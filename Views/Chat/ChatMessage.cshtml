@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewData["Title"] = "Chat Message";
+    if (ViewBag.Mobile == 0)
+    {
+        <environment include="Development">
+            <link href="~/css/chat/style.chat.css" rel="stylesheet" />
+        </environment>
+        <environment exclude="Development">
+            <link href="~/css/chat/style.chat.min.css" rel="stylesheet" asp-append-version="true" />
+        </environment>
+    }
+    else
+    {
+        <environment include="Development">
+            <link href="~/css/chat/mb.style.chat.css" rel="stylesheet" />
+        </environment>
+        <environment exclude="Development">
+            <link href="~/css/chat/mb.style.chat.min.css" rel="stylesheet" asp-append-version="true" />
+        </environment>
+    }
+}
+@section Styles{
+    <style>
+        div.dvMhomeContainer{
+            background-color: #fff!important;
+        }
+
+        .dvMhomeContainer h1{
+            margin-bottom: 10px !important;
+        }
+    </style>
+}
+
+<div class="wrapm">
+    <section class="section-form">
+        <h1>Leave us a message!</h1>
+        <form id="formMessage">
+            <div class="dvForm">
+                <div class="txt">
+                    <input type="text" name="firstName" id="firstName" placeholder="Your Name" />
+                    <span class="spReq">*</span>
+                </div>
+                <div class="txt">
+                    <input type="text" name="clientEmail" id="clientEmail" placeholder="Your Email" />
+                    <span class="spReq">*</span>
+                </div>
+                <div class="txt">
+                    <textarea id="message" name="message" rows="4" cols="40" placeholder="Your Message"></textarea>
+                    <span class="spReq">*</span>
+                </div>
+                <div class="txt">
+                    <input type="text" name="bookingNo" id="bookingNo" placeholder="Booking Number(optional)" />
+                </div>
+            </div>
+            <p><span class="spRequ">*</span><i>Mandatory fields</i></p>
+            <button type="button" id="submitMess" value="Submit">Submit</button>
+        </form>
+        <p>If you have an existing booking, you can visit your <a href="/booking_confirmation">Manage Booking</a> section for the most up-to-date information about your trip.</p>
+        <p>For general questions please visit our <a href="/frequently_asked_questions">FAQ</a> page.</p>
+    </section>
+    <section class="section-success">
+        <h1>Your message has been received!</h1>
+        <p>Thank you for contacting Tripmasters.</p>
+        <p>We will respond to your inquiry as quickly as posible.</p>
+        <a href="/">Go back to Home Page</a>
+    </section>
+</div>
+@section Scripts
+{
+
+    @{
+        if (ViewBag.Mobile == 0)
+        {
+            <environment include="Development">
+                <script src="~/js/chatmess/java.chatmessage.js"></script>
+            </environment>
+            <environment exclude="Development">
+                <script src="~/js/chatmess/java.chatmessage.min.js"></script>
+            </environment>
+        }
+        else
+        {
+            <environment include="Development">
+                <script src="~/js/chatmess/mb.java.chatmessage.js"></script>
+            </environment>
+            <environment exclude="Development">
+                <script src="~/js/chatmess/mb.java.chatmessage.min.js"></script>
+            </environment>
+        }
+    }
+}
+
+

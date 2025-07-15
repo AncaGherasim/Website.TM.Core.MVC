@@ -1,0 +1,36 @@
+﻿@model MVC_TM.Models.ViewModels.RecentlyViewedViewModel;
+@using MVC_TM.Infrastructure;
+@using Microsoft.Extensions.Options
+@inject IOptionsMonitor<AppSettings> _appsettings
+
+@{
+    ViewBag.Canonical = @String.Format("https://www.tripmasters.com/recently_viewed");
+
+}
+@section Styles
+{
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/recently/dt.style.recentlyviewed.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/recently/dt.style.recentlyviewed.min.css" />
+    </environment>
+}
+
+<div class="dvMainContainer">
+    <input name="userVisitID" type="hidden" id="userVisitID" value="@ViewBag.userVisitID" />
+    <div class="dvRoundContainer">
+        <h3>Recently Viewed <span id="novisited"></span></h3>
+        <div class="dvItemsContainer"></div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <environment include="Development">
+        <script src="~/js/recently/dt.java.recentlyviewed.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/recently/dt.java.recentlyviewed.min.js" asp-append-version="true"></script>
+    </environment>
+}

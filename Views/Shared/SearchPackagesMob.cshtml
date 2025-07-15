@@ -1,0 +1,168 @@
+﻿@using MVC_TM.Infrastructure;
+@model List<xmlPackage>
+@using Microsoft.Extensions.Options
+@inject IOptionsMonitor<AppSettings> _appsettings
+
+@{
+    Layout = null;
+}
+
+<div class="col-12 px-1">
+    @{
+        string nights = "";
+        string ntsText = "";
+        Int32 enumerator = 0;
+        string imagePath = "https://pictures.tripmasters.com/siteassets/d/";
+
+    }
+    @if (Model.Count > 0)
+    {
+        foreach (var p in Model)
+        {
+            string urlSite = "";
+            @if (p.ProdKinds.Contains(":.ED"))
+            {
+                urlSite = "https://www.tripmasters.com/europe/";
+            }
+            @if (p.ProdKinds.Contains(":LD"))
+            {
+                urlSite = "https://www.tripmasters.com/latin/";
+            }
+            @if (p.ProdKinds.Contains(":.TW"))
+            {
+                urlSite = "https://www.tripmasters.com/asia/";
+            }
+            @if (p.ProdKinds.Contains(":.TM - Luxury"))
+            {
+                if (string.IsNullOrEmpty(p.Country))
+                {
+                    urlSite = "https://www.tripmasters.com/luxury/country";
+                }
+                else
+                {
+                    urlSite = "https://www.tripmasters.com/luxury/";
+                }
+            }
+
+
+            <div class="row mx-auto mb-1 bg-white" >
+                <div class="col-5 p-1" >
+                    <a href=@String.Format("{0}{1}/{2}/package-{3}", urlSite, p.Country.Replace(" ", "_").ToLower(), p.Title.Replace(" ", "_").ToLower(), p.Id) style="text-decoration:none;border:none;">
+                        <img class="img-fluid" id=@String.Format("img{0}", p.Id)  src=@String.Format("https://pictures.tripmasters.com{0}", p.ImageURL.ToLower()) alt="" />
+                    </a>
+                    @if (p.IsLuxury == "1")
+                    {
+                        <div class="curatelux">
+                            <span class="best-packages__item-lux">Curated Luxury</span>
+                            <span class="best-packages__item-stars">★★★★★</span>
+                        </div>
+                    }
+                </div>
+                <div class="col-7 py-2 pr-1">
+                    <a href=@String.Format("{0}{1}/{2}/package-{3}", urlSite, p.Country.Replace(" ", "_").ToLower(), p.Title.Replace(" ", "_").ToLower(), p.Id) class="packTitle">
+                        @p.Title @if (p.IsLuxury == "1")
+                        {
+                            <span class="starlux">★</span>
+                        }
+                    </a>
+                    @if (p.ProdKinds.Contains("1784"))
+                    {
+                        @Html.Raw("&nbsp;")
+                        <span>
+                            <img id=@String.Format("imgGuided{0}", p.Id) src=@String.Format("{0}Guided.jpg", imagePath) alt="" style="vertical-align:middle;margin-top:-2px;" />
+                        </span>
+                    }
+                    @if (p.ProdKinds.Contains("1785"))
+                    {
+                        @Html.Raw("&nbsp;")
+                        <span>
+                            <img id=@String.Format("imgPartiallyGuid{0}", p.Id) src=@String.Format("{0}GuidedPartially.jpg", imagePath) alt="" style="vertical-align:middle;margin-top:-2px;" />
+                        </span>
+                    }
+                    <div style="margin-top:5px;">
+                        @if (p.Duration > 0)
+                        {
+                            @if (p.ProdKinds.Contains("1901"))
+                            {
+                                nights = p.Duration.ToString() + " nights ";
+                                ntsText = "by selecting date, and your departure city.";
+                            }
+                            else
+                            {
+                                nights = p.Duration.ToString() + " to " + (p.Duration + Math.Round(Convert.ToDecimal(p.Duration) / 2)) + "+ nights";
+                                ntsText = "by selecting dates, No. of nights in each city and your departure city.";
+                            }
+                            <span class="packDuration">@nights</span>
+                        }
+                        @if (p.Price != 0)
+                        {
+                            <span class="packDuration">@Html.Raw("&nbsp;from&nbsp;")</span><span class="packPrice"><b>@String.Format("{0:c0}", @p.Price)*</b></span>
+                        }
+                    </div>
+                    @if (p.Reviews > 0)
+                    {
+                        <div style="margin-top:5px;font-size:12px;">
+                            <a href="@String.Format("{0}{1}/{2}/feedback-{3}", urlSite, p.Country.Replace(" ", "_").ToLower(), p.Title.Replace(" ", "_").ToLower(), p.Id)" style="color:#140480;cursor:pointer;">
+                                @p.Reviews Reviews
+                            </a>
+                        </div>
+                    }
+                    <div class="position-absolute" onclick=@String.Format("displayPackInfo('divInfo{0}');", p.Id) style="bottom: 10px;color: #140480">Package includes&nbsp;</div>
+                </div>
+                <div style="clear:both;"></div>
+                <div class="col-12" id=@String.Format("divInfo{0}", p.Id) style="display:none;color:#6a6a6a;margin:10px 5px 0 0;">
+                    <div style="font-size:12px;margin-right:5px;">@Html.Raw(@p.Description)</div>
+                    <div style="margin:15px 5px 0 0;font-size:12px;"> This sample price:  @p.PriceHistInfo for arrival on @p.DepartureDate.ToLongDateString(), departure from @p.DepartureAirport. Choose your own departure city and dates.</div>
+                    <div style="color:black;font-weight:bold;margin:15px 0 0 0;font-size:12px;">This @p.Duration night sample itinerary includes:</div>
+
+                    @{
+                        string[] a = p.Include.Split("[crlf]");
+                        string strContent = "";
+                        for (Int32 i = 0; i <= a.Length - 1; i++)
+                        {
+                            strContent = strContent + "&bull;&nbsp;" + a[i].Replace("|", ";") + "</br>";
+                        }
+                    }
+
+
+                    <div style="margin:3px 10px 0 0;font-size:12px;">@Html.Raw(@strContent)</div>
+                    <div class="bookItButton" onclick=@String.Format("window.location='{0}{1}/{2}/package-{3}';", urlSite, p.Country.Replace(" ", "_").ToLower(), p.Title.Replace(" ", "_").ToLower(), p.Id)>Book It</div>
+                </div>
+            </div>
+            @if (enumerator == 4 && ViewBag.PageNumber == 1)
+            {
+                <div class="row mx-auto mb-1 bg-white"><a href="http://www.tripmasters.com"><img src=@String.Format("{0}BuildOnYourOwn_Large.jpg", imagePath) style="margin-top:10px;border-style:none;max-width:100%;height:auto;" alt="BuildOnYourOwn" /></a></div>
+            }
+            enumerator += 1;
+        }
+
+        @if (Model.Count <= 4 && ViewBag.PageNumber == 1)
+        {
+            <div style="border-bottom:solid 1px gray;background-color:White;padding:15px 5px 20px 5px;text-align:center;"><a href="http://www.tripmasters.com"><img src=@String.Format("{0}BuildOnYourOwn_Large.jpg", imagePath) style="margin-top:10px;border-style:none;max-width:100%;height:auto;" alt="BuildOnYourOwn" /></a></div>
+        }
+
+        @if (ViewBag.PageNumber * 10 < ViewBag.xmlPacksCount)
+        {
+            Int32 restPacks = ViewBag.xmlPacksCount - ViewBag.PageNumber * 10;
+            @if (restPacks >= 10)
+            {
+                restPacks = 10;
+            }
+            <div id=@String.Format("dvMore_{0}", @ViewBag.PageNumber + 1) style="border-bottom:solid 1px gray;background-color:White;padding:10px 5px 25px 5px;text-align:center;"><div class="grayButton" onclick=@String.Format("ShowPacks({0})", @ViewBag.PageNumber + 1)>Show @restPacks more results</div></div>
+        }
+    }
+    else
+    {
+        <div id="msgNoPacks" style="display:none;font-size:16px;color:navy;"></div>
+    }
+
+    @if (ViewBag.xmlPacksCount == null)
+    {
+        <input name="noOfPacks" type="hidden" id="noOfPacks" value="0" />
+    }
+    else
+    {
+        <input name="noOfPacks" type="hidden" id="noOfPacks" value="@ViewBag.xmlPacksCount" />
+    }
+
+</div>

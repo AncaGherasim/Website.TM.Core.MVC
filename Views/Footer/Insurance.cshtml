@@ -1,0 +1,259 @@
+﻿@{
+    ViewBag.Canonical = @String.Format("https://www.tripmasters.com/insurance");
+
+}
+
+<head>
+    @{
+        ViewBag.Mobile = 0;
+                                <environment include="Development">
+                                    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+                                </environment>
+                                <environment exclude="Development">
+                                    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
+                                </environment>
+                                <style>
+                                    .chatUs {
+                                        height: 22px !important;
+                                        font-size: 12px !important;
+                                    }
+
+                                    .table {
+                                        width: 980px !important;
+                                        margin: 0 auto
+                                    }
+
+                                    .secTopHeader {
+                                        height: 140px !important
+                                    }
+
+                                    .adotDecor {
+                                        color: white !important
+                                    }
+
+                                    .dvhChat {
+                                        width: 30% !important
+                                    }
+
+                                    .insBody {
+                                        font-family: Arial, Helvetica, sans-serif;
+                                        font-size: 14px;
+                                        height: auto;
+                                        line-height: 20px;
+                                        margin: 0 auto;
+                                        max-width: 800px;
+                                        padding: 0 15px 25px;
+                                        background-color: white
+                                    }
+
+                                    .insTitle {
+                                        font-weight: bold;
+                                        font-size: 18px;
+                                        margin-top: 10px;
+                                        padding-top: 20px
+                                    }
+
+                                    .insComm {
+                                        text-align: justify;
+                                        padding-top: 30px
+                                    }
+
+                                    .insNote {
+                                        color: #999;
+                                        padding-top: 20px
+                                    }
+
+                                    .insDesc {
+                                        padding: 3px 0 0 0;
+                                        text-align: justify
+                                    }
+
+                                    .insLink {
+                                        padding-left: 0px
+                                    }
+                                    .spanh2Insurance, .spanh2Insurance2,.spanh2Insurance3{display:none}
+
+                                     @@media only screen and (max-width:700px) {
+                                      .mainSec, .insBody, .mainSec2{width:100%;background-color:white;padding: 10px 14px !important;}
+                                        .redpoint,.redpoint3, .allianz{display:none}
+                                        .h2TitleInsurance, .h2TitleInsurance2, .h2TitleInsurance3 {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            margin: 0px auto;
+                                            padding: 2rem 1rem;
+                                            border: 1px solid #78909C;
+                                            border-radius: 6px;
+                                            background-color: #ECEFF1;
+                                        }
+                                        hr {
+                                            border: none;
+                                            border-top: 1px dashed #ccc;
+                                            color: #fff;
+                                            height: 1px;
+                                            background: none;
+                                            margin: 10px auto!important;
+                                            width: 100%;
+                                        }
+                                        .spanh2Insurance, .spanh2Insurance2, .spanh2Insurance3{display:table-cell;vertical-align:middle;transform: rotate( 90deg);}
+                                        .span1, .span2,.span3 {display:table-cell;vertical-align:middle;}
+                                     }
+                                </style>
+
+    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        .insBody {
+            font-size:14px !important;
+            height: auto;
+            line-height: 20px;
+            margin: 0 auto;
+            max-width: 980px;
+            padding: 0 15px 25px
+        }
+        .insBody p {font-size: 0.875rem}
+        .insTitle {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: 30px;
+            padding: 0 15px;
+        }
+        .insComm {text-align: justify;padding: 30px 0 0 15px;}
+        .insNote {
+            color: #999;
+            padding: 0 15px;
+            font-weight: 400;
+        }
+        .insDesc {padding: 3px 0 0 15px;text-align: justify}
+        .insLink {padding-left: 0px}
+
+        .mainSec, .mainSec2 {
+            max-width: 980px;
+            margin: 0 auto;
+            line-height: 20px;font-size:14px;
+        }
+
+            .mainSec h1, .mainSec2 h1 {
+                font-size: 1.125rem;
+                margin: 40px 0;
+                padding: 7px 15px;
+                border-radius: 7px;
+                background: #608ed5;
+                color: #fff;
+                font-weight: 500;
+            }
+
+            .mainSec p, .mainSec2 p {
+                margin: 0px 0 0 20px;
+                font-size: 14px;
+                line-height: 20px
+            }
+       p.spHardTxt { color: black !important;}
+        hr {
+            border: none;
+            border-top: 1px dashed #ccc;
+            color: #fff;
+            height: 1px;
+            background: none;
+            margin: 40px auto;
+            width: 100%;
+        }
+        ul.dash {
+            list-style: none;
+            margin: 0;
+            padding: 0 35px;
+            font-size:14px;
+        }
+         ul.dash > li:before {
+                display: inline-block;
+                content: "-";
+                width: 1em;
+                margin-left: -1em;
+            }
+        p.spSmallTxt {font-size: 0.75rem;color: black;padding: 35px 0 0 0px;}
+        .pSmallTxt{font-size: 0.75rem;color: black;padding: 35px 0 0 0px;}
+        h2 {font-size: 1.2rem;color: #ff6a00;}
+        .travelPro{font-size:1rem!important;padding:10px 0}
+        .underline{text-decoration:underline}
+    </style>
+
+</head>
+
+<section class="container   mainSec">
+    
+    <h1>Travel Insurance</h1>
+
+    <h2 class="h2TitleInsurance3"><span class="span3">Redpoint Travel Insurance - If purchased on/after March 20th, 2023</span><span class="spanh2Insurance3" style="font-size: 30px">›</span></h2>
+    <div class="redpoint3">
+        <p class="travelPro"><b>Travel Protection: Harbor <span class="underline">With</span> Cancel Anytime*</b></p>
+        <p>Trip Cancellation & Interruption <span class="underline">Beyond</span> Covered Reasons</p>
+        <p>If you’d like to maximize your coverage for cancellation, we’d recommend this option as it allows you to cancel for any reason not excluded from your plan</p>
+        <p class="spHardTxt">This flexible cancellation plan offers: </p>
+        <ul class="dash">
+            <li>Up to 100% reimbursement if you <b>cancel for a covered reason;</b></li>
+            <li>Up to 75% reimbursement for just about any other reason not already covered or excluded from your plan. </li>
+        </ul>
+        <br />
+        <p><b>To be eligible for “Cancel Anytime” benefits:</b></p>
+        <p class="spHardTxt">
+            <ul class="dash">
+                <li>Must be physically able to travel at time of purchase.</li>
+                <li>Purchase within 15 days from the initial trip payments.</li>
+                <li>Insure the total cost of the trip.</li>
+            </ul>
+        </p>
+        <br />
+        <p class="spHardTxt">In addition to the above Trip Cancelation benefits, the plan includes protection for covered Trip Interruption, Emergency Medical, baggage, natural and man-made disasters. Please see all exclusions under <a href="https://redpointtravelprotection.com/harbor-travel-insurance-coverage-benefits/" target="_blank" class="openINS">Terms, Conditions and exclusions.</a></p>
+
+        <br />
+        <p class="travelPro"><b>Travel Protection: Harbor <span class="underline">Without</span> Cancel Anytime*</b></p>
+        <p>Trip Cancellation & Interruption with <span class="underline">limited</span> Covered Reasons</p>
+        <p>Travel Insurance can pay trip cancellation and interruption claims when you cancel or interrupt your trip due to certain covered situations. Exclusions and restrictions apply.</p><br />
+        <p class="spHardTxt">In addition to the above Trip Cancelation benefits, the plan includes protection for covered Trip Interruption, Emergency Medical, baggage, natural and man-made disasters. Please see all exclusions under <a href="https://redpointtravelprotection.com/harbor-travel-insurance-coverage-benefits/" target="_blank" class="openINS">Terms, Conditions and exclusions.</a></p>
+
+        <br />
+       
+        <p class="spSmallTxt">* The plans are underwritten by State National Insurance Company, Inc. Univops Insurance Service LLC is the licensed producer. Plans only available to US residents and may not be available in all jurisdictions. Pricing may vary by state.</p>
+
+
+
+    </div>
+
+       <br />
+    <hr />
+
+       </section>
+
+
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.openINS').click(function (event) { openNW(this.href); event.preventDefault() })
+            $('.h2TitleInsurance2').click(function () {
+                $('.allianz').is(':visible') === false ?
+                    ($('.allianz').slideDown(), $('.h2TitleInsurance2').css({ 'background-color': 'white', 'border': '1px solid white' }), $('.insBody').css({ 'background-color': 'white', 'border': '1px solid #78909C', 'border-radius': '6px' }), $('.spanh2Insurance2').css({'transform': 'rotate( 270deg)'}))
+                    : ($('.allianz').slideUp(), $('.h2TitleInsurance2').css({ 'background-color': '#ECEFF1', 'border': '1px solid #78909C' }), $('.insBody').css({ 'border': 'none' }), $('.spanh2Insurance2').css({ 'transform': 'rotate( 90deg)' }));
+            });
+            $('.h2TitleInsurance').click(function () {
+                $('.redpoint').is(':visible') === false ?
+                    ($('.redpoint').slideDown(), $('.h2TitleInsurance').css({ 'background-color': 'white', 'border': '1px solid white' }), $('.mainSec2').css({ 'background-color': 'white', 'border': '1px solid #78909C', 'border-radius': '6px' }), $('.spanh2Insurance').css({ 'transform': 'rotate( 270deg)' }))
+                    : ($('.redpoint').slideUp(), $('.h2TitleInsurance').css({ 'background-color': '#ECEFF1', 'border': '1px solid #78909C' }), $('.mainSec2').css({ 'border': 'none' }), $('.spanh2Insurance').css({ 'transform': 'rotate( 90deg)' }));
+            });
+             $('.h2TitleInsurance3').click(function () {
+                $('.redpoint3').is(':visible') === false ?
+                    ($('.redpoint3').slideDown(), $('.h2TitleInsurance3').css({ 'background-color': 'white', 'border': '1px solid white' }), $('.mainSec').css({ 'background-color': 'white', 'border': '1px solid #78909C', 'border-radius': '6px' }), $('.spanh2Insurance3').css({ 'transform': 'rotate( 270deg)' }))
+                    : ($('.redpoint3').slideUp(), $('.h2TitleInsurance3').css({ 'background-color': '#ECEFF1', 'border': '1px solid #78909C' }), $('.mainSec').css({ 'border': 'none' }), $('.spanh2Insurance3').css({ 'transform': 'rotate( 90deg)' }));
+            });
+
+
+        });
+        function openNW(nwurl) {
+            var LeftPosition = (screen.width) ? (screen.width - 900) / 2 : 0;
+            var TopPosition = (screen.height) ? (screen.height - 500) / 2 : 0;
+            var settings = 'height=500,width=900,top=' + TopPosition + ',left=' + LeftPosition + ',scrollbars=yes,resizable=yes';
+            window.open(nwurl, '', settings);
+        };
+    </script>
+}

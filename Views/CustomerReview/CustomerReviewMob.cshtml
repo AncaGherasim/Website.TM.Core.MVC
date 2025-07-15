@@ -1,0 +1,254 @@
+﻿@model MVC_TM.Models.ViewModels.CustomerReviewViewModel
+@using MVC_TM.Controllers;
+
+@section Styles{
+    <environment include="Development">
+        <link href="~/css/customerreview_m/mb.style.customer_review.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/customerreview_m/mb.style.customer_review.min.css" rel="stylesheet" />
+    </environment>
+}
+
+<div id="bgshow" style="position: absolute; top: 0px; left: 0px; opacity: 0.65; background-color: rgb(204, 204, 204); z-index: 3900; width: 100%; height: 100%;overflow: hidden;display:none;"></div>
+@{
+    if (ViewBag.errMess == true)
+    {
+    <div id="errMess" style="padding:20px 5px;">
+        <div style="margin:5px; border:solid 1px #698dc7; padding:20px; font-family:Arial, Helvetica, sans-serif;">
+            <p><img src="https://pictures.tripmasters.com/siteassets/d/TM_Header.png" alt="TripMaster.com" /></p>
+            <span id="lblErr" style="color:#006;font-size:18px">@ViewBag.lblErr</span>
+        </div>
+    </div>
+    }
+}
+
+
+<div id="dvAjax" style="background-color:White;text-align:center;border:solid 1px #698dc7;margin:o auto;padding:17px; display:none; max-width:90%; width:90%; position: absolute;z-index:3901;">
+    <img src="https://pictures.tripmasters.com/siteassets/d/ajax-loader.gif" style="margin:0 auto;" />
+</div>
+<div id="dvThank" style="background-color:White;text-align:center;border:solid 1px #698dc7;margin:0 Auto;padding:10px; max-width:90%; width:85%; display:none; position: absolute;z-index:3901; ">
+    <span style="float:right;margin:5px 5px 0px 0px;color:Gray;font-size:11px;cursor:pointer;" onclick="HideThankMess('dvThank');">close [x]</span><div style="clear:both;"></div>
+    <div class="txt_boldNavy18" style="margin-top:10px;">Thank you for your Review!</div>
+    <div style="color:#6e6e6e;font-size:12px;margin-top:15px;">We're currently processing your review and will be displayed as soon as this is complete!</div>
+    <div style="color:Gray;margin-top:15px;font-size:11px;">Visit our website:</div>
+    <div>
+        <a href="http://tripmasters.com/" style="text-decoration:none;">
+            <img border="0" alt="tripmasters" src="https://pictures.tripmasters.com/siteassets/d/TM_Header.png" height="35" />
+        </a>
+    </div>
+    <div style="border-top:solid 1px #6e6e6e;margin:10px 30px 0px 30px;padding-top:15px;">
+        <div class="fb-like" data-href="https://www.facebook.com/Tripmasters/?fref=ts" data-layout="button" data-action="like" data-show-faces="false" data-share="true" data-width="box_count"></div>
+    </div>
+</div>
+@{
+    if (ViewBag.dvMainContainer == true)
+    {
+        <div id="dvMainContainer" class="dvMobMainContainer" style="margin-top:5px;" runat="server">
+            <span class="txt_boldNavy18" style="padding:0px 8px 0px 10px;line-height:40px;">Review Center</span>
+            <span id="dvStatusJS" style="font-weight:bold;font-size:14px;display:none"> | Status: Processing</span>
+            <div id="dvStatus" runat="server" visible="false" style="display:inline;font-weight:bold;font-size:14px;">
+                @{
+                    string feedText = string.Empty;
+                    if (Model.feedProcessed == true)
+                    {
+                        feedText = "Posted";
+                    }
+                    else if (Model.feedReceived == true)
+                    {
+                        feedText = "Processing";
+                    }
+                }
+                <span>@feedText</span>
+            </div>
+            <div class="dvhr1"></div>
+
+            <div class="txt_boldBlack14" style="padding:0px 0px 0px 10px;">How would you rate your overall experience?</div>
+            <span id="rateOverall" class="validator" style="display:none;">Please select an option.</span>
+            @{
+                if (ViewBag.ulExperienceOptions == true)
+                {
+                    <ul id="ulExperienceOptions" class="options">
+                        <li id="o5" class="unselectedItem">Completely Satisfied</li>
+                        <li id="o4" class="unselectedItem">Satisfied</li>
+                        <li id="o3" class="unselectedItem">Somewhat Satisfied</li>
+                        <li id="o2" class="unselectedItem">Somewhat Dissatisfied</li>
+                        <li id="o1" class="unselectedItem">Dissatisfied</li>
+                    </ul>
+                }
+                if (ViewBag.dvExp == true)
+                {
+                    <div id="dvExp">
+                        <ul id="ulExperienceOptionsSel" class="options">
+                            <li id="Li5" class="unselectedItemSel">Completely Satisfied</li>
+                            <li id="Li4" class="unselectedItemSel">Satisfied</li>
+                            <li id="Li3" class="unselectedItemSel">Somewhat Satisfied</li>
+                            <li id="Li2" class="unselectedItemSel">Somewhat Dissatisfied</li>
+                            <li id="Li1" class="unselectedItemSel">Dissatisfied</li>
+                        </ul>
+                    </div>
+                }
+            }
+            <div class="dvhr"></div>
+
+            <span id="valYN" class="validator" style="display:none">Please select an option.</span>
+            <div class="txt_boldBlack14" style="padding:0px 0px 0px 10px;">Would you recommend us to a friend?</div>
+            @{
+                if (ViewBag.ulUse == true)
+                {
+                    <ul id="ulUse" class="usingAgain">
+                        <li id="u1" class="unselectedItem">Yes</li>
+                        <li id="u0" class="unselectedItem">No</li>
+                    </ul>
+                }
+                if (ViewBag.dvUse == true)
+                {
+                    <div id="dvUse">
+                        <ul id="ulUseSel" class="usingAgainSel" runat="server">
+                            <li id="Li1" class="unselectedItemSel">Yes</li>
+                            <li id="Li0" class="unselectedItemSel">No</li>
+                        </ul>
+                    </div>
+                }
+            }
+            <div class="txt_boldBlack14" style="margin:30px 5px 0px 10px;">Please let us know how we can improve our service or products we offer:</div>
+            @{
+                if (ViewBag.revContent == true)
+                {
+                    <textarea id="revContent" class="Comment"></textarea>
+                }
+                if (ViewBag.revContentReadOnlyTextVisible == true)
+                {
+                    <textarea id="revContentReadOnly" class="Comment" readonly></textarea>
+                }
+            }
+            <div class="dvhr"></div>
+
+            @{
+                if (ViewBag.dvTellUs == true)
+                {
+                    <div id="dvTellUs">
+                        <div class="txt_boldBlack14" style="padding:15px 0px 10px 10px;">Tell us more!</div>
+                        @{
+                            if (ViewBag.dvUserSelect == true)
+                            {
+                                <div id="dvUserSelect" style="margin:0 -1em 0 -1em;">
+                                    @{
+                                        string color = String.Empty;
+                                        for (int i = 0; i <= Model.services.Count - 1; i++)
+                                        {
+                                            if ((i % 2) == 0)
+                                            {
+                                                color = "#eff4fa";
+                                            }
+                                            else
+                                            {
+                                                color = "#fff";
+                                            }
+                                            <div style="padding:10px 0px 10px 10px; margin:0px 0px 0px 10px;background-color:@color">
+                                                <div style="padding:0 0 7px 3px;">@Model.services[i].Name</div>
+                                                <div>
+                                                    <div id="container_@Model.services[i].Id" class="ServiceContainer">
+                                                        <div id="s_@(Model.services[i].Id)_1" class="star-rating" title="1"></div>
+                                                        <div id="s_@(Model.services[i].Id)_2" class="star-rating" title="2"></div>
+                                                        <div id="s_@(Model.services[i].Id)_3" class="star-rating" title="3"></div>
+                                                        <div id="s_@(Model.services[i].Id)_4" class="star-rating" title="4"></div>
+                                                        <div id="s_@(Model.services[i].Id)_5" class="star-rating" title="5"></div>
+                                                    </div>
+                                                    <div id="rate_@(Model.services[i].Id)_descrFull" style="float:left;margin-left:20px;display:none;padding:5px 0px 0px 0px;"></div>
+                                                    <div style="clear:both;"></div>
+                                                </div>
+                                            </div>
+                                        }
+                                        <input type="hidden" id="rate_1" value="0" />
+                                        <input type="hidden" id="rate_2" value="0" />
+                                        <input type="hidden" id="rate_3" value="0" />
+                                        <input type="hidden" id="rate_4" value="0" />
+                                        <input type="hidden" id="rate_5" value="0" />
+                                        <input type="hidden" id="rate_6" value="0" />
+                                        <input type="hidden" id="rate_7" value="0" />
+                                        <input type="hidden" id="rate_8" value="0" />
+                                        <input type="hidden" id="rate_9" value="0" />
+                                    }
+                                </div>
+                            }
+                            if (ViewBag.dvPreSelect == true)
+                            {
+                                <div id="dvPreSelect">
+                                    @{
+                                        string color = String.Empty;
+                                        for (int i = 0; i <= Model.services.Count - 1; i++)
+                                        {
+                                            if ((i % 2) == 0)
+                                            {
+                                                color = "#eff4fa";
+                                            }
+                                            else
+                                            {
+                                                color = "#fff";
+                                            }
+                                            <div style="padding:10px 0px 10px 10px; margin:0px 0px 0px 10px;background-color:@color">
+                                                <div style="padding:0 0 7px 3px;">@Model.services[i].Name</div>
+                                                <div id="container_@(Model.services[i].Id)_PreSelected" class="ServiceContainer-preselected">
+                                                    @{
+                                                        Int32 preSelRate = Int32.Parse(Model.services[i].Rating);
+                                                        for (int j = 1; j <= preSelRate; j++)
+                                                        {
+                                                            <div class="star-rating-selected" title="@j"></div>
+                                                        }
+                                                        for (int j = preSelRate + 1; j <= 5; j++)
+                                                        {
+                                                            <div class="star-rating-preselected" title="@j"></div>
+                                                        }
+                                                    }
+                                                </div>
+
+                                                @{
+                                                    var rate = ReviewController.GetRateDescription(preSelRate);
+                                                    <div style="float:left;margin-left:20px;padding:15px 0px 0px 0px;"><span class="@(rate[0])">@(rate[1])</span></div>
+                                                    <div style="clear:both;"></div>
+                                                }
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            }
+                        }
+                    </div>
+                }
+            }
+            <div id="dvSubmit" style="text-align:center;padding-bottom:20px;">
+                <div class="dvhr"></div>
+                <input type="button" value="Submit your Review" class="submitButton" id="submitBotton" />
+            </div>
+            <input type="hidden" id="opVal" value="@ViewBag.opVal" />
+            <input type="hidden" id="usingVal" value="-1" />
+        </div>
+    }
+}
+<input id="hfFeedRcvd" type="hidden" value="@Model.feedReceived.ToString()" />
+<form method="post" id="formAjax" name="formAjax">
+    <input name="userBooking" type="hidden" id="userBooking" value="@Model.bookingId" />
+    <input name="userEmail" type="hidden" id="userEmail" value="@Model.email" />
+    <input name="userRate" type="hidden" id="userRate" value="@Model.rate" />
+    <input name="userUsing" type="hidden" id="userUsing" value="" />
+    <input name="userReview" type="hidden" id="userReview" value="" />
+    <input name="serviceScore" type="hidden" id="serviceScore" value="N/A" />
+    <input name="sitebpScore" type="hidden" id="sitebpScore" value="N/A" />
+    <input name="flightScore" type="hidden" id="flightScore" value="N/A" />
+    <input name="hotelScore" type="hidden" id="hotelScore" value="N/A" />
+    <input name="transferScore" type="hidden" id="transferScore" value="N/A" />
+    <input name="ssScore" type="hidden" id="ssScore" value="N/A" />
+    <input name="carrentalScore" type="hidden" id="carrentalScore" value="N/A" />
+    <input name="trainScore" type="hidden" id="trainScore" value="N/A" />
+    <input name="ferryScore" type="hidden" id="ferryScore" value="N/A" />
+</form>
+
+@section Scripts{
+    <environment include="Development">
+        <script src="~/js/customerreview_m/mb.java.customer_review.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/customerreview_m/mb.java.customer_review.min.js" asp-append-version="true"></script>
+    </environment>
+}

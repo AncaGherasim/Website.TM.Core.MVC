@@ -1,0 +1,87 @@
+﻿.mainSubsDiv {
+	border: 1px solid #638bd1;
+	box-shadow: inset 0 0 10px #638bd1;
+	border-radius: 10px 10px 10px 10px;
+	width: 980px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+.mainSubsDiv h1 {
+	font-size: 20px;
+	color: #036;
+	font-weight: 700;
+	text-align: center;
+}
+
+.divisionTabs {
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+}
+
+.dvTabTitle {
+	text-align: center;
+	line-height: 22px;
+	border-bottom: 1px #0065b8 solid;
+	font-size: 1rem;
+	line-height: 1.9rem;
+}
+
+	.dvTabTitle:hover {
+		cursor: pointer
+	}
+
+.activeTab {
+	background: #0065b8;
+	color: white;
+}
+
+.secCountries {
+	display: grid;
+	grid-template-columns: 35% 65%;
+	padding: 15px;
+}
+
+.dvCountries {
+	color: #036;
+	font-size: 0.9rem;
+	text-align: left;
+}
+
+	.dvCountries h1 {
+		font-size: 1.25rem;
+		color: navy;
+		text-align: left;
+	}
+
+	.dvCountries ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		line-height: 1.2rem;
+	}
+
+		.dvCountries ul li:hover {
+			text-decoration: underline;
+			cursor: pointer;
+		}
+
+.dvCities {
+}
+
+	.dvCities ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		line-height: 1.2rem;
+	}
+
+		.dvCities ul li {
+			margin-bottom: 25px;
+			border-bottom: 1px solid #ccc;
+		}
+
+	.dvCities h2 {
+		color: navy;
+		font-size: 0.95rem;
+	}

@@ -1,0 +1,72 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.dveachReview {padding:0 10px;margin:0 auto}
+.dvEachRvwLeft {float:left;width:30%}
+.spEaReLeTitle {color:#666;float:left;width:6%;display:block;margin:0 0 7px 0}
+.spEaReLeDesc {color:#666;float:left;width:65%;margin:0 0 7px 0}
+.spEaReLeLine {display:block;width:99%;margin:0 0 7px 0}
+.spEaReLeLine a {color:navy}
+.spEaReLeLine a:hover {color:red}
+.darkText {color:#666}
+.orangeText {color:#F60}
+.fntLightText {color:#666;font-size:11px}
+.dvEachRvwRight {float:left;width:70%}
+.spEaReRgTitle {width:99%;display:block;margin:0 0 7px 0;font-weight:700;font-size:14px}
+.dvitinInclude {padding:10px}
+.spEaReRiLeft {float:left;width:65%;border-right:1px dotted #CCC;margin-right:6px;line-height:1.4;min-height:150px}
+.spEaReRiRight {float:left;width:33%;line-height:1.4}
+.pSimilar {text-align:right}
+.alightcolor {color:#999 !important;text-decoration:underline !important; line-height:23px}
+.alightcolor:hover {color:#F00 !important}
+.pPlcVisit {margin:1px 0;color:#999}
+.pPlcVisit a {color:#999 !important;text-decoration:underline}
+.pPlcVisit a:hover {color:#F00 !important}
+.dvhr {border-top:2px dotted #666;height: 20px;margin: 20px auto}
+.spCheckBox {width:98%}
+.button {text-decoration:none!important;color:blue!important}
+.dvPaginas, .light-theme, .simple-pagination a {text-decoration:none !important}
+.dvPaginas, .light-theme, .simple-pagination a:hover {text-decoration:underline !important}
+.dvLinearTopBgRev {background:-webkit-linear-gradient(bottom, #fff 35%, #e7ebf7 100%);background:-moz-linear-gradient(bottom, #fff 35%, #e7ebf7 100%);background:-ms-linear-gradient(bottom, #fff 35%, #e7ebf7 100%);background:-o-linear-gradient(bottom, #fff 35%, #e7ebf7 100%)}
+.dvColumn {-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;-webkit-column-gap: 5px;column-gap: 5px;-moz-column-gap: 5px;list-style-type: none;padding:0px}
+.falsecheckdop {font-size:12px !important}
+.submitButton{background:#fffecd linear-gradient(to bottom,#fffecd 5%,#ffd968 100%) repeat scroll 0 0;border:1px solid #f4cd1a;border-radius:15px;color:#000;cursor:pointer;display:inline-block;font:12px arial;padding:8px 55px;text-decoration:none;font-weight:bold;}
+.submitButton:hover{background:-webkit-gradient(linear,left top,left bottom,color-stop(0.05,#ffd968),color-stop(1,#fffecd));background:-moz-linear-gradient(top,#ffd968 5%,#fffecd 100%);background:-webkit-linear-gradient(top,#ffd968 5%,#fffecd 100%);background:-o-linear-gradient(top,#ffd968 5%,#fffecd 100%);background:-ms-linear-gradient(top,#ffd968 5%,#fffecd 100%);background:linear-gradient(to bottom,#ffd968 5%,#fffecd 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd968',endColorstr='#fffecd',GradientType=0);background-color:#ffd968;text-decoration:none}
+#dvLeft{float:left;}
+#dvRight{float:right;background-color:#dfe4f7;margin:10px 0px;height:150px;width:300px;text-align:center;}
+.emptyBar{border:solid 1px #dbdbdb;float:left;height:15px;
+          background:-webkit-gradient(linear,left top,left bottom,color-stop(0.05,#ffffff),color-stop(1,#fffecd));
+          background:-moz-linear-gradient(top,#ffffff 5%,#f3f3f3 100%);background:-webkit-linear-gradient(top,#ffffff 5%,#f3f3f3 100%);
+          background:-o-linear-gradient(top,#ffffff 5%,#f3f3f3 100%);background:-ms-linear-gradient(top,#ffffff 5%,#f3f3f3 100%);
+          background:linear-gradient(to bottom,#ffffff 5%,#f3f3f3 100%);
+          position:absolute;top:4px;left:50px;}
+.fullBar{border:solid 1px #ffa42f;float:left;height:15px;
+          background:-webkit-gradient(linear,left top,left bottom,color-stop(0.05,#fec303),color-stop(1,#fab500));
+          background:-moz-linear-gradient(top,#fec303 5%,#fab500 100%);
+          background:-webkit-linear-gradient(top,#fec303 5%,#fab500 100%);
+          background:-o-linear-gradient(top,#fec303 5%,#fab500 100%);
+          background:-ms-linear-gradient(top,#fec303 5%,#fab500 100%);
+          background:linear-gradient(to bottom,#fec303 5%,#fab500 100%);
+          position:absolute;top:4px;left:50px;}          
+.perCent{float:left; position:absolute;left:182px;top:4px;}
+.emptyStars {
+    background: transparent url('https://pictures.tripmasters.com/siteassets/d/stars_empty.png') no-repeat scroll 0 0;
+    height: 23px;
+    float: left;
+    position: absolute;
+    top: 0px;
+}
+.fullStars {
+    background: transparent url('https://pictures.tripmasters.com/siteassets/d/stars_full.png') no-repeat scroll 0 0;
+    height: 23px;
+    float: left;
+    position: absolute;
+    top: 0px;
+}
+ div.dvfilter{padding:3px 0;position:relative; cursor:pointer; color:#666}
+      div.dvfilter:hover > div.starNum, div.dvfilter:hover > div.perCent{color:#ff0000; text-decoration:underline}
+       div.starNum {
+           width: 48px;
+           float: left;
+           padding-bottom: 2px !important;
+       }
+          

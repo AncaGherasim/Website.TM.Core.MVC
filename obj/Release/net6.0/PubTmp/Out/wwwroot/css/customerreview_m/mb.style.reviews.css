@@ -1,0 +1,57 @@
+﻿.pageTitle {color:#1c2663;font-size:18px;padding:20px 0 8px 15px;}
+.emptyStars {
+    background: transparent url('https://pictures.tripmasters.com/siteassets/d/stars_empty.png') no-repeat scroll 0 0;
+    height: 23px;
+    float: left;
+    position: absolute;
+    top: 0px;
+}
+.fullStars {
+    background: transparent url('https://pictures.tripmasters.com/siteassets/d/stars_full.png') no-repeat scroll 0 0;
+    height: 23px;
+    float: left;
+    position: absolute;
+    top: 0px;
+}
+.darkText {color:#666;font-size:12px;}
+.emptyBar{border:solid 1px #dbdbdb;float:left;height:15px;
+          background:-webkit-gradient(linear,left top,left bottom,color-stop(0.05,#ffffff),color-stop(1,#fffecd));
+          background:-moz-linear-gradient(top,#ffffff 5%,#f3f3f3 100%);background:-webkit-linear-gradient(top,#ffffff 5%,#f3f3f3 100%);
+          background:-o-linear-gradient(top,#ffffff 5%,#f3f3f3 100%);background:-ms-linear-gradient(top,#ffffff 5%,#f3f3f3 100%);
+          background:linear-gradient(to bottom,#ffffff 5%,#f3f3f3 100%);
+          position:absolute;top:4px;left:50px;z-index:1;}
+.fullBar{border:solid 1px #ffa42f;float:left;height:15px;
+          background:-webkit-gradient(linear,left top,left bottom,color-stop(0.05,#fec303),color-stop(1,#fab500));
+          background:-moz-linear-gradient(top,#fec303 5%,#fab500 100%);
+          background:-webkit-linear-gradient(top,#fec303 5%,#fab500 100%);
+          background:-o-linear-gradient(top,#fec303 5%,#fab500 100%);
+          background:-ms-linear-gradient(top,#fec303 5%,#fab500 100%);
+          background:linear-gradient(to bottom,#fec303 5%,#fab500 100%);
+          position:absolute;top:4px;left:50px;z-index:2;}     
+.perCent{float:left; position:absolute;left:182px;top:4px;}
+.submitButtonRev{background:#fffecd linear-gradient(to bottom,#fffecd 5%,#ffd968 100%) repeat scroll 0 0;border:1px solid #f4cd1a;border-radius:4px;color:#000;cursor:pointer;display:inline-block;font:12px arial;padding:8px 55px;text-decoration:none;font-weight:bold;}
+.submitButtonRev:hover{background:-webkit-gradient(linear,left top,left bottom,color-stop(0.05,#ffd968),color-stop(1,#fffecd));background:-moz-linear-gradient(top,#ffd968 5%,#fffecd 100%);background:-webkit-linear-gradient(top,#ffd968 5%,#fffecd 100%);background:-o-linear-gradient(top,#ffd968 5%,#fffecd 100%);background:-ms-linear-gradient(top,#ffd968 5%,#fffecd 100%);background:linear-gradient(to bottom,#ffd968 5%,#fffecd 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd968',endColorstr='#fffecd',GradientType=0);background-color:#ffd968;text-decoration:none}   
+.grayButton{text-align:center;color:#3c3c3c;border:solid 1px #cccccc;padding:10px;font-size:14px;font-weight:bold; margin:15px 20px 0 20px;
+            background: -moz-linear-gradient(to bottom, #e5e5e5, #eeeeee, #f5f5f5, #d8d8d8);background:-webkit-linear-gradient(to bottom,#e5e5e5,#eeeeee, #f5f5f5, #d8d8d8);
+            background:-o-linear-gradient(to bottom, #e5e5e5,#eeeeee,#f5f5f5, #d8d8d8);background:-moz-linear-gradient(to bottom,#e5e5e5,#eeeeee, #f5f5f5, #d8d8d8);background:linear-gradient(to bottom,#e5e5e5,#eeeeee, #f5f5f5, #d8d8d8);}
+.packIncludeUp {color:#0a07ec;font-size:12px;margin:15px 0 0 0;float:right;}
+.packIncludeUp::after{content:'\203A';font-size:14px;display:inline-block;-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-o-transform:rotate(90deg);-ms-transform: rotate(90deg);}
+.packIncludeDown {color:#0a07ec;font-size:12px;margin:15px 0 0 0;float:right;}
+.packIncludeDown::after{content:'\2039';font-size:14px; display:inline-block;-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-o-transform:rotate(90deg);-ms-transform: rotate(90deg);}
+.packInfo {display:none;font-size:12px;margin:2px -15px 0 -15px;padding:15px 15px 10px 15px;         
+          background: -webkit-linear-gradient(#f3f6fb, #ffffff);
+          background: -o-linear-gradient(#f3f6fb, #ffffff);
+          background: -moz-linear-gradient(#f3f6fb, #ffffff);
+          background: linear-gradient(#f3f6fb, #ffffff);}
+.packLink {margin-top:15px;color:#4131b6;text-decoration:underline;display:block;}
+ div.dvfilter{padding:3px 0;position:relative; cursor:pointer; color:#666; margin:5px 0px}
+      div.dvfilter:hover > div.starNum, div.dvfilter:hover > div.perCent{color:#ff0000; text-decoration:underline}
+       div.starNum {
+           font-size:14px;
+           width: 48px;
+           float: left;
+           padding-bottom: 2px !important;
+       }
+       div.emptyBar, div.fullBar{height:20px !important}
+       .darkText{font-size:14px !important}
+       .perCent{left:282px !important}

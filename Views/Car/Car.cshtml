@@ -1,0 +1,59 @@
+﻿@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@inject IOptions<AppSettings> _appsettings
+@model List<MVC_TM.Models.BookCar>
+
+@section Styles{
+    <style>
+        .dvmainContenedor {
+            margin: 0 auto;
+            width: 980px
+        }
+
+        .dvBGpageTitle {
+            background: #336ac5 none repeat scroll 0 0;
+            border-radius: 7px;
+            height: 46px;
+            margin-top: 15px
+        }
+
+        .dvPageTitleWhite {
+            color: #fff;
+            float: left;
+            font-family: Arial,Helvetica,sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 10px 15px;
+        }
+    </style>
+}
+
+<div class="dvmainContenedor">
+    @{
+        Int32 count = 0;
+        foreach (var car in Model)
+        {
+            if (count == 0)
+            {
+                <div class="dvBGpageTitle">
+                    <div class="dvPageTitleWhite">@car.IAEM_Brand - @car.IAEM_Model</div>
+                </div>
+            }
+            <div style="margin:5px auto;">
+                <div style="padding:15px; border:1px solid #808080">
+                    <div style="float:left">
+                        <img src="https://pictures.tripmasters.com/images/cars/carimages/@(car.IAEM_Brand.ToLower())@(car.IAEM_Model.ToLower())_@(car.IAEM_Doors).jpg" />
+                    </div>
+                    <div style="float:left; padding:10px 20px">
+                        <b>Model:</b> @car.IAEM_Model
+                        <br />
+                        <b>Doors:</b> @car.IAEM_Doors
+                    </div>
+                    <br style="clear:both" />
+                </div>
+            </div>
+            count++;
+        }
+    }
+</div>

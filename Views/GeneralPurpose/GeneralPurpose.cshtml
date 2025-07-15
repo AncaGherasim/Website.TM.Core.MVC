@@ -1,0 +1,195 @@
+﻿@using static MVC_TM.Models.ViewModels.GeneralPurposeViewModel;
+@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@inject IOptions<AppSettings> _appsettings
+@using System.Text.RegularExpressions;
+@using System.Linq;
+@{
+    var purposeTitle = ViewBag.purposeName;
+    var pageTemplate = ViewBag.PageTemplate;
+}
+
+@section Styles {
+    <environment include="Development">
+        <link href="~/css/responsive_calendar/responsive_calendar.css" rel="stylesheet" />
+        <link href="~/css/generalpurpose/dt.style.tm.GP_page.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/responsive_calendar/responsive_calendar.min.css" rel="stylesheet" asp-append-version="true" />
+        <link href="~/css/generalpurpose/dt.style.tm.GP_page.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+
+@{
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    Decimal overAllAvg = 0;
+    Decimal defw = 120;
+    Decimal w = 0;
+    overAllAvg = Decimal.Round(Model.Score, 1);
+    w = Decimal.Round((overAllAvg * defw) / 5, 1);
+    List<Int64> offerPrices = new List<Int64>();
+    List<String> offerUrl = new List<string>();
+}
+<input type="hidden" id="jplcNA" value="@Model.areaNA" />
+<input type="hidden" id="jplcID" value="@Model.areaID" />
+<input type="hidden" id="plcID" value="@Model.areaID" />
+<input type="hidden" id="strPlcsIDs" value="@Model.strPlcsIDs" />
+@{
+    List<DisplayTheme> Code1620 = new List<DisplayTheme>();
+    List<DisplayTheme> Code1623 = new List<DisplayTheme>();
+    List<DisplayTheme> Code1619 = new List<DisplayTheme>();
+    List<DisplayTheme> Code1912 = new List<DisplayTheme>();
+    List<DisplayTheme> Code1882 = new List<DisplayTheme>();
+    List<DisplayTheme> Code2478_70 = new List<DisplayTheme>();
+    List<DisplayOrder> PriOrder = new List<DisplayOrder>();
+
+    if (Model.leftDisplay != null)
+    {
+        foreach (var dst in Model.leftDisplay)
+        {
+            switch (dst.SDP_GroupProdKindID)
+            {
+                case 1620:
+                    Code1620 = Model.leftDisplay;
+                    Code1620 = Code1620.FindAll(ex => ex.SDP_GroupProdKindID == 1620);
+                    if (Code1620.Count() > 0) { PriOrder.Add(new DisplayOrder { OrderNumber = Code1620[0].SDP_Order, OrderName = "Code1620" }); };
+                    <input type="hidden" id="Code1620" value="@dst.SDP_DisplayTitle" />
+                    break;
+                case 1623:
+                    Code1623 = Model.leftDisplay;
+                    Code1623 = Code1623.FindAll(ex => ex.SDP_GroupProdKindID == 1623);
+                    if (Code1623.Count() > 0) { PriOrder.Add(new DisplayOrder { OrderNumber = Code1623[0].SDP_Order, OrderName = "Code1623" }); };
+                    <input type="hidden" id="Code1623" value="@dst.SDP_DisplayTitle" />
+                    break;
+                case 1619:
+                    Code1619 = Model.leftDisplay;
+                    Code1619 = Code1619.FindAll(ex => ex.SDP_GroupProdKindID == 1619);
+                    if (Code1619.Count() > 0) { PriOrder.Add(new DisplayOrder { OrderNumber = Code1619[0].SDP_Order, OrderName = "Code1619" }); };
+                    <input type="hidden" id="Code1619" value="@dst.SDP_DisplayTitle" />
+                    break;
+                case 1912:
+                    Code1912 = Model.leftDisplay;
+                    Code1912 = Code1912.FindAll(ex => ex.SDP_GroupProdKindID == 1912);
+                    if (Code1912.Count() > 0) { PriOrder.Add(new DisplayOrder { OrderNumber = Code1912[0].SDP_Order, OrderName = "Code1912" }); };
+                    <input type="hidden" id="Code1912" value="@dst.SDP_DisplayTitle" />
+                    break;
+                case 2478:
+                case 2470:
+                    Code2478_70 = Model.leftDisplay;
+                    Code2478_70 = Code2478_70.FindAll(ex => ex.SDP_GroupProdKindID == 2478 || ex.SDP_GroupProdKindID == 2470);
+                    if (Code2478_70.Count() > 0) { PriOrder.Add(new DisplayOrder { OrderNumber = Code2478_70[0].SDP_Order, OrderName = "Code2478_70" }); };
+                    <input type="hidden" id="Code2478_70" value="@dst.SDP_DisplayTitle" />
+                    break;
+                case 1882:
+                    Code1882 = Model.leftDisplay;
+                    Code1882 = Code1882.FindAll(ex => ex.SDP_GroupProdKindID == 1882);
+                    if (Code1882.Count() > 0) { PriOrder.Add(new DisplayOrder { OrderNumber = Code1882[0].SDP_Order, OrderName = "Code1882" }); };
+                    <input type="hidden" id="Code1882" value="@dst.SDP_DisplayTitle" />
+                    break;
+            }
+        }
+    }
+}
+
+@{
+    PriOrder = PriOrder.OrderBy(o => o.OrderNumber).ToList();
+}
+
+<div class="main-container">
+    <section class="hero">
+        <h1>@purposeTitle</h1>
+        <div class="hero__wrapper">
+            <div class="hero__shadow"></div>
+            <img src="@Model.pagePicture" alt="@purposeTitle" />
+        </div>
+    </section>
+    @if (pageTemplate == "GPByo")
+    {
+        <section class="calendar">
+            <div>
+                @await Component.InvokeAsync("UC_TM_ResponsiveCalendar")
+            </div>
+        </section>
+    }
+
+    @{
+        if (Model.allTop > 0)
+        {
+            <section class="secGP" id="allTop">
+                <div class="cmsContainerA">
+                    @{
+                        string topTitle = "";
+                        foreach (var top in Model.allTopDisplay)
+                        {
+                            string imgSRC = top.STX_PictureURL.Replace("http:", "https:");
+                            if (top.SDP_DisplayTitle != "none")
+                            {
+                                topTitle = top.SDP_DisplayTitle;
+                            }
+                            else
+                            {
+                                topTitle = top.STX_Title;
+                            }
+                            if (top.STX_CMSID > 0)
+                            {
+                                @Html.Raw(top.CMS_Content.Replace("http:", "https:"))
+                                ;
+                            }
+                            else
+                            {
+                                var imgH = top.STX_PictureHeightpx;
+                                var cimgH = "0";
+                                var imgW = top.STX_PictureWidthpx;
+                                var cimgW = "0";
+                                if (imgH == 0)
+                                {
+                                    cimgH = "auto";
+                                }
+                                if (imgW == 0)
+                                {
+                                    cimgW = "100%";
+                                }
+                                <img class="delay" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src="@imgSRC.ToLower()" width="@cimgW" height="@cimgH" align="left" style="margin: 0px 5px 5px 0px;" />
+                                <span class="Text_Arial12">@top.STX_Description</span>
+                            }
+                        }
+                    }
+
+                </div>
+
+            </section>
+        }
+    }
+
+    @{
+        if (Model.boxFeaturPacks != null)
+        {
+
+            @await Component.InvokeAsync("FeaturedPacks")
+        }
+    }
+
+    @{
+        foreach (var ord in PriOrder)
+        {
+            @await Component.InvokeAsync(ord.OrderName)
+        }
+    }
+
+</div>
+
+@section Scripts
+ {
+    <environment include="Development">
+        <script src="~/lib/lazysizes.min.js" asp-append-version="true"></script>
+        <script src="~/js/responsive_calendar/dm.java.TM.Calendar.js" asp-append-version="true"></script>
+        <script src="~/js/responsive_calendar/dt.java.TM.CommonFunctions.js" asp-append-version="true"></script>
+        <script src="~/js/generalpurpose/dt.java.tm.gp.page.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/lib/lazysizes.min.js" asp-append-version="true"></script>
+        <script src="~/js/responsive_calendar/dm.smallcalendar.min.js" asp-append-version="true"></script>
+        <script src="~/js/generalpurpose/dt.java.tm.gp.page.min.js" asp-append-version="true"></script>
+    </environment>
+
+}

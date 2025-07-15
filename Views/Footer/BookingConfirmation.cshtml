@@ -1,0 +1,230 @@
+﻿<head>
+    @{
+        ViewBag.Mobile = 0;
+          @section Styles {
+                <environment include="Development">
+                  <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+                </environment>
+                <environment exclude="Development">
+                  <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
+                </environment>
+                }
+    }
+    @{
+        ViewBag.Canonical = @String.Format("https://www.tripmasters.com/booking_confirmation");
+
+    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+.dvhChat{width:30%!important}
+.dvMainContainer { width: 980px; margin: 0 auto;font: Arial,Helvetica,sans-serif;font-size: 12px;}
+.dvRoundContainer {margin-bottom: 5px;border: 1px solid #638bd1;box-shadow: inset 0 0 15px #638bd1;border-radius: 10px 10px 10px 10px;padding: 20px;margin-top: 15px;max-width: 980px;margin-right:auto; margin-left: auto;}
+ h3 { margin: 0 0 5px;padding: 5px 10px;border-radius: 5px;background: #608ed5;color: #fff;font-size: 16px;text-align: left;}
+.form-label label{padding:3px;margin-right:5px;font:14px Arial,Helvetica,sans-serif;font-size:20px;}
+.form-label label span{color:#333;font-size:11px}
+input[type=button]{float:right;cursor:pointer}
+input[type=text] {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1.1em;
+    padding: 0 0.8em;
+}
+ select {width: 153px}
+ .book{padding-left:80px; padding-right:80px;}
+.errMsg { background-color: #FF4D63;padding: 4px;border-radius: 2px;color: #fff;font-weight: 700;font-size: 12px; margin-left: 14px;margin-top: 0;position: absolute}
+.dvSaveLeft {padding: 29px 25px; font: 12px Arial,Helvetica,sans-serif}
+.dvSaveRight {padding: 15px 20px;font: 12px Arial,Helvetica,sans-serif}
+.dvCheckContainer {
+    margin: 0 auto;
+    height: auto;
+    padding: 25px 40px;
+    border: 1px solid #dee5f7;
+    border-radius: 7px;
+    background: #dee5f7;
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
+}
+.dvCheckTitle {color: #000096;padding: 7px 0;font: 700 16px Arial,Helvetica,sans-serif}
+.dvCheckContainer .wrapper a {float: right;font-size: 12px;color: #000080;text-decoration: underline;}
+.dvsaveAssist {margin: 25px auto;text-align: left}
+.dvsaveAssist div {text-align: left}
+.footer-stag {font-size: 16px !important}
+.form-label {
+    margin-bottom: 25px;
+}
+
+.form-label label {
+    padding: 0;
+    font: 14px Arial,Helvetica,sans-serif;
+    font-size: 20px;
+}
+.form-button {
+    width: 50%;
+    background-image: linear-gradient(to bottom, #f9e5ab 30%, #ffcc66 100%) !important;
+    border: 1px solid #ffcc66;
+    border-radius: 5px;
+    color: #000085;
+    font-family: Arial;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 8px;
+    margin: 10px;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0 30px 0 0px;
+    margin-top: 16px;
+    
+}
+.reminders {background: url("https://pictures.tripmasters.com/siteassets/d/reminder_icon.png") no-repeat left;padding-left:30px;font-size: 16px;padding-top: 10px; padding-bottom: 10px;color:navy}
+ @@media only screen and (max-width:767px) {
+            .container{padding-left:unset;padding-right:unset}
+.dvRoundContainer {margin-bottom: 5px;padding: 20px;margin-top: 15px;border: none;box-shadow: none;}
+h3 {width: -webkit-fill-available !important;}
+ .book{padding-left:unset; padding-right:unset;}
+.dvSaveLeft {padding: 20px 10px;}
+div.contentSecPay img {max-width: -webkit-fill-available;}
+.dvMainContainer {width: 100%;background-color: white}
+ div.dvMhomeContainer { background-color: white;width: 100%}
+.dvCheckTitle {font-size: 14px}
+.form-label label {font-size: 14px;float: inherit;}
+.travel {font-size: 9px}
+.dvMheadMenu {padding-left: 20px; margin-left: 20px;}
+.dvMheadMenu button {border: 1px solid white; border-radius: 5px; padding: 8px;}
+.dvEachBtn .spandvEachBtn {float: right;}
+.navbar { padding: 0 10px;}
+.form-label {display:flex;flex-direction:column}
+input[type=text]{width:100%;height: 30px;}
+.wrapper {
+    padding: 0;
+}
+ }
+ }
+
+    </style>
+</head>
+
+<div class="container">
+        <div class="dvRoundContainer">
+            <div class="row"><h3 style="text-align:center;margin: 0 auto;padding: 10px;width: 93%;">ACCESS YOUR BOOKING DETAILS</h3></div>
+            <div class="book" style="">
+                <div class="row dvSaveLeft">
+                    <div class="dvCheckContainer">
+                        <form name="frmListQry" method="post">
+                            <p class="form-label">
+                                <label style="padding-top:10px" for="">Booking Number:</label>
+                                <input name='BookingID' type="text" id='BookingID' value="@ViewBag.bookingId" size="10" maxlength="10" />
+                            </p>
+                            <p class="form-label">
+                                <label for="">Email Address:</label>
+                                <input name="EmailAddress" type="text" id="EmailAddress" value="@ViewBag.email" size="50" maxlength="50" />
+                            </p>
+
+                            <p style="padding-right:30px;">
+                                <input type="hidden" name="SystemID" id="SystemID" value="" />
+                                <input type="hidden" name="bFirst" value="1" />
+                                <input type="hidden" name="register" value="tournet" />
+                            <input type="hidden" name="GeneralLoc" value="https://pictures.tripmasters.com/defaultimages/" />
+                                <div class="wrapper">
+                                    <a href="/saved_itinerary">Retrieve your Saved Itinerary</a><br style="clear:both" />
+                                    <input class="form-button" id="Submit" name="Submit" type="button" value="Submit" onclick=" event.preventDefault();SearchBook()" />
+                                <img class="lazyload" id="imgLoading" src="https://pictures.tripmasters.com/siteassets/d/ajax-indicator.gif" style="display:none" alt="" asp-append-version="true" />
+                                </div>
+                                
+                            <br style="clear:both" />
+                        </form>
+                    </div>
+                </div>
+                <div style="padding-left:6px"><span class="reminders">Reminders!</span></div>
+                <div class="row dvSaveRight">
+                    <p><font color="navy" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Official documents:</strong></font></p>
+                    <p>
+                        <font color="navy" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong> Passports:</strong></font><br>
+                        Check your passport and make sure it's valid for at least 6 months after the return from your trip! Most countries today will not let you in if your passport’s expiration date is less than that.
+                    </p>
+                    <p>
+                        <font color="navy" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Visas:</strong></font><br>
+                        Make sure that you check the entry requirements for all people in your party. Remember, different nationalities have different requirements. A Green Card will allow you to return to the US but will not provide the same rights as an American Passport.<br /><a href="https://visacentral.com/?login=tripmasters" target="_blank" class="openVISA">VisaCentral</a>
+                    </p>
+
+                    <p>
+                        <font color="navy" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Print and bring your voucher!</strong></font><br>
+                        Your printed vouchers are proof of payment. Remember, each service may require a different type of voucher whether it be electronic or paper.
+                    </p>
+                    <p class="Editor_Package_Includes" style="color:black;font-weight:300">
+                        <font color="navy" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong style="font-weight:700">Reconfirm your flights:</strong></font><br>
+                        We recommend that you reconfirm your flights with the airlines a minimum of 48 hours prior to your departure and return dates. This will ensure that you are aware of any airline schedule changes that would possibly compromise your travel plans.
+                    </p>
+                </div>
+            </div>
+            <br style="clear:both" />
+        </div>
+    <br>
+</div>
+<script>
+    function SearchBook() {
+        //console.log("SearchBook");
+        var regexEmail = /^([a-zA-Z0-9_.+-])+\@@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        var bookingId = $('#BookingID').val();
+        var email = $('#EmailAddress').val();
+        if (bookingId == '' || isNaN(bookingId)) {
+            $('#BookingID').focus();
+            alert('Please verify the booking number!');
+            return;
+        }
+        else if (!regexEmail.test(email)) {
+            $('#EmailAddress').focus();
+            alert('Please verify the email address!');
+            return;
+        }
+        else {
+            //console.log("Api/getDataBookingDeptID");
+            // 2023-09-25 Rolled back only TMLD is going live with BPv5 at this time.
+            //document.frmListQry.action = "//reservation.tripmasters.com/bp5/show"; //reservation.tripmasters.com/Tourpackage4/Confirmation/Show";"
+            $.ajax({
+                url: "/Api/getDataBookingDeptID",
+                contentType: "application/json; charset=utf-8",
+                data: '{ "bookingId":"' + bookingId + '", "email":"' + email + '"}',
+                type: "POST",
+                success: function (data) {
+                    //var idDep = data;
+                    if (data.statusCode === 200) {
+                        switch (data.dept) {
+                            case 1615:
+                                $('#SystemID').val('71D4E8A7-74AA-4682-8AEA-1548843AFE58');
+                                document.frmListQry.action = "https://reservation.tripmasters.com/bp5/show";
+                                document.frmListQry.submit();
+                                break;
+                            case 1617:
+                                $('#SystemID').val('D9B95C29-F988-41E2-BB9E-364EB2F64C2A');
+                                document.frmListQry.action = "https://reservation.tripmasters.com/bp5/show";
+                                document.frmListQry.submit();
+                                break;
+                            case 1425:
+                                $('#SystemID').val('5FF1593B-4388-4EAB-A735-BD472D4CC3C4');
+                                document.frmListQry.action = "https://reservation.tripmasters.com/bp5/show";
+                                document.frmListQry.submit();
+                                break;
+                        };
+                        
+                        $('#imgLoading').show();
+                        $('#Submit').hide();
+                    } else if (data.statusCode === 500){
+                        alert(data.message);
+                        return;
+                    }
+                    
+                },
+                error: function (xhr, desc, exceptionobj) {
+                    alert(xhr.responseText + ' = error');
+                }
+            });
+        }
+    }
+</script>

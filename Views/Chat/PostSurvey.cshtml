@@ -1,0 +1,148 @@
+﻿@model MVC_TM.Models.ViewModels.BookingsViewModel
+@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@inject IOptions<AppSettings> _appsettings
+@{
+    ViewData["Title"] = "Post Survey";
+    if (ViewBag.Mobile == 0)
+    {
+        <environment include="Development">
+            <link href="~/css/chat/style.chat.css" rel="stylesheet" />
+        </environment>
+        <environment exclude="Development">
+            <link href="~/css/chat/style.chat.min.css" rel="stylesheet" asp-append-version="true" />
+        </environment>
+    }
+    else
+    {
+        <environment include="Development">
+            <link href="~/css/chat/mb.style.chat.css" rel="stylesheet" />
+        </environment>
+        <environment exclude="Development">
+            <link href="~/css/chat/mb.style.chat.min.css" rel="stylesheet" asp-append-version="true" />
+        </environment>
+    }
+}
+@{
+    if (ViewBag.IsValid == true)
+    {
+        if (ViewBag.SurveyPresent != true)
+        {
+            <h1 class="survey-title1">Have a moment? </h1>
+            <h4 class="survey-title2">We love to hear from our customers as Tripmasters continues to grow and adapt</h4>
+            <div class="survey">
+                <div class="dvpostSurvey">
+                    <form id="formpostsurvey" name="postsurvey">
+                        <div class="q1_text">Did you find everything you were looking for while booking your vacation?</div>
+                        <div class="seloptions">
+                            <div class="spchk">
+                                <input type="radio" name="q1" id="q1_yes" value="true" />
+                                <label for="q1_yes">Yes</label>
+                            </div>
+                            <div class="spchk ">
+                                <input type="radio" name="q1" id="q1_no" value="false" />
+                                <label for="q1_no">No</label>
+                            </div>
+                        </div>
+
+                        <div class="q2_text">Did you feel the website was easy to navigate?</div>
+                        <div class="seloptions">
+                            <div class="spchk">
+                                <input type="radio" name="q2" id="q2_yes" value="true" />
+                                <label for="q2_yes">Yes</label>
+                            </div>
+                            <div class="spchk ">
+                                <input type="radio" name="q2" id="q2_no" value="false" />
+                                <label for="q2_no">No</label>
+                            </div>
+                        </div>
+
+                        <div class="q3_text">Did you find the need to contact us during the online purchase?</div>
+                        <div class="seloptions">
+                            <div class="spchk">
+                                <input type="radio" name="q3" id="q3_yes" value="true" />
+                                <label for="q3_yes">Yes</label>
+                            </div>
+                            <div class="spchk ">
+                                <input type="radio" name="q3" id="q3_no" value="false" />
+                                <label for="q3_no">No</label>
+                            </div>
+                        </div>
+                        <div class="experience_text">How was your experience with our representative?</div>
+                        <div class="seloptions">
+                            <div class="spchk">
+                                <input type="radio" name="experience" id="exp5" value="5" />
+                                <label for="exp5">Excelent</label>
+                            </div>
+                            <div class="spchk ">
+                                <input type="radio" name="experience" id="exp4" value="4" />
+                                <label for="exp4">Very Good</label>
+                            </div>
+                            <div class="spchk ">
+                                <input type="radio" name="experience" id="exp3" value="3" />
+                                <label for="exp3">Good</label>
+                            </div>
+                            <div class="spchk ">
+                                <input type="radio" name="experience" id="exp2" value="2" />
+                                <label for="exp2">Fair</label>
+                            </div>
+                            <div class="spchk ">
+                                <input type="radio" name="experience" id="exp1" value="1" />
+                                <label for="exp1">Poor</label>
+                            </div>
+                        </div>
+                        <div class="message_text">Overall Comments: (500 max characters)</div>
+                        <div class="seloptions">
+                            <textarea id="message" name="message" rows="8" cols="50" maxlength="500" placeholder="Your Message"></textarea>
+                        </div>
+                        <input type="hidden" id="bookId" value="@ViewBag.BookingId" />
+                        <input type="hidden" id="email" value="@ViewBag.Email" />
+
+
+                    </form>
+                </div>
+                <p>Tripmasters values your opinion and we appreciate your time and business. </p>
+                <p>Have a fantastic trip!</p>
+                <button type="button" id="submitSurvey" value="Submit">Submit Survey</button>
+            </div>
+        }
+        else
+        {
+            <div class="survey-present">
+                <h1>Thank you for filling the survey, we value your feedback!</h1>
+                <h2>We received your feedback about the booking process with us.</h2>
+                <h3>Survey saved on: @Model.postSurvey.FirstOrDefault().CAPS_SurveyReceived.Date.ToShortDateString()</h3>
+                <a href="/">Get back to our homepage</a>
+            </div>
+
+        }
+
+    }
+    else
+    {
+        <div class="wrap error">
+            <h1>Sorry, something went wrong!</h1>
+            <h3>Please contact us for further assistance!</h3>
+            <h4>The Booking number or the email adress are incorrect.</h4>
+        </div>
+    }
+    <input type="hidden" id="bookId" value="@ViewBag.BookingId" />
+    <input type="hidden" id="email" value="@ViewBag.Email" />
+}
+<div class="wrap success">
+    <h1>Success!</h1>
+
+    <h4>Thank you very much for filling out the suvey, we value your feedback.</h4>
+    <a href="/">Get back to our homepage</a>
+</div>
+
+@section Scripts
+    {
+
+    <environment include="Development">
+        <script src="~/js/chat/dt.java.postsurvey.js" ></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/chat/dt.java.postsurvey.min.js"></script>
+    </environment>
+}

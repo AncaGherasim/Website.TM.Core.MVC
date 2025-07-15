@@ -1,0 +1,244 @@
+﻿/** Style for Contact Agent Page**/
+.dvMPgContainer {
+    background-color: #e7e7e7;
+    padding: 10px;
+    border-top: 1px solid #999;
+}
+
+.dvMcontagt {
+    box-shadow: 0 7px 6px -3px rgba(0,0,0,.53);
+    background-color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.dvMAgentInfo {
+    padding: 10px;
+}
+
+.dvMheadTitle {
+    padding: 15px 20px;
+    background-color: #638bd1;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.dvMagtimg {
+    text-align: center;
+    padding: 20px 0;
+}
+
+    .dvMagtimg img {
+        border: 1px solid #ccc;
+        padding: 3px;
+        border-radius: 5px;
+        min-height: 225px;
+        max-height: 300px;
+    }
+
+.spStatus.available {
+    font-size: 20px;
+    color: #009900;
+    padding-top: 20px;
+    display: block;
+    font-weight: 700;
+    text-align: center;
+}
+
+.spStatus.offline {
+    font-size: 20px;
+    color: #cc0000;
+    padding-top: 20px;
+    display: block;
+    font-weight: 700;
+    text-align: center;
+}
+
+.separator {
+    border-top: 2px dotted #ccc;
+    width: 95%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
+
+.schedule {
+    display: block;
+    text-align: center;
+}
+
+.dvMCall {
+    background-color: #ecf1ff;
+    margin-top: 10px;
+}
+
+    .dvMCall label {
+        font-size: 12px;
+        color: #009;
+        text-align: center;
+        display: block;
+        padding-top: 20px;
+    }
+
+    .dvMCall input {
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+        width: 93%;
+    }
+
+    .dvMCall span {
+        font-size: 14px;
+    }
+
+.btnCall {
+    background: #fffecd linear-gradient(to bottom,#fffecd 18%,#fffecd 4%,#ffd968 50%,#ffd968 100%) repeat scroll 0 0;
+    border: 1px solid #d9a300;
+    color: #009;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.online {
+    padding: 10px;
+}
+
+.notAvailableOn {
+    padding: 90px 10px;
+    text-align: center;
+}
+
+    .notAvailableOn span:nth-child(1) {
+        display: block;
+    }
+
+.done, .notAvailable {
+    display: none;
+    padding: 90px 10px;
+    text-align: center;
+}
+
+    .done span, .notAvailable span {
+        display: block;
+    }
+
+.dvCenterInfo {
+    padding: 40px 0px 20px 0;
+    text-align: center;
+}
+
+    .dvCenterInfo span {
+        display: block;
+        font-size: 16px;
+    }
+
+    .dvCenterInfo b {
+        color: #000;
+        font-weight: 500;
+    }
+
+    .dvCenterInfo span:nth-child(1) {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .dvCenterInfo span:nth-child(2) {
+        font-size: 14px;
+        color: #ccc;
+    }
+
+    .dvCenterInfo span:nth-child(5) {
+        color: #666;
+        padding-top: 5px;
+    }
+
+    .dvCenterInfo span:nth-child(6) {
+        color: #666;
+        padding-top: 5px;
+    }
+
+.dvSchedule {
+    padding-bottom: 20px;
+    display: none;
+}
+
+.dvDaySchedule {
+    padding: 8px;
+    font-size: 14px;
+    width: 95%;
+    margin: 0 10px;
+}
+
+    .dvDaySchedule:nth-child(odd) {
+        background-color: #ecf1ff;
+    }
+
+    .dvDaySchedule span:nth-child(1) {
+        width: 50%;
+        color: lightskyblue;
+        display: inline-block;
+    }
+
+.spExpand {
+    color: lightskyblue;
+    width: 40%;
+    padding-top: 5px;
+    margin: 0 auto;
+}
+
+    .spExpand.collapsed:after {
+        transform: rotate(270deg);
+    }
+
+    .spExpand:after {
+        content: "\203A";
+        transform: rotate(90deg);
+        float: right;
+        font-size: 26px;
+        color: lightskyblue;
+        position: relative;
+        top: -5px;
+    }
+
+.secAnnounce {
+    display: block;
+    font-size: 14px;
+    background: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
+    margin: 20px auto 0;
+    padding: 30px 10px;
+}
+
+    .secAnnounce img {
+        float: left;
+        margin: 0 10px 55px 0;
+        width: 9% !important;
+    }
+
+    .secAnnounce p {
+        text-align: center;
+        margin: 25px 0 0 0;
+    }
+
+        .secAnnounce p a {
+            color: white;
+            text-decoration: underline;
+            font-size: 16px;
+        }
+
+p.closeAnn {
+    text-align: right;
+    margin: 0;
+    padding: 0 0 15px;
+    font-weight: 700;
+    font-size: 15px;
+}

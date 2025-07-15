@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Canonical = @String.Format("https://www.tripmasters.com/how_to_book_on_tripmasters");
+
+}
+
+<head>
+    @{
+                                <environment include="Development">
+                                    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+                                </environment>
+                                <environment exclude="Development">
+                                    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
+                                </environment>
+                                <style>
+                                    .chatUs {
+                                        height: 22px !important;
+                                        font-size: 12px !important;
+                                    }
+
+                                    .table {
+                                        width: 980px !important;
+                                        margin: 0 auto
+                                    }
+
+                                    .secTopHeader {
+                                        height: 140px !important
+                                    }
+                                     .adotDecor{color:white!important}
+                            .dvifcontainer{
+                                display:block;
+                                margin :0px auto;
+                                width:90%;
+                                max-width:850px;
+                                height:580px;
+                                background:white;
+                                padding:12px 80px 111px 80px;
+                                  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                            }
+                            .title{
+                                margin :0px auto 15px auto;
+                                width:90%;
+                                max-width:900px;
+                                text-align:center;
+                                font-size:39px;
+                                color:navy;
+                            }
+                            .divmain{
+                                background:#f2f2f2; margin:0 0 15px 0; padding:20px
+                            }
+                                    .iframe {
+                                        height: 100%;
+                                        width: 100%
+                                    }
+                                    .txtOrangeBold {
+                                        font-size: 12px!important;
+                                    }
+
+                               @@media only screen and (min-width:767px) and (max-width: 817px ) {
+                                   .title {
+                                       font-size: 35px;
+                                   }
+                               }
+
+                               @@media only screen and (max-width:767px) {
+                                        .dvifcontainer {
+                                    display: block;
+                                    margin: 0px auto;
+                                    width: 90%;
+                                    max-width: 810px;
+                                    background: white;
+                                    height: 200px;
+                                    padding: 12px 20px 60px 20px;
+                                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                                }
+
+                                .title {
+                                    margin: 0px auto 15px auto;
+                                    width: 90%;
+                                    max-width: 900px;
+                                    text-align: center;
+                                    font-size: 18px;
+                                    color: navy;
+                                }
+
+                                .divmain {
+                                    background: #f2f2f2;
+                                    margin: 0 0 15px 0;
+                                    padding: 20px
+                                }
+                                .dvifcontainer {
+                                    height:370px;
+                                    padding :12px 20px 65px 20px
+                                }
+                                .iframe {
+                                    height: 90%;
+                                    width: 100%
+                                }
+                                    }
+                                </style>
+      ViewBag.Mobile = 0;
+    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<div class="divmain">
+
+    <div class="dvifcontainer">
+        <p class="title">How to book on Tripmasters</p>
+        <iframe class="iframe" src="https://www.youtube.com/embed/K9-19D0sy-4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+﻿@model MVC_TM.Models.ViewModels.TaxByCity;
+@{
+    ViewData["Title"] = "TaxByCity";
+}
+
+<link href="~/css/tax/dy.style.taxbycity.css" rel="stylesheet" />
+<section class="mainSubsDiv">
+    <h1>City Tax Information</h1>
+    <section class="divisionTabs">
+        <div class="dvTabTitle" id="243">Europe</div>
+        <div class="dvTabTitle" id="595">Asia, Pacific & Middle East</div>
+        <div class="dvTabTitle" id="182">South America</div>
+    </section>
+    <section class="secCountries">
+        <div class="dvCountries">
+            <h1>Countries</h1>
+            <ul id="ctr243">
+                @foreach (var tx in Model.taxCountries)
+                {
+
+                    if (tx.STR_UserID == 243)
+                    {
+                <li class="liLink" id="@tx.PCTI_CountryID">@tx.PCTI_CountryName</li>
+                    }
+                }
+            </ul>
+            <ul id="ctr595">
+                @foreach (var tx in Model.taxCountries)
+                {
+                    if (tx.STR_UserID == 595)
+                    {
+                <li class="liLink" id="@tx.PCTI_CountryID">@tx.PCTI_CountryName</li>
+                    }
+                }
+            </ul>
+            <ul id="ctr182">
+                @foreach (var tx in Model.taxCountries)
+                {
+                    if (tx.STR_UserID == 182)
+                    {
+                <li class="liLink" id="@tx.PCTI_CountryID">@tx.PCTI_CountryName</li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="dvCities">
+            <ul id="cyt243">
+                @foreach (var cy in Model.taxCities)
+                {
+                    if (cy.STR_UserID == 243 && cy.PCTI_CityName != null & cy.PCTI_CountryName != null)
+                    {
+                <li class="ctyLink" id="@String.Format("cty{0}", cy.PCTI_CountryID)">
+                    <h2>@cy.PCTI_CityName, @cy.PCTI_CountryName</h2>
+                    <p>@Html.Raw(cy.PCTI_CityTaxDescription)</p>
+                </li>
+                    }
+
+                }
+
+            </ul>
+            <ul id="cyt595">
+                @foreach (var cy in Model.taxCities)
+                {
+                    if (cy.STR_UserID == 595 && cy.PCTI_CityName != null & cy.PCTI_CountryName != null)
+                    {
+                <li class="ctyLink" id="@String.Format("cty{0}", cy.PCTI_CountryID)">
+                    <h2>@cy.PCTI_CityName, @cy.PCTI_CountryName</h2>
+                    <p>@Html.Raw(cy.PCTI_CityTaxDescription)</p>
+                </li>
+                    }
+
+                }
+            </ul>
+            <ul id="cyt182">
+                @foreach (var cy in Model.taxCities)
+                {
+                    if (cy.STR_UserID == 182 && cy.PCTI_CityName != null & cy.PCTI_CountryName != null)
+                    {
+                <li class="ctyLink" id="@String.Format("cty{0}", cy.PCTI_CountryID)">
+                    <h2>@cy.PCTI_CityName, @cy.PCTI_CountryName</h2>
+                    <p>@Html.Raw(cy.PCTI_CityTaxDescription)</p>
+                </li>
+                    }
+
+                }
+            </ul>
+
+        </div>
+    </section>
+
+
+</section>
+
+@section Scripts{
+    <script src="~/js/tax/dt.java.taxbycity.js"></script>
+}

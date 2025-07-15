@@ -1,0 +1,46 @@
+﻿@using static MVC_TM.Models.ViewModels.GeneralPurposeViewModel;
+
+@{
+    List<DisplayTheme> ProdKind1620 = new List<DisplayTheme>();
+    ProdKind1620 = Model.leftDisplay;
+    ProdKind1620 = ProdKind1620.FindAll(ex => ex.SDP_GroupProdKindID == 1620);
+    foreach (var mix in ProdKind1620)
+    {
+        <section id="1620" class="packages">
+            <div class="first-container">
+                <h2 class="packages__title">
+                    @mix.SDP_DisplayTitle
+                </h2>
+                <p class="packages__text">
+                    @mix.SDP_Description
+                </p>
+                <ul class="packages__list">
+
+                    @{
+                        List<BoxContent> prdknd1620 = Model.boxContent;
+                        prdknd1620 = prdknd1620.FindAll(hi => hi.STX_ProdKindID == 1620);
+                        foreach (var cto in prdknd1620)
+                        {
+
+                            <li class="packages__item">
+                                <div class="packages__image">
+                                    <a href=@String.Format("{0}", cto.STX_URL)>
+                                        <img class="lazyload" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src=@String.Format("{0}", cto.STX_PictureURL) alt="@cto.STX_Title" title="@cto.STX_Title" />
+                                        <div class="packages__wrapper">
+                                            <h3>@cto.STX_Title</h3>                                           
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="packages__info">
+                                    <p class="packages__description">@Html.Raw(@MVC_TM.Infrastructure.Utilities.TruncateHtml(@cto.STX_Description, 160))</p>
+                                    @*<a class="packages__view" href=@String.Format("{0}", cto.STX_URL)>VIEW IT <span>›</span></a>*@
+                                </div>
+                            </li>
+                        }
+                    }
+
+                </ul>
+            </div>
+        </section>
+    }
+}

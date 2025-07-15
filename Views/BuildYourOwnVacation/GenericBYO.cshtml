@@ -1,0 +1,84 @@
+﻿@model MVC_TM.Models.ViewModels.HomeViewModel
+@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@inject IOptions<AppSettings> _appsettings
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/responsive_calendar/responsive_calendar.css" />
+        <link href="~/css/home/dt.style.tmHomePage.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/responsive_calendar/responsive_calendar.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/home/home.min.css" asp-append-version="true" />
+    </environment>
+
+}
+@{
+    ViewBag.Canonical = @String.Format("https://www.tripmasters.com/build_your_own_vacation");
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+}
+@{
+        Int32 rev = Model.NumComments;
+        Decimal overAllAvg = 0;
+        Decimal defw = 120;
+        Decimal w = 0;
+        overAllAvg = Decimal.Round(Model.Score, 1);
+        w = Decimal.Round((overAllAvg * defw) / 5, 1);
+}
+
+    <script>
+        var SiteName = '@_appsettings.Value.ApplicationSettings.SiteName';
+        var TMED_HotelsAPI = '@_appsettings.Value.ApplicationSettings.TMED_HotelsAPI';
+        var designPage = '@ViewBag._utPg';
+    </script>
+
+    <style>
+    ul.ullist {
+        color: transparent;
+        margin: 180px 0 0 20px;
+        font-size: 11px;
+        position: absolute;
+    }
+</style>
+<div class="dvMask"></div>
+<div class="hero__background">
+    <div class="calendar-review__wrapper">
+        <section class="calendar">
+            <h1 class="calendar__title">Custom vacation packages since 1984</h1>
+            <h2 class="calendar__subtitle">Combining destination expertise with fast and easy booking</h2>
+            <div>
+                @await Component.InvokeAsync("UC_TM_ResponsiveCalendar")
+            </div>
+            <div class="calendar__advanced">
+                <a href="/advanced_build_your_own_vacation"><span>Advanced</span><span>›</span></a>
+            </div>
+        </section>
+        <section class="review">
+            <div class="review__wrapper">
+                <span class="review__number"><a style="font-size: 15px" href="https://www.tripmasters.com/review">@String.Format("{0:C0}", @Model.NumComments).Replace("$", "") Customer Reviews</a></span>
+                <div class="review__stars">
+                    <div class="review__stars-wrapper">
+                        <div class="review__empty-stars"></div>
+                        <div class="review__full-stars" style="width:@(w)px"></div>
+                    </div>
+                    <span class="review__rating">@overAllAvg out of 5 stars</span>
+                </div>
+                <a class="review__link" href="/review">LEARN MORE</a>
+            </div>
+        </section>
+    </div>
+</div>
+
+    @section Scripts
+    {
+
+        <environment include="Development">
+            <script src="~/js/responsive_calendar/dm.java.TM.Calendar.js" asp-append-version="true"></script>
+            <script src="~/js/responsive_calendar/dt.java.TM.CommonFunctions.js" asp-append-version="true"></script>
+        </environment>
+        <environment exclude="Development">
+            <script src="~/js/responsive_calendar/dm.smallcalendar.min.js" asp-append-version="true"></script>
+        </environment>
+    }

@@ -1,0 +1,284 @@
+﻿
+@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@inject IOptions<AppSettings> _appsettings
+
+@{
+
+    ViewData["Title"] = "Test_Chat";
+    if (ViewBag.Mobile == 0)
+    {
+        <environment include="Development">
+            <link href="~/css/test_chat/style.test_chat.css" rel="stylesheet" />
+        </environment>
+        <environment exclude="Development">
+            <link href="~/css/test_chat/style.test_chat.min.css" rel="stylesheet" asp-append-version="true" />
+        </environment>
+    }
+    else
+    {
+        <environment include="Development">
+            <link href="~/css/test_chat/mb.style.test_chat.css" rel="stylesheet" />
+        </environment>
+        <environment exclude="Development">
+            <link href="~/css/test_chat/mb.style.test_chat.min.css" rel="stylesheet" asp-append-version="true" />
+        </environment>
+    }
+}
+
+<script type="text/javascript">
+    var contactType = "@_appsettings.Value.EmailSetting.AwsChatContactType";
+    var activeChats = "@_appsettings.Value.EmailSetting.AwsActiveChats";
+</script>
+<div class="wrap">
+    <section class="section-main" id="section-main">
+        <div class="dvChatContent">
+            <div class="dvChatHeader">
+                <span>Chat with Us!</span>
+                <img src="https://pictures.tripmasters.com/siteassets/d/ChatIcon.png" />
+                <span>7 days a week from 8AM to Midnight ET</span>
+                <span>Fields market with <b style="color:red">&#10033;</b> are required</span>
+            </div>
+            <div class="dvChatDetails">
+                <form name="chatDetails" id="chatDetails" class="login-form">
+                    <div class="dvFormDetails">
+                        <div class="txtb">
+                            <input type="text" name="firstName" id="firstName" placeholder="Name" />
+                            <span class="spReq">*</span>
+                        </div>
+                        <div class="txtb">
+                            <input type="text" name="clientEmail" id="clientEmail" placeholder="Email" />
+                            <span class="spReq">*</span>
+                        </div>
+                        <div class="txtb">
+                            <textarea id="question" name="question" rows="4" cols="40" placeholder="Your Question"></textarea>
+                            <span class="spReq">*</span>
+                        </div>
+                    </div>
+                    <div class="dvAgentDetails">
+                        <div class="dvImg">
+                        </div>
+                        <div class="dvDetails">
+                            <span id="agtNa"></span>
+                            <span id="agtEmail"></span>
+                            <span id="status"></span>
+                            <span id="day"></span>
+                            <span id="work"></span>
+                            <span id="spExpand">Full Schedule</span>
+                            <br style="clear: both" />
+                            <div class="dvSchedule">
+                            </div>
+                        </div>
+                    </div>
+                    <span class="spRadio">
+                        <input type="radio" id="q1" name="rdBtn" value="3" />
+                        <label for="q1">Help during travels</label>
+                    </span>
+                    <span class="spRadio">
+                        <input type="radio" id="q2" name="rdBtn" value="1" />
+                        <label for="q2">Help to book next adventure</label>
+                    </span>
+                    <span class="spRadio">
+                        <input type="radio" id="q3" name="rdBtn" value="4" />
+                        <label for="q3">Change or cancel your reservation</label>
+                    </span>
+                    <span class="spRadio">
+                        <input type="radio" id="q4" name="rdBtn" value="2" />
+                        <label for="q4">Help with any other questions</label>
+                    </span>
+                    <span class="spRadio">
+                        <input type="radio" id="q5" name="rdBtn" value="99" />
+                        <label for="q5">Chat to a specific agent</label>
+                    </span>
+                    <br style="clear:both" />
+                    <div class="dvAgtNa">
+                        <input type="text" name="agtName" id="agtName" placeholder="Agent Email" />
+                    </div>
+                    <div class="dvSubmitBtn">
+                        <input type="button" class="submit" id="startChat" value="Start Chat" />
+                    </div>
+                    <input type="hidden" id="agtstatus" name="agtstatus" value="0" />
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="section-chat" id="section-chat" style="display: none">
+        <div id="chatWrapper">
+            <div id="root"></div>
+        </div>
+        <div class="centered">
+            <div id="divSpinner" class="spinner loading">
+                <div class="loading-text">Loading</div>
+            </div>
+            <script>
+                ! function (l) {
+                    function e(e) {
+                        for (var r, t, n = e[0], o = e[1], u = e[2], f = 0, i = []; f < n.length; f++) t = n[f], p[
+                            t] &&
+                            i.push(
+                                p[t][0]), p[t] = 0;
+                        for (r in o) Object.prototype.hasOwnProperty.call(o, r) && (l[r] = o[r]);
+                        for (s && s(e); i.length;) i.shift()();
+                        return c.push.apply(c, u || []), a()
+                    }
+
+                    function a() {
+                        for (var e, r = 0; r < c.length; r++) {
+                            for (var t = c[r], n = !0, o = 1; o < t.length; o++) {
+                                var u = t[o];
+                                0 !== p[u] && (n = !1)
+                            }
+                            n && (c.splice(r--, 1), e = f(f.s = t[0]))
+                        }
+                        return e
+                    }
+                    var t = {},
+                        p = {
+                            1: 0
+                        },
+                        c = [];
+
+                    function f(e) {
+                        if (t[e]) return t[e].exports;
+                        var r = t[e] = {
+                            i: e,
+                            l: !1,
+                            exports: {}
+                        };
+                        return l[e].call(r.exports, r, r.exports, f), r.l = !0, r.exports
+                    }
+                    f.m = l, f.c = t, f.d = function (e, r, t) {
+                        f.o(e, r) || Object.defineProperty(e, r, {
+                            enumerable: !0,
+                            get: t
+                        })
+                    }, f.r = function (e) {
+                        "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol
+                            .toStringTag, {
+                            value: "Module"
+                        }), Object.defineProperty(e, "__esModule", {
+                            value: !0
+                        })
+                    }, f.t = function (r, e) {
+                        if (1 & e && (r = f(r)), 8 & e) return r;
+                        if (4 & e && "object" == typeof r && r && r.__esModule) return r;
+                        var t = Object.create(null);
+                        if (f.r(t), Object.defineProperty(t, "default", {
+                            enumerable: !0,
+                            value: r
+                        }), 2 & e && "string" != typeof r)
+                            for (var n in r) f.d(t, n, function (e) {
+                                return r[e]
+                            }.bind(null, n));
+                        return t
+                    }, f.n = function (e) {
+                        var r = e && e.__esModule ? function () {
+                            return e.default
+                        } : function () {
+                            return e
+                        };
+                        return f.d(r, "a", r), r
+                    }, f.o = function (e, r) {
+                        return Object.prototype.hasOwnProperty.call(e, r)
+                    }, f.p = "./";
+                    var r = window.webpackJsonp = window.webpackJsonp || [],
+                        n = r.push.bind(r);
+                    r.push = e, r = r.slice();
+                    for (var o = 0; o < r.length; o++) e(r[o]);
+                    var s = n;
+                    a()
+                }([])</script>
+            <script src="~/js/test_chat/amazon-connect-chat-interface.js" asp-append-version="true"></script>
+        </div>
+    </section>
+    <section class="section-survey">
+        <div class="dvSurvey">
+            <div class="dvSurveyHead">
+                <img src="https://pictures.tripmasters.com/siteassets/d/ChatIcon.png" />
+                <span>Post Chat Survey</span>
+                <span>How would you rate the quality of support?</span>
+            </div>
+            <div class="dvFormSurvey">
+                <form id="formsurvey" name="survey">
+                    <div class="quest">Would you like to receive a copy of this chat?</div>
+                    <div class="dvchkbox">
+                        <div class="spchk">
+                            <input type="checkbox" name="transcript" id="yes" value="true" />
+                            <label for="yes">Yes, Please!</label>
+                        </div>
+                        <div class="spchk rgth">
+                            <input type="checkbox" name="transcript" id="no" value="false" checked />
+                            <label for="no">No, Thank you!</label>
+                        </div>
+                    </div>
+                    <div class="quest">Politeness and good manners:</div>
+                    <div class="rdbtnno">
+                        <span></span>
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                    </div>
+                    <div class="rdbtn">
+                        <span>Poor</span>
+                        <span><input type="radio" id="m1" name="politeness" value="1" /></span>
+                        <span><input type="radio" id="m2" name="politeness" value="2" /></span>
+                        <span><input type="radio" id="m3" name="politeness" value="3" /></span>
+                        <span><input type="radio" id="m4" name="politeness" value="4" /></span>
+                        <span><input type="radio" id="m5" name="politeness" value="5" /></span>
+                        <span>Outstanding</span>
+                    </div>
+                    <div class="quest">Level of proficiency (qualification):</div>
+                    <div class="rdbtnno">
+                        <span></span>
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                    </div>
+                    <div class="rdbtn">
+                        <span>Poor</span>
+                        <span><input type="radio" id="out1" name="proficiency" value="1" /></span>
+                        <span><input type="radio" id="out2" name="proficiency" value="2" /></span>
+                        <span><input type="radio" id="out3" name="proficiency" value="3" /></span>
+                        <span><input type="radio" id="out4" name="proficiency" value="4" /></span>
+                        <span><input type="radio" id="out5" name="proficiency" value="5" /></span>
+                        <span>Outstanding</span>
+                    </div>
+                    <div class="quest">Tell us why you rated the support this way:</div>
+                    <textarea id="message" name="comments" rows="4" cols="40"></textarea>
+                    <div class="dvSubmit">
+                        <input type="button" class="submit" id="submitSurvey" value="Submit" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+<audio id="playAudio" src="sounds/mixkit-positive-notification-951.wav" preload="auto"></audio>
+@section Scripts
+{
+    <script>
+        // --- Blibk Tabkb and sound
+        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        var newIcon = "TM_SmallLogo_Blink.png";
+        var oldIcon = "favicon.ico";
+        var sound = document.getElementById("playAudio");
+        var timeoutId = null;
+        var oldTitle = document.title;
+        var message = "you have a message";
+    </script>
+    
+    @{
+        <environment include="Development">
+            <script src="~/js/test_chat/java.test_chat.js"></script>
+        </environment>
+        <environment exclude="Development">
+            <script src="~/js/test_chat/java.test_chat.min.js" asp-append-version="true"></script>
+        </environment>
+    }
+}
+
+

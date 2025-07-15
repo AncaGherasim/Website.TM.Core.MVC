@@ -1,0 +1,706 @@
+.bodybookingprocess {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/header_bg.png);
+	background-position:top;
+	background-repeat:repeat-x;
+}
+.noservice {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/header_bg.png);
+	background-position:top;
+	background-repeat:repeat-x;
+}
+
+table {
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+h1 {
+	letter-spacing: -1px;
+	font-size: 32px;
+}
+
+h2 {
+	font-size: 10px;
+}
+
+td {
+	font-size: 12px;
+}
+
+a:link {
+	color: #00C;
+	text-decoration: none;
+}
+
+a:hover {	
+	text-decoration: underline;
+	color: #00C;
+}
+
+a:active {
+	text-decoration: underline;
+	color: #00C;
+}
+
+a:visited {
+	color: #00C;
+	text-decoration: none;
+}
+
+img {
+	border: none;
+}
+
+img.left {
+	float: left;
+	margin-right: 15px;
+}
+
+img.right {
+	float: right;
+	margin-left: 15px;
+}
+
+/* Form */
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+legend {
+	display: none;
+}
+
+input, textarea, select {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000;
+}
+
+#wrapper {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style:none;
+	
+}
+
+/* Header */
+
+#header {
+	width: 980px;
+	margin: 0 auto;
+	height: 42px;
+	background-color:
+}
+
+#hrblue {
+	
+	
+}
+
+
+/* Menu */
+
+.menu {
+	/*float: left;
+	width: 980px;
+	height: 47px;*/
+	background:url(https://content.bookingprocess.com/general/europe/DefaultImages/header_br.png) repeat-x center;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0px 0 0 0px;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	/*display: block;
+	float: left;*/
+}
+
+#menu a {
+	
+	float: right;
+/*	margin-top: 5px;
+	padding: 8px 17px;*/
+	text-decoration: none;
+	font-size: 10px;
+	color: #CACFE3;
+}
+
+#menu a:hover { 
+	color: #fff;
+	text-decoration: underline;
+}
+
+.page_title {
+	color: #FFF;
+	font-size:16px;
+	/*float:left;*/
+	padding: 20px 0 0 0;
+}
+
+.breadcrumbs {
+	/*display: block;
+	width: 400px;*/
+	color: #CACFE3;
+	font-size:10px;
+	/*float:right;*/
+	padding: 25px 0 0 0;
+	
+}
+
+.current_Page {
+	color: #FFF;
+	/*float:right;*/
+}
+
+.crumbs {
+	padding: 0px 0 0 0;
+	margin-left: 5px;
+	/*float:right;*/
+}
+
+
+/** LOGO */
+
+#logo img {
+	float:left;
+	
+		
+	
+	}
+
+#logo {
+
+
+}
+
+#logo h1 {
+	float: right;
+	margin: 0;
+	padding: 5px 0 0 0px;
+	line-height: normal;
+}
+
+#logo h1 { 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:30px;
+	
+}
+
+#logo h2 {
+	float: right;
+	padding: 7px 10px 0 0px;
+	font: 10px Arial, Helvetica, sans-serif;
+	line-height:1.4em;
+	color: #CACFE3;
+}
+
+
+
+
+/* Page */
+
+#page {
+	width: 980px;
+	margin: 0 auto;
+	
+	/*padding: 0 25px;*/
+}
+
+/* Content */
+
+#content {
+	float: left;
+	width: 410px;
+	
+}
+
+#contentBox {
+	height:90px;
+	padding:5px 0px 5px 5px;
+	background-color:#FFF;
+	line-height: 1.4em;
+}
+
+#contentserviceBox {
+	height:auto;
+	padding:5px 0px 5px 5px;
+	background-color:#FFF;
+	line-height: 1.4em;
+}
+
+.sortBox {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/sort_bg.png);
+	background-repeat:repeat-y;
+	/*height:90px;
+	padding:5px 0px 5px 5px;
+	background-color:#FFF;
+	line-height: 1.4em;*/
+}
+
+/* Price Box */
+.price_container {
+	width:608px;
+		
+}
+.price_container_2 {
+	width:588px;
+	padding-left:10px;
+
+}
+
+
+#priceBox {
+	height:50px;
+	padding:5px 0px 5px 5px;
+	background-color:#FFF;
+	line-height: 1.4em;
+}
+
+#priceBox ul {
+	margin: 0;
+	padding: 0px 0 0 0px;
+	list-style: none;
+	
+}
+
+#priceBox .priceBoxR {
+	float: right;
+	padding: 0 5px 0 10px;
+	width:360px;
+	border-left:#CCC thin dotted;
+	
+}
+
+
+/* TEXT */
+
+
+.textBlack12 {
+	font-size:12px;
+	color:#000;
+	}
+
+.textBlack14 {
+	font-size:14px;
+	color:#000;
+	}
+	
+.textBlack16 {
+	font-size:16px;
+	color:#000;
+	}
+	
+.textWhite12 {
+	font-size:12px;
+	color: #FFFFFF;
+	}
+
+.textWhite14 {
+	font-size:14px;
+	color: #FFFFFF;
+	}
+.textWhite16 {
+	font-size:16px;
+	color: #FFFFFF;
+	}
+	
+.textWhite18 {
+	font-size:18px;
+	color: #FFFFFF;
+	}
+
+.textOrange12 {
+	color:#F60;
+	font-size:12px;
+}
+
+.textOrange14 {
+	color:#F60;
+	font-size:14px;
+}
+
+.textOrange16 {
+	color:#F60;
+	font-size:16px;
+}
+
+.textOrange22 {
+	color:#F60;
+	font-size:20px;
+	
+}
+.textBlue20 {
+	color: #006;
+	font-size:20px;
+	
+}
+.textBlue12 {
+	color: #006;
+	font-size:12px;
+	
+}
+.textBlue14 {
+	color: #006;
+	font-size:14px;
+	
+}
+.textBlue16 {
+	color: #006;
+	font-size:16px;
+	
+}
+
+.textGrey10 {
+	font-size:10px;
+	color: #666666;		
+}
+.textGrey12 {
+	font-size:12px;
+	color: #666666;	
+}
+
+.textGrey20 {
+	font-size:20px;
+	color: #666666;		
+}
+
+.Table_PaxList {
+	background-color:#CEDAF0;
+	
+}
+
+
+/* Boxes */
+
+.Bx_Title_L {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/Bx_Tlt_H_L.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.Bx_Title_C {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/Bx_Tl_H_C.jpg);
+	background-repeat: repeat-x;
+	background-position:  top;
+	
+}
+.Bx_Title_R {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/Bx_Tl_H_R.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+	height: 30px;
+	
+}
+.Bx_Title_R span {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-weight: normal;	
+	text-align:left;
+}
+
+.Bx_Title_Rg {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/Bx_Tl_H_R.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+	height: 30px;
+	
+}
+.Bx_Title_Rg span {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #FFFFFF;
+	
+}
+.Bx_TL {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_TL.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.Bx_TL_price {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_TL_price.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.Bx_TL_head {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_TL_head.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.Bx_TL_light {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_TL_light.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.Bx_TM {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_TM.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+}
+.Bx_TR {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_TR.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.Bx_TR_price {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_TR_price.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.Bx_TR_head {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_TR_head.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.Bx_TR_light {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_TR_light.png);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.Bx_CL {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_CL.gif);
+	background-repeat: repeat-y;
+	background-position: left;
+}
+.Bx_CR {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_CR.gif);
+	background-repeat: repeat-y;
+	background-position: right;
+}
+.Bx_BL {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_BL.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+.Bx_BL_price {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_BL_price.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+.Bx_BL_light {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_BL_light.png);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+.Bx_BM {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_BM.gif);
+	background-repeat: repeat-x;
+	background-position: bottom;
+}
+.Bx_BR {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_BR.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.Bx_BR_price {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_BR_price.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.Bx_BR_light {
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_BR_light.png);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+
+/* Components  */
+
+.componentSSlink {
+	color: #00C;
+	text-decoration: none;
+	font-size:12px;
+	cursor: hand;
+	cursor: pointer;
+}
+
+.componentSShover {	
+	text-decoration: underline;
+	color: #00C;
+	font-size:12px;
+	cursor: hand;
+	cursor: pointer;
+}
+
+.componentSS a:active {
+	text-decoration: underline;
+	color: #00C;
+	font-size:12px;
+}
+
+.componentSS a:visited {
+	color: #00C;
+	text-decoration: none;
+	font-size:12px;
+}
+
+#City_hotel_component {
+	padding:0px 20px 20px 20px;
+	height:70px;	
+}
+
+.hotel_rating {
+	height:20px; 
+	padding:5px 0 0 0;
+}
+
+.hotel_title {
+	color:#006;
+	text-decoration:none;
+	font-size:16px;
+}
+	
+.hotel_title a {
+	color:#006;
+	text-decoration:none;
+	font-size:16px;
+}
+	
+.hotel_title a:hover {
+	color:#006;
+	text-decoration: underline;
+	font-size:16px;
+}
+	
+.hotel_title a:visited {
+	color:#006;
+	text-decoration:none;
+	font-size:16px;
+}
+	
+.hotel_title a:active {
+	color:#006;
+	text-decoration:none;
+	font-size:16px;
+}
+
+#addOptions_component {
+	padding:0px 20px 20px 20px;
+	height:150px;	
+}
+
+.doted_hr {
+	border-top:#CCC thin dotted; 
+	float:right; 
+	width:680px; 
+	padding-top:0px;
+	
+}
+.doted_hr930 {
+	border-top:#CCC thin dotted; 
+	float: none;
+	width:930px; 
+	padding-top:0px;
+	
+}
+
+.long_doted_hr {
+	border-top:#CCC thin dotted; 
+	float:right; 
+	width:940px; 
+	padding-top:10px;
+	
+}
+
+
+#SaveItin_container {
+	padding:10px 20px 5px 20px; 
+	height:30px;
+}
+
+.Continue_body {
+	background-color:#304493;
+	/*background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/footer_bg.png);
+	background-position: bottom;
+	background-repeat:repeat-x;*/
+	height:80px;
+}
+/* credit card page */
+
+.payselect {
+	font-family: arial;
+	font-size: 12px;
+	font-weight: bold;
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/payselect.png);
+	background-repeat:no-repeat;
+}
+.paynoselect {
+	font-family: arial;
+	font-size: 12px;
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/paynoselect.png);
+	background-repeat:no-repeat;
+}
+ .CC-BorderTop {
+ 	background-image:url(https://content.bookingprocess.com/general/europe/DefaultImages/CCtop.gif);
+ 	background-repeat:no-repeat;
+	background-position:top;
+ 	background-color:#DFE8F6;
+ 	
+}
+.CC-BorderBot {
+	background-image:url(https://content.bookingprocess.com/general/europe/DefaultImages/CCbox.jpg);
+ 	background-repeat:repeat-x;
+
+}
+.CC-cornerR {
+	background-image:url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_TL_light.png);
+	background-repeat:no-repeat;
+	background-position:top left;
+	
+}
+
+.CC-cornerR {
+	background-image:url(https://content.bookingprocess.com/general/europe/DefaultImages/ED_Bx_TR_light.png);
+	background-repeat:no-repeat;
+	background-position:top right;
+	
+}
+
+
+/* footer */
+
+.footer {
+	background-color:#304493;
+	/*
+	background-image: url(https://content.bookingprocess.com/general/europe/DefaultImages/footer_bg.png);
+	background-position: bottom;
+	background-repeat:repeat-x;*/
+	height:140px;
+}
+.Continue {
+	margin-right:230px;
+	color:#FFF;
+	line-height:1.4 em;
+	font-size:12px;
+}
+
+

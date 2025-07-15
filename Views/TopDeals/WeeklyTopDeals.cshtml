@@ -1,0 +1,147 @@
+﻿﻿@using static MVC_TM.Models.ViewModels.WeeklyViewModels
+@using Microsoft.Extensions
+@using MVC_TM.Infrastructure
+@using System.Globalization
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+        <link href="~/css/weekly_topdeals/weekly_topdeals.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="~/css/weekly_topdeals/weekly_topdeals.min.css" asp-append-version="true" />
+    </environment>
+
+}
+@{
+    DateTime sixMonthsAgo = DateTime.Today.AddMonths(-6);
+    var StartDate = ViewBag.wk_startdate;
+    var EndDate = ViewBag.wk_enddate;
+    var CampaingCode = ViewBag.wk_campaign;
+    var HeadLine = ViewBag.wk_headline;
+}
+<section class="info first-container">
+    <h1 class="info__title">Weekly Top Deals</h1>
+    <p class="info__date">@StartDate to @EndDate week</p>
+    <!-- TrustBox widget - Horizontal -->
+    <div class="info__trustpilot trustpilot-widget" data-locale="en-US" data-template-id="5406e65db0d04a09e042d5fc" data-businessunit-id="5cb67c0b7142f60001738c17" data-style-height="28px" data-style-width="100%">
+        <a href="https://www.trustpilot.com/review/tripmasters.com" target="_blank" rel="noopener">Trustpilot</a>
+    </div>
+    <!-- End TrustBox widget -->
+    @{
+        @if (!string.IsNullOrEmpty(HeadLine))
+        {
+            <p class="info__text">@Html.Raw(HeadLine.Replace("\n\n", "<br>"))</p>
+        }
+
+        else
+        {
+            <p class="info__text">Explore our hand-picked collection and let us guide you towards your next extraordinary travel experience. Don't miss out on these limited-time offers – your dream trip awaits!</p>
+        }
+    }    
+</section>
+
+<section class="packages first-container">
+    <h2 class="visually-hidden">List of vacation packages</h2>
+    <ul class="packages__list">
+        @{
+            var pckC = 1;
+            string siteURL = "/";
+            foreach (var pk in Model.WeeklyPacks)
+            {
+                switch (pk.deptNA)
+                {
+                    case "europe":
+                        siteURL = "/europe";
+                        break;
+
+                    case "asia":
+                        siteURL = "/asia";
+                        break;
+
+                    case "latin":
+                        siteURL = "/latin";
+                        break;
+                }
+                <li class="packages__item">
+                    <a class="packages__link" href="@($"{siteURL}/{pk.CountryNA.Replace(' ', '_').ToLower()}/{pk.PDL_Title.Replace(' ', '_').ToLower()}/package-{pk.PDLID}")">
+                        <div class="packages__image">
+                            <div class="packages__mob-circle">@pckC</div>
+                            <img src="@($"https://pictures.tripmasters.com{pk.IMG_500Path_URL}")" alt="@pk.PDL_Title" />
+                        </div>
+                        <div class="packages__info">
+                            <div class="packages__wrapper">
+                                <div class="packages__circle">@pckC</div>
+                                <div>
+                                    <p class="packages__price">
+                                        @if (pk.STP_Save != 99999)
+                                        {
+                                            @Html.Raw(String.Format("{0} nights from <span>{1:C0}*</span> - including flights", pk.STP_NumOfNights, pk.STP_Save))
+                                        }
+                                        else
+                                        {
+                                            if (pk.STP_NumOfNights > 0)
+                                            {
+                                                @Html.Raw(String.Format("{0} nights itinerary", pk.STP_NumOfNights))
+                                            }
+                                        }
+                                    </p>
+                                    <h3 class="packages__name">@pk.PDL_Title</h3>
+                                </div>
+                            </div>
+                            <p class="packages__description">
+                            @if (!string.IsNullOrEmpty(pk.PDL_Description) && !Utilities.RegexHelper.MyRegex.IsMatch(pk.PDL_Description))
+                            {
+                                    @Html.Raw(Utilities.TruncateHtml(pk.PDL_Description, 200))
+                            }
+                            else
+                            {
+                                    @Html.Raw(Utilities.TruncateHtml(pk.SPD_Description, 200))
+                            }
+                            </p>
+                            @{
+                                if (pk.OverallScore >= 4)
+                                {
+                                    <div class="packages__review">
+                                        <div class="packages__stars" style="--rating: @Decimal.Round(pk.OverallScore, 1)" aria-label="Rated @Decimal.Round(pk.OverallScore, 1) out of 5"></div>
+                                        <p class="packages__score">@Decimal.Round(pk.OverallScore, 1) out of 5 <span>(@pk.NoOfFeed reviews)</span></p>
+                                    </div>
+
+
+                                    if (!string.IsNullOrWhiteSpace(pk.Comment))
+                                    {
+                                        <p class="packages__comment">
+                                            @Html.Raw(MVC_TM.Infrastructure.Utilities.TruncateText(pk.Comment, 200))
+                                            @if (@pk.TvlDate <= sixMonthsAgo)
+                                            {
+                                                <span class="packages__date">Traveled on: @pk.TvlDate.ToString("MM/dd/yyyy")</span>
+                                            }
+                                        </p>
+                                    }
+                                }
+                            }
+                        </div>
+                    </a>
+                </li>
+                pckC++;
+            }
+        }
+    </ul>
+</section>
+<section class="more">
+    <div class="first-container">
+        <h2 class="more__title">More Deals</h2>
+        <ul class="more__list">
+            <li class="more__item">
+                <a href="/europe">Best Deals to Europe, Africa and the Middle East</a>
+            </li>
+            <li class="more__item">
+                <a href="/asia">Best Deals to Asia and the South Pacific</a>
+            </li>
+            <li class="more__item">
+                <a href="/latin">Best Deals to Latin America, the Caribbean, USA and Canada</a>
+            </li>
+        </ul>
+    </div>
+</section>

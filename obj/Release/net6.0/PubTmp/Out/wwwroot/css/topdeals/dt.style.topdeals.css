@@ -1,0 +1,68 @@
+﻿#DealsContainer{background:-webkit-linear-gradient(#ecf0f9,white,white,white,white);background:-o-linear-gradient(#ecf0f9,white,white,white,white);background:-moz-linear-gradient(#ecf0f9,white,white,white,white);background:linear-gradient(#ecf0f9,white,white,white,white);background-color:#fff;border:solid 1px #96add4;margin-top:-1px;padding-bottom:25px;min-height:100px;position:relative}
+.Tab{background:-webkit-linear-gradient(#d9d9d9,#ececec);background:-o-linear-gradient(#d9d9d9,#ececec);background:-moz-linear-gradient(#d9d9d9,#ececec);background:linear-gradient(#d9d9d9,#ececec);border-radius:6px 6px 0 0;border:solid 1px #96add4;border-bottom-width:0;border-top:solid 12px #999;border-top-width:12px;color:#333;cursor:pointer;float:left;font-size:16px;height:45px;line-height:38px;margin:10px 0 0 10px;text-align:center;width:215px;vertical-align:middle;position:relative;}
+.TabActive{background:-webkit-linear-gradient(#ecf0f9,#ecf0f9);background:-o-linear-gradient(#ecf0f9,#ecf0f9);background:-moz-linear-gradient(#ecf0f9,#ecf0f9);background:linear-gradient(#ecf0f9,#ecf0f9);border-top-color:#2a57a1;color:#f60;border-bottom:solid 1px #ecf0f9}
+.RegionTitle{color:#f60;font-family:Arial;font-size:14px;font-weight:700;padding:25px 0 15px 60px}
+.PackDuration{color:#999;display:inline-block;font-size:12px;font-weight:700}
+.PackPrice{color:#f60;font-family:Arial;font-size:12px;font-weight:700}
+.CountryTitle{color:#036;font-family:Arial;font-size:14px;font-weight:700;padding:15px 5px 5px 55px;text-align:left}
+.CountryTitle a{color:#036;text-decoration:none}
+.CountryTitle a:hover{color:red;text-decoration:underline}
+.packDisplay{padding:25px 15px 15px 30px}
+.Blue-Arial16{color:#036;font-family:Arial;font-size:16px;font-weight:700}
+.LinkStyle{color:#009;font-size:11px;height:5px;text-decoration:underline}
+.LinkStyle:hover{color:red}
+.falsecheck {
+    background: url('https://pictures.tripmasters.com/siteassets/d/checkboxN.gif') no-repeat scroll 0 0 rgba(0,0,0,0);
+    color: navy;
+    cursor: pointer;
+    font: 11px Tahoma,Arial,Helvetica,sans-serif;
+    height: 17px;
+    outline: medium none;
+    padding: 2px 0 0 20px;
+    text-decoration: none
+}
+.falsecheck:hover{color:#06F}
+.falsechecked{background-position:left -25px}
+.divCustomize {
+    background: #212d6e 0% 0% no-repeat padding-box;
+    border: 1px solid #212d6e;
+    border-radius: 23px;
+    color: #fff !important;
+    display: table;
+    cursor: pointer;
+    text-decoration: none;
+    font: 12px arial;
+    text-transform: uppercase;
+    height: 30px;
+    width: 200px;
+    margin: 15px 0 !important;text-align:center
+}
+.customize {
+    color: #fff !important;
+    display: table-cell;vertical-align:middle
+}
+hr.gradLineTop {
+    top: -6px;
+    position: relative;
+    border: 0;
+    height: 1px;
+    background: #999 !important;
+    width: 91% !important;
+    margin: 0 auto;
+    clear: both;
+    margin: 0px 60px 0px 30px
+}
+hr.gradLineTopMore {
+    top: -6px;
+    position: relative;
+    border: 1px dotted #999;
+    width: 91% !important;
+    margin: 0 auto;
+    clear: both;
+    margin: 0px 60px 0px 30px;height:0px!important;background:none!important;
+}
+.package {
+    padding: 5px 0px 4px 30px;
+    color: #009;
+    margin: 0px 60px 0px 30px;
+}

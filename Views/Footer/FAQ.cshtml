@@ -1,0 +1,1099 @@
+﻿@{
+    //ViewBag.Mobile = 0;
+    <environment include="Development">
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+@{
+    ViewBag.Canonical = @String.Format("https://www.tripmasters.com/frequently_asked_questions");
+   
+}
+@section Styles{
+    <style>
+        .chatUs {
+            height: 22px !important;
+            font-size: 12px !important;
+        }
+        .dropdown-menu {
+            width: 100%;
+        }
+        .table {
+            width: 980px !important;
+            margin: 0 auto
+        }
+
+        .secTopHeader {
+            height: 140px !important
+        }
+
+        .adotDecor {
+            color: white !important
+        }
+
+        .dvhChat {
+            width: 30% !important
+        }
+
+        .dvhBBB {
+            width: 180px;
+        }
+
+        .title {
+            color: #3C4888;
+            font-size: 20px;
+            margin: 19px 0 19px 0;
+            padding-left: 20px;
+            padding-right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .caret {
+            padding-right: 0px;
+            margin-top: 5px;
+            transform: rotate( 90deg);
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .dropdown {
+            border-bottom: 1px solid grey;
+        }
+
+        h4 {
+            margin-left: 10px;
+        }
+
+        .dContainer {
+            width: 980px;
+            margin: 0 auto;
+            margin-bottom: 5px;
+            border: 1px solid #638bd1;
+            border-radius: 10px 10px 10px 10px;
+            padding: 40px;
+            display: table;
+            margin-top: 10px;
+        }
+
+        .dContainerUpdate {
+            width: 980px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            border: 1px solid #638bd1;
+            border-radius: 10px 10px 10px 10px;
+            margin-top: 30px
+        }
+
+        .title {
+            color: #3C4888;
+            font-size: 20px;
+            margin: 19px 0 19px 0;
+            padding-left: 20px;
+            cursor: pointer
+        }
+
+        .titleUpdate {
+            color: #3C4888;
+            font-size: 20px;
+            margin: 1px 0 19px 0;
+            padding-left: 20px;
+            text-align: left
+        }
+
+        .dvpageTitle {
+            color: #24285F;
+            font-size: 25px;
+            font-weight: bold;
+            border-bottom: 1px solid #658DD2;
+            margin: 10px 0 30px 0;
+            padding-bottom: 10px;
+        }
+
+        .dropdown-menu li {
+            color: grey
+        }
+
+        li p b {
+            color: black;
+            font-size: 15px
+        }
+
+        li i {
+            color: darkslategrey
+        }
+
+        h4 span.caret {
+            color: dimgray
+        }
+
+        li b {
+            color: black
+        }
+
+        .headerSubmitButton {
+            border: 1px solid #ccc !important;
+            border-radius: 5px !important;
+            cursor: pointer !important;
+            font-size: 12px !important;
+            padding: 2px 10px !important;
+            position: relative !important;
+            top: -1px !important;
+        }
+
+        input {
+            line-height: normal !important;
+        }
+
+        .footer-stag {
+            font-size: 16px !important
+        }
+
+        ol li {
+            font-size: 14px
+        }
+
+        ul li {
+            font-size: 14px;
+        }
+
+        li p span b {
+            color: #ff6a00;
+            font-size: 15px;
+        }
+
+        ol.NumberList {
+            list-style-type: upper-greek;
+        }
+
+        @@media only screen and (max-width:700px) {
+            div.dvMhomeContainer {
+                background-color: white !important;
+            }
+
+            .dContainerUpdate, .dContainer {
+                width: 100% !important;
+            }
+
+            .dContainer {
+                margin-top: 10px;
+                padding: 10px;
+                background-color: white
+            }
+
+            .dvpageTitle {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .title {
+                font-size: 16px;
+                padding-left: 10px;
+            }
+
+            .vouchers {
+                font-size: 11px;
+            }
+
+            .id9 {
+                font-size: 11px;
+            }
+
+            .spandvEachBtn {
+                float: right;
+            }
+        }
+    </style>
+}
+
+
+    <div class="container dContainer" >       
+        <div class="dvpageTitle"> Frequently Asked Questions</div>
+        <div>
+        <div class="dropdown">
+            <h4 class="title" id="01" data-toggle="dropdown">Activities/Tours<span class="caret">›</span></h4>
+            <ul class="dropdown-menu" id="meniu_01" style="position:relative;padding-left: 20px;padding-right: 10px; margin-bottom: 20px;display:none;">
+                <li>
+                    <p>
+                        <b>Can I book tours and activities after the initial reservation is booked?</b><br />
+                        Yes, Tripmasters allows you to book tours up to as close as 3 days prior to departure. We send you a reminder email, 21 days before departure to start your researching.  However, should you have something important planned on your TO DO list, we recommend booking it as early as possible as some things can sell out in high season.
+                    </p>
+                    <p><b>How do I select the best tour for me?</b><br />
+                    <p>In most large cities there are numerous tours to popular attractions, it is very important for you to read through the descriptions and select the ones that fit your interests best. Do not forget about fitness level as well! Some of these tours can include lots of walking and climbing of steps.</p>
+                    <p>We do offer a large variety of tours from group activities to walking tours, private and more specific type interest tours for people interested in say culinary, art or music. There are plenty of “skip the line” tours which is more for convenience rather than the content. These will help avoid long waiting lines to “must see” attractions but can include different levels of guidance.</p>
+                    <p>Pay attention to the type of guides and the size of the tour.  Remember, small group tours will always be more personal.  And also pay attention to the inclusions/substitutions (some museums/attractions are closed on certain days of the week and therefore another attraction may be substituted on the day you are there.)  </p>
+                    </p>
+                    <p>
+                        <b>Where do I meet the tour?</b><br />
+                        The meeting point of the tour will be listed on your voucher. There are some tours with hotel pick up but most tours are to be met at a specific location. If you are in the city the day before, we suggest getting acquainted with the location of the tour meeting point beforehand. We always recommend being at the tour meeting point at least 15 minutes (if not 30) before the scheduled meeting time. Grab a coffee close by and head over just before the tour begins so the tour guide knows you have arrived.
+                    </p>
+                    <p>
+                        <b>Do I have to reconfirm my tour before arrival?</b><br />
+                        Some tours will ask you to reconfirm at the destination. If you feel it is too confusing and do not have a working smartphone on hand, then contact the front desk at your hotel. Most front desk staff have no problem calling to reconfirm even in the local language, should you ask nicely for help.
+                    </p>
+                    <p>
+                        <b>What if my tour has been canceled?</b><br />
+                        Unfortunately, some tours may be canceled due to unforeseen circumstances.  Tours that are canceled last minute will receive a full refund. However, you can always ask the provider if they can suggest something similar for that day in exchange for the tour loss. A Lot of times they know of other great tours they can get you signed up for in exchange so you do not lose time exploring.
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdown">
+                <h4 class=" title" id="02" data-toggle="dropdown">Air<span class="caret">›</span></h4>
+                <ul class="dropdown-menu" id="meniu_02" style="position:relative;padding-left: 20px;padding-right: 10px; margin-bottom: 20px;display:none;">
+                    <li>
+                        <p>
+                            <b>Why is it important that I give my name as it appears on my passport when booking air?</b><br />
+                            Due to increased travel security around the world, it is now more important than ever that your airline ticket match your first and last name exactly as it reads on your passport. Additionally, any changes to your air booking, which include spelling, could be subject to a change fee, penalties or cancellation.
+                        </p>
+                        <p>
+                            <b>What are the Transportation Security Administration (TSA) requirements?</b><br />
+                            The Transportation Security Administration (TSA) requires full name (as it appears on a government-issued ID that passenger will be traveling with), date of birth and gender for all passengers. Failure to provide the required TSA information for your air reservation can result in delays at the airport during the check-in process and/or flights canceled prior to departure by the airline.
+                        </p>
+                        <p>
+                            <b>When will I be able to select my seats if I was unable to reserve during the booking process?</b><br />
+                        Depending on the cabin you choose, you may be able to pre-select your seat during the booking process. Some airlines do not allow you to choose your seats in advance without paying a fee. If you do not have a seat assigned, we recommend that you do your online check-in directly with the airline, which may give you the option to select a seat. You can also purchase your seat selection directly from the airline prior to your flight departure.
+                        </p>
+                        <p>
+                            <b> Once confirmed, are airlines seats always guaranteed?</b><br />
+                            In most cases, seat assignments are firm. However, airlines may sometimes re-assign seats for operational reasons. This often happens at the last moment, is controlled by airline staff, and Tripmasters is not notified. Passengers are encouraged to reconfirm their seat assignments and any other special requests directly with their airline prior to departure.
+                        </p>
+                        <p>
+                            <b>If I provide my frequent flier miles on airfares purchased through Tripmasters. Will they be applied?</b> <br />
+                            Tripmasters will be more than happy to pass on your frequent flier numbers to the airline. However, some discounted or promotional fares may not be eligible for mileage accrual. We also encourage you to offer these numbers upon check-in.
+                        </p>
+                        <p>
+                            <b>How do I make a special request for meals, wheelchair or assistance on my flight?</b><br />
+                            During the booking process, you are able to notate any special request.  There is a field for this, beneath where you input your payment information. Should you have missed this field when booking, we can take this special request via email or chat.
+                            However, if you are requesting a wheelchair, it may be a good idea to contact our customer service to provide additional information in regards to your limitations.
+                        </p>
+                        <p>
+                            <b>How do I know if baggage is included in my ticket price?</b><br />
+                        When booking your reservation, you will notice a link next to each flight segment that will display flight details and baggage fees. These details are important to read carefully, as they will provide additional information regarding your flight itinerary. Although most international "over the water" flights allow for one piece of luggage up to a certain weight, you may have also booked regional flights between cities. These smaller flights may not allow for the same weight as the international flight. It is important to pack light, as the overweight fees can be hefty. Additionally, some small carriers may not allow for pre-purchased baggage. In these cases, they MUST be paid directly to the carrier. It is recommended to go to the airline website directly, as purchasing prior may result in a cheaper fee.
+                    </p>
+                        <p>
+                            <b>Why is my connection time so short?</b><br />
+                            The airlines have a requirement for a time to get from point A to point B in each airport, these are called “Minimum Connection Times”. These are legal times the airline must adhere to and we cannot make a reservation if it does not meet this standard. Unfortunately, these times are not ideal. We strongly recommend checking these time frames in the booking process to select the connection you are most comfortable with. Remember the key to checking before booking is that once tickets are issued, we cannot change them without penalties incurred by the airline.
+                        </p>
+                        <p>
+                            <b>What should I do if the connection is missed?</b><br />
+                            It is important to go directly to the nearest ticketing counter to be protected on the next available flight. In these cases, it is the responsibility of the airline to re-accommodate. After contact with the airline desk, we recommend you to advise Tripmasters, if possible, of your new scheduled flight as it may affect other services. The most convenient way to contact us at this point would be through our chat if located where the wifi connection is available.
+                        </p>
+                        <p>
+                            <b>Why can’t I upgrade my seat to a Premium or Business Class seat?</b><br />
+                            Each airline has different classes of service that may have restrictions once the fare is ticketed. Some of the basic discounted fares may not be eligible for class upgrades after purchase.
+                        </p>
+                        <p>
+                            <b>How early should I arrive at the airport prior to my flight departure? </b><br />
+                            Tripmasters recommends your plan to be there 3 hours prior to departure. This is a key factor for a successful trip. Keep in mind things happen like the following: accidents, missed directions to the airport, missed transfers and having to get alternate transportation, long check-in lines, long security lines. If you are not on time for check-in, this can result in having to purchase a new ticket.
+                        </p>
+                        <p>Some regional airports within other countries may have long check-in wait time so it is important to keep this in mind even while en route getting to the following destination. If a segment is missed in your itinerary, this could result in no value of the consecutive segments. Airlines will charge you rebooking fees along with any fare increase from the original ticket price. </p>
+                        <p>
+                            <b>What should I do if my flight is delayed or canceled?</b><br />
+                            Tripmasters recommends contacting the airline directly as soon as you know of the delay. If at the airport, check with the ticket counter. Should you be rerouted, we recommend calling the airline’s direct number first as there can be hold times. It will be important to find out how they can re-protect you on a future flight or give you an estimate on the delay. Once the accurate information is final, please contact us either by chat or call to let us know your new flight so we can notify any services that may be affected.
+                        </p>
+                        <p><b>NOTE:</b> Tripmasters is not responsible for delayed or canceled flights, portions of trips missed due to such issues, or additional expenses incurred due to unforeseen circumstances. This is a great reason to select insurance when purchasing the package.</p>
+                        <p><b>Do you have any tips to help ensure a smooth check-in?</b></p><br />
+                        <p><b>Arrive early:</b>Make sure you have allotted ample time for your journey, including giving yourself plenty of time for getting to the airport, making your way through check-in and security, and making your way to the departure gate.</p>
+                        <p>
+                            <b>Check In:</b> Keep in mind that many airport websites now provide real-time information on flight delays. Whether you check online or call the airline, stay informed.
+                        </p>
+                        <p>
+                            <b>Operating Carrier:</b>You may be traveling with a different airline than the one listed on your ticket. At the airport, you will be checking in with the airline listed as <b>operating carrier </b>on your voucher.
+                        </p>
+                        <p><b>Documentation:</b> Make sure you have all your passport and visa information correct and valid for the departure dates you are traveling.   Remember, your passport should be valid for at least 6 months beyond your return date.</p>
+                        <p>
+                            <b>What is the PreCheck program?</b><br />
+                        The TSA`s PreCheck (see<a href="http://www.tsa.gov/precheck" target="_blank" rel="noopener noreferrer"> www.tsa.gov/precheck</a>), a trusted traveler program, has spread to more cities across the U.S. and is now available at more than 180 airports. Members of the program are prescreened and can jet through security without having to take off their shoes or remove laptops from cases. The U.S. Customs Department`s Global Entry program (see<a href="http://www.globalentry.gov" target="_blank" rel="noopener noreferrer"> www.globalentry.gov</a>) is another shortcut for frequent international travelers, especially as the federal government immigration and customs lines get longer.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <h4 class="title" id="03" data-toggle="dropdown">Car Rentals <span class="caret">›</span></h4>
+                <ul class="dropdown-menu" id="meniu_03" style="position:relative;padding-left: 20px;padding-right: 10px;margin-bottom: 20px;display:none;">
+                    <li>
+                        <p>
+                            <b>What should I keep in mind when choosing a Car:</b><br />
+                            Keep in mind the big differences between your typical American rental car and what you’ll get in Europe or other countries. Midrange foreign cars have less passenger room, trunk space is small, and manual transmissions are the norm. Automatics are more expensive (usually about 50 percent more) and may only be available if you upgrade to a bigger, pricier car. You may want to consider brushing up on your shifting skills, it will save you a lot of money.
+                        </p>
+                        <p>
+                            <b>What should I keep in mind when selecting a car:</b><br />
+                            You will see that a few cars offered are American but most are European/foreign brands (Opel, Fiat, Citroën, Peugeot, Renault, Škoda, and Seat). Don’t waste time carefully choosing among models, since you’re not guaranteed to get the exact car you signed up for, just a “similar” model.
+                            <br /><br />
+                            If you opt for the smallest, least-expensive model, make sure that it is just you and a companion and pack very lightly!  Remember these smaller models are more maneuverable on narrow, winding roads, but be prepared for a tight fit.
+                        </p>
+                        <p>
+                            <b>How do I go about choosing a Pick-Up (and Drop-Off) Place and Time</b><br />
+                            We strongly recommend that you do not drive in the big cities, unless you have had previous experience driving there and know what you are getting yourself into. It’s best and less stressful to pick up your vehicle on the day that you are departing the city.  Picking up a car at an airport usually costs more than picking it up downtown. But many central car-rental locations have shorter hours (and may close at midday) or are buried in a maze of narrow streets. Also consider traffic — it may be easier to drive away from an airport than a parking garage in the heart of the city. You may find that a train-station office is handier than a downtown one (though some station pickups come with airport-like fees). Fortunately, airport/train-station fees apply only to your pickup location, not your drop off.<br />
+                            <br />
+                            Cars are rented in 24-hour periods, so think carefully about selecting your pickup and drop-off times — if you pick up the car at 10 a.m. on the first day and drop it off at noon on the last day, you’ll be charged a whole day’s rental for just those two hours. Don’t book your pickup time for earlier than you really need the car. If you can, book a drop-off time that falls within that location’s office hours (rather than just leaving the keys in an after-hours drop box); it’s best to finalize and receive your paperwork in person.
+                        </p>
+                        <p>
+                            <b>What should I do when Picking Up my car?</b><br />
+                            When you arrive at the rental counter, ask for a copy of the contract in English if it’s not provided as a matter of course.
+                            This is also a good time to quiz the rental agent on a few things, including:
+                            <ul>
+                                <li>local laws you might not be aware of (for example, whether headlights must be on at all times, where and how kids ride, etc.)</li>
+                                <li>length of the grace period for drop-off, if any</li>
+                                <li>how to use anything you can’t figure out, such as the wipers, alarm system, lights, radio, GPS, etc.</li>
+                                <li>what type of fuel the car takes (diesel vs. unleaded), the local term for that fuel type, and how to release     the gas cap</li>
+                                <li>location of proof-of-insurance “green card” and other paperwork</li>
+                                <li>whether your car has an unexpired toll-highway vignette (if needed)</li>
+                                <li>info on making repairs and any included emergency roadside services</li>
+                                <li>location of spare tire and directions for using it (if the car has no spare, ask for a different vehicle)</li>
+                                <li>whether the car has a breath-testing kit for measuring alcohol levels (required in France, costs around $5)</li>
+                            </ul>
+                            <br />
+                            Be sure to check the entire vehicle for scratches or dents. Photograph all dings and scratches, even the tiniest ones (be sure the date/time stamp is on). Note the fuel level and eyeball the tire pressure. If any damage is not noted on the rental agreement, return to the counter to make adjustments.<br /><br />
+                            Before you drive off, get to know your car. This is tough when you’re aching to get out on the road — but take a few minutes, while you’re still in the rental agency’s parking lot, to try out all the features and gadgets: Run the front and rear windshield wipers and sprayers, figure out whether the headlights come on automatically with the engine, switch the headlights to high-beam, get comfortable with the gearshift, turn on the radio, and so on.<br /><br />
+                            Before leaving, get instructions for driving to your next stop (or at least to the expressway). Then drive around the parking lot for a few minutes to test rear view mirrors, the gearshift and clutch, and the lights and signals.
+                        </p>
+                        <p>
+                            <b>What should I do when Dropping Off My Car?</b><br />
+                            Be on time to drop off your car — you could be charged an extra day’s rent if you show up a little late<br /><br />
+                            Unless you’ve already prepaid for a tank of gas, top up your car before returning it — otherwise you may be charged for a full tank, no matter how much gas is actually left. Not only that, but you’ll likely be charged more than double what you would have paid at a nearby gas station...and they may pile on an additional “refueling fee” as well. There’s no need to wait until you’re almost at the rental office to fill up — fuel gauges are very forgiving, so start watching for a convenient gas station miles before you reach the rental office. Save your final gas receipt as proof that you filled the tank, and don’t toss it until you’ve seen your credit-card bill.<br /><br />
+                            Once you’re parked at the rental office, walk around the car with the attendant to be sure there are no new problems. Some drivers take pictures of the returned vehicle as proof of its condition (an especially good idea if you’re returning the car at an unstaffed after-hours drop-off point). Ask for a copy of the final condition report and keep it until you’ve seen your credit-card statement. Unexpected charges that show up on your credit-card statement are easier to dispute if you have good documentation on hand.<br /><br />
+                            If you must drop off a car when the office is closed.  There is a drop box where you place your keys and instructions on where to park the car.  In this situation, it is even more important that you take pictures of your car and have the status totally documented in case any problems arise.
+                        </p>
+                        <p>
+                            <b>What is a Drop box?</b><br />
+                            Some destinations (especially downtown locations) open at certain times. Sometimes clients have to return cars when the office is closed. In these cases a Drop box has to be requested by our client upon car pickup.  NOT ALL OFFICES HAVE A DROP BOX WE HAVE TO CHECK FOR EACH SPECIFIC CASE so please send us an email so that we can verify for you.
+                        </p>
+                        <p>
+                            <b>What is a “one way fee”?</b><br />
+                            One way fees, otherwise known as “drop off fees”, are extra charges that are due in addition to the total rate you paid for your car rental. These fees can be incurred when picking up your rental car in one location and dropping it off in another.
+                        </p>
+                        <p>
+                            <b>What types of one way fees are there?</b><br />
+                            There are two different types of one way fees:<br />
+                            <b>Domestic:</b>Applicable when picking up and dropping off a car at two different locations within the same country. Domestic one way fees are less common and may or may not apply to your rental depending on your unique itinerary and reservation.<br />
+                            <b>International:</b>Applicable when picking up a car in one country and dropping it off in another country. International one way fees always apply for pick ups and drop offs between two different countries.
+                        </p>
+                        <p>
+                            <b>Are there restrictions on where I can drive and drop off my rental car?</b><br />
+                            All one way fees and travel restrictions are at the discretion of each individual rental car supplier. You can generally travel to and drop your car off in most Western European countries without issue, but Eastern European travel with a rental car will be subject to restrictions.
+                        </p>
+                        <p>
+                            <b>Why can’t I see my drop off charges upfront?</b><br />
+                            One way fees vary based on everything from the supplier you rent from, to the type of car you choose, and everything in between. Since the fees vary so greatly, Our supplier has to calculate them on an individual basis to ensure you get an accurate quote and are properly informed once the reservation is confirmed.
+                        </p>
+                        <p>
+                            <b>Why aren’t one way fees automatically included in my rental rate?</b><br />
+                            One way fees are incurred and collected by whichever one of TripMasters’ trusted car rental companies you choose to book with. TripMasters  does not collect or profit from one way fees in any way.
+                        </p>
+                        <p>
+                            <b>When and how do I pay a one way fee?</b><br />
+                            If your car rental requires a one way fee, the amount will be due upon pickup of your vehicle. One way fees are charged in the local currency for whichever country your rental originates in.
+                        </p>
+                        <p>
+                            <b>Why are one way fees not standardized?</b><br />
+                            Each supplier determines their own fees independently. For the same given pick up and drop off location, one company may charge far less than another while some may not allow the desired travel at all. Every supplier has different offices and rental locations, enabling each provider to offer different options.
+                        </p>
+                        <p>
+                            <b>Do I need to obtain an international driver's license?</b><br />
+                            It is becoming a more common practice for rental companies to request an International Driver’s licence, so we highly recommend heading over to your local AAA to secure the driver's license. Should the local supplier demand this be present and you do not have this with you it may negatively impact your trip and prevent you from picking up your car.
+                        </p>
+                        <p>
+                            <b>Can I use my debit card to pick up the car rental?</b><br />
+                            We always advise that you have a valid credit card with the primary driver’s name. Otherwise you may be denied pick up without a valid credit card as most car rental agencies want a credit card not a debit card for protection reasons.
+                        </p>
+                        <p>
+                            <b>What kind of insurance is included on the car rental package price?</b><br />
+                            Having collision and theft coverage are a necessity with any rental vehicle. Our cars include the inclusive rate which will include the Third Party Liability, Fire, Collision and Theft built in as part of the rental cost. Unfortunately, some locations do not allow the inclusive and it must be secured on site. This is mostly for Latin America countries.  Be sure to read the fine print when selecting your car.   Be aware that the deductible amounts can be rather high in some locations. You may be able to purchase additional coverage at the counter that will lower the deductible as well.
+                        </p>
+                        <p>
+                            <b>What is the difference between basic and Inclusive?</b><br />
+                            If you select a basic rental rate your price will include value added tax (VAT), public liability insurance, fire insurance and unlimited miles. If the inclusive rate is selected it will include everything in the basic rate plus collision damage waiver (CDW) and theft protection for the rental vehicle.
+                        </p>
+                        <p>
+                            <b>What if the local supplier insists that you purchase additional insurance?</b><br />
+                            Any local car rental company's employees are usually trusted with sales, so they will probably try to sell various company products to customers. With a few exceptions, all insurance products offered locally will be optional.  The car rental company may offer insurance covering the car parts not normally covered by the package included in prepaid rates. Should this be the case, it is entirely up to you to decide whether they want to buy this additional insurance if you have not already.
+                        </p>
+                        <p>
+                            <b>What do I do in the Event of an Accident?</b><br />
+                            If you are involved in an accident, no matter how minor, a valid police report is always required. Contact local authorities and then contact the number on your rental car keychain. We also recommend you document any damage with a digital camera if one is available. Be aware of what you are liable for by thoroughly inspecting and understanding your car rental voucher before you leave.
+                        </p>
+                        <p>
+                            <b>Do you recommend renting GPS?</b><br />
+                            You have 3 options:<br /><br />
+                            <i>1.  Renting a GPS from your car rental company</i><br />
+                            You can either arrange to pick up a GPS from the local car rental company or, even better, you can save money and book a GPS with our vendor that is pre-loaded with maps, in English, and sent directly to your home! Call our Customer Service agent and request a quote.
+                            <br /><br />
+                            <i>2.  You can take your own GPS:></i><br />
+                            On eBay and Amazon you can purchase refurbished portable devices with Europe and North America maps for as little as $50.
+                            <br />Ease of Use: No need to learn how to setup and use an unfamiliar device.<br />
+                            100% Availability: Portable units rented in Europe are not allowed on international one-way rentals, and sometimes not on domestic one-ways. Many rental offices in smaller towns don’t even rent GPS.<br />
+                            Unlimited Coverage: A good percentage of rental car factory-installed and portable GPS units cover only the country in which the car is rented. That’s not a problem when you bring your unit with the right maps.<br /><br />
+                            <i>3. GPS alternative: use a smartphone or tablet</i><br />
+                            An increasing number of travelers don’t bother with GPS at all; they simply rely on Google Maps on a smartphone or tablet. That, of course, means if you want turn-by-turn live directions, you’ll have to have a data connection in the car, and that will involve cost. It may be worth it to you to purchase a data package from your phone’s service provider (AT&T, Verizon etc.).<br /><br />
+                            A less flexible but cheaper alternative is to create and download maps of your routes prior to getting in the car when you have access to WiFi. Even without a data connection you can use the maps you downloaded and your phone will track your location using satellites and cell towers. Apps, such as OffMaps for the iPhone, can store multiple downloaded maps.<br /><br />
+                            Finally, backup whatever navigation system you use with quality hard-copy maps scaled at 1:200,000 or 1:150,000 (preferred). The paper maps will provide perspective as well as identify scenic roadways and significant sights and towns along your route.
+                        </p>
+                        <p>
+                            <b>What additional Rental costs and fees could I be facing?</b><br />
+                            <i>Car Rental Equipment</i><br />
+                            Appears on car rental contracts as: Car Rental Equipment (GPS, child seats, winter tires, etc.), Add-Ons, Extras (ALWAYS SHOWN IN VOUCHERS)<br />
+                            You will always have the option of adding additional equipment to your rental depending on your unique needs or preferences. The most commonly available accessories include GPS units, child seats, snow chains, ski racks, and portable WiFi devices, but other options may be offered in different locations. Additional equipment is usually charged on a per-day basis, and prices will range depending on the supplier you are renting from; add-ons will always cost extra, to be paid for at the counter and subject to VAT, unless your quote or contract explicitly states them as "included". Be sure to take care of the accessories you add on, too, because you will have to pay a replacement fee for any loss, theft, or damages done to the items!<br /><br />
+                            <i>Car Rental Fuel Policy</i><br />
+                            Appears on car rental contracts as: Full to Full, Full to Empty<br />
+                            Your car rental fuel policy will determine how you will pay for any existing fuel your rental car comes with when you pick it up. With a full to full policy, you will pay nothing up front but will be expected to return the vehicle with the same amount of fuel your car had when you picked it up (usually a full tank); you will be charged for any fuel missing when the vehicle is returned. If your rental includes a full to empty fuel policy, you will pre-pay a given amount for a full tank of fuel and can return the vehicle as close to empty as possible without incurring any additional fuel costs.<br /><br />
+                            Optional fuel policies are generally a matter of preference, but be aware that all rental companies will charge a premium for any type of fuel, usually based on the highest price per liter available in the area. To save on fuel charges, opt for a full to full policy when available, fill up the rental car right before you return it, and retain a copy of the receipt for your records. It may be a bit less convenient to have to make a fuel stop just before dropping off, but that little bit of extra work can save you some money on the premium rates you will have to pay for a tank of gas through a full to empty policy.<br /><br />
+                            <i>Limited/Unlimited Mileage Car Rentals</i><br />
+                            Appears on car rental contracts as: Limited Kilometers<br />
+                            If your car rental includes unlimited mileage/kilometers, then you have no worries; you can cover as much ground as you'd like in your rental car without incurring any extra fees! Some rental rates, however, may be specified as "limited kilometers," in which case you will be charged extra if you drive the car farther than an allotted distance. Limited kilometer rentals usually come with 100 to 300 kilometers per day, after which you will have to pay an extra fee per additional kilometer driven.<br /><br />
+                            <i>VAT Car Rental Tax</i><br />
+                            Appears on car rental contracts as: VAT Tax, Value Added Tax<br />
+                            Typically Costs: 15% to 30%, depending on country<br /><br />
+                            <b>What you need to know:</b> VAT (or Value Added Tax) is a standard European sales tax that varies among different nations in Europe. The minimum allowed VAT rate is 15%, but individual countries can set their rates higher, and some will charge up to 27%. You will have to pay VAT on your rental rate (whether or not it is prepaid), as well as any other extra equipment charges or local fees you are charged for at the rental desk, including one way fees, insurance costs, and location surcharges. Unlike VAT tax paid on goods, clothing, and souvenirs, which can be reclaimed at the airport upon your departure, you cannot reclaim any VAT taxes you pay on a car rental.<br /><br />
+                            <i>Local Rental Car Taxes</i><br />
+                            Appears on car rental contracts as: Road Tax, Vehicle License Fee, Environmental Fee/Eco Surcharge, Credit Card Processing Fee, Road Safety Fee<br />
+                            <br />
+                            <b>What you need to know:</b>Local rental car taxes may apply to your rental depending on the type of vehicle you rent, the location you rent it in, and which supplier you choose to rent from. While typically not very expensive, local taxes are often overlooked and have become prime suspects in the realm of dastardly "hidden" fees. They are not always included and rarely mentioned in your average rental quote, but you can almost count on having to pay a few extra Euros at the pick-up desk on any car rental for various location-specific taxes.<br /><br />
+                            <i>Rental Car Location Surcharges</i><br />
+                            Appears on car rental contracts as: Airport Surcharge, Rail Station Surcharge, Premium Location Surcharge, Parking Fees, Out of Hours Fees, Late Return Fees<br />
+                            Location surcharges are typically applied when picking up your rental car at major transportation hubs throughout Europe, such as airports, rail stations, and cruise ports. The standard additional charge for picking a car up at one of these locations is €40, but the fee can vary from €20 to €80 in some cases. Depending on the locale, additional location-related charges may be applied, such as "parking fees," which are incurred in areas like Venice where parking space is very limited.
+                            <br /><br />
+                            Be sure to pay attention to the hours of operation for the offices where you plan on picking up and dropping off the vehicle, as well as the specific times you've arranged your rental for. Dropping off your car later than the agreed-upon time on your reservation can cost you a "late return fee" and, depending on the time of day you originally picked up the car, can also add an additional day onto your total rental rate.
+                        </p>
+                        <p>
+                            <b>What are the age requirements and/or restrictions?</b><br />
+                            Regardless of where you are looking to travel, rental car age requirements and restrictions may affect the cost of your vehicle reservation. This is especially true for those looking to rent a car under 25 years of age  because many rental suppliers will set strict rental car age limits or charge an additional daily fee known as a young driver surcharge. These age limits will vary depending on where and who you plan to rent your car with, so it's best to keep yourself informed and in control of all your local car rental fees.<br /><br />
+                            A less common rental car age requirement is a maximum age limit that will sometimes prevent older senior drivers from renting a car. These limits typically affect drivers 75 and older, but individual rental suppliers can set these rental car age requirements and restrictions at their own discretion. The good news for senior citizens is that these rules are uncommon in most European countries, but it's still always best to be aware of potential age limits that can affect your trip abroad! <br />
+                            <ul>
+                                <li> Car rentals for 18 year olds are possible, and even though the minimum legal driving age in most European countries is younger than 18, each respective car rental company can choose who they will or will not rent to and can set their own rules and restrictions.</li>
+                                <li>Car rental age limits are based on the terms and conditions from the country you rent in. The only car rental age restrictions that will apply to you will be detailed in the terms and conditions of your rental contract, but national laws will still apply if you plan on driving to different countries. Always be sure to read up on driving laws in any  country you intend on visiting and give prior notice to TripMasters  if you plan on driving a rental car internationally.</li>
+                                <li>Young driver surcharges are incurred by rental suppliers and paid locally. If your age requires you to pay an additional fee according to the terms and conditions of your rental car contract, the additional amount will not be included in your prepaid rate with TripMasters and will need to be paid locally at the rental desk when you pick up your vehicle.</li>
+                                <li>Rental car age restrictions may require you to purchase insurance. If you are a senior driver or younger driver, particularly those looking to rent a car under 21, you may be required to purchase an inclusive rate rather than opting for a basic rate or using insurance provided by a credit card.</li>
+                                <li>Car rental age requirements may restrict you from renting certain vehicles. Many rental companies will set higher age limits for specialty and luxury vehicles. Vehicles in the economy and compact classes will always have the fewest  age-related restrictions. </li>
+                            </ul>
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <h4 class="title" id="4" data-toggle="dropdown">Children<span class="caret">›</span></h4>
+                <ul class="dropdown-menu" id="meniu_4" style="position:relative;padding-left: 20px;padding-right: 10px;margin-bottom: 20px;display:none;">
+                    <li>
+                        <p>
+                            <b>How do I add a child under 2 on my booking?</b><br />
+                            <i style="color:grey!important">IMPORTANT NOTICE:</i> Please DO NOT book an itinerary for 2 adults (flights and land services) and call to ask for an infant to be added, this is not the correct procedure. It is important to call us <i style="color:grey!important">BEFORE</i> you book due to live availability request.
+                        </p>
+                        <p><b>AIRLINES</b>:  DO consider a child <b style="color:grey!important">under 2</b> years old as an infant. The infant will not have a seat on the plane and will be considered a lap baby. The fee to book a flight for an infant is typically 10 percent of the adult fare cost. If you are booking with an infant, you <b style="color:grey!important">MUST</b> contact us because <b style="color:grey!important"><i style="color:grey!important">ONLY an agent</i></b> can create and process the itinerary. </p>
+                        <p><b>FARES/PRICING</b>: Notice that on our website, infant fare is not available. This is because we will need to <i style="color:grey!important">manually</i> check the availability and book it from there.</p>
+                        <p><b>LAND PORTION</b>: The infant needs to be priced as a 2-year old. This is so the hotels and other land services are aware that you are traveling with a child. This may prevent a possible additional collection when you are at the destination. You should request the proper sleeping arrangements at the time of booking for us to pass onto the hotel as there may not be crib style options. Some hotels do not allow more than a certain amount of people per room no matter age. </p>
+                        <p>
+                            <b>What should I keep in mind when booking a trip with children?</b><br />
+                            <b>Hotels:</b><br />
+                            It is very important to remember room size, remember that hotel rooms tend to be much smaller than Americans are used to.  Bed configurations tend to be 2 single beds or 1 double bed.  When booking triples or quads, in many instances, this may just be a rollaway in the room or in some instances a pull-out sofa.  Also, there will be a lot less availability to pick from when you request Triple or quad rooms as many hotels do not even offer these options.  Depending on your children’s ages and how many of you are travelling, it may be a lot more convenient and comfortable to book 2 rooms and send us a request to forward to the hotel for either connecting or adjoining rooms.  We are now also offering apartments in many cities which could provide more comfortable space with children.
+                            <br />
+                            <b>Amenities:</b><br />
+                            We recommend doing your research and paying attention to child friendly amenities at the hotels such as pools or playgrounds, as they are not going to be found everywhere.<br />
+                            <b>Breakfast:</b><br />
+                            Some hotels, despite listing breakfast as part of the room plan will only include it in the rate for the 1st two passengers.<br />
+                            <b>Tours:</b><br />
+                            Pay special attention to descriptions when purchasing tours for the whole family.  Some tours may not be age appropriate or interesting to children.  In most cities, with some additional searching you may be able to find tours specifically put together around children’s interests.
+
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <h4 class="title" id="5" data-toggle="dropdown">Destination Guidance<span class="caret">›</span></h4>
+                <ul class="dropdown-menu" id="meniu_5" style="position:relative;padding-left: 20px;padding-right: 10px;margin-bottom: 20px;display:none;">
+                    <li>
+                        <h5><b>Japan</b></h5><br />
+                        <p>
+                            <b>Japan Rail Pass - Is It Worth It?</b><br />
+                            If you’re visiting two or more cities, then the JR pass might be the best solution for you. The pass is very easy to use, it’s valid on all JR lines and covers the shinkansen (bullet train). Just keep in mind that the pass does not cover the Nozomi shinkansen (the very fastest class of bullet train) but it covers the Hikari shinkansen, which is nearly as fast. The speed difference between these trains is minimal: usually just a few minutes for the trip between Tokyo and Kyoto. Another advantage is that since you won’t need to buy train tickets, you can make any random side trip when you want to.
+                        </p>
+                        <p>
+                            <b>Are there situations where the pass isn’t good value?</b><br />
+                            Absolutely! If you’re going to be in a single major city such as Tokyo or Kyoto, with a few local day trips near the city it will almost certainly not be money well spent.
+                        </p><br />
+                        <h5><b>Middle East</b></h5><br />
+                        <p>
+                            <b>I noticed the note "Alcohol-Free Hotels" in the description for some hotels in Middle East cities. What does this mean?</b><br />
+                            An alcohol-free or dry bar is a property that does not serve alcoholic beverages. This may be important to some travelers, so be aware of this when checking the hotel descriptions and time of travel.
+                        </p>
+                        <p>
+                            <b>Traveling To Middle East during Ramadan?</b><br />
+                            The month of Ramadan can sometimes disrupt your daily routine as shops, bars, restaurants and tourist attractions will often have shorter daytime opening hours and some may close altogether, but if you’re fascinated by different cultures and religions it’s an exciting time to visit. The breaking of the fast at sundown is an electric experience as communities and families often meet up to eat together.
+                        </p>
+                        <p>Ramadan means the month of dawn-to-dusk fasting. The exact dates of Ramadan change every year but it is mostly celebrated between May and July.</p>
+                        <ul>
+                            <li>6 May – 3 June 2019 (1440 AH)</li>
+                            <li>24 April – 23 May 2020 (1441 AH)</li>
+                            <li>13 April – 12 May 2021 (1442 AH)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        <div class="dropdown">
+            <h4 class="title" id="6" data-toggle="dropdown">Ferries <span class="caret">›</span></h4>
+            <ul class="dropdown-menu" id="meniu_6" style="position:relative;padding-left: 20px;padding-right: 10px;margin-bottom: 20px;display:none;">
+                <li>
+                    <p>
+                        <b>Where do I pick up my tickets?</b><br />
+                        Ferry tickets are by destination. Some will be waiting for you at your hotel prior to your departure or at the pier’s location.  Some will be e-tickets which you can print with the rest of your vouchers.  You will be notified of your particular circumstance by email.  Carefully read your vouchers before departure so you are aware of which destination specific pickups are located.
+                    </p>
+                    <p>
+                        <b>Can I change the time of my ticket?</b><br />
+                        Once the ferry ticket has been issued, we would need to contact the vendor to make sure the change can be made and it will be subject to vendor penalties.  Remember that ferries are not frequent in most destinations, so you may have received a time that correlates with availability, hotel checkout times or even flight departure times.
+                    </p>
+                    <p>
+                        <b>Are there seat assignments on the ferry?</b><br />
+                        Some ferries are booked with pre-assigned seats and some are not.  When they come with seats, these are generated by the issuing office and cannot be requested.  So, if a preferred seat is important to you make sure to get the pier with plenty of time for check-in. Remember there can be loads of people on your ferry so getting there early is key.
+                    </p>
+                    <p>
+                        <b>How early should I get to the port?</b><br />
+                        Ports are very busy and crowded places.  It is important that you get there early enough to orient yourself, find the ferry you will be using and line up to board.  We recommend planning to get there around an hour before to not have to rush and get frustrated.
+                    </p>
+                    <p>
+                        <b>What about my luggage?</b><br />
+                        You are responsible for your luggage throughout your trip.  Different ferry companies have different rules.  Please remember to pack light.
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="dropdown">
+            <h4 class="title" id="7" data-toggle="dropdown">Future Travel Credit <span class="caret">›</span></h4>
+            <ul class="dropdown-menu" id="meniu_7" style="position:relative;padding-left: 20px;padding-right: 10px;margin-bottom: 20px;display:none;">
+                <li>
+                    <p>
+                        <b>How do I use my Future Travel Credit for a new trip?</b><br />
+                        Using your travel credit with Tripmasters is easy  and you can do it directly within our booking process! No need to wait on the phone for an agent or trade emails back and forth.
+                        <ol class="NumberList">
+                            <li>
+                                Put your trip together at Tripmasters, and follow the prompts until you arrive at the payments screen.
+                            </li>
+                            <li>
+                                Under Payment Options, choose the "PAY WITH TRAVEL CREDIT" button.
+                            </li>
+                            <li>
+                                Enter your Original Booking Number and your Travel Credit Number.
+                            </li>
+                            <li>
+                                Click "Verify Travel Credit."
+                            </li>
+                        </ol>
+                        <br />
+                        Click <a href="https://www.tripmasters.com/tripmasters_travel_credit_instructions/cms?cms=11608&wh=0&wf=0" target="_blank" rel="noopener noreferrer">here</a> for more detailed information
+                    </p>
+                    <p>
+                        <b>How do I access my Future Travel Credit?</b><br />
+                        The only way to access is through the email you received about “Your Future Travel Credit”.
+                    </p>
+                    <p>
+                        <b>How long is the Future Travel Credit valid?</b><br />
+                        Forever! It will never expire.
+                    </p>
+                    <p>
+                        <b>What can a Future Travel Credit be used to purchase?</b><br />
+                        It can be applied to any of our vacation packages you purchase.                            
+                    </p>
+                    <p>
+                        <b>Can I use my credit for multiple vacations?</b><br />
+                        Yes, it can be used for multiple bookings until its total value is depleted.
+                    </p>
+                    <p>
+                        <b>What if my new trip is more or less expensive than the value of my Future Travel Credit?</b><br />
+                        <ul class="ui-icon-bullet">
+                            <li>
+                                If the balance of your Future Travel Credit is higher than the value of your reservation, the remaining balance can be used for future bookings
+                            </li>
+                            <li>
+                                If the balance of your Future Travel Credit is less than the value of your reservation, you will only have to pay the difference with any of our payment methods. 
+                            </li>
+                        </ul>
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+
+                <div class="dropdown">
+            <h4 class="title" id="8" data-toggle="dropdown">Gift Certificates <span class="caret">›</span></h4>
+            <ul class="dropdown-menu" id="meniu_8" style="position:relative;padding-left: 20px;padding-right: 10px;margin-bottom: 20px;display:none;">
+                <li>
+                    <p>
+                        <b>How can I buy a Travel Gift Certificate?</b><br />
+                        Buying a Gift Certificate is easy. You can do it directly in our <a href="https://reservation.tripmasters.com/bp5/travelcredit" target="_blank" rel="noopener noreferrer">website</a>
+
+                        <ol class="NumberList">
+                            <li>
+                                Select the amount
+                            </li>
+                            <li>
+                                Complete the payment information
+                            </li>
+                            <li>
+                                Accept the Terms and Conditions
+                            </li>
+                        </ol>
+                    </p>
+                    <p>
+                        <b>How do I use a Travel Gift Certificate?</b><br />
+                        <ol class="NumberList">
+                            <li>
+                                You need to put your trip together at Tripmasters, and follow the prompts until you arrive at the payments screen.
+                            </li>
+                            <li>
+                                Then, under Payment Options, choose “Redeem Gift Cert/Credit
+                            </li>
+                            <li>
+                                Complete the mandatory fields
+                            </li>
+                            <li>
+                                Click on Verify Gift Cert/Credit
+                            </li>
+                        </ol>
+                    </p>
+                    <p>
+                        <b>Do Travel Gift Certificates have an expiration date?</b><br />
+                        No, it will never expire.
+                    </p>
+                    <p>
+                        <b>What can a travel gift certificate be used to purchase?</b><br />
+                        TripMasters Travel Gift Certificates can be applied to any of our vacation packages.
+                    </p>
+                    <p>
+                        <b>Can I use my Gift Certificate for multiple vacations?</b><br />
+                        Yes. A gift certificate can be used for multiple bookings until its total value is depleted.
+                    </p>
+                    <p>
+                        <b>What if my new trip is more or less expensive than the value of my Gift Certificate?</b><br />
+                        <ul class="ui-icon-bullet">
+                            <li>
+                                If the balance of your Gift Certificate is higher than the value of your reservation, the remaining balance can be used for future bookings
+                            </li>
+                            <li>
+                                If the balance of your Gift Certificate is less than the value of your reservation, you will only have to pay the difference with any of our payment methods.
+                            </li>
+                        </ul>
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+
+
+            <div class="dropdown">
+                <h4 class="title" id="9" data-toggle="dropdown">Hotels<span class="caret">›</span></h4>
+                <ul class="dropdown-menu" id="meniu_9" style="position:relative;padding-left: 20px;padding-right: 10px; margin-bottom: 20px;display:none;">
+                    <li>
+                        <p>
+                            <b>I need help selecting my hotel, what tools do you offer?</b><br />
+                            We curate our hotels as much as we can, taking into consideration people’s budget and taste.<br />
+                            We classify our hotels using 3 different sets of qualifiers.
+                            <ol>
+                                <li><b> Star Rating </b>- Please note, that although this is the most common way people understand hotel classification, there is no universal star rating system. Each country has different requirements for awarding stars (a three-star rating in Washington, DC, is different from a three-star rating in Melbourne, Australia or Rome, Italy). So, keep in mind that a 3 star in most of Europe does not equate to a 3 star in the US. Please do not expect, for example, the Hilton Garden Inn room sizes and AC performance, service, amenities in Europe or elsewhere.</li>
+                                <li><b>Reviews</b>- We use a meta-review site which obtains hotel reviews from passengers worldwide to rate their hotel stays.  We only choose hotels with a score of 80 or more, unless we need to lower the rating due to availability issues.  Remember the higher the score, the better the quality.</li>
+                                <li><b>Location</b>- We strive to offer hotels that are centrally located in major cities.  Within the booking process, you are able to sort hotels by zone and also, by selecting an attraction that you want to be close to.  We also offer a map that allows you to further visualize the location before booking.  Note:  in certain small countryside towns and villages, the hotels may not be centrally located as these are offered in conjunction with a rent-a-car, allowing you the option of enjoying hotels in the countryside.</li>
+                            </ol>
+                        <span style="font-size:14px">Please remember that the very first display in our booking process will show you the most economical hotel available at the city that you have selected.  It is important for you to “Browse Hotels” and spend a little time researching your options.  Sometimes for just a few dollars more you may be able to select a property that will suit your needs a lot better.</span>
+                        </p>
+                        <p>
+                            <b>What do hotel stars indicate (in general)?</b><br />
+                            <b>One Star</b>- These budget properties offer clean accommodations. Tripmasters does not offer these type of properties.
+                        </p>
+                        <p><b>Two Stars</b> - These budget properties offer clean accommodations and are slightly better than 1 stars.  By American standards, this is not a recommended option. <i> Tripmasters does not offer these type of properties unless they are located in a remote location with very limited availability.</i></p>
+                        <p><b>Three Stars</b> - The minimum comfort level for many travelers. This is a budget basic property.  Rooms will be small and do not expect any extra amenities.</p>
+                        <p><b>Four Stars</b> - More comfortable and more of a traditional property.  Be careful, as the range in 4-star properties can vary greatly in style and amenities.   These hotels may offer a little more space and service.  </p>
+                        <p><b>Five Stars</b> - These are hotels that offer a higher level of accommodations and services. The properties offer a high degree of personal service. But don’t let the 5 stars fool you, as some 5 stars are not at the level of an American 5-star property.</p>
+                        <p><i>Do not use star rating as your sole decision maker, read descriptions, reviews, and our scores!</i></p>
+                        <p>
+                            <b>We noticed the note <img src="https://pictures.tripmasters.com/siteassets/d/favorite.gif" /> in the description of the hotel we were looking to book. There were other ones without this note. What exactly does this mean?</b><br />
+                            Tripmasters tries to help clients select properties that maximize their experience, regardless of star rating. We select our "favorites" properties within each star-rating category based on criteria such as location and reviews. These properties add value to your vacation due to their standards and integrity. We regularly re-evaluate our "favorites" to ensure that high quality remains intact and clients have solid options working within their own budgets.
+                        </p>
+                        <p>
+                            <b>I noticed your site mentioned “Bed and breakfast” and then “Room only” in the booking process.  What exactly does this mean?</b><br />
+                            This refers to the meal plan included in the room type you have booked. Some rates include breakfast while others do not. This is based on what is available at the time of booking. Some people may prefer having breakfast right at the hotel while others may prefer to explore the cafes in their new city. Should you have inadvertently booked “room only” at the hotel you selected, we can always ask the hotel for the cost to include breakfast, if available.
+                        </p>
+                        <p>
+                            <b>What TYPE of accommodations are offered on your site? </b><br />
+                            Tripmasters offers a variety of accommodations. Some regions have specialized accommodations depending on the type of destination. Here are a couple of examples and where you may see these options:
+                            <ul>
+                                <li>Hotels</li>
+                                <li>Apartments</li>
+                                <li>B&B’s</li>
+                                <li>Guesthouses</li>
+                                <li>Ryokans (Japan)</li>
+                                <li>Tent Style - (Amazon, Jungle)</li>
+                                <li>Lodges - (Amazon, Jungle)</li>
+                                <li>Condos (Hawaii)</li>
+                            </ul>
+                        </p>
+                        <p>
+                            <b>What type of Room Categories are offered and what should I be on the lookout for?</b><br />
+                            When selecting your hotel, it is very important to pay attention to the room category as well.  Remember, the default, again, will be the least expensive available at that hotel.  Normally, these tend to be the smallest rooms and with the least desirable location at the property.   Upgrading to the next available category will usually secure a more desirable room.  It is especially important to try to not select a category labeled “Economy or Annex”.
+                        </p>
+                        <p>
+                            <b>What about room-size?</b><br />
+                            Unless you are booking an American Chain property which maintains its standards worldwide, chances are that your room is going to be a lot smaller than what you would encounter in the USA.   Please keep this in mind, if you are selecting properties that are located in historical or central city locations.
+                        </p>
+                        <div>
+                            <b>I’ve heard that overseas hotels do not always have air conditioning, is this true?</b><br />
+                            <p>This is a common misconception. For instance, in Europe A/C is not a common luxury. Many European hotels either do not have it or only run it a handful of days each year. Some cities take this even further and prohibit its use unless the external temperature reaches a certain point. That is much more common in Northern Europe than Southern, but most of our clients do not understand the lack of A/C.<br /></p>
+                            <p>In older properties, those housed in restored and historic buildings, or even apartment-style accommodations, A/C must be retrofit or the property will forgo it altogether. Even those newer hotels with A/C still choose to only run it during the very hottest times of the year, which is late summer. We always recommend talking to hotel management if discomfort is an issue.  Most front desks at least have a fan that can be delivered to your room.  <br /></p>
+                            <p>Some hotels even right here in the US that are located in our <b>Hawaii</b> offerings still maintain its plantation style look, which is unique to the islands as they were built to be able to ventilate and cool themselves naturally. These constructions were built prior to the post-war economic boom, when air conditioning installation became common practice. However, prior to this, it was almost non existent. High electricity costs are another reason for such limited offerings. In Kauai and Maui there are about 50% to 60% condo style properties that may not have air conditioning.<br /></p>
+                            <p>We endeavor to provide as accurate and detailed information as possible about hotels but remember it is up to local management whether or not to use A/C even if they have it. Europeans are accustomed to dealing without A/C and so they do not even consider this an issue.</p>
+                        </div>
+                        <p>
+                            <b>What does a “Non-Refundable” hotel mean? </b><br />
+                            Non-refundable means that if the hotel reservation is canceled, there is no refund. Non-refundable hotels are also non-amendable/changeable.  This is one of the ways Tripmasters is able to pass down the savings to our customers so it’s important to review if the property is the right fit for you before finalizing.  So, when choosing your hotels make sure you are confident with your selection and have read the policy of each property during the booking process.
+                        </p>
+                        <p>
+                            <b>Will I have additional charges at the hotels upon check out?</b><br />
+                            Yes, unfortunately, there are a number of fees that can only be collected by the hotel directly upon check out.<br />
+                            <b>City Taxes:</b> These are local taxes mandated by the city councils in each location. These are imposed for tourism and are applied to tourism infrastructure. We are not allowed to collect them prior to arrival. These fees can range from approximately 1 to 5 dollars a night depending on the star rating of the hotel. These are noted in the hotel voucher for your guidance. <br />
+                            <b>Resort Fees: </b>hese are fees collected by the resort to maintain the grounds and the general facilities. These fees are usually charged by room per night and will be paid upon check out. These are noted on the hotel voucher for your guidance. <br />
+                            <b>Cleaning/Maintenance Fees:</b> Some apartments and most condos will collect an additional service fee for cleaning your space before the next guest arrives. These fees can be a little more substantial and you should prepare for them ahead of time. We list this in the property description in the reservation process. This will also be located in your voucher as a reminder. <br />
+                        </p>
+                        <p>
+                            <b>I checked my hotel reviews and want to change my hotel choice.  How can I do this?</b><br />
+                            Although Tripmasters does not charge change penalties, the suppliers may do so. <br />
+                            Please contact Tripmasters to see if a change can be made and if so, what the cost could look like for this change.
+                        </p>
+                        <p>
+                            <b>I want to add a hotel night onto the end of my trip that is already booked. How can I do that?</b><br />
+                            We can always add nights to your trip but remember the airlines impose large change fees and it may not be worth it to make this change after the booking has been finalized. So, please make sure you feel you picked the right number of nights before booking.   Please feel free to call us and see what penalties will apply and to make the change if you still must.
+                        </p>
+                        <p>
+                            <b>I contacted the hotel and they said they do not have any reservation under my name. How is that possible?</b><br />
+                            Tripmasters reserves the hotel for you in a blocked or allotted space and names are released to hotels a specific number of days before arrival as stipulated by the vendor. Should you want your name released earlier, just give us a shout out! We can advise the supplier. Keep in mind this may take 2 or 3 days to register with the hotel’s front desk.
+                        </p>
+                        <p>
+                            <b>Why do some hotels say “On Request”?</b><br />
+                            The vast majority of our services are linked to our vendors that provide real-time availability and pricing.  Unfortunately, there are some smaller hotels, located in more remote areas that we can only offer on a request basis.  For these properties, we contact and confirm services as soon as your booking has been created.  Normally, we are able to confirm them within 48 hours.  On occasion, they may not be available, should that occur we contact you with alternate comparable properties for your approval.
+                        </p>
+                        <p>
+                            <b>I get into my destination early? Check in isn't until hours later. What can I do with my luggage? </b><br />
+                            This is a common issue in most hotels across the world. So, hotels will allow you to store your luggage and go explore your new city at your leisure until your room is available for relaxing or freshening up. Keep in mind, this may cost a nominal fee but will be worth it to be free of the luggage you have been dragging around. Remember to keep your valuables with you though.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <h4 class="title" id="10" data-toggle="dropdown">Insurance<span class="caret">›</span></h4>
+                <ul class="dropdown-menu" id="meniu_10" style="position: relative; padding-left: 20px; padding-right: 10px; margin-bottom: 20px; display: none;">
+                    <li>
+                        <p>
+                            <b>What Redpoint Insurance products do Tripmasters offer?</b><br />
+                            We offer two different options of travel protection for your selection.
+                            <ol>
+                       <li>
+                        <p>
+                                    <b>Travel Protection: Harbor <u>With</u> Cancel Anytime*</b><br />
+                            Trip Cancellation & Interruption <u style="color: grey;font-size:12px">Beyond</u> Covered Reasons<br />
+                            This flexible cancellation plan offers:<br />
+                            A. Up to 100% reimbursement if you <b>cancel for a covered reason.</b><br />
+                            B. Up to 75% reimbursement for just about any other reason not already covered or excluded from your plan.<br />
+                                    <b style="color: grey;font-size:12px">To be eligible for “Cancel for Anytime” benefits:</b><br />
+                            Must be physically able to travel at time of purchase.<br />
+                            Purchase within 15 days from the initial trip payments.<br />
+                            <br />
+                            In addition to the above Trip Cancelation benefits, the plan also includes protection for covered Trip interruption, Emergency Medical, baggage, natural and man-made disasters. Please see all exclusions under <a href="https://redpointtravelprotection.com/harbor-travel-insurance-coverage-cfar-benefits/" target="_blank" class="openINS">Terms, Conditions and exclusions.</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <b>Travel Protection: Harbor <u>Without</u> Cancel For Any Reason*</b><br />
+                            Trip Cancellation & Interruption with <u style="color: grey;font-size:12px">limited</u> Covered Reasons<br />
+                            Travel Insurance can pay trip cancellation and interruption claims when you cancel or interrupt your trip due to certain covered situations. Exclusions and restrictions apply.
+                        </p>
+                        <p>
+                            The plan includes protection for covered Trip interruption, Emergency Medical, baggage, natural and man-made disasters. Please see all exclusions under <a href="https://redpointtravelprotection.com/harbor-travel-insurance-coverage-cfar-benefits/" target="_blank" class="openINS">Terms, Conditions and exclusions.</a>
+                        </p>
+                        <p>
+                            * The plans are underwritten by State National Insurance Company, Inc. Univops Insurance Service LLC is the licensed producer. Plans only available to US residents and may not be available in all jurisdictions. Pricing may vary by state.
+
+                        </p>
+                    </li>
+                    </ol>
+                    </p>
+                    <p>
+                        <b>Why do Tripmasters recommend Travel Insurance strongly?</b><br />
+                        Tripmasters strongly recommends travel insurance because it can help defray costs associated with unforeseen circumstances. Most of our clients find that because of the investment in their vacation, adding a nominal charge for insurance provides great peace of mind.
+                    </p>
+                    <p>
+                        <b>What are some key benefits Redpoint Travel Insurance offers?</b><br />
+                        Plans include key benefits such as:<br />
+                        <b>Delays</b>- If your flight is delayed by three hours or more, you’re eligible to receive reimbursement for additional accommodations and meals you require while you wait for your flight. Min of 3 hours delay $200 per day; Max $1,000<br />
+                        <b>Cancellations</b>- Trip cancellation coverage means you’re eligible to cancel your trip due to sickness and be reimbursed for trip expenses that would otherwise be non-refundable. Maximum coverage per person: up to 100% of trip cost (a doctor must impose restrictions at the time of loss preventing you from going on the covered trip.)
+                        <br />
+                        <b>Medical</b>- Emergency Accident and Emergency Sickness Medical Expense benefits can reimburse costs incurred during your trip due to a covered medical emergency. Medical expense coverage through Redpoint is a reimbursement process. This means you pay for the medical expenses and then file a claim for reimbursement when you return home. Maximum coverage per person: (US) $100,000<br />
+                        <b>Trip interruptions</b>- Trip Interruption benefits can reimburse eligible costs due to a covered interruption. Up to 150% of Trip Cost Limit<br />
+                        <b>Luggage delay</b>- If your luggage is delayed for 12 hours or more, you’re eligible for reimbursement for the expense of replacing necessary personal effects. Min of 12 hours delay; Daily Limit $100; Max Benefit $500
+                    </p>
+                    <p>
+                        <b>What is the difference in Redpoint plan options?</b><br />
+                        What is the difference in Redpoint plan options?
+                        The biggest difference is the added flexibility the <b>Cancel Anytime</b> add - on provides where you can receive 75% reimbursement and allows you to cancel as late as the day of departure - as long as you have not left for the trip.  You can cancel for just about any reason not already covered by your plan.  If you’d like to maximize your coverage for cancellation, we’d recommend upgrading your policy with this benefit.
+                    </p>
+                    <p>
+                        <b>When is the latest time to secure my Redpoint policy?</b><br />
+                        <ol>
+                            <li>
+                    <p>
+                        <b>Harbor <u>With</u> Cancel For Any Reason</b><br />
+                         You can purchase Harbour WITH “cancel for any reason” up to 15 days from initial trip payment.
+                    </p>
+                    </li>
+                    <li>
+                        <p>
+                            <b>Harbor <u>Without</u> Cancel For Any Reason</b><br />
+                            You can purchase Harbour WITHOUT “cancel for any reason” up to 48 hours prior to your trip departure date.
+                        </p>
+                    </li>
+                    </ol>
+
+                    <p>The sooner you purchase, the longer your protection window so it's a good idea to protect your investment as soon as you book.</p>
+                    </p>
+                    <p>
+                        <b>Why do I need to pay an additional amount for the insurance when I am just adding my tours/transfers/changes?</b><br />
+                        Any services that are added to your package after the first purchase makes the package price more and the insurance MUST be adjusted to updated to include the newly added services. Otherwise, these new services would not be covered by the original purchased plan. So, just double check when adding services later to the booking that this adjustment is made.
+                    </p>
+                   
+                 
+                </ul>
+            </div>
+
+
+            <div class="dropdown">
+                <h4 class="title" id="11" data-toggle="dropdown">Local Transfers<span class="caret">›</span></h4>
+                <ul class="dropdown-menu" id="meniu_11" style="position:relative;padding-left: 20px;padding-right: 10px; margin-bottom: 20px;display:none;">
+                    <li>
+                        <p>
+                            <b>Where will my arrival airport/hotel transfer be waiting for me?</b><br />
+                            When purchasing a private transfer the representative typically waits for an hour after the flight touches down.They are usually holding a sign with your name just on the other side of immigration. We understand that these lines can be long in some cases. It is important to be ready when you depart the aircraft to have your passport/visa documents readily accessible and pick up luggage as quickly as possible to ensure a smooth transition to the transfer representative.
+                        </p>
+                        <p>
+                            <b>What happens if I miss my transfer?</b><br />
+                            Transfers can be missed due to schedule changes and delays. Whenever you know you will not make the transfer time, please try and reach out to Tripmasters so we can cancel or try to rebook for another time. This is another great reason to have trip insurance as the unforeseen issue of missing a pre-scheduled transfer can happen. We recommend grabbing a taxi, train or another mode of transportation to your hotel and please keep the receipt for a potential claim upon returning home from your vacation.
+                        </p>
+                        <p>
+                            <b>What should I do if the driver didn’t show up?</b><br />
+                            If you have access to call the supplier’s number, this is the first best thing to do. Should this not be an option, please contact Tripmasters via chat or our toll-free number to have one of our agents try to locate the representative. If for some reason they are unable to locate the driver, please take a taxi and keep the receipt and we will file the claim right away, once it has been reported to us for a refund
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <h4 class="title" id="12" data-toggle="dropdown">Mobile Applications<span class="caret">›</span></h4>
+                <ul class="dropdown-menu" id="meniu_12" style="position:relative;padding-left: 20px;padding-right: 10px;margin-bottom: 20px;display:none;">
+                    <li>
+                        <p>
+                            <b>Why can’t I download the Tripmasters application yet?</b><br />
+                            The Tripmasters application is meant to be used for customers while traveling.  The email and password will be sent to you 7 days prior to departure in order to view your trips booked while on your trip.
+                        </p>
+                        <p>
+                            <b>Can I change my password on the TM  application?</b><br />
+                            Yes, you can change or update your password in the app.
+                        </p>
+                        <p>
+                            <b>Does the application have live updates while traveling?</b><br />
+                            Yes, it does have updates. However, we always recommend double checking with airlines directly on schedule changes or last minute updates due to the dynamic nature.
+                        </p>
+                        <p>
+                            <b>Does the application work offline?</b><br />
+                            Yes, this is one of the wonderful features of the application. So, if you cannot snooze on your plane ride, why not go over your itinerary to make sure those details are all still in order and the locations are as you remembered?
+                        </p>
+                        <p>
+                            <b>Can we contact you through the application when abroad?</b><br />
+                            Yes, there is an option to chat. If the option is not coming up, it may be because there is not an agent available at that moment.  If that occurs, please check back in a few minutes.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        <div class="dropdown">
+            <h4 class="title" id="13" data-toggle="dropdown">Payments<span class="caret">›</span></h4>
+            <ul class="dropdown-menu" id="meniu_13" style="position:relative;padding-left: 20px;padding-right: 10px;margin-bottom: 20px;display:none;">
+                <li>
+                    <p>
+                        <b>Does Tripmasters offer any payments plans and what payments are acceptable?</b><br />
+                        Tripmasters accepts all major credit cards, as well as Amazon Pay, Paypal and Affirm. We also offer an option to pay for your reservation in staggered payments. For more information: <a href="https://www.tripmasters.com/payments" target="_blank" rel="noopener noreferrer">https://www.tripmasters.com/payments </a>
+                    </p>
+                    <p>
+                        <b>Can I finance a trip through tripmasters? </b><br />
+                        Yes, we offer Paypal options and also financing through Affirm, to learn more please feel free to visit our payments page: <a href="https://www.tripmasters.com/payments" target="_blank" rel="noopener noreferrer">https://www.tripmasters.com/payments</a>
+                    </p>
+                    <p>
+                        <b>Can I use multiple credit cards for the booking?</b><br />
+                        No, you can only use one credit card during checkout.
+                    </p>
+                    <p>
+                        <b>Does Tripmasters accept payments from a person not traveling on the booking?</b><br />
+                        We do, but the cardholder will need to fill out a form along with some identification confirmations matching the details in our form. This form will be emailed to you directly.
+                    </p>
+                    <p>
+                        <b>Why do I see more than one charge on my Credit Card statement?</b><br />
+                        Your credit card statement may show more than one charge: one from the airline(s) and one from Tripmasters. All charges will sum up your total package price.
+                    </p>
+                    <p>
+                        <b>If I don’t have credit cards to pay my trip, can I pay through a fund transfer?</b><br />
+                        Yes, this can be done. Please contact our customer service for details on this kind of transaction.
+                    </p>
+                    <p>
+                        <b>Can I make a payment online earlier than my due date for staggered payment?</b><br />
+                        Tripmasters does not currently have this function available to do online but will in the near future. In the meantime, feel free to shoot us a chat or reach out by phone to complete the transaction.
+                    </p>
+                    <p>
+                        <b>My card has not yet been charged for the remaining balance? When will that happen?</b><br />
+                        Our staggered payments have due dates that we run the cards on. In some cases, the bank does not immediately reflect the charge. We understand how frustrating this can be, but rest assured that your trip will be held and you will be notified if the card does not process properly. Once your charge has been processed, you will receive an email.
+                    </p>
+                    <p>
+                        <b>Do you charge single supplements on your packages?</b><br />
+                        All of Tripmasters packages are based on per person charges. So, if  single traveler wants to book a room, they pay only for the rate of a single room, no extra charges are tacked on.  All services are priced based on the number of people travelling.
+                    </p>
+
+
+                </li>
+            </ul>
+        </div>
+
+            <div class="dropdown">
+                <h4 class="title" id="14" data-toggle="dropdown">Trains<span class="caret">›</span></h4>
+                <ul class="dropdown-menu" id="meniu_14" style="position:relative;padding-left: 20px;padding-right: 10px;margin-bottom: 20px;display:none;">
+                    <li>
+                        <p>
+                            <b>How early should I get to the train station?</b><br />
+                            Give yourself a little time to breathe and plan to be at the train station an hour or so before departure.  Remember that you need to look for the city that you are going to on the “Arrivals/Departures Board” (sometimes these are not posted until 30 minutes before departure).  It will be listed in the local language.  Once you identify the track your train will depart from, you need to make your way there, with your luggage in tow.  Some large stations can be confusing.   Most often there will be someone there (especially at the customer service desk) who can help you.  So the more time that you give yourself the better.
+                        </p>
+                        <p>
+                            <b>How will I know which train to take?</b><br />
+                            Once you are on the platform, check your train ticket, your Coach number will be listed on it.
+                        </p>
+                        <p>
+                            <b>Do I have to go through Security at the train station? </b><br />
+                            You will only have to go through ticket control and security if you are riding on one of the high-speed trains.  On some train stations, you may have to pass your luggage through a luggage scanner.  Small regional train stations do not have any security measures.
+                        </p>
+                        <p>
+                            <b>What do I do with my luggage?</b><br />
+                            You are responsible for your luggage throughout your journey.   Should your bags be on the smaller side, you will be able to store them above your seat.  If they are larger, there normally is a luggage rack at the entry points to your coach.  Remember to pack light as loading/unloading and hauling from one train to another can get exasperating.
+                        </p>
+                        <p>
+                            <b>What happens if I need to connect at a train station?</b><br />
+                            Connecting from one train to another is not terribly complicated.  But remember that you will have to take your luggage with you.  In some small towns, this may mean going down a set of steps to cross the tracks underneath and climbing up on the other side.  Sometimes, you may need to switch to another platform as well.  Whenever possible, look at the connection time when booking your train reservation.  As with flights, the connections are always legal, but some people may need more time than others.
+                        </p>
+                        <p>
+                            <b>Can I change my train time?</b><br />
+                            In some instances, you can change this should the ticket not be issued yet. If the ticket has been issued, then the change fee fares located on the back of the ticket will apply. Should you receive a paper ticket via mail prior to departure, you may need to send this ticket back for change along with the associated fees the suppliers have set forth. There are also non-refundable tickets where changes may not be allowed to that particular routing.
+                        </p>
+                        <p>
+                            <b>Can I change my seat?</b><br />
+                            Most of the time, you will be holding a ticket with a seat reservation included.  If this is the case, your train tickets are issued in conjunction with your seat reservations. Some train routes allow for open seating. This will be indicated when you receive your train documents. If your ticket has been issued and you would like to change the seat, the best option would be to change it at the train station and it will involve a fee. There are fares that are non-refundable where amendments cannot be made to these fare types.
+                        </p>
+                        <p>
+                            <b>My ticket says “coach” but I booked first class?</b><br />
+                            The “Coach” mentioned on your train ticket refers to the Coach (car) number that you are to board.  Normally the First Class Coach cars tend to be in the front of the train and will have the type of class listed on the side of the entry.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+            <h4 class="title" id="15" data-toggle="dropdown">Visa and Travel Requirements<span class="caret">›</span></h4>
+                <ul class="dropdown-menu" id="meniu_15" style="position:relative;padding-left: 20px;padding-right: 10px;margin-bottom: 20px;display:none;">
+                    <li>
+                        <p>
+                            <b>1. How long does my passport need to be valid for traveling?</b><br />
+                            The TSA requirements for passports says that all passports expiration dates MUST be valid for at least 6 months from your date of departure.
+                        </p>
+                        <p>
+                            <b>2. Do I need a Visa to travel to my destination?</b><br />
+                            This depends on your citizenship or what country you may be entering. We suggest checking this at our prefered link:<br />
+                        <a href="https://visacentral.com/?login=Tripmasters " target="_blank" rel="noopener noreferrer">https://visacentral.com/?login=Tripmasters </a><br />
+                            It is always the customers responsibility to make sure that these documents have been properly be obtained. <br />
+                            Remember that Visa rules are based on your nationality, not your residency. So the fact that you are holding a green card does not mean that you can apply as an American would. Make sure that all your travel companions verify their Visa needs as well.
+                        </p>
+                    <p>
+                        <b>3. What are the entry and health requirements for the destinations I am visiting?</b><br />
+                        Find out more about the latest information on travel documents and health requirements, plus local government COVID-19 vaccination policies 
+                        <a href="https://apply.joinsherpa.com/travel-restrictions?affiliateId=americanairlines&from=bannerContainerA&language=en-US" target="_blank" rel="noopener noreferrer">here</a>. Destination-specific general vaccination requirements can be found under the Medical and Health Information of each trip’s Essential Trip Information.  As guidelines are constantly changing and evolving, this information is updated multiple times a day, so we encourage you to check back frequently.<br />
+                        IMPORTANT:  Don’t forget to check your connecting cities.  Some countries exempt transit passengers from their entry restrictions and requirements, others don’t.  This means that even for a connection, it’s exactly the same as if you were entering the country.
+                    </p>
+                    <p>
+                        <b>4. What risks do I face if I do not have the proper documentation for travel?</b><br />
+                        a) If you, either prior to or during travel, do not have all the required forms for the destination(s) you are visiting, your trip may be negatively affected.<br />
+                        --The negative impact could include but is not limited to: Denied entry (to destinations), denial of services, cancellation penalties, financial losses (related to the denial of refund requests), and costly change fees or penalties.<br />
+                        --The WHO and CDC consider COVID-19 a foreseeable event, therefore service providers are defaulting to their pre-COVID cancellation and refund policies.<br />
+                        --Keep in mind, Tripmasters does not charge cancellation or change fees, but we must adhere to all our vendors’ cancellation or change fee schedules.
+                    </p>
+                </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <h4 class="title" id="16" data-toggle="dropdown">Vouchers<span class="caret">›</span></h4>
+                <ul class="dropdown-menu" id="meniu_16" style="position:relative;padding-left: 20px;padding-right: 10px;margin-bottom: 20px;display:none;">
+                    <li>
+                        <p>
+                            <b>Where and when can I view my vouchers?</b><br />
+                            Vouchers can be viewed when logging into manage bookings link on our website<br />
+                        <a href="https://www.tripmasters.com/booking_confirmation " class="vouchers" target="_blank" rel="noopener noreferrer">https://www.tripmasters.com/booking_confirmation </a>
+                        </p>
+                        <p>
+                            <b>When will I have access to my vouchers?</b><br />
+                            Once your reservation has been paid in full, you may view the itinerary details along with the vouchers. However, Tripmasters recommends not actually printing these documents until closer to your travel date due to airline time changes, meeting point changes or any updated information that may be pertinent to your trip.<br />
+                            <br />
+                            We will send you a reminder email 7 days before departure for when we recommend that you print your vouchers.  At that time, it is important that you match all your documents to your services purchased, as on occasion you may have purchased a service which still requires paper documents (such as some trains) and it is important that you make sure that you take these with you, as you will not be able to replace them once on your trip.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <h4 class="title" id="17" data-toggle="dropdown">Website <span class="caret">›</span></h4>
+                <ul class="dropdown-menu" id="meniu_17" style="position:relative;padding-left: 20px;padding-right: 10px;margin-bottom: 20px;display:none;">
+                    <li>
+                        <p>
+                            <b>What are the advantages of your website?</b><br />
+                            We have worked really hard at making it easy for you to create a trip ideally suited to your interests and way of travelling.  We have put together suggested itineraries with the recommended order of cities and means of transportation between each, as well as a recommended minimum number of nights.  Each of these elements is completely flexible.
+                            <br /><br />
+                            The initial default view of the booking process will display the most economical option of each service (air/hotel/transportation).  Once there, you are able to sort through each to select the best option based on your needs or preferences.  You are, then, also, able to add additional services, such as local transfers and tours/activities.
+                            <br /><br />
+                            For the more experienced or adventurous, you can also Build your Own Itinerary from our main calendar.  There you can select cities in any order, (up to 12) as well as change the transportation between them to whatever you desire.  Please note, that we always give you as default the preferred option based on time/expense.
+                        </p>
+                        <p>
+                            <b>Why can I not complete my booking from my Saved Itinerary?</b><br />
+                            All of our prices are very dynamic in nature.  Air and hotel prices and space are subject to availability at the point in which you are pricing them.  If you wait too long before completing the purchase, the components that you were looking at, may no longer be available to confirm.
+                        </p>
+                        <p>
+                            <b>What if I want to know more information about a city or area?</b><br />
+                            Please go to the top of the browser and click on View Destinations to select the city or area that you are interested in.  We are constantly adding relevant information specific to each destination to our pages as well as more suggested itineraries showing you ways to combine with other cities.
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('.title').click(function () {
+                var id = $(this).attr('id');
+                showList(id);
+            });
+        });
+        function showList(id) {
+            if ($('#meniu_' + id).is(":visible")) {
+                $('#meniu_' + id).hide();
+                $('#' + id + ' > span').css('transform', 'rotate(90deg)');
+                $('#' + id + '').parent().css('border-bottom', '1px solid grey');
+            }
+            else {
+                $('#meniu_' + id).show();
+                $('#' + id + ' > span').css('transform', 'rotate(270deg)');
+                $('#' + id + '').parent().css('border-bottom', '0px solid grey');
+            }
+        }
+
+    </script>
+}

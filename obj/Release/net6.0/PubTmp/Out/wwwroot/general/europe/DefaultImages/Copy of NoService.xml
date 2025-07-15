@@ -1,0 +1,758 @@
+
+<!-- ====================================================================================================== -->
+<!--  Name:  NoService.xml                                                                -->
+<!-- ====================================================================================================== -->
+<!-- Date:   2005                                                                                 -->
+<!-- Notes:  XML for error text     -->
+<!-- Author: R.Tan                                                                              -->    
+<!--                                                                                                     -->    
+<!-- R.Tan		12/20/2007		Changed operation time                     -->    
+<!-- obravard	12/20/2007		Changed operation time                     -->    
+<!-- =====================================================================================================  -->
+
+
+<Errors>
+	<Header><![CDATA[
+     <center>
+      <table width="760" border="0" align="center" cellpadding="3" cellspacing="0">
+  <tr> 
+    <td height="50"><a href="http://www.europeandestinations.com"> 
+      <img src="http://www.europeandestinations.com/images/ED_Header_Tournet.gif" alt="" name="EuropeanDestinations.com"  border="0" align="absmiddle"> 
+      </a>     </td>
+  </tr>
+  <tr bgcolor="#cccc99"> 
+    <td colspan="2"></td>
+  </tr>
+</table>
+     </center>
+  ]]></Header>
+	<Error1000><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 1001:</strong><br>
+       <b><br/>
+       </b>We were unable to find a combination of flights and hotel for
+       your particular dates. </font></p>
+      <p><font face="verdana" size="2">Please try a different
+          date or destination. <br>
+          <br>
+          If the problem persists, our agents are more than
+          happy to assist you with your travel planning. Call us toll-free <strong>1-877-267-2247</strong>,
+        Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST.</font><font face="verdana" size="2">	<br>
+        <br>   
+          </font>        </p>
+      </td>
+   </tr>
+   <tr>
+     <td width="151"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue"><a href="#" onClick="history.go(-1)"><u>Try
+                 a new search</u></a> </font></b></font></td>
+     <td width="728"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+  ]]></Error1000>
+	<Error1001><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 1001:</strong><br>
+       <b><br/>
+       </b>We were unable to find a combination of flights and hotel for
+       your particular dates. </font></p>
+      <p><font face="verdana" size="2">Please try a different
+          date or destination. <br>
+          <br>
+          If the problem persists, our agents are more than
+          happy to assist you with your travel planning. Call us toll-free <strong>1-877-267-2247</strong>,
+        Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST.</font><font face="verdana" size="2">	<br>
+        <br>   
+          </font>        </p>
+      </td>
+   </tr>
+   <tr>
+     <td width="151"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue"><a href="#" onClick="history.go(-1)"><u>Try
+                 a new search</u></a> </font></b></font></td>
+     <td width="728"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+  ]]></Error1001>
+  <Error1001C>
+  <![CDATA[
+    <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 1001C:</strong><br>
+       <b><br>
+       </b>We were unable to find a combination of flights from @CityName@.</font></p>
+      <p><font face="verdana" size="2">What you can do next is try a different
+          date or select a different city. <br>
+          <br>
+          If the problem persists, our agents are more than
+          happy to assist you with your travel planning. Call us toll-free <strong>1-877-267-2247</strong>,
+        Mon-Fri 9am-2:30am. Sat-Sun 10am-7:30pm EST.</font><font face="verdana" size="2"> <br>
+        <br>   
+        </font>        </p>
+      </td>
+   </tr>
+   <tr>
+     <td width="151"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue"><a href="#" onClick="history.go(-1)"><u>New search</u></a> </font></b></font></td>
+     <td width="728"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+  ]]>   
+ </Error1001C>
+	<Error1002><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 1002:</strong><br>
+       <b><br>
+       </b>We were unable to find a hotel for
+       your particular dates. </font></p>
+      <p><font face="verdana" size="2">What you can do next is try a different
+          <strong>date</strong> or select a different <strong>city</strong>. <br>
+          <br>
+          If the problem persists, our agents are more than to assist you with your travel planning. <br>
+          Call us toll-free <strong>1-877-267-2247</strong>,
+        Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST.</font><font face="verdana" size="2">	<br>
+        <br>   
+        </font>        </p>
+      </td>
+   </tr>
+   <tr>
+     <td width="151"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue"><a href="#" onClick="history.go(-1)"><u>Try
+                 a new search</u></a> </font></b></font></td>
+     <td width="728"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+  ]]></Error1002>
+  
+  <Error1002C>
+  <![CDATA[
+    <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 1002C:</strong><br>
+       <b><br>
+       </b>We were unable to find a hotel in @CityName@.</font></p>
+      <p><font face="verdana" size="2">What you can do next is try a different
+          date or select a different city. <br>
+          <br>
+          If the problem persists, our agents are more than
+          happy to assist you with your travel planning. Call us toll-free <strong>1-877-267-2247</strong>,
+        Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST.</font><font face="verdana" size="2">	<br>
+        <br>   
+        </font>        </p>
+      </td>
+   </tr>
+   <tr>
+     <td width="151"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue"><a href="#" onClick="history.go(-1)"><u>New search</u></a> </font></b></font></td>
+     <td width="728"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+  ]]>   
+ </Error1002C>
+ 
+  <Error1002H>
+  <![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 1002H:</strong><br>
+       <b><br>
+       </b>We were unable  to find the hotel your requested: (@ProductItemID@).</font></p>
+      <p><font face="verdana" size="2">What you can do next is select
+          a different hotel. <br>
+          <br>
+          If the problem persists, our agents are more than
+          happy to assist you with your travel planning. Call us toll-free <strong>1-877-267-2247</strong>,
+        Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST.</font><font face="verdana" size="2">	<br>
+        <br>   
+        </font>        </p>
+      </td>
+   </tr>
+   <tr>
+     <td width="151"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue"><a href="#" onClick="history.go(-1)"><u>New search</u></a> </font></b></font></td>
+     <td width="728"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+  ]]>   
+ </Error1002H>
+  
+	<Error1003><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 1003:</strong><br>
+       <b><br>
+       </b>We were unable  to find transfers. Please <a href="#" onClick="history.go(-1)">try your search
+       again</a>.</font></p>
+      <p><font face="verdana" size="2">          If the problem persists, our agents are more than
+          happy to assist you with your travel planning. Call us toll-free <strong>1-877-267-2247</strong>,
+        Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST.</font><font face="verdana" size="2">	<br>
+        <br>   
+        </font>        </p>
+      </td>
+   </tr>
+   <tr>
+     <td width="151"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue"><a href="#" onClick="history.go(-1)"><u>New search</u></a> </font></b></font></td>
+     <td width="728"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+
+  ]]></Error1003>
+	<Error1004><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 1004:</strong><br>
+       <b><br>
+       </b>We were unable  to find sightseeing tours. We are currently
+       working on adding activities related to this city. Please try <a href="#" onClick="history.go(-1)">your
+       search again</a>.</font></p>
+      <p><font face="verdana" size="2">          If you would like to book a
+          tour in this city, continue with your itinerary and then consult one
+          of our agents. We are more than happy to assist you with your travel
+          planning. Call us toll-free <strong>1-877-267-2247</strong>,
+        Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST.</font><font face="verdana" size="2">	<br>
+        <br>   
+        </font>        </p>
+      </td>
+   </tr>
+   <tr>
+     <td width="322"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue"><a href="#" onClick="history.go(-1)"><u>Return to your itinerary</u></a> </font></b></font></td>
+     <td width="557"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+  ]]></Error1004>
+	<Error1005><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 1005:</strong><br>
+       <b><br>
+       </b>We were unable  to book your itinerary. Please try again in a few
+       minutes. This might be due to a temporary Internet connection glitch.</font></p>
+      <p><font face="verdana" size="2">          If the problem persists, our
+          agents are more than happy to assist you with your travel planning.
+          Call us toll-free <strong>1-877-267-2247</strong>,
+        Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST.</font><font face="verdana" size="2">	<br>
+        <br>   
+        </font>        </p>
+      </td>
+   </tr>
+   <tr>
+     <td width="322"><font face="verdana" size="2"><b><font color="blue"><a href="#" onClick="history.go(-1)"><u>Please
+                 try again </u></a> </font></b></font></td>
+     <td width="557"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+  ]]></Error1005>
+	<Error1006><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 1006:</strong><br>
+       <b><br>
+       </b>We were unable  to process your payment at this time. Please call
+       our customer service </font><font face="verdana" size="2">
+       toll-free <strong>1-877-267-2247</strong>,
+        Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST. We will be happy to assist you. <br>
+        <br>   
+        </font>        </p>
+      </td>
+   </tr>
+   <tr>
+     <td width="322"><font face="verdana" size="2"><b><font color="blue"><a href="#" onClick="history.go(-1)"><u>New Search </u></a> </font></b></font></td>
+     <td width="557"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+  ]]></Error1006>
+	<Error1007><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 1007:</strong><br>
+       <b><br>
+       </b>We were unable  to process your request at this time. Please try again
+       in a few minutes. This might be due to a temporary Internet connection
+       glitch.</font></p>
+      <p><font face="verdana" size="2">          If the problem persists, our
+          agents are more than happy to assist you with your travel planning.
+          Call us toll-free <strong>1-877-267-2247</strong>,
+        Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST.</font><font face="verdana" size="2">	<br>
+        <br>   
+        </font>        </p>
+      </td>
+   </tr>
+   <tr>
+     <td width="322"><font face="verdana" size="2"><b><font color="blue"><a href="#" onClick="history.go(-1)"><u>Please
+                 try again </u></a> </font></b></font></td>
+     <td width="557"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+  ]]></Error1007>
+	<Error1008><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 1008:</strong><br>
+       <b><br>
+       </b>At this time, no detailed description is available for this service.
+       We apologize. Please continue with your itinerary and then consult one
+       of our agents if you would like more details.<br>
+      </font><font face="verdana" size="2">          <br>
+      We are more than happy
+      to assist you with your travel planning. Call us toll-free <strong>1-877-267-2247</strong>,
+        Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST.</font><font face="verdana" size="2">	<br>
+        <br>   
+        </font>        </p>
+      </td>
+   </tr>
+   <tr>
+     <td width="322"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue">
+	 <a style="cursor:hand" onClick="history.go(-1)"><u>Continue with your itinerary</u></a> </font></b></font></td>
+     <td width="557"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+  ]]></Error1008>
+	<Error1009><![CDATA[
+   <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2"><p><font face="verdana" size="2"> <strong>Customer service
+                message 1009:</strong><br>
+                  <b><br>
+                  </b>We were unable to process the insurance information at
+                  this time. The system is unable to continue with the booking
+                  process.</font></p>
+            <p><font size="2" face="verdana">While we apologize for the inconvenience,
+                we ask you to please <a href="mailto:contact@europeandestinations.com ">email
+                our customer service</a> or call us toll-free <strong>1-877-267-2247</strong>,
+                Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST. We will address this issue as soon as possible.<br>
+                      <br>
+          </font> </p></td>
+      </tr>
+      <tr>
+        <td width="322"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue"><a href="mailto:contact@europeandestinations.com ">Email customer service </a></font></b></font></td>
+        <td width="557"><font size="2" face="verdana">Toll-free number: <strong>1-877-267-2247</strong></font></td>
+      </tr>
+    </table>
+  </center>
+  ]]></Error1009>
+	<Error10010><![CDATA[
+    <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2"><p><font face="verdana" size="2"> <strong>Customer service
+                message 10010:</strong><br>
+          <b><br>
+          </b>We were unable to process shipping information at this time. The
+          system is unable to continue with the booking process.</font></p>
+            <p><font size="2" face="verdana">While we apologize for the inconvenience,
+                we ask you to please <a href="mailto:contact@europeandestinations.com ">email
+                our customer service</a> or call us toll-free <strong>1-877-267-2247</strong>,
+                Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST. We will address this issue as soon as possible.<br>
+                      <br>
+          </font> </p></td>
+      </tr>
+      <tr>
+        <td width="322"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue"><a href="mailto:contact@europeandestinations.com ">Email customer service </a></font></b></font></td>
+        <td width="557"><font size="2" face="verdana">Toll-free number: <strong>1-877-267-2247</strong></font></td>
+      </tr>
+    </table>
+  </center>
+  ]]></Error10010>
+	<Error10011><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2"><p><font face="verdana" size="2"> <strong>Customer service
+                message 10011:</strong><br>
+          <b><br>
+          </b>We were unable to process the passenger information at this time.
+          The system is unable to continue with the booking process.</font></p>
+            <p><font size="2" face="verdana">While we apologize for the inconvenience,
+                we ask you to please <a href="mailto:contact@europeandestinations.com ">email
+                our customer service</a> or call us toll-free <strong>1-877-267-2247</strong>,
+                Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST. We will address this issue as soon as possible.<br>
+                      <br>
+          </font> </p></td>
+      </tr>
+      <tr>
+        <td width="322"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue"><a href="mailto:contact@europeandestinations.com ">Email customer service </a></font></b></font></td>
+        <td width="557"><font size="2" face="verdana">Toll-free number: <strong>1-877-267-2247</strong></font></td>
+      </tr>
+    </table>
+  </center>
+  ]]></Error10011>
+	<Error10012><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 10012:</strong><br>
+       <b><br>
+       </b>We were unable  to book your itinerary. This might be due to a temporary
+       glitch in our system. No charges have been made to your credit card at
+       this time. Please <a href="#" onClick="history.go(-1)">re-submit your information</a>.</font></p>
+      <p><font face="verdana" size="2">          If the problem persists, our agents are more than
+          happy to assist you with your travel planning. Call us toll-free <strong>1-877-267-2247</strong>,
+        Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST.</font><font face="verdana" size="2">	<br>
+        <br>   
+        </font>        </p>
+      </td>
+   </tr>
+   <tr>
+     <td width="323"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue"><a href="#" onClick="history.go(-1)"><u>Re-submit information</u></a> </font></b></font></td>
+     <td width="556"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+
+  ]]></Error10012>
+	<Error10013><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2"><p><font face="verdana" size="2"> <strong>Customer service
+                message 10013:</strong><br>
+          <b><br>
+          </b>We were unable to confirm your itinerary at this time.
+We will address this issue immediately.          </font></p>
+            <p><font size="2" face="verdana">Please call us toll-free <strong>1-877-267-2247</strong>,
+          Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST.<br>
+          <br>
+          We apologize for the inconvenience.</font><font size="2" face="verdana">
+                    <br>
+                    <br>
+          </font> </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="322"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue"><a href="mailto:contact@europeandestinations.com ">Email customer service </a></font></b></font></td>
+        <td width="557"><font size="2" face="verdana">Toll-free number: <strong>1-877-267-2247</strong>
+              (Mon-Fri 9-8:30 EST)<strong> </strong></font></td>
+      </tr>
+    </table>
+  </center>
+  ]]></Error10013>
+	<Error10014><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+     <font face="verdana" size="2">
+     <b>
+     <br/><br/>
+     Msg:10014<br/>
+     Unable To Check your IATA/PIN. Can't Continue..<br/>
+     Please Call Customer Service.
+     </b>
+     </font>
+    </td>
+   </tr>
+  </table>
+  </center>
+  ]]></Error10014>
+	<Error10015><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+     <font face="verdana" size="2">
+     <b>
+     <br/><br/>
+     Msg:10015<br/>
+     Please verify Your IATA/PIN. <br/>
+     </b>
+     </font>
+    </td>
+   </tr>
+  </table>
+  </center>
+  ]]></Error10015>
+	<Error10016><![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+     <font face="verdana" size="2">
+     <b>
+     <br/><br/>
+     Msg:10016<br/>
+     Please Enter Your IATA/PIN. <br/>
+     </b>
+     </font>
+    </td>
+   </tr>
+  </table>
+  </center>
+  ]]></Error10016>
+  <Error10017><![CDATA[
+ 
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 10017:</strong><br>
+       <b><br>
+       </b>Our system was unable to understand the information you just entered.<br>
+       <br>
+       Please check your <strong>booking number</strong> or<strong> email address</strong> and <a href="http://www.europeandestinations.com/BookingConfirmation.asp">try
+       again</a>. <br>
+       <br> 
+       </font><font face="verdana" size="2">If the problem persists, our agents
+       are more than happy to assist you with your travel planning. Call us toll-free <strong>1-877-267-2247</strong>,
+        Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST.</font><font face="verdana" size="2">	<br>
+        <br>   
+        </font>        </p>
+      </td>
+   </tr>
+   <tr>
+     <td width="179"><font face="verdana" size="2"><b><font face="verdana" size="2"><a href="http://www.europeandestinations.com/BookingConfirmation.asp">Please try again </a></font></b></font></td>
+     <td width="700"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+
+  ]]></Error10017>
+  
+  
+  <Error10023R>
+  <![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 10023R:</strong><br>
+       <b><br>
+       </b>You have already successfully completed your reservation.<br>
+       <br>
+       Check your booking:       <a href="http://www.europeandestinations.com /BookingConfirmation.asp"><strong>Your
+       booking number is @BookingNo@ </strong></a><br>
+       <br> 
+       </font></p>
+      </td>
+   </tr>
+   <tr>
+     <td width="361"><font face="verdana" size="2"><b><strong>Go to <a href="http://www.europeandestinations.com /">European Destinations
+      home page </a></strong></b></font></td>
+     <td width="518"> <strong> </strong></td>
+   </tr>
+  </table>
+  </center>
+  ]]>
+ </Error10023R>
+
+
+  <Error10023r>
+  <![CDATA[
+  <center>  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+      <p><font face="verdana" size="2">
+            <strong>Customer service message 10023r:</strong><br>
+       <b><br>
+       </b>You have already  completed your reservation. However, we failed to
+       confirm the air portion of your itinerary due to airline schedule conflicts. Your
+       credit card has not been charged at this time.<br>
+       <br>
+       Your booking number is <strong>@BookingNo@</strong>       <br>
+       <br>
+       Please call us toll-free to reconfirm the air portion of your
+       itinerary:<strong> 1-877-267-2247</strong>,
+       Mon-Fri 9am-2:30am EST. Sat-Sun 10am - 7:30pm EST.</font><font face="verdana" size="2"> <br>
+        <br>
+</font></p>
+      </td>
+   </tr>
+   <tr>
+     <td width="361"><font face="verdana" size="2"><a href="http://www.europeandestinations.com /BookingConfirmation.asp">Check your booking by name</a> </font></td>
+     <td width="518"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://www.europeandestinations.com /">Start
+         a new itinerary</a></font></td>
+   </tr>
+  </table>
+  </center>
+  ]]>
+ </Error10023r>
+ <ErrorRule0001>
+  <![CDATA[
+<center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+     <font face="verdana" size="2">        <strong>Customer service message
+Rule0001:</strong><b><br/>
+        <br/>
+        </b>The minimum number of nights available for this package is
+@MinStay@
+        night(s).<br>
+        <br>
+        Please select a wider range of dates.</font></td></tr>
+      <tr><td><font face="verdana" size="2"><b><font face="verdana" size="2"
+color="blue"><a href="#" onClick="history.go(-1)"><u>Try
+                 a new search</u></a> </font></b></font></td>
+     <td></td>
+   </tr>
+  </table>
+  </center>
+  ]]>
+ </ErrorRule0001>
+<ErrorRule0002>
+  <![CDATA[
+  <center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+     <font face="verdana" size="2">
+          <strong>Customer service message Rule0002:</strong><b><br/>
+     <br/>
+     </b>The maximum number of nights available for this package is
+@MaxStay@ night(s)<b><br/>
+     <br/>
+     </b> Please reduce the number of nights.</font></td>
+   </tr>
+   <tr>
+     <td colspan="2"><font face="verdana" size="2"><b><font face="verdana"
+size="2" color="blue"><a href="#" onClick="history.go(-1)"><u>Try
+      a new search</u></a></font></b></font></td>
+   </tr>
+  </table>
+  </center>  ]]>
+ </ErrorRule0002>
+ 
+ <ErrorRetrieveItin0001>
+  <![CDATA[
+  <center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+     <font face="verdana" size="2">
+     <b>
+     <br/><br/>
+     Msg:RetrieveItin0001<br/>
+     Itinerary does not exist or System Error<br/>
+     </b>
+     </font>
+    </td>
+   </tr>
+   <tr>
+     <td colspan="2"><font face="verdana" size="2"><b><font face="verdana" size="2"><a href="http://www.europeandestinations.com/SavedItinerary.asp">Please try again </a></font></b></font></td>
+   </tr>
+  </table>
+  </center>
+  ]]>
+ </ErrorRetrieveItin0001>
+
+  <ErrorRetrieveItin0002>
+  <![CDATA[
+  <center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+     <font face="verdana" size="2">
+     <b>
+     <br/><br/>
+     Msg:RetrieveItin0002<br/>
+     Itinerary never been saved<br/>
+     </b>
+     </font>
+    </td>
+   </tr>
+   <tr>
+     <td colspan="2"><font face="verdana" size="2"><b><font face="verdana" size="2"><a href="http://www.europeandestinations.com/SavedItinerary.asp">Please try again </a></font></b></font></td>
+   </tr>
+  </table>
+  </center>
+  ]]>
+ </ErrorRetrieveItin0002>
+
+  <ErrorRetrieveItin0003>
+  <![CDATA[
+  <center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+     <font face="verdana" size="2">
+     <b>
+     <br/><br/>
+     Msg:RetrieveItin0003<br/>
+     Zip Code needed for this Itinerary or Zip Code does not match<br/>
+     </b>
+     </font>
+    </td>
+   </tr>
+   <tr>
+     <td colspan="2"><font face="verdana" size="2"><b><font face="verdana" size="2"><a href="http://www.europeandestinations.com/SavedItinerary.asp">Please try again </a></font></b></font></td>
+   </tr>
+  </table>
+  </center>
+  ]]>
+ </ErrorRetrieveItin0003>
+ 
+<ErrorRetrieveItin0004>
+	<![CDATA[
+	<center>
+	<table width="750" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+		<td colspan="2">
+			<font face="verdana" size="2">
+			<b>
+			<br/><br/>
+				Msg:RetrieveItin0004<br/>
+				Digit parameter needed for this Itinerary or Digit does not match<br/>
+			</b>
+			</font>
+		</td>
+		</tr>
+		<tr>
+			<td colspan="2"><font face="verdana" size="2"><b><font face="verdana" size="2"><a href="http://www.europeandestinations.com/SavedItinerary.asp">Please try again </a></font></b></font></td>
+		</tr>
+	</table>
+	</center>
+	]]>
+</ErrorRetrieveItin0004>
+
+<ErrorP0001>
+  <![CDATA[
+  <center>
+<table width="879" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+     <font face="verdana" size="2">
+     <b>
+     <br/><br/>
+      Msg:P0001<br/>
+      <strong>Unable to Find Your Requested Package (@ProductItemID@)<br/>
+     <font face="verdana" size="2" color="blue">
+      <a href="#" onClick="history.go(-1)"><u>Please try a new search</u></a>
+     </font>
+     </b>
+     </font>
+    </td>
+   </tr>
+  </table>
+  </center>
+  ]]>
+ </ErrorP0001>
+ 
+ 
+</Errors>

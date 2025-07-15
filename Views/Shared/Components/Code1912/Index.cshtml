@@ -1,0 +1,89 @@
+﻿@using static MVC_TM.Models.ViewModels.GeneralPurposeViewModel;
+
+@{
+    List<DisplayTheme> ProdKind1912 = new List<DisplayTheme>();
+    ProdKind1912 = Model.leftDisplay;
+    ProdKind1912 = ProdKind1912.FindAll(ex => ex.SDP_GroupProdKindID == 1912);
+
+    String newURL = "";
+    String xpicURL = "";  
+    string rgxSeoSites = "\bbeach\b.|\blatin\b.|\beurope\b.|\basia\b.";
+    foreach (var atr in ProdKind1912)
+    {
+
+        <section id="1912" class="packages">
+            <div class="first-container">
+                <h2 class="packages__title">@atr.SDP_DisplayTitle</h2>
+                <p class="packages__text">@atr.SDP_Description</p>
+                <ul class="todo__list">
+                    @{
+                        List<BoxContent> leftOrientLong = Model.boxContent;
+                        leftOrientLong = leftOrientLong.FindAll(hi => hi.STX_ProdKindID == 1912);
+
+                        foreach (var at in @leftOrientLong)
+                        {
+                            int pW = at.STX_PictureWidthpx != 0 ? at.STX_PictureWidthpx : 50;
+                            int pH = at.STX_PictureHeightpx != 0 ? at.STX_PictureHeightpx : 50;
+
+                            string xURL = at.STX_Title;
+                            if (at.STX_URL != "none")
+                            {
+                                xpicURL = at.STX_URL;
+                                if (xpicURL[0].ToString() == "/")
+                                {
+                                    xpicURL = @ViewBag.AppBasePath + xpicURL.Replace("%20", "_");
+                                }
+                                if (xpicURL[0].ToString() == "h")
+                                {
+                                    if (System.Text.RegularExpressions.Regex.Match(xpicURL, rgxSeoSites, System.Text.RegularExpressions.RegexOptions.IgnoreCase).Success)
+                                    {
+                                        xpicURL = xpicURL.Replace(".aspx/", ".aspx");
+                                    }
+                                }
+                                if (xpicURL.Contains("/latin/", StringComparison.OrdinalIgnoreCase) || xpicURL.Contains("/asia/", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    newURL = String.Format("{0}", xpicURL.Replace("/europe", "").Replace("/Europe", "").ToLower());
+
+                                }
+                                else
+                                {
+                                    newURL = xpicURL.ToLower().Replace(" ", "_");
+                                }
+                            }
+                            if (at.STX_CMSID == 0)
+                            {
+
+                                @if (at.STX_PictureURL != "none")
+                                {
+                                    string imgSRC = at.STX_PictureURL.Replace("http:", "https:");
+                                    <li class="todo__item">
+                                        <div class="todo__image">
+                                            <a href="@newURL"><img class="lazyload" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src="@imgSRC.ToLower()" alt="@at.STX_Title" /></a>
+                                        </div>
+                                        <div class="todo__wrapper">
+                                            <h3 class="todo__title"><a href="@newURL">@at.STX_Title</a></h3>
+                                            <p class="todo__description">@Html.Raw(@at.STX_Description)</p>
+                                        </div>
+
+                                    </li>
+                                }
+
+                            }
+                            else
+                            {
+                                <li style="margin:3px 5px 10px 5px; display:block">
+                                    <div style=" overflow:auto">
+                                        @at.CMS_Content.Replace("http:", "https:")
+                                    </div>
+                                </li>
+                            }
+
+
+                        }
+                    }
+                </ul>
+            </div>
+        </section>
+
+    }
+}

@@ -1,0 +1,114 @@
+﻿@using MVC_TM.Infrastructure;
+@model PackageInfo
+@using Microsoft.Extensions.Options
+@inject IOptionsMonitor<AppSettings> _appsettings
+
+@{
+    Layout = null;
+}
+
+@{
+    string regionTitle = "";
+    string region = "";
+    string siteURL = "";
+    switch (@Model.RegionId)
+    {
+        case 243:
+            regionTitle = "EUROPE";
+            region = "europe";
+            siteURL = "https://www.tripmasters.com/europe/";
+            break;
+        case 182:
+            regionTitle = "LATIN AMERICA";
+            region = "latin";
+            siteURL = "https://www.tripmasters.com/latin/";
+            break;
+        case 595:
+            regionTitle = "ASIA, PACIFIC & MIDDLE EAST";
+            region = "asia";
+            siteURL = "https://www.tripmasters.com/asia/";
+            break;
+    }
+}
+
+<div style="float:left;">
+    <div style="width:200px;color:#1b2560;text-align:center;font-weight:bold;font-size:20px;vertical-align:middle;">
+        @regionTitle
+    </div>
+    <a style="text-decoration:none;" href=@String.Format("{0}{1}/{2}/package-{3}", @siteURL, @Model.CountryName.Replace(" ", "_").ToLower(), @Model.Name.Replace(" ", "_").ToLower(), Model.Id)>
+        <img class="delay" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src=@String.Format("https://pictures.tripmasters.com{0}", Model.IMG_Path_URL.ToLower()) style="width:200px; height:200px; margin-top:10px;" alt="no image" />
+    </a>
+</div>
+
+<div style="float:left; padding-left:20px;width:650px;">
+    <a style="text-decoration:none;" href=@String.Format("{0}{1}/{2}/package-{3}", @siteURL, @Model.CountryName.Replace(" ", "_").ToLower(), @Model.Name.Replace(" ", "_").ToLower(), Model.Id)>
+        <div class="Blue-Arial16">@Model.Name</div>
+    </a>
+    @{
+        if (Model.Price != 9999)
+        {
+            <div>
+                <span class="PackDuration">@Model.Duration nights from</span>
+                <span class="PackPrice">@String.Format("{0:c0}", Model.Price)*</span>
+            </div>
+        }
+        if (Model.Ext_Places.Count > 0)
+        {
+            <div style="color:#999;font-size:11px;font-weight: 700; margin-bottom:5px;">
+                Related destinations
+                @foreach (var p in Model.Ext_Places)
+                {
+                    <a style="margin-right:7px;" class="LinkStyle" href=@String.Format("{0}{1}/vacations", siteURL, @p.Name.Replace(" ", "_").ToLower())>@p.Name</a>
+                }
+
+            </div>
+        }
+        <div style="margin-top:10px;width:635px;">@Html.Raw(@Model.Description)</div>
+        @if (Model.Content.Trim() != "")
+        {
+            <div style="font-size:12px; font-weight:bold; margin-top:10px;">Included</div>
+            <ul>
+                @{
+                    string[] a = Model.Content.Split("\r\n");
+                    for (Int32 i = 0; i <= a.Length - 1; i++)
+                    {
+                        <li>@Html.Raw(@a[i])</li>
+                    }
+                }
+            </ul>
+        }
+
+        <div style="margin:5px 0px 20px 0px;">
+            <a style="margin:0px 10px 0px 0px;" class="LinkStyle" href=@String.Format("{0}{1}/{2}/package-{3}", siteURL, Model.CountryName.Replace(" ", "_").ToLower(), Model.Name.Replace(" ", "_").ToLower(), Model.Id)>
+                Click here for more info
+            </a>
+            @if (Model.NoOfFeeds > 0)
+            {
+                <a class="LinkStyle" href=@String.Format("{0}{1}/{2}/feedback-{3}", siteURL, Model.CountryName.Replace(" ", "_").ToLower(), Model.Name.Replace(" ", "_").ToLower(), Model.Id)>Customer feedback (@Model.NoOfFeeds)</a>
+                @Html.Raw("&nbsp;")
+                <img class="delay" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src="https://pictures.tripmasters.com/siteassets/d/IMG-Feed.jpg" alt="no image" align="absmiddle" />
+            }
+        </div>
+        <div class="divCustomize"><a class="customize" href=@String.Format("{0}{1}/{2}/package-{3}", siteURL, Model.CountryName.Replace(" ", "_").ToLower(), Model.Name.Replace(" ", "_").ToLower(), Model.Id)>Customize It</a></div>
+
+        <form id=@String.Format("frmFindPack{0}", Model.Id) method="post" name=@String.Format("frmFindPack{0}", Model.Id)>
+            <div style="font-weight:bold;margin:10px 0px;">For more choices, combine cities found in this itinerary</div>
+            @foreach (var p in Model.Ext_Places)
+            {
+                <div style="padding:7px 4px 0px 0px; white-space:nowrap;display:inline-block;">
+                    <a name=@String.Format("dot{0}{1}", Model.Id, p.Id) class="falsecheck" id=@String.Format("falsedot{0}{1}", Model.Id, p.Id) onclick=@String.Format("changeCheck('falsedot{0}{1}')", Model.Id, p.Id)>@p.Name</a>
+                    <input type="checkbox" name=@String.Format("dot{0}{1}", Model.Id, p.Id) id=@String.Format("dot{0}{1}", Model.Id, p.Id) style="display:none" value="@p.Id|@p.Name" />
+
+                </div>
+            }
+            <input type="hidden" name="allID" id="allID" value="" />
+            <input type="hidden" name="allNA" id="allNA" value="" />
+
+        </form>
+
+        <div style="margin:15px 0px 10px 60px;color: #999;font-size:11px;font-weight: 700;cursor:pointer;" onclick=@String.Format("findPacks('frmFindPack{0}','{1}');", Model.Id, siteURL)> >> Find similar package</div>
+
+    }
+</div>
+<div style="clear:both;"></div>
+

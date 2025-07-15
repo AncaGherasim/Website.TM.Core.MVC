@@ -1,0 +1,550 @@
+﻿﻿@using static MVC_TM.Models.ViewModels.YearsViewModels
+@using MVC_TM.Models
+@using MVC_TM.Infrastructure
+@using System.Text.RegularExpressions
+
+@{
+    var strCheck = new Regex(@"^(?:from )?(?:website hierarchy|website|hierarchy|web hierarchy)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+    DateTime sixMonthsAgo = DateTime.Today.AddMonths(-6);
+    Decimal overAllAvg = 0;
+    Decimal defw = 120;
+    Decimal w = 0;
+    overAllAvg = Decimal.Round(Model.Score, 1);
+    w = Decimal.Round((overAllAvg * defw) / 5, 1);
+    System.Globalization.NumberFormatInfo nfi = new System.Globalization.CultureInfo("en-US", false).NumberFormat;
+    nfi.NumberDecimalDigits = 0;
+    List<Int64> offerPrices = new List<Int64>();
+    List<String> offerUrl = new List<string>();
+    string pack3Ids = "";
+    var pkC = 0;
+    Decimal lowP = 500;
+    Decimal highP = 9000;
+
+    if (Model.id3SuggestPacks.Count > 0 && Model.allPacksInfo.Count > 0)
+    {
+        foreach (var z in Model.allPacksInfo)
+        {
+            if (z.STP_Save != 999)
+            {
+                offerPrices.Add((Int32)z.STP_Save);
+            }
+            offerUrl.Add(String.Format("https://www.tripmasters.com/europe/{0}/{1}/package-{2}", z.CityNA.Replace(" ", "_").ToLower(), z.PDL_Title.Replace(" ", "_").ToLower(), z.PDLID));
+            pack3Ids = pack3Ids + z.PDLID + ", ";
+        }
+        
+    }
+    if (offerPrices.Count > 0)
+    {
+        lowP = offerPrices.Min();
+        highP = offerPrices.Max();
+    }
+    
+
+
+
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+}
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+        <link href="~/css/responsive_calendar/responsive_calendar.css" rel="stylesheet" />
+        <link href="~/css/years/years.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+        <link href="~/css/responsive_calendar/responsive_calendar.min.css" rel="stylesheet" asp-append-version="true" />
+        <link href="~/css/years/years.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+
+@section structureData {
+    <script type="application/ld+json">
+            {
+            "@@context" : "https://schema.org",
+            "@@type" : "Product",
+            "name" : "Experience Italy 2025",
+            "sku":"71-travel",
+            "mpn":"71-travel-vac",
+            "brand" : {
+            "@@type" : "Brand",
+            "name": "Tripmasters",
+        @Html.Raw(String.Format("\"url\" : \"https://www.tripmasters.com/italy-travel-guide-2025\","))
+            "logo" : "https://pictures.tripmasters.com/siteassets/d/tm_header_logo.png"
+            },
+            "image":"https://pictures.tripmasters.com/siteassets/d/tm_header_logo.png",
+            "review":{
+            "@@type":"Review",
+            "name":"@Model.YearCountryFeedbacks",
+            "author":{
+            "@@type":"Organization",
+            "name":"Tripmasters"
+            }
+            },
+            "offers": {
+            "@@type": "AggregateOffer",
+            "priceCurrency":"USD",
+            "highPrice": "@highP",
+            "lowPrice": "@lowP",
+            "offerCount": "4",
+            "offers": [
+        @foreach (var u in @offerUrl)
+        {
+            @Html.Raw("{")
+            @Html.Raw('"' + "@type" + '"' + ":" + '"' + "Offer" + '"' + "," +
+                                           '"' + "url" + '"' + ":" + '"' + @u + '"')
+            ;
+            @Html.Raw("}")
+            if (u != @offerUrl.Last())
+            {
+                @Html.Raw(",")
+                ;
+            }
+
+        }
+            ]
+            },
+            "description" : "@ViewBag.pageMetaDesc",
+            "additionalProperty" : "Book Customizable Multi-city trips in seconds|Curated Hotels & Services ",
+            "aggregateRating": {
+            "@@type": "aggregateRating",
+            "ratingValue": "@overAllAvg",
+            "reviewCount": "@Model.YearCountryFeedbacks"
+            },
+            "sameAs":[
+            "https://twitter.com/tripmasters",
+            "https://www.facebook.com/Tripmasters",
+            "https://www.pinterest.com/tripmasters/",
+            "https://www.instagram.com/tripmasterstravel/",
+            "https://www.linkedin.com/company/tripmasters",
+            "https://en.everybodywiki.com/Tripmasters",
+            "https://www.youtube.com/tripmasters"
+            ],
+               "keywords": "Italy and suggested Vacation Packages 2025, best Italy vacation packages, Italy travel packages, Best Cities to Visit in Italy: Rome, Florance, Venice, Amalfi Coast, Cinque Terre Area, Milan, Tuscany and Hill towns"
+        
+            },
+                    {
+          "@@context": "https://schema.org",
+          "@@type": "ItemList",
+          "name": "Top Places to go in Italy and suggested Vacation Packages 2025",
+          "itemListElement": [
+            {
+              "@@type": "TouristTrip",
+              "name": "Rome - Florence - Venice by Train",
+              "image": "https://pictures.tripmasters.com/images/packages1/italy/venice-cityview-200.jpg",
+              "url": "https://www.tripmasters.com/europe/europe/rome/rome_-_florence_-_venice_by_train/package-12036"
+            },
+            {
+              "@@type": "TouristTrip",
+              "name": "Rome - Florence - Venice - Milan by Train",
+              "image": "https://pictures.tripmasters.com/images/packages/italy/venice-dogepalace-200.jpg",
+              "url": "https://www.tripmasters.com/europe/europe/rome/rome_-_florence_-_venice_-_milan_by_train/package-18386"
+            },
+            {
+              "@@type": "TouristTrip",
+              "name": "Milan - Como - Venice by Train",
+              "image": "https://pictures.tripmasters.com/images/packages/italy/venice-gondolas-200.jpg",
+              "url": "https://www.tripmasters.com/europe/europe/milan/milan_-_como_-_venice_by_train/package-19097"
+            },
+            {
+              "@@type": "TouristTrip",
+              "name": "Venice - Florence - Rome and Amalfi",
+              "image": "https://pictures.tripmasters.com/images/packages/italy/venice-gondolaserenade-200.jpg",
+              "url": "https://www.tripmasters.com/europe/europe/venice/venice_-_florence_-_rome_and_amalfi/package-88946"
+            },
+            {
+              "@@type": "TouristTrip",
+              "name": "Charms of Italy (Venice - Florence - Rome - Sorrento)",
+              "image": "https://pictures.tripmasters.com/images/asst/71/sorrento_-_amalfi_coast_-651775-200.jpg",
+              "url": "https://www.tripmasters.com/europe/europe/venice/charms_of_italy_(venice_-_florence_-_rome_-_sorrento)/package-44878"
+            }
+          ]
+        }
+    </script>
+    
+}
+<div class="main-container">
+    @{
+        if (Model.id1PageTitle.Count > 0)
+        {
+            var pt = ((List<Id1PageTitle>)Model.id1PageTitle).FirstOrDefault();
+
+            <h1 class="main-title">@pt.Title</h1>
+
+            <section class="hero" id="PagePresentation">
+                <div class="hero__wrapper">
+                    <img class="hero__image" src="@pt.Picture" alt=""/>
+                    <div class="hero__overimage">
+                        <h2 class="hero__subtile">@pt.OverImageText</h2>
+                        <p class="hero__text"><span>with Expert Support</span><span class="hero__bold-text">7 days a week from</span><span class="hero__bold-text">8AM to Midnight ET</span><span>Your Perfect Trip Awaits!</span></p>
+                    </div>
+                </div>
+            </section>
+        }
+
+        if (Model.id2Banner.Count > 0)
+        {
+            <section class="banner first-container" id="Banner">
+                <div class="banner__wrapper">
+                    @{
+                        var b = ((List<Id2Banner>)Model.id2Banner).FirstOrDefault();
+                        <h2 class="banner__title">
+                            <span>Plan Smart,</span>
+                            <span>Book Easy,</span>
+                            <span>Travel Confidently!</span>
+                        </h2>
+                        <ul class="banner__list">
+                            @if (b.Plan != null)
+                            {
+                                <li class="banner__item">
+                                    <p class="banner__item-title">@b.Plan.Title</p>
+                                    <p class="banner__item-subtitle">@b.Plan.Subtitle</p>
+                                    <p class="banner__item-description">@b.Plan.Description</p>
+                                </li>
+                            }
+                            @if (b.Customize != null)
+                            {
+                                <li class="banner__item">
+                                    <p class="banner__item-title">@b.Customize.Title</p>
+                                    <p class="banner__item-subtitle">@b.Customize.Subtitle</p>
+                                    <p class="banner__item-description">@b.Customize.Description</p>
+                                </li>
+                            }
+                            @if (b.Rating != null)
+                            {
+                                <li class="banner__item">
+                                    <p class="banner__item-title">@b.Rating.Title</p>
+                                    <p class="banner__item-subtitle">@b.Rating.Subtitle</p>
+                                    <p class="banner__item-description">@b.Rating.Description</p>
+                                </li>
+                            }
+                        </ul>
+                    }
+                </div>
+            </section>
+        }
+
+        if (Model.id3SuggestPacks.Count > 0 && Model.allPacksInfo.Count > 0)
+        {
+            var ss = ((List<Id3SuggestPacks>)Model.id3SuggestPacks).FirstOrDefault();
+
+            <section class="suggested first-container">
+                <h2 class="suggested__title">@ss.Title</h2>
+                <h3 class="suggested__subtitle">@ss.Description</h3>
+                @{
+                    Int32 count2 = 0;
+                    <ul id="suggestedList" class="suggested__list">
+
+                        @foreach (var p in Model.allPacksInfo)
+                        {
+                            @if (!string.IsNullOrEmpty(ss.PacklistIDs) && ss.PacklistIDs.Contains(p.PDLID.ToString()))
+                            {
+                                count2++;
+
+                                string hideClass = count2 > 3 ? "suggested__item-hidden" : "";
+
+                                <li class="@($"suggested__item {hideClass}")">
+                                    <a class="suggested__link" href="@($"/{ViewBag.Division.ToLower()}/{p.CityNA.Replace(" ", "_").ToLower()}/{p.PDL_Title.Replace(" ", "_").ToLower()}/package-{p.PDLID}")">
+                                        <div class="suggested__img">
+                                            <img class="lazyload" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src="@($"https://pictures.tripmasters.com{p.IMG_Path_URL}")" alt="View of @p.PDL_Title" />
+                                        </div>
+                                        <div class="suggested__info">
+                                            <div class="suggested__wrapper">
+                                                <h3>@p.PDL_Title</h3>
+                                                <div class="suggested__price">
+                                                    @if (p.STP_Save != 9999)
+                                                    {
+                                                        <span>@p.STP_NumOfNights nights from</span>
+                                                        <span>@($"{p.STP_Save:C0}*")</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>@p.STP_NumOfNights nights itinerary</span>
+                                                    }
+
+                                                </div>
+                                            </div>
+                                            @{
+                                                if (!string.IsNullOrEmpty(p.PDL_Description) && !strCheck.IsMatch(p.PDL_Description))
+                                                {                                                    
+                                                    <div>
+                                                        <p class="suggested__comment">@Utilities.TruncateText(p.PDL_Description, 150)</p>
+                                                    </div>
+                                                }
+                                            }                                         
+                                                                                        
+                                            @if (!string.IsNullOrEmpty(p.Comment))
+                                            {
+                                                string comment = Utilities.TruncateText(p.Comment, 150); //(p.Comment.Length > 150 ? p.Comment.Substring(0, 150) + "..." : p.Comment);
+                                                <div class="suggested__score">
+                                                    <div class="suggested__stars" style="--rating: @Decimal.Round(p.OverAllScore, 1)"></div>
+                                                    <span>@p.NoOfFeed reviews</span>
+                                                </div>
+                                                <p class="suggested__comment">@comment</p>
+                                                @if (p.dep_date >= sixMonthsAgo)
+                                                {
+                                                    <p class="suggested__date">Traveled on: @p.dep_date.ToString("MM/dd/yyyy")</p>
+                                                }
+                                            }
+                                        </div>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                    if (count2 > 3)
+                    {
+                        <button id="suggestedToggleButton" class="suggested__button" aria-expanded="false"><span>See All</span> @ViewBag.placename Vacations Packages</button>
+                    }
+                }
+            </section>
+        }
+
+        if (Model.id4Calendar.Count > 0)
+        {
+            <section class="calendar-section second-container" id="Calendar">
+                @{
+                    var vwCal = ((List<Id4Calendar>)Model.id4Calendar).FirstOrDefault();
+                    <h2 class="calendar-section__title">@vwCal.Title</h2>
+                    <div class="calendar-section__wrapper">
+                        <div class="calendar-section__header">
+                            <p>Design Your Own Trip</p>
+                            <p>Select up to 12 destinations!</p>
+                        </div>
+                        @await Component.InvokeAsync("UC_TM_ResponsiveCalendar")
+                    </div>
+                }
+            </section>
+        }
+
+        if (Model.id5Destinations.Count > 0)
+        {
+            <section class="destinations" id="Destinations">
+                <div class="first-container">
+                    @{
+                        var vwDst = ((List<Id5CountryDest>)Model.id5Destinations).FirstOrDefault();
+                        <h2 class="destinations__title">@vwDst.Title</h2>
+                        <h3 class="destination__subtitle"> @vwDst.Description</h3>
+                        <div class="destinations__wrapper">
+                            @if(vwDst.TopCities != "" || vwDst.TopCities != null)
+                            {
+                                <div>
+                                    <h3 class="destinations__group">Top Cities</h3>
+                                    <ul class="destinations__list">
+                                    @{
+                                        var tpCty = vwDst.TopCities.Split(",").Take(10);
+                                            foreach (var cy in tpCty)
+                                        {
+                                            <li class="destinations__item">
+                                                <a href="@String.Format("/{0}/{1}/vacations", ViewBag.Division.ToLower(), cy.Trim().Replace(" ","_").ToLower())">@cy</a>
+                                            </li>
+                                        }
+                                    }
+                                    </ul>
+                                </div>
+                               
+                            }
+                            @if (vwDst.TopRegions != "" || vwDst.TopRegions != null)
+                            {
+                                <div>
+                                    <h3 class="destinations__group">Regions of @ViewBag.Placename</h3>
+                                    <ul class="destinations__list">
+                                        @{
+                                            var tpReg = vwDst.TopRegions.Split(",").Take(10);
+                                            foreach (var rg in tpReg)
+                                            {
+                                                <li class="destinations__item">
+                                                    <a href="@String.Format("/{0}/{1}/area/vacations", ViewBag.Division.ToLower(), rg.Trim().Replace(" ","_").ToLower())">@rg</a>
+                                                </li>
+                                            }
+                                        }
+                                    </ul>
+                                </div>
+                            }                          
+                        </div>
+                    }
+                </div>
+            </section>
+        }
+
+        if (Model.id6Activities.Count > 0)
+        {
+            <section class="activities first-container" id="Activities">
+                @{
+                    Int32 count = 0;
+                    var vwAct = ((List<Id6Activities>)Model.id6Activities).FirstOrDefault();
+                    if (vwAct != null)
+                    {
+                        <h2 class="activities__title">@vwAct.Title</h2>
+                        <h3 class="activities__subtitle">@vwAct.Description</h3>
+                    }
+                    if (Model.ListOfToDo.Count > 0)
+                    {
+                        <ul id="activitiesList" class="activities__list">
+                            @foreach (var td in Model.ListOfToDo)
+                            {
+                                count++;
+                                string hideClass = count > 6 ? "activities__item-hidden" : "";
+
+                                <li class="@($"activities__item {hideClass}")">
+                                    <a href="@td.Link">
+                                        <img class="activities__image" src="@td.Image" alt="@td.Name" />
+                                        <div class="activities__wrapper">
+                                            <span class="activities__name">@td.Name</span>
+                                            <p class="activities__description">@td.Description</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    if (count > 6)
+                    {
+                        <button id="activitiesToggleButton" class="activities-button" aria-expanded="false">Show more</button>
+                    }
+
+                }
+            </section>
+        }
+
+        if (Model.id7Beyonds.Count > 0)
+        {
+            <section class="beyond first-container" id="Beyonds">
+                @{
+                    var byn = ((List<Id7Beyonds>)Model.id7Beyonds).FirstOrDefault();
+                    <h2 class="beyond__title">@byn.Title</h2>
+                    <h3 class="beyond__subtitle">@byn.Description</h3>
+                    @if (Model.allPacksInfo.Count > 0)
+                    {
+                        <div id="swiper" class="swiper" role="region" aria-label="vacation packages carousel">
+                            <div id="swiperList" class="packages-list swiper-wrapper">
+                                @foreach (var p in Model.allPacksInfo)
+                                {
+                                @if (!string.IsNullOrEmpty(byn.PackList) && byn.PackList.Contains(p.PDLID.ToString()))
+                                {
+                                    string comment = !string.IsNullOrEmpty(p.Comment)
+                                    ? (p.Comment.Length > 205 ? p.Comment.Substring(0, 205) + "..." : p.Comment)
+                                    : "";
+                        
+                                    <div class="packages-item swiper-slide">
+                                        <article>
+                                            <a href="@($"/{ViewBag.Division.ToLower()}/{p.CityNA.Replace(" ", "_").ToLower()}/{p.PDL_Title.Replace(" ", "_").ToLower()}/package-{p.PDLID}")">
+                                                <div class="packages-item__img">
+                                                    <img class="lazyload"
+                                                         src="https://pictures.tripmasters.com/siteassets/d/spacer.gif"
+                                                         data-src="@($"https://pictures.tripmasters.com{@p.IMG_Path_URL}")"
+                                                         alt="Travel deal: @p.PDL_Title in @p.CityNA - starting at @($"{p.STP_Save:C0}")"
+                                                         onerror="this.src='https://pictures.tripmasters.com/siteassets/d/no-image.jpg'" />
+                                                </div>
+                                                <div class="packages-item__info">
+                                                    <div>
+                                                        <div class="packages-item__wrapper">
+                                                            <h3 class="packages-item__name">@p.PDL_Title</h3>
+                                                            <div class="packages-item__nights">
+                                                                <span>@p.STP_NumOfNights nights from</span>
+                                                                <span>@($"{p.STP_Save:C0}*")</span>
+                                                            </div>
+                                                        </div>
+                                                            @{
+                                                                if (!string.IsNullOrEmpty(p.PDL_Description) && !strCheck.IsMatch(p.PDL_Description))
+                                                                {
+                                                                    <div>
+                                                                        <p class="suggested__comment">@Utilities.TruncateText(p.PDL_Description, 150)</p>
+                                                                    </div>
+                                                                }
+                                                            }
+                                                        @if (p.NoOfFeed > 0)
+                                                        {
+                                                            <div class="packages-item__stars" style="--rating: @Decimal.Round(p.OverAllScore, 1)" aria-label="Rated @Decimal.Round(p.OverAllScore, 1) out of 5"></div>
+                                                            <span class="packages-item__score">@Decimal.Round(p.OverAllScore, 1) out of 5 <span>(@p.NoOfFeed reviews)</span></span>
+                                                        }
+                                                        <p class="packages-item__comment">@comment</p>
+                                                    </div>
+                                                    @if (!string.IsNullOrEmpty(p.Comment) && p.dep_date >= sixMonthsAgo)
+                                                    {
+ 
+                                                        <span class="packages-item__date">Traveled on: @p.dep_date.ToString("MM/dd/yyyy")</span>
+                                                    }
+                                                </div>
+                                            </a>
+                                        </article>
+                                    </div>
+                                }
+                                }
+                            </div>
+                        </div>
+                        <button class="swiper-button-next" role="button" aria-label="View next vacation package slide" aria-controls="swiperList"></button>
+                        <button class="swiper-button-prev" role="button" aria-label="View previous vacation package slide" aria-controls="swiperList"></button>
+                    }
+                }
+            </section>
+        }
+
+        if (Model.YearCountryFeedbacks > 0)
+        {
+            var plcName = ViewBag.Placename;
+            <section id="customerReviews" class="customer-reviews first-container">
+                <h2 class="customer-reviews__title">Customer Reviews</h2>
+                <div class="customer-reviews__rating"><span class="customer-reviews__all-stars" style="--rating: @overAllAvg"></span> <span class="customer-reviews__num-stars">@overAllAvg out of 5 stars</span></div>
+                @if (Model.YearCountryFeedbacks == 1)
+                {
+                    <div class="customer-reviews__count"><span>@String.Format("1") Review</span></div>
+                }
+                else
+                {
+                    <div class="customer-reviews__count"><a href=@String.Format("/{0}/{1}/trips_taken_by_travelers" ,ViewBag.Division, plcName.Replace(" ", "_").ToLower() )> @Model.YearCountryFeedbacks.ToString("N", @nfi) Reviews</a></div>
+                }
+                <ul id="dReview" class="customer-reviews__list">
+                    <li id="loadingReviews" style="text-align:center; padding:50px;">
+                        <img src="https://pictures.tripmasters.com/siteassets/d/ajax-loader.gif" alt="ajax-indicator.gif" /><br />loading ...<br />
+                    </li>
+                </ul>
+            </section>
+        }
+
+        @if (Model.EachFaqList.Count > 0)
+        {
+            Int32 count = 1;
+            <section class="faq" id="FAQ">
+                <div class="faq__wrapper first-container">
+                    <h2 class="faq__title">@ViewBag.Placename FAQ's</h2>
+                    <ul id="faqList" class="faq__list">
+                        @foreach (var fq in Model.EachFaqList)
+                        {
+                            <li id="@String.Format("faqItem-{0}", count)" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                <button id="@String.Format("faq-{0}", count)" itemprop="name" aria-expanded="false">@Html.Raw(fq.FaqQuestion)<span>›</span></button>
+                                <div class="faq__item-hidden" id="@String.Format("faqInfo-{0}", count)" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                    <div itemprop="text">
+                                        <p>@Html.Raw(fq.FaqResponse)</p>
+                                    </div>
+                                </div>
+                            </li>
+                            count++;
+                        }
+                    </ul>
+                </div>
+            </section>
+        }
+    }
+    <input type="hidden" id="placeID" value="@ViewBag.PlaceId" />
+</div>
+
+
+@section Scripts
+{
+    <environment include="Development">
+        <script src="~/lib/lazysizes.min.js" asp-append-version="true"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="~/js/responsive_calendar/dm.java.TM.Calendar.js" asp-append-version="true"></script>
+        <script src="~/js/responsive_calendar/dt.java.TM.CommonFunctions.js" asp-append-version="true"></script>
+        <script src="~/js/years/years.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/lib/lazysizes.min.js" asp-append-version="true"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="~/js/responsive_calendar/dm.smallcalendar.min.js" asp-append-version="true"></script>
+        <script src="~/js/years/years.min.js" asp-append-version="true"></script>
+    </environment>
+}

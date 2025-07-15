@@ -1,0 +1,132 @@
+﻿<head>
+    @{
+        ViewBag.Mobile = 1;
+    }
+    @{
+        ViewBag.Canonical = @String.Format("https://www.tripmasters.com/airline_ancillary_fees");
+
+    }
+    @section Styles {
+                <environment include="Development">
+                    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+                </environment>
+                <environment exclude="Development">
+                    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
+                </environment>
+                
+            }
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css" >
+.dvtable {text-align:center;background-color: #fff;}
+.dvimgAmadeus img {margin:0 auto;}
+.dvCol {padding:3px;}
+H3.error {position:relative;color: #2E99D9;font-size: 15px;font-family: Arial, Helvetica, sans-serif;text-transform: uppercase;text-align: center;margin-left:auto;margin-right:auto;border-bottom-style:solid;border-top-style:solid;
+          border-color:orange;border-width:7px;padding-bottom: 5px;padding-top:5px;}
+H3.exceptions {position:relative;color: #666666;font-family:Arial,Helvetica,sans-serif;text-align: justify;margin-left:auto;margin-right:auto;}
+H3 {font-size: 12px;padding:0 10px;font-family:Arial,Helvetica,sans-serif;vertical-align: baseline; line-height: 1.7;margin-top:30px}
+.lblAirline {font-family: Arial, Helvetica, sans-serif;color:#666666;text-align:center;text-indent:15px;color: #333333;
+            font-size:18px;font-weight: bold;text-transform:capitalize}
+.optionlist{border-radius:3px;color: #212121; text-align:left; list-style-type: none; 
+            position:absolute; z-index:901;background-color:white; padding:0 8px;min-height:200px; 
+            width:85%;max-height:90%;overflow:hidden; overflow-y:scroll;}
+.optionlist li{ padding:12px 10px 12px 5px; border-bottom:1px solid #e3e3e3;font-size:20px;clear:both;}
+.optionlist li div{ overflow-wrap: break-word; word-wrap: break-word;white-space: normal !important;display:inline-block;width:80%;}
+.optionlist li.unselected::after {content: '\26AA';float:right;font-size:18px;font-weight:bold;color:#6c6c6c; }
+.optionlist li.selected::after{color:#4285f4; content: "\25C9"; font-size:26px;float:right;}
+
+#selAirline{font-family:Courier New;border-radius: 5px;color: #666666;margin-top:10px;width:95%;border:1px solid  #666666;padding:12px 0 12px 12px; margin:15px auto; font-size:18px;
+            display:none;text-align:left;}
+div.dvMask {display: none;width: 100%;height: 100%;background: rgba(100,100,100,0.8); 
+            position: absolute;top: 0;left: 0;z-index: 900;    }       
+</style>
+</head>
+
+
+
+    <div class="dvMask"></div>
+    <div style="background: #e7e7e7;border-top: 1px solid #ccc; padding:15px 0;  ">
+    <div style="margin: 0 auto;background-color: #6c98bb; color: #fff;  font-size: 20px;  padding: 15px ; "> Baggage Fees</div>
+    <div class="dvtable"   >
+      <div class="dvimgAmadeus" ><img alt="Baggage charges and allowances" class="style1"   style="margin: 0 auto;width: 100%; text-align: center;height: 65px;margin-bottom:60px"   src="https://pictures.tripmasters.com/siteassets/m/amadeus_image.gif" /></div>
+      
+      <div class="dvCol"> <span class="lblAirline">Display baggage policy of: </span>
+          <br />
+          <br />
+      <span id='ajaxLoadTx' style="width:120px; background:#fff; border:1px solid black; padding: 8px 10px; border-radius: 5px; "><img src="https://pictures.tripmasters.com/siteassets/d/ajax-indicator.gif"/> Loading Airlines List</span>
+       <div id="selAirline" onclick="showFilter();" >
+          <span> Select Airline</span><span class="sp90" style="float:right;transform:rotate(90deg); margin-right: 15px;color:#666666;font-size: 30px;line-height: 20px;margin: 0 15px;">&rsaquo;</span>
+       </div>
+          <ul   id="ddlAirline"  class="optionlist">
+              <li class="optionlist li" onclick ="list();"></li>
+        </ul>   
+      </div>
+      <div class="dvCol">
+        <h3 class="exceptions">Baggage allowance and charges are provided for information only. Additional discounts may apply depending on flyer-specific factors (e.g., frequent flyer status, military, credit card used for purchase, early purchase over the internet, etc.). Additional charges may apply in case of excess or overweight baggage. Please contact your travel agent for more specific information.</h3>
+      </div>
+    </div>
+  </div>
+
+
+@section Scripts{ 
+         <script>
+         jQuery.ajaxPrefilter(function (options) {
+             if (options.crossDomain && jQuery.support.cors) {
+                 options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+             };
+         });
+         $(document).ready(function () {
+             $('#ddlAirline').hide();
+             $('#selAirline').hide();
+             $.ajax({
+                 type: "POST",
+                 url: "/Api/GetAirlineFeeList",
+                 contentType: "application/json; charset=utf-8",
+                 dataType: "json",
+                 data: '{listID:"adeusList"}',
+                 success: function (data) {
+                     var sel = data.replace(/option/g, "li").replace(/value/g, "data-value");
+                     $('#selAirline').show();
+                     $('#ddlAirline').html(sel);
+                     $('.optionlist li').each(function () {
+                         $(this).html('<div>' + $(this).text() + '</div>');
+                     });  
+                     $('.optionlist li[data-value=""]').addClass('selected');
+                     $('.optionlist :not(li[data-value=""])').addClass('unselected');
+                     $('.optionlist li').click(function list () {
+                         var val_ = $(this).attr("data-value");                
+                         $('.optionlist li').removeClass('selected').addClass('unselected');
+                         $(this).removeClass('unselected').addClass('selected');
+
+                         if (val_ != "" && val_ != undefined)
+                             window.location.assign('https://bags.amadeus.com/Display.aspx?a=' + val_)
+
+                         $('.optionlist').hide();
+                         $('.dvMask').hide();
+                     });
+                     $('#ajaxLoadTx').hide();
+                 },
+                 error: function (xhr, desc, exceptionobj) {
+                     $('#ajaxLoadTx').html('Error ! reload page');
+                     $('.optionlist').hide();
+                     $('.dvMask').hide();
+                 }
+             });
+            
+         });
+               
+
+         function showFilter() {
+             window.scrollTo(0, 0);
+             var maskH = $(document).height();
+             $('.dvMask').css({ 'height': maskH });
+             $('.dvMask').show();
+
+             var left_ = ($(document).width() - $('.optionlist').width()) / 2 - 8;
+             var top_ = 20;
+             $('.optionlist').css({ 'top': top_, 'left': left_ });
+             $('.optionlist').show();
+
+         }; 
+</script>
+
+}

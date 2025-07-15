@@ -1,0 +1,90 @@
+<!-- ====================================================================================================== -->
+<!--  Name:  NoServiceDO.xml                                                                      -->
+<!-- ====================================================================================================== -->
+<!-- Date:   07/08/2020                                                                                  -->
+<!-- Notes:  XML for error text only on +/-3 days ajax requests     -->
+<!-- Author: Ccabansag                                                                                        -->
+<!--                                                                                                        -->
+<!-- 07/08/2020 Ccabansag		Created                     -->
+<!-- =====================================================================================================  -->
+<Errors>
+<DOErrorHeaderBegin>
+  <![CDATA[
+    <div style="border-top-width: 1px; border-top-color: #638BD1; padding-top: 5px;">
+  ]]>
+</DOErrorHeaderBegin>
+<DOErrorHeaderEnd><![CDATA[
+</div>
+]]>
+</DOErrorHeaderEnd>
+<DOErrorBottom>
+  <![CDATA[
+
+    <div style="clear: both;">
+		  <img border="0" width="0" height="5" src="@GeneralLoc@spacer.gif"></img>
+	  </div>
+    
+]]>
+</DOErrorBottom>
+<DOError1007><![CDATA[
+
+  <div class="col border my-4 textGrey13 badge-1rem badge-light-white shadow-sm p-3 lineHeight15em">
+			<span class="font-weight-bold">Customer service message 1007:</span>
+      <br><br>
+      
+      <span class="">
+			Unable to Process Your Request At This Time. <br> Please Try Later. 
+			</span>
+      <br><br>
+      
+			<span class="">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 7 Days a Week from 8AM to Midnight ET <br>toll-free 
+      </span>
+      <span class=" font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+    
+	
+	]]>
+	</DOError1007>
+	<DOErrorRule0003><![CDATA[
+ 
+  <div class="col border my-4 textGrey13 badge-1rem badge-light-white shadow-sm p-3 lineHeight15em">
+			<span class="font-weight-bold">Msg:Rule0003:</span>
+      <br><br>
+      
+      <span class="">
+			We're sorry, our system can only search <br>
+      for prices within @MaxDayToPrice@ days <br>from today. <br><br>
+      Please change your dates <br> and try your search again.<br/>
+			</span>
+    </div>
+		]]>
+	</DOErrorRule0003>
+	<DOError1001><![CDATA[
+    <div class="col border my-4 textGrey13 badge-1rem badge-light-white shadow-sm p-3 lineHeight15em">
+			<span class="font-weight-bold">Customer service message 1001:</span>
+      <br><br>
+      
+      <span class="">
+      We can't find any available flights for <br>
+      the dates selected. <br>
+      Call an agent if you can't find <br>
+      any in other dates.
+			</span>
+      <br><br>
+      
+      <span class="">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 7 Days a Week from 8AM to Midnight ET <br>toll-free 
+      </span>
+      <span class=" font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+ 
+		]]>
+	</DOError1001>
+</Errors>

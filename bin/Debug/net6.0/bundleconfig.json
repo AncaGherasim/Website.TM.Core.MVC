@@ -1,0 +1,389 @@
+[
+  {
+    "outputFileName": "wwwroot/css/vacpack/vacationPackages.min.css",
+    "inputFiles": [
+      "wwwroot/css/vacpack/vacationPackages.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/tax/dt.java.taxbycity.min.js",
+    "inputFiles": [
+      "wwwroot/js/tax/dt.java.taxbycity.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/chatmess/mb.java.chatmessage.min.js",
+    "inputFiles": [
+      "wwwroot/js/chatmess/mb.java.chatmessage.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/chatmess/java.chatmessage.min.js",
+    "inputFiles": [
+      "wwwroot/js/chatmess/java.chatmessage.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/chat/java.chat.min.js",
+    "inputFiles": [
+      "wwwroot/js/chat/java.chat.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/chat/mb.java.chat.min.js",
+    "inputFiles": [
+      "wwwroot/js/chat/mb.java.chat.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/chat/style.chat.min.css",
+    "inputFiles": [
+      "wwwroot/css/chat/style.chat.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/chat/mb.style.chat.min.css",
+    "inputFiles": [
+      "wwwroot/css/chat/mb.style.chat.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/test_chat/style.test_chat.min.css",
+    "inputFiles": [
+      "wwwroot/css/test_chat/style.test_chat.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/topdeals/dm.java.topdeals.min.js",
+    "inputFiles": [
+      "wwwroot/js/topdeals/dm.java.topdeals.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/topdeals/dm.style.topdeals.min.css",
+    "inputFiles": [
+      "wwwroot/css/topdeals/dm.style.topdeals.css"
+    ]
+  },
+    {
+    "outputFileName": "wwwroot/css/weekly_topdeals/weekly_topdeals.min.css",
+    "inputFiles": [
+      "wwwroot/css/weekly_topdeals/weekly_topdeals.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/cms/cms.min.js",
+    "inputFiles": [
+      "wwwroot/js/cms/java.CMS_javaScript_Optimized.js",
+      "wwwroot/js/cms/java.CMS_javaScriptLinks.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site/deskTopLayout.js",
+      "wwwroot/js/site/java_utInit.js",
+      "wwwroot/js/site/dt.java.CommonFunctions.js",
+      "wwwroot/js/site/dt.java.date.format.js",
+      "wwwroot/js/site/dt.java.scrollable.js",
+      "wwwroot/js/site/dt.java.simplepagination.js",
+      "wwwroot/js/site/Base.js",
+      "wwwroot/js/site/moment.js",
+      "wwwroot/js/site/dt.java.MrktEmailSubscriber.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site/java_utInit.min.js",
+    "inputFiles": [
+      "wwwroot/js/site/java_utInit.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/review/review.min.css",
+    "inputFiles": [
+      "wwwroot/css/review/dt.style.bodypages.css",
+      "wwwroot/css/review/dt.style.simplepagination.css",
+      "wwwroot/css/review/dt.style.reviewpage.css",
+      "wwwroot/css/review/dt.style.pgwslider.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/review/dt.java.reviewpage.min.js",
+    "inputFiles": [
+      "wwwroot/js/review/dt.java.reviewpage.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/review_m/mb.java.review.min.js",
+    "inputFiles": [
+      "wwwroot/js/review_m/mb.java.review.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/reviews/dt.java.reviewspage.min.js",
+    "inputFiles": [
+      "wwwroot/js/reviews/dt.java.reviewspage.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/reviews_m/mb.java.reviews.min.js",
+    "inputFiles": [
+      "wwwroot/js/reviews_m/mb.java.reviews.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/search/dt.java.search.min.js",
+    "inputFiles": [
+      "wwwroot/js/search/dt.java.search.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/search/search.min.css",
+    "inputFiles": [
+      "wwwroot/css/search/dt.style.bodypages.css",
+      "wwwroot/css/search/dt.style.simplepagination.css",
+      "wwwroot/css/search/dt.style.search.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/site/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site/dt.style.subscription.css",
+      "wwwroot/css/site/dt.style.TM_SiteStyle.css",
+      "wwwroot/css/site/dt.style.TM-ui-autocomplete.css",
+      "wwwroot/css/site/dt.style.Style.css",
+      "wwwroot/css/site/dt.style.simplepagination.css",
+      "wwwroot/css/site/dt.style.scrollable.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/destinations_m/mb.style.destinations.min.css",
+    "inputFiles": [
+      "wwwroot/css/destinations_m/mb.style.destinations.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/destinations_m/mb.java.destinations.min.js",
+    "inputFiles": [
+      "wwwroot/js/destinations_m/mb.java.footerURL.js",
+      "wwwroot/js/destinations_m/mb.java.searchbox.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/home_m/mb.java.superhomepage.min.js",
+    "inputFiles": [
+      "wwwroot/js/home_m/mb.java.superhomepage.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/home/dm.style.tmHomePage.min.css",
+    "inputFiles": [
+      "wwwroot/css/home/dm.style.tmHomePage.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/home/home.min.css",
+    "inputFiles": [
+      "wwwroot/css/home/dt.style.tmHomePage.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/advanced/dt.style.advanced.min.css",
+    "inputFiles": [
+      "wwwroot/css/advanced/dt.style.advanced.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/home_m/mb.style.tmSite.min.css",
+    "inputFiles": [
+      "wwwroot/css/home_m/mb.style.tmSite.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/destinations/dt.java.destinations.min.js",
+    "inputFiles": [
+      "wwwroot/js/destinations/dt.java.destinations.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/destinations/dt.style.destinations.min.css",
+    "inputFiles": [
+      "wwwroot/css/destinations/dt.style.destinations.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/home/dt.java.HomePage.min.js",
+    "inputFiles": [
+      "wwwroot/js/home/dt.java.HomePage.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/home/dm.java.HomePage.min.js",
+    "inputFiles": [
+      "wwwroot/js/home/dm.java.HomePage.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/advanced/dt.java.HomePageAdvanced.min.js",
+    "inputFiles": [
+      "wwwroot/js/advanced/dt.java.HomePageAdvanced.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site_m/mb.java.searchhead.min.js",
+    "inputFiles": [
+      "wwwroot/js/site_m/mb.java.searchhead.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/contactus/dt.script.contactUs.min.js",
+    "inputFiles": [
+      "wwwroot/js/contactus/dt.script.contactUs.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/tmsite.min.css",
+    "inputFiles": [
+      "wwwroot/css/tmsite.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/recently/dt.java.recentlyviewed.min.js",
+    "inputFiles": [
+      "wwwroot/js/recently/dt.java.recentlyviewed.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/recently_m/mb.java.recentlyviewed.min.js",
+    "inputFiles": [
+      "wwwroot/js/recently_m/mb.java.recentlyviewed.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/recently/dt.style.recentlyviewed.min.css",
+    "inputFiles": [
+      "wwwroot/css/recently/dt.style.recentlyviewed.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/recently_m/mb.style.recentlyviewed.min.css",
+    "inputFiles": [
+      "wwwroot/css/recently_m/mb.style.recentlyviewed.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/search_m/mb.java.Mobile_Search.min.js",
+    "inputFiles": [
+      "wwwroot/js/search_m/mb.java.Mobile_Search.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/home_m/mb.style.ui-autocomplete.min.css",
+    "inputFiles": [
+      "wwwroot/css/home_m/mb.style.ui-autocomplete.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/customerreview/dt.style.bodypages.min.css",
+    "inputFiles": [
+      "wwwroot/css/customerreview/dt.style.bodypages.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/customerreview/dt.style.customerreview.min.css",
+    "inputFiles": [
+      "wwwroot/css/customerreview/dt.style.customerreview.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/search_m/mb.style.search.min.css",
+    "inputFiles": [
+      "wwwroot/css/search_m/mb.style.search.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/customerreview/dt.java.customerreview.min.js",
+    "inputFiles": [
+      "wwwroot/js/customerreview/dt.java.customerreview.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/customerreview_m/mb.java.customer_review.min.js",
+    "inputFiles": [
+      "wwwroot/js/customerreview_m/mb.java.customer_review.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/customerreview_m/mb.style.customer_review.min.css",
+    "inputFiles": [
+      "wwwroot/css/customerreview_m/mb.style.customer_review.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/reponsive/dtmb.style.ResponsiveStyle.min.css",
+    "inputFiles": [
+      "wwwroot/css/reponsive/dtmb.style.ResponsiveStyle.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/chat/dt.java.postsurvey.min.js",
+    "inputFiles": [
+      "wwwroot/js/chat/dt.java.postsurvey.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/responsive_calendar/responsive_calendar.min.css",
+    "inputFiles": [
+      "wwwroot/css/responsive_calendar/responsive_calendar.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/responsive_calendar/dm.smallcalendar.min.js",
+    "inputFiles": [
+      "wwwroot/js/responsive_calendar/dm.java.TM.Calendar.js",
+      "wwwroot/js/responsive_calendar/dt.java.TM.CommonFunctions.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/site_responsive/site_responsive.min.css",
+    "inputFiles": [
+      "wwwroot/css/site_responsive/site_responsive.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/generalpurpose/dt.style.tm.GP_page.min.css",
+    "inputFiles": [
+      "wwwroot/css/generalpurpose/dt.style.tm.GP_page.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/generalpurpose/dt.java.tm.gp.page.min.js",
+    "inputFiles": [
+      "wwwroot/js/generalpurpose/dt.java.tm.gp.page.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/years/years.min.css",
+    "inputFiles": [
+      "wwwroot/css/years/years.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/years/years.min.js",
+    "inputFiles": [
+      "wwwroot/js/years/years.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/contactagent/dt.java.contactagent.min.js",
+    "inputFiles": [
+      "wwwroot/js/contactagent/dt.java.contactagent.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/contactagent_m/mb.java.contactagent.min.js",
+    "inputFiles": [
+      "wwwroot/js/contactagent_m/mb.java.contactagent.js"
+    ]
+  }
+]

@@ -1,0 +1,60 @@
+﻿body{font-size:12px;}
+.blueTitle_Arial_12{font-family:Arial;font-size:12px;color:navy;text-align:left;font-weight:700;margin:15px 0 3px 7px}
+.blueTitle_Arial_14{font-family:Arial;font-size:14px;color:navy;text-align:left;font-weight:700;margin:5px 0 1px 16px}
+.Text_14Arial_Bold{font-family:Arial;font-size:14px;color:#000;font-weight:700}
+.Text_Arial15_Orange{font-family:Arial,Helvetica,sans-serif;font-size:15px;color:#F60}
+.Text_16Arial_Bold{font-family:Arial;font-size:16px;color:#000;font-weight:700}
+.Text_12Arial_BlackBold{font-family:Arial;font-size:12px;color:#000;font-weight:700}
+.Text_12_Gray{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#999}
+.falsecheck_1 {
+    font: 11px Arial,Tahoma,Helvetica,sans-serif;
+    text-decoration: none;
+    outline: none;
+    background: url('https://pictures.tripmasters.com/siteassets/d/checkboxN.gif') no-repeat;
+    background-position: 1px 2px;
+    height: 17px;
+    display: inline-block;
+    padding: 4px 0 1px 20px;
+    color: navy;
+}
+.falsecheck_1:hover{background-color:#8698f1;color:#fff;text-decoration:underline; border-radius:2px;width:92%;}
+.falsechecked_1{background-position:1px -23px;background-color:#8698f1;color:#fff;width:92%;}
+.dvpaginas::before {content: "";position: absolute;}
+div.dvPagin {margin-top:0px!important;}
+.toolTip{font-family:Arial;font-size:12px;color:#000;font-weight:700;border-bottom:dashed 1px black;cursor:pointer;line-height:15px;}
+.toolTipCss{width:320px;border:solid 1px navy;border-radius:4px;padding:5px;font-weight:700;text-align:center;}
+.dvbRightColW {width: 74%;padding-left:10px!important;}
+.filterItem {margin:1px 5px 1px 5px;}
+.linkMoreContainer{margin-left:10px;margin-top:1px; font-size:11px;text-align:left;}
+.linkMoreObjects{color:Navy;cursor:pointer;font-weight:700;}
+.moreObjects{display:none;position:absolute;z-index:9999;background:white;min-width:550px;}
+.closeLink{float:right;cursor:pointer;cursor:pointer;color:Gray;clear:both;}
+.closeLink:hover{text-decoration:underline;}
+.applyFilters{margin:15px 130px;padding:7px;background-color: #e9eef8;border-radius: 3px;color: #333;cursor: pointer;font: 12px Arial,Helvetica,sans-serif;text-align: center;}
+.applyFilters:hover{color:Red;text-decoration:underline;}
+.curatelux {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    justify-content: center;
+    align-items: start;
+}
+
+    .curatelux .best-packages__item-lux {
+        display: inline-block;
+        font-size: 0.95rem;
+        font-style: italic;
+        font-family: "Merriweather";
+        line-height: 1;
+        color: #b89723;
+    }
+
+    .curatelux .best-packages__item-stars {
+        color: #b89723;
+        font-size: 0.95rem;
+    }
+
+.starlux {
+    color: #b89723;
+    font-size: 0.95rem;
+}

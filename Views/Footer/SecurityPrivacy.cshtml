@@ -1,0 +1,140 @@
+﻿<head>
+    @{
+        ViewBag.Canonical = @String.Format("https://www.tripmasters.com/security-privacy");
+
+    }
+    @{
+                    <environment include="Development">
+                        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+                    </environment>
+                    <environment exclude="Development">
+                        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
+                    </environment>
+                    <style>
+                     .chatUs{height: 22px!important;font-size: 12px!important;}
+                     .table{width:980px!important;margin:0 auto}
+                     .secTopHeader{height:140px!important} 
+                    .dvhChat{width:30%!important}
+                    .adotDecor{color:white!important}
+                    .image{margin-top:18px}
+                     @@media only screen and (max-width:767px) {
+                      .image {
+                          display: none;
+                      }
+                     }
+              }
+                    </style>
+            ViewBag.Mobile = 0;
+
+    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<div class="container-fluid dvpagecontainer" style="max-width: 980px;margin: 0 auto;background-color:white;padding:10px">
+    <div style="width:100%;background-color:white">
+        <div bgcolor="#F0EFD2">
+                <p style="text-align:left; padding:20px 0;">
+                    <strong>
+                        <font color="#000066" size="3" face="Verdana, Arial, Helvetica, sans-serif">
+                            Security and Privacy
+                        </font>
+                    </strong>
+                </p>
+
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:20px">
+        <div class="col-lg-6 col-sm-12 ">
+            <div class="row">
+                <div class="col-lg-9 col-sm-12">
+                    <p>
+                        <font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+                            <strong>
+                                <font color="#0066CC" size="2">
+                                    Online Security 
+                                </font>
+                            </strong>
+                        </font>
+                    </p>
+                    <p>
+                        <font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+                            <strong>
+                                Why
+                                is Tripmasters.com so safe?
+                            </strong>
+                        </font>
+                    </p>
+                    <p>
+                        At
+                        Tripmasters.comwe use secure server software (SSL)
+                        which is the industry standard and among the best software
+                        available today for secure commerce transactions. SSL encrypts
+                        all of your personal information, including credit card number,
+                        name, and address, so that it cannot be read as the information
+                        travels over the Internet.
+                    </p>
+                </div>
+                <div class="col-lg-3 image pl-0 pr-0" >
+                    <img src="https://pictures.tripmasters.com/siteassets/d/Locks.jpg" width="120" height="99" />
+                </div>
+            </div>
+            <p>
+                <strong>
+                    We
+                    guarantee that your transaction
+                </strong> with Tripmasters.com will
+                be 100% safe. You pay nothing if unauthorized charges are
+                made to your card as a result of buying online at Tripmasters.com.
+            </p>
+            <p>
+                <strong>Precise location in background</strong><br />
+                Tripmasters mobile app collects location data to display real-time risk alerts and personalized assistance notification features, even when the app is closed and not in use. This option can be changed later by going to the device settings.
+
+
+            </p>
+
+        </div>
+
+        <div class="col-lg-6 col-sm-12 pr-3 ">
+
+            <p>
+                    <strong>
+                        Under
+                        the Fair Credit Billing Act,
+                    </strong> your bank cannot hold you liable
+                    for more than $50.00 of fraudulent charges. If your bank does
+                    hold you liable for any of this $50.00, Tripmasters.com
+                    will cover the entire liability for you, up to the full $50.00.
+                    We will cover this liability only if, while buying online at
+                    Tripmasters.com using our secure server, the unauthorized
+                    use of your credit card resulted through no fault of your own.
+                    In the event of unauthorized use of your credit card, you must
+                    notify your credit card provider in accordance with its reporting
+                    rules and procedures.
+            </p>
+            <p>
+                    <font color="#0066CC" size="2">
+                        <strong>
+                            Privacy
+                            Policy:<font size="1">
+                                <br>
+                            </font>
+                        </strong>
+                    </font>Tripmasters.com <strong>protects your personal information </strong>and will not sell your
+                    information to a third party. We will only send you our specials
+                    and newsletters if you subscribe to our website. Even if
+                    you purchase from us and we have your e-mail we will not
+                    send you anything unless you subscribe through the subscribe
+                    link in our home page.<br>
+
+                    Third party vendors, including Google, show our ads on sites on the internet. Third party vendors, including Google, use cookies to serve ads based on a user's prior visits to our website. You may opt out of Google's use of cookies by visiting the Network Advertising Initiative opt out page.
+            <br/>
+                In some instances, we may share your personal information with third parties to facilitate requested services, provide recommendations, and personalize your experience with TripMasters. This may include, but is not limited to, sharing your name, contact details, travel itinerary, and any other relevant information required to provide services.
+                </p>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,129 @@
+body{margin:0;font-family:Arial,Helvetica,sans-serif!important}
+.dvMainContainer{width:980px;margin:0 auto;font:Arial,Helvetica,sans-serif;font-size:12px}
+.dvRoundContainer{margin-bottom:5px;border:1px solid #638bd1;box-shadow:inset 0 0 15px #638bd1;border-radius:10px 10px 10px 10px;padding:20px}
+.dvRoundContainer h3{margin:0 0 5px;padding:5px 10px;border-radius:5px;background:#608ED5;color:#FFF;font-size:16px;text-align:left}
+.dvRoundContainer h3 span{display:inline-block;width:20px;height:20px;margin-left:10px;padding:2px 3px 0 2px;background:#FBA919;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;font-size:16px;text-align:center}
+.Text_Arial16_BlueBold {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    color: #013299;
+    font-weight: 700
+}
+.Text_Arial12_OrangeBold {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    color: #F90;
+    font-weight: 700
+}
+a:link,a:visited{color:navy;text-decoration:none}
+a:hover{text-decoration:underline}
+#samplePriS a:link{color:navy;text-decoration:none}
+#samplePriS a:hover{color:#F60;text-decoration:underline}
+#samplePriH a:link{color:navy;text-decoration:none}
+#samplePriH a:hover{color:#F60;text-decoration:underline}
+.a3:hover{color:#FFC;text-decoration:underline}
+.a1{font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:#FFCB01;text-decoration:none}
+.a2{font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;color:blue;text-decoration:none}
+.a3{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#fff;text-decoration:none}
+.a4{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#360;text-decoration:none}
+.a5{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#060;text-decoration:none}
+.a6{font-family:Arial,Helvetica,sans-serif;font-size:18px;text-decoration:none;color:#030}
+.foot{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#666;text-decoration:none}
+.foot a:hover{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#00C;text-decoration:underline}
+.foot a:visited{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#666;text-decoration:none}
+.foot a:link{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#666;text-decoration:none}
+.foot a:active{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#666;text-decoration:none}
+.secAnnounce {
+    max-width: 52%;
+    display: block;
+    font-size: 14px;
+    background: #333;
+    color: #fff;
+    width: 37%!important;
+    padding: 5px 20px 30px;
+    margin: 30px auto;
+}
+p.closeAnn, p.closeTopAnn {
+    text-align: right !important;
+    margin: 0 !important;
+    padding: 0 0 15px !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    width: 100% !important;
+}
+.secAnnounce p {
+    text-align: center;
+    margin: 25px 0 0 0 !important;
+    width: 100% !important;
+}
+.secAnnounce img{
+    float: left;
+    margin: 0 10px 0 0;
+}
+.secAnnounce p a {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 16px;
+}
+.spdotLine {
+    border-bottom: .17em dotted #ccc;
+    width: 98%;
+    margin: 10px;
+    display: inline-block
+}
+.secVoucher {
+    background-color: #F5F5F5;
+    height: 146px;
+    margin-top: 25px !important;
+    margin: 0 auto;
+    display: table
+}
+
+.divSecVoucher1 {
+    display: table-cell;
+    width: 41%;
+    vertical-align: middle;
+    text-align: center
+}
+
+.divSecVoucher2 {
+    display: table-cell;
+    width: 64%;
+    text-align: center;
+    padding: 0 30px 0 18px;
+}
+
+.giftForTravel {
+    color: #638BD1;
+    font-size: 25px;
+    margin: 0px;
+    padding-right: 16px;
+}
+
+.giftVoucher {
+    color: #121852;
+    font-size: 46px;
+    margin: 0px;
+    font-weight: bold;
+}
+
+.divSecVoucher2 p {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.divSecVoucher2 a {
+    background: #1F2B6C 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #121852 !important;
+    border-radius: 19px;
+    opacity: 1;
+    color: white !important;
+    text-decoration: none !important;
+    padding: 9px 90px;
+    font-size: 17px;
+    max-width: 276px;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+}

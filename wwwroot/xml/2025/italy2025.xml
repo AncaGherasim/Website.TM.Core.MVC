@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <section id="1">
+    <note>Page presentation</note>
+    <title>Experience Italy 2025</title>
+    <description></description>
+    <picture>https://tripmasters-pictures.s3.amazonaws.com/images/web/tm/tmed/t4/italy.jpg</picture>
+    <overimagetext>Discover Italy</overimagetext>
+  </section>
+  <section id="2">
+    <note>Banner</note>
+    <title>Plan Smart, Book Easy, Travel Confidently!</title>
+    <plan>
+      <title>Plan your dream</title>
+      <subtitle>with Tripmasters!</subtitle>
+      <description>Plan your dream trip with Tripmasters! Customize multi-destination vacations with your choice of destinations, stays, transport, and activities. Enjoy flexible itineraries for a travel experience that fits you!</description>
+    </plan>
+    <customize>
+      <title>Customize your trip</title>
+      <subtitle>up to 12 destinations!</subtitle>
+      <description>Plan your perfect getaway, where you can customize trips to up to 12 destinations with flexible flight, stay, and activity options. Access your itinerary and travel guides on the go with the Tripmasters mobile app for a seamless travel experience!</description>
+    </customize>
+    <rating>
+      <title>Yes! we hold an</title>
+      <subtitle>A+ rating from BBB</subtitle>
+      <description>Tripmasters holds an A+ rating from the Better Business Bureau (BBB), reflecting our strong dedication to customer satisfaction and high standards of business practices.</description>
+    </rating>
+  </section>
+  <section id="3">
+    <note>Suggested Packages</note>
+    <title>Top Places to go in Italy and suggested Vacation Packages 2025</title>
+    <description>
+      Discover our best Italy vacation packages for 2025, featuring top-rated multi-city trips across Italy’s most iconic destinations. These Italy travel packages seamlessly combine the best spots to visit in Italy for an unforgettable experience!
+    </description>
+    <packlistIDs>858780, 44878, 96409, 88917, 19097, 12036, 88946, 18386</packlistIDs>
+  </section>
+  <section id="4">
+    <note>BYO Calendar</note>
+    <title>Make 2025 trips unforgettable! Build your own itinerary and choose up to 12 destinations!</title>
+    <description/>
+    <calendar/>
+  </section>
+  <section id="5">
+    <note>Country Destinations</note>
+    <title>Exclusive Destinations in Italy 2025</title>
+    <description>10  Best Cities to Visit in Italy! Experience the perfect blend of must-see cities and best regions to visit in Italy. These iconic destinations are a must on nearly everyone’s bucket list. With their timeless charm, rich history, and breathtaking landscapes, they stand out as the top places to visit in Italy for 2025!</description>
+    <topcities>Rome, Florence, Venice, Amalfi Coast, Cinque Terre Area, Bologna, Milan, Siena, Naples, Verona</topcities>
+    <regions>Tuscany and Hill towns, Amalfi Coast and Neapolitan Riviera, Sicily, Emilia Romagna, Puglia (Heel of Italy), Umbria and Hilltowns, The Veneto, Italian Lakes, Sardinia, Iconic Italian Road Trips, Chianti Wine Region</regions>
+  </section>
+  <section id="6">
+    <note>Things to do</note>
+    <title>Top things to do in Italy 2025</title>
+    <description>Top Things to Do in Italy in 2025! Get inspired with our must-visit Italy experiences. Explore iconic cities, breathtaking coastlines, UNESCO World Heritage Sites, top wine regions, authentic culinary delights, and scenic road trips through Italy. Here’s our list of suggested Italy itineraries of Best Things to Do in Italy in 2025.</description>
+    <listoftodo>
+      <todo>
+        <no>1</no>
+        <todoname>Romantic Honeymoon in Italy</todoname>
+        <todoimage>https://tripmasters-pictures.s3.amazonaws.com/images/packages1/italy/italy-wineanddinercouple-200.jpg</todoimage>
+        <tododescription>Create unforgettable memories with a dreamy honeymoon in Italy, perfect for any couple seeking romance and adventure!</tododescription>
+        <todolink>https://www.tripmasters.com/europe/honeymoon_in_italy/area/vacations</todolink>
+      </todo>
+      <todo>
+        <no>2</no>
+        <todoname>Italy Food Tours</todoname>
+        <todoimage>https://tripmasters-pictures.s3.amazonaws.com/images/apkg/71/italy_-_food_-_rome-4283741-500.jpg</todoimage>
+        <tododescription>Dive into an Italy food tour and savor authentic Italian flavors with local food tastings and handpicked traditional eateries. Experience the best of Italian cuisine on a culinary journey through Italy!</tododescription>
+        <todolink>https://www.tripmasters.com/europe/italian_cuisine/area/vacations</todolink>
+      </todo>
+      <todo>
+        <no>3</no>
+        <todoname>Wine Country Tours in Italy</todoname>
+        <todoimage>https://tripmasters-pictures.s3.amazonaws.com/images/asst/71/chianti_-_wine_tour_-776107-500.jpg</todoimage>
+        <tododescription>Savor the best of authentic Italian wine with exclusive wine tours in Tuscany, Piedmont, Sicily, Chianti and beyond.</tododescription>
+        <todolink>https://www.tripmasters.com/europe/italian_wine_regions/area/vacations</todolink>
+      </todo>
+      <todo>
+        <no>4</no>
+        <todoname>Best Historical Sites in Italy</todoname>
+        <todoimage>https://tripmasters-pictures.s3.amazonaws.com/images/asst/71/amalfi_-_coast_view_-713577-500.jpg</todoimage>
+        <tododescription>Discover Rome's Colosseum, Pompeii, Venice, Florence, the Amalfi Coast, and other historic wonders on an unforgettable Italy UNESCO travel experience!</tododescription>
+        <todolink>https://www.tripmasters.com/europe/italy/italian_unesco_world_heritage_highlights/package-655976</todolink>
+      </todo>
+      <todo>
+        <no>5</no>
+        <todoname>The Ultimate Road Trip Through Scenic Italy</todoname>
+        <todoimage>https://tripmasters-pictures.s3.amazonaws.com/images/packages1/italy/sicily-countryside-500.jpg</todoimage>
+        <tododescription>From the stunning coastlines of Sicily and the misty peaks of the Dolomites to Tuscany’s wine routes and hidden medieval towns, an Italy self-drive adventure offers an unforgettable road trip through the country’s most scenic landscapes and cultural treasures!</tododescription>
+        <todolink>https://www.tripmasters.com/europe/iconic_italian_road_trips/area/vacations</todolink>
+      </todo>
+      <todo>
+        <no>6</no>
+        <todoname>Best City and Beach Vacation in Italy</todoname>
+        <todoimage>https://tripmasters-pictures.s3.amazonaws.com/images/apkg/71/positano_-_beach-1124395-500.jpg</todoimage>
+        <tododescription>Italy offers a perfect blend of vibrant cities and some of the world's best beaches. Whether you seek secluded bays or luxurious beach destinations, Italy's coastline caters to every traveler. </tododescription>
+        <todolink>https://www.tripmasters.com/europe/city_and_beach_holidays_in_italy/area/vacations</todolink>
+      </todo>
+    </listoftodo>
+  </section>
+  <section id="7">
+    <note>Beyong</note>
+    <title>Italy and Beyond 2025</title>
+    <description>
+      Explore our top multi-country European vacation packages, designed to take you to Europe's most iconic must-see destinations. Browse our expertly curated top-selling Multi-Country Italy Vacation packages 2025 or customize your own unforgettable journey!
+    </description>
+    <packlist>26163, 47278, 164238, 35575, 47811, 96402, 19158</packlist>
+    <beyon>
+      <no>1</no>
+      <beyonname></beyonname>
+      <beyonimage></beyonimage>
+      <beyondescription></beyondescription>
+      <beyondlink></beyondlink>
+    </beyon>
+    <beyon>
+      <no>2</no>
+      <beyonname></beyonname>
+      <beyonimage></beyonimage>
+      <beyondescription></beyondescription>
+      <beyondlink></beyondlink>
+    </beyon>
+  </section>
+  <section id="8">
+    <note>Reviews</note>
+    <title>Customer Reviews</title>
+    <description/>
+    <reviewlist/>
+  </section>
+  <section id="9">
+    <note>Faq</note>
+    <title>Italy FAQ's</title>
+    <decription/>
+    <faqlist>
+      <faq>
+        <question/>
+        <answer/>
+      </faq>
+    </faqlist>
+  </section>
+  <section id="10">
+		<note>Page title and metas</note>
+		<pagetitle>Italy 2025 Travel Guide | 2025 Vacation Packages | Tripmasters </pagetitle>
+		<metadescription>Plan your dream Italy vacation with the 2025 Travel Guide by Tripmasters. Discover top destinations, custom vacation packages, expert tips, and exclusive deals for an unforgettable Italian getaway.</metadescription>
+		<metakeyword></metakeyword>
+	</section>
+</root>

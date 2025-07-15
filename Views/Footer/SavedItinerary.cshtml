@@ -1,0 +1,234 @@
+﻿@{
+    <environment include="Development">
+                              <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+                              <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+<style>
+    .dvCheckContainer {
+        margin: 0 auto;
+        height: auto;
+        padding: 25px;
+        border: 1px solid #ffd968;
+        text-align: left;
+        border-radius: 7px;
+        background: #ffe493;
+    }
+    .dvMainContainer { width: 980px; margin: 0 auto;font: Arial,Helvetica,sans-serif;font-size: 12px;}
+.dvRoundContainer {margin-bottom: 5px;border: 1px solid #638bd1;box-shadow: inset 0 0 15px #638bd1;border-radius: 10px 10px 10px 10px;padding: 20px;margin-top: 15px;}
+ .dvRoundContainer h3 { 
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    background: #608ed5;
+    color: #fff;
+    font-size: 16px;
+}
+.dvCheckContainer form {display:flex;flex-direction:column;}
+.dvCheckContainer label{display: flex;justify-content:space-between;align-items: center;padding:6px 0;font:14px Arial,Helvetica,sans-serif;font-size:20px;position: relative;}
+.dvCheckContainer label .if-available{color:#333;font-size:13px;margin-left:4px;}
+input[type=button]{float:right;cursor:pointer}
+input[type=text]{width:50%;height: 30px;}
+ select {width: 153px}
+ .book{padding-left:80px; padding-right:80px;}
+.errMsg { background-color: #FF4D63;padding: 4px;border-radius: 2px;color: #fff;font-weight: 700;font-size: 12px; margin-left: 14px;margin-top: 0;position: absolute;right: 0;top: -15px}
+.dvSaveLeft {padding: 29px 25px; font: 12px Arial,Helvetica,sans-serif}
+.dvSaveRight {padding: 15px 20px;font: 12px Arial,Helvetica,sans-serif;text-align: justify;}
+.dvsaveAssist div {text-align: left;}
+.dvCheckContainer {margin: 0 auto;height: auto;padding: 25px;border: 1px solid #dee5f7; text-align: left;border-radius: 7px;background: #dee5f7;margin-right: 0px;margin-left: 0px;}
+.dvCheckTitle {color: #000096;padding: 7px 0;font: 700 16px Arial,Helvetica,sans-serif}
+.dvCheckContainer p a {float: right;font-size: 12px}
+.form-button {
+    background-image: linear-gradient(to bottom, #f9e5ab 30%, #ffcc66 100%) !important;
+    border: 1px solid #ffcc66;
+    border-radius: 5px;
+    color: #000085;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 5px 50px;
+    float:none;
+}
+.footer-stag {font-size: 16px !important}
+.reminders {background: url("https://pictures.tripmasters.com/siteassets/d/reminder_icon.png") no-repeat left;margin-left:20px;padding-left:30px;font-size: 16px;padding-top: 10px; padding-bottom: 10px;color:navy}
+.dvBookAssist {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 10px 25px 10px 10px;
+    font-size: 12px;
+}
+.dvHaveBook {
+    padding-left: 10px;
+    line-height: 17px;
+}
+.dvHaveBook a {
+    color: #000080;
+}
+.Blue-Arial14 {
+    margin-bottom: 10px;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: 700;
+    color: #036;
+}
+.Text_12 {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+}
+.wrapper-button {
+    margin-top: 10px;
+}
+ @@media only screen and (max-width:767px) {
+.container{padding-left:5px;padding-right:5px}
+.dvRoundContainer {margin-bottom: 5px;padding: 20px;margin-top: 15px;border: none;box-shadow: none;border: 1px solid #638bd1;box-shadow: inset 0 0 15px #638bd1;border-radius: 10px 10px 10px 10px;}
+h3 {width: -webkit-fill-available !important;}
+.dvAssisTitle {
+    font-size: 16px;
+    color: #000569;
+    text-align: right;
+    font-weight: 700;
+    padding: 10px 15px 0 0;
+}
+.dvCheckContainer label {
+    flex-direction:column;
+    align-items: flex-start;
+}
+.errMsg {
+    right:5px;
+    top: -1px;
+}
+.dvAssisMess {font-size: 12px;color: #000569;text-align: right;padding: 3px 15px 5px 0;}
+.book{padding-left:unset; padding-right:unset;}
+.dvSaveLeft {padding: 20px 10px;}
+div.contentSecPay img {max-width: -webkit-fill-available;}
+.dvMainContainer {width: 100%;background-color: white}
+ div.dvMhomeContainer { background-color: white;width: 100%}
+.dvCheckTitle {font-size: 14px}
+ .dvCheckContainer label {font-size: 14px;}
+.travel {font-size: 9px}
+.dvMheadMenu {padding-left: 20px; margin-left: 20px;}
+.dvMheadMenu button {border: 1px solid white; border-radius: 5px; padding: 8px;}
+.dvEachBtn .spandvEachBtn {float: right;}
+.navbar { padding: 0 10px;}
+#frmListQry p {
+    display: flex;
+    flex-direction:column;
+}
+input[type=text]{width:99%;height: 30px;}
+        }
+
+</style>
+
+<div class="container ">
+    <div style="max-width: 1020px; margin: 0 auto;">
+        <div class="dvRoundContainer">
+            <div><h3>Retrieve your Saved Itinerary</h3></div>
+            <div class="dvSaveLeft">
+                <div class="dvCheckContainer">
+                    <form id="frmListQry" name="frmListQry" method="post" autocomplete="off">
+                            <label for="itinerary">Itinerary ID:
+                                <input type="text" name="itinerary" id="itinerary" value="" size="10" maxlength="10" />
+                            </label>
+                            <label for="Zip">Zip Code:
+                                <input name="Zip" type="text" id="Zip" value="" size="10" maxlength="10" />
+                            </label>
+                            <label for="Digit"><span>Security Digit:<span class="if-available">(if available)</span></span>
+                                <input type="text" id="Digit" name="Digit" value="" />
+                            </label>
+                        <div class="wrapper-button">
+                            <input class="form-button" id="search" name="search" type="button" value="Search">
+                        </div>
+                        <input type="hidden" name="bFirst" value="1">
+                        <input type="hidden" name="register" value="tournet">
+                        <input type="hidden" name="GeneralLoc" value="https://pictures.tripmasters.com/defaultimages/" />
+                        <br style="clear:both" />
+                    </form>
+                </div>
+            </div>
+            <div class="dvSaveRight">
+
+              <div class="dvBookAssist">
+                    <div class="Blue-Arial14">Need booking assistance?</div>
+                    <div class="Text_12">
+                        <b>We're glad to help:</b><br>
+                        Call Us <b>7</b>  days a week<br />
+                        from 8AM to Midnight ET<br />
+                        <span class="Text_Arial16_navy"><b>1-800-430-0484</b></span>
+                    </div>
+              </div>
+                
+                <div class="dvHaveBook">
+                    <font size="2">
+                        <b>Do you already have a booking?</b><br>
+                        <a href="/booking_confirmation"><img src="https://pictures.tripmasters.com/siteassets/d/yellowarrow.gif" width="11" height="15" border="0" align="absbottom"> check the status here</a>
+                    </font>
+                </div>
+            </div>
+            <br style="clear:both" />
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var itinreg = /^\d*$/;
+            var zcodreg = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
+            $('#search').click(function () {
+                var itinerary = $.trim($("#itinerary").val());
+                var Zip = $.trim($("#Zip").val());
+                $("#itinerary").val(itinerary);
+                $("#Zip").val(Zip);
+                $(".errMsg").remove();
+                if ($("#itinerary").val() == "" || !itinreg.test($("#itinerary").val())) {
+                    $("#itinerary").val(itinerary).focus().after("<span class='errMsg'>verify your itinerary ID</span>");
+                    return false;
+                } else if ($("#itinerary").val().length < 4) {
+                    $("#itinerary").val(itinerary).focus().after("<span class='errMsg'>minimum 4 digits</span>");
+                    return false;
+                } else if ($("#Zip").val() == "" || $("#Zip").val().length < 5 || !zcodreg.test($("#Zip").val())) {
+                    $("#Zip").val(Zip).focus().after("<span class='errMsg'>verify your zipcode</span>");
+                    return false;
+                } else
+                    if (itinerary < 100000000) {
+                        $('#frmListQry').attr('action', 'https://reservation.tripmasters.com/Tourpackage4/Itinerary/View/' + itinerary + '/' + Zip + '')
+                    }
+                    else {
+                        $('#frmListQry').attr('action', 'https://reservations.tripmasters.com/TVLAPI/MultiCity3/MC_Componentlist.asp');
+                    }
+                $('#frmListQry').submit();
+            });
+            $("#itinerary, #Zip").keyup(function () {
+                if ($(this).val() != "") {
+                    $(".errMsg").fadeOut();
+                    return false;
+                }
+            });
+            $("#itinerary").keyup(function () {
+                if ($(this).val().length = 4) {
+                    $(".errMsg").fadeOut();
+                    return false;
+                }
+            });
+            $("#zipcode").keyup(function () {
+                if ($(this).val().length = 5) {
+                    $(".errMsg").fadeOut();
+                    return false;
+                }
+            });
+            $("#SystemID").change(function () {
+                if ($("#SystemID").val() != "Select-One") {
+                    $(".errMsg").fadeOut();
+                    return false;
+                }
+            });
+
+        });
+    </script>
+}

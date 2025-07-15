@@ -1,0 +1,289 @@
+﻿@model MVC_TM.Models.ViewModels.SearchViewModel
+@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@inject IOptions<AppSettings> _appsettings
+
+
+
+@section Styles {
+    <environment include="Development">
+        <link href="~/css/search_m/mb.style.search.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/search_m/mb.style.search.min.css" asp-append-version="true" />
+    </environment>
+
+    <style>
+    </style>
+}
+
+@section structureData{
+}
+
+<div class="row mb-1 bg-light" id="dvResultsNumber" >
+    <div class="col-8 py-2" id="results" style="font-size:14px;width:75%;float:left;">
+        <span id="resultsVal" style="font-weight:bold;">0</span>&nbsp;Results
+    </div>
+    <div class="col-4 py-2 headerBack" style="font-size:16px;font-weight:bold;width:21%;float:left;color:#3679c7;" onclick="showDiv('dvFilters')">&nbsp;&nbsp;Filter >></div>
+</div>
+
+<div id="dvWait"></div>
+<div class="row" id="dvFilterPacks" ></div>
+<div id="dvFilters" style="background-color:#e7e7e7;padding:0 15px 20px 15px;display:none;">
+    <div style="background-color:White;">
+        <div class="filterHeader">
+            <div style="font-size:18px;width:78%;">Filter your packages</div>
+            <div class="headerBack" style="font-size:14px;width:19%;" onclick="showDiv('dvFilterPacks')"><< Back</div>
+        </div>
+        <div style="padding:0 8px 30px 8px;">
+            <div class="categoryBorder filterCategory1">Select Criteria</div>
+            <div class="categoryBorder">
+                <div class="category" style="padding-bottom:3px;" onclick="showDiv('dvFilterOrderBy')">Order by</div>
+                <div id="orderByText">Relevance</div>
+                <input id="orderByVal" name="orderByVal" type="hidden" value="5" />
+            </div>
+            <div class="categoryBorder filterCategory1" style="margin-top:15px;">Filters</div>
+            @if (Model.Interests.Count > 0)
+            {
+                <div class="categoryBorder category" onclick="showDiv('dvFilterInterests')">Interests</div>
+            }
+            @if (Model.Countries.Count > 0)
+            {
+                <div class="categoryBorder category" onclick="showDiv('dvFilterCountries')">Countries</div>
+            }
+            @if (Model.Cities.Count > 0)
+            {
+                <div class="categoryBorder category" onclick="showDiv('dvFilterCities')">Cities</div>
+            }
+            @if (Model.StayLengths.Count > 0)
+            {
+                <div class="categoryBorder category" onclick="showDiv('dvFilterLengthOfStay')">Length of stay</div>
+            }
+            @if (Model.Prices.Count > 0)
+            {
+                <div class="categoryBorder category" onclick="showDiv('dvFilterPrice')">Price per person (USD)</div>
+            }
+        </div>
+    </div>
+</div>
+
+@if (Model.Prices.Count > 0)
+{
+    <div id="dvFilterPrice" style="display:none;">
+        <div class="filterCategoryHeader">@Html.Raw("&nbsp;Back")</div>
+        <div class="filterCategoryContainer">
+            <div class="filterCategory1">Price per person (USD)</div>
+            <div class="filterOptionsContainer">
+                @foreach (var f in Model.Prices.OrderBy(x => x.Index))
+                {
+                    string classStr = "filterOption";
+                    if (f.Index == Model.Prices.Count)
+                    {
+                        classStr = "filterOptionNoBroder";
+                    }
+                    <div id=@String.Format("optCkPrice{0}", f.Value) class="@String.Format("{0} unselectedOptionC", classStr)">@f.Title</div>
+                }
+            </div>
+            <div id="ApplyFilter_optPrice" class="blueButton">Apply Filter</div>
+            <div id="ClearFilter_optPrice" class="grayButton">Clear Filter</div>
+        </div>
+    </div>
+}
+
+@if (Model.StayLengths.Count > 0)
+{
+    <div id="dvFilterLengthOfStay" style="display:none;">
+        <div class="filterCategoryHeader">@Html.Raw("&nbsp;Back")</div>
+        <div class="filterCategoryContainer">
+            <div class="filterCategory1">Length of stay</div>
+            <div class="filterOptionsContainer">
+                @foreach (var f in Model.StayLengths.OrderBy(x => x.Index))
+                {
+                    string classStr = "filterOption";
+                    if (f.Index == Model.StayLengths.Count)
+                    {
+                        classStr = "filterOptionNoBroder";
+                    }
+                    <div id=@String.Format("optCkLenght{0}", f.Value) class="@String.Format("{0} unselectedOptionC", classStr)">@f.Title</div>
+                }
+            </div>
+            <div id="ApplyFilter_optLeght" class="blueButton">Apply Filter</div>
+            <div id="ClearFilter_optLenght" class="grayButton">Clear Filter</div>
+        </div>
+    </div>
+}
+
+@if (Model.Countries.Count > 0)
+{
+    <div id="dvFilterCountries" style="display:none;">
+        <div class="filterCategoryHeader">@Html.Raw("&nbsp;Back")</div>
+        <div class="filterCategoryContainer">
+            <div class="filterCategory1">Countries</div>
+            <div class="filterOptionsContainer">
+                @foreach (var c in Model.Countries.Take(12))
+                {
+                    string cId = "";
+                    if (c.Id > 0)
+                    {
+                        cId = " (" + c.Id + ")";
+                    }
+                    <div id=@String.Format("optCkCountries{0}", c.Name.Replace(" ", "_").Replace("(", "").Replace(")", "")) class="filterOption unselectedOptionC">@c.Name @cId</div>
+                }
+                @if (Model.Countries.Count > 12)
+                {
+                    <div id="link2MoreCountries" class="filterOption" style="padding-left:5px;" onclick="showDiv('dvFilterMoreCountries')">+ More countries</div>
+                }
+            </div>
+            <div id="ApplyFilter_optCkCountries" class="blueButton">Apply Filter</div>
+            <div id="ClearFilter_optCkCountries" class="grayButton">Clear Filter</div>
+        </div>
+    </div>
+    <div id="dvFilterMoreCountries" style="display:none;">
+        <div class="filterCategoryHeader">@Html.Raw("&nbsp;Back")</div>
+        <div class="filterCategoryContainer">
+            <div class="filterCategory2">Countries</div>
+            @foreach (var c in Model.Countries.OrderBy(x => x.Name))
+            {
+                string cId = "";
+                if (c.Id > 0)
+                {
+                    cId = " (" + c.Id + ")";
+                }
+                <div id=@String.Format("optCk2MoreCountries{0}", c.Name.Replace(" ", "_").Replace("(", "").Replace(")", "")) class="filterOption unselectedOptionC">@c.Name @cId</div>
+            }
+            <div id="ApplyFilter_optCk2MoreCountries" class="blueButton">Apply Filter</div>
+            <div id="ClearFilter_optCk2MoreCountries" class="grayButton">Clear Filter</div>
+        </div>
+    </div>
+}
+
+@if (Model.Cities.Count > 0)
+{
+    <div id="dvFilterCities" style="display:none;">
+        <div class="filterCategoryHeader">@Html.Raw("&nbsp;Back")</div>
+        <div class="filterCategoryContainer">
+            <div class="filterCategory2">Cities</div>
+            @foreach (var c in Model.Cities.Take(12))
+            {
+                string cId = "";
+                if (c.Id > 0)
+                {
+                    cId = " (" + c.Id + ")";
+                }
+                <div id=@String.Format("optCkCities{0}", c.Name.Replace(" ", "_").Replace("(", "").Replace(")", "")) class="filterOption unselectedOptionC">@c.Name @cId</div>
+            }
+            @if (Model.Cities.Count > 15)
+            {
+                <div id="link2MoreCities" class="filterOption" style="padding-left:5px;" onclick="showDiv('dvFilterMoreCities')">+ More cities</div>
+            }
+            <div id="ApplyFilter_optCkCities" class="blueButton">Apply Filter</div>
+            <div id="ClearFilter_optCkCities" class="grayButton">Clear Filter</div>
+        </div>
+    </div>
+    <div id="dvFilterMoreCities" style="display:none;">
+        <div class="filterCategoryHeader">@Html.Raw("&nbsp;Back")</div>
+        <div class="filterCategoryContainer">
+            <div class="filterCategory2">Cities</div>
+            @foreach (var c in Model.Cities.OrderBy(x => x.Name))
+            {
+                string cId = "";
+                if (c.Id > 0)
+                {
+                    cId = " (" + c.Id + ")";
+                }
+                <div id=@String.Format("optCk2MoreCities{0}", c.Name.Replace(" ", "_").Replace("(", "").Replace(")", "")) class="filterOption unselectedOptionC">@c.Name @cId</div>
+            }
+            <div id="ApplyFilter_optCk2MoreCities" class="blueButton">Apply Filter</div>
+            <div id="ClearFilter_optCk2MoreCities" class="grayButton">Clear Filter</div>
+        </div>
+    </div>
+}
+
+@if (Model.Interests.Count > 0)
+{
+    <div id="dvFilterInterests" style="display:none;">
+        <div class="filterCategoryHeader">@Html.Raw("&nbsp;Back")</div>
+        <div class="filterCategoryContainer">
+            <div class="filterCategory2">Interests</div>
+            @foreach (var c in Model.Interests.Take(10))
+            {
+                string cId = "";
+                if (c.Id > 0)
+                {
+                    cId = " (" + c.Id + ")";
+                }
+                <div id=@String.Format("optCkInterests{0}", c.Name.Replace(" ", "_").Replace("(", "").Replace(")", "")) class="filterOption unselectedOptionC">@c.Name @cId</div>
+            }
+            @if (Model.Interests.Count > 10)
+            {
+                <div id="link2MoreInterests" class="filterOption" style="padding-left:5px;" onclick="showDiv('dvFilterMoreInterests')">+ More interests</div>
+            }
+            <div id="ApplyFilter_optCkInterests" class="blueButton">Apply Filter</div>
+            <div id="ClearFilter_optCkInterests" class="grayButton">Clear Filter</div>
+        </div>
+    </div>
+    <div id="dvFilterMoreInterests" style="display:none;">
+        <div class="filterCategoryHeader">@Html.Raw("&nbsp;Back")</div>
+        <div class="filterCategoryContainer">
+            <div class="filterCategory2">Interests</div>
+            @foreach (var c in Model.Interests.OrderBy(x => x.Name))
+            {
+                string cId = "";
+                if (c.Id > 0)
+                {
+                    cId = " (" + c.Id + ")";
+                }
+                <div id=@String.Format("optCk2MoreInterests{0}", c.Name.Replace(" ", "_").Replace("(", "").Replace(")", "")) class="filterOption unselectedOptionC">@c.Name @cId</div>
+            }
+            <div id="ApplyFilter_optCk2MoreInterests" class="blueButton">Apply Filter</div>
+            <div id="ClearFilter_optCk2MoreInterests" class="grayButton">Clear Filter</div>
+        </div>
+    </div>
+}
+
+<div id="dvFilterOrderBy" style="display:none;">
+    <div class="filterCategoryHeader">@Html.Raw("&nbsp;Back")</div>
+    <div class="filterCategoryContainer">
+        <div class="filterCategory1">Order by</div>
+        <div class="filterOptionsContainer">
+            <div id="optOrder0" class="filterOption unselectedOption">Most Popular</div>
+            <div id="optOrder1" class="filterOption unselectedOption">Length of stay</div>
+            <div id="optOrder2" class="filterOption unselectedOption">Price - Low to High</div>
+            <div id="optOrder3" class="filterOption unselectedOption">Price - High to Low</div>
+            <div id="optOrder4" class="filterOption unselectedOption">Package Name</div>
+            <div id="optOrder5" class="filterOptionNoBroder selectedOption">Relevance</div>
+            <div id="optOrder6" class="filterOptionNoBroder unselectedOption">Luxury</div>
+        </div>
+        <div id="ApplyFilter_optOrder" class="blueButton">Apply Filter</div>
+        <div id="ClearFilter_optOrder" class="grayButton">Clear Filter</div>
+    </div>
+</div>
+
+<div id="errMessage" style="display:none;border-bottom:solid 1px gray;background-color:White;padding:10px 5px 25px 5px;">
+    <div style="font-size:16px;font-weight:bold;padding:10px 0 15px 15px; border-bottom:solid 1px #f2f2f2;"><span style="color:Navy;">Itineraries for:</span>&nbsp;<span style="color:Gray;">@ViewBag.q</span></div>
+    <div style="font-size:18px;font-weight:bold;text-align:center;padding:30px 0 12px 0">No itineraries found.</div>
+    <div style="font-size:14px;font-weight:bold;text-align:center;">Please try the following link:</div>
+    @{
+        var bag = ViewBag.q.Replace(" ", "%20");
+    }
+<div style="margin:10px 8px 20px 8px;padding:10px 0;cursor:pointer;text-decoration:underline;color:#121085;border:solid 1px #c8c8c8;text-align:center; background: -moz-linear-gradient(to bottom, #f6f6f6, #e0e0e0);
+         background:-webkit-linear-gradient(to bottom, #f6f6f6, #e0e0e0);background:-o-linear-gradient(to bottom, #f6f6f6, #e0e0e0);background:-moz-linear-gradient(to bottom, #f6f6f6, #e0e0e0);background:linear-gradient(to bottom, #f6f6f6, #e0e0e0);"
+     onclick='window.open("@String.Format("https://www.google.com/search?q=site:tripmasters.com {0}", @bag)")'>
+    @Html.Raw(@String.Format("https://www.google.com/search?q=site:tripmasters.com {0}", @bag))
+</div>
+    <div style="font-size:14px;font-weight:bold;text-align:center;margin-bottom:20px;">Thank you!</div>
+</div>
+
+
+<input name="awsQ" type="hidden" id="awsQ" value="@ViewBag.q" />
+
+
+@section Scripts
+    {
+    <environment include="Development">
+        <script src="~/js/search_m/mb.java.Mobile_Search.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/search_m/mb.java.Mobile_Search.min.js" asp-append-version="true"></script>
+    </environment>
+}

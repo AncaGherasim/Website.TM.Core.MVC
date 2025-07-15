@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @{
+        ViewBag.Canonical = @String.Format("https://www.tripmasters.com/payments");
+
+    }
+    @{
+        ViewBag.Mobile = 0;
+                                        <environment include="Development">
+                                            <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+                                        </environment>
+                                        <environment exclude="Development">
+                                            <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
+                                        </environment>
+                                            <style>
+                                    .chatUs {height: 22px !important;font-size: 12px !important;}
+                            .table {width: 980px !important; margin: 0 auto}
+                            .secTopHeader {height: 140px !important}
+                            .adotDecor {color: white !important}
+                            .dvhChat {width: 30% !important}
+                            body {margin: 0;font-family: Arial; font-size: 12px}
+                            body p {font-family: Arial;font-size: 12px}
+                            .dvContainer {max-width: 980px; margin: 0 auto;}
+                            .payTitle {margin: 20px auto 5px; color: #039;}
+                            .payContent {width: 100%;text-align: left}
+                            .payContent .paycontfooter {width: 100%;float: left}
+                            .titleCol, .title,.titleCol2,.titleCol3,.titleCol4,.titleCol5 {padding: 15px;color: #fff;font-size: 16px;background: #81a6dd url('https://pictures.tripmasters.com/siteassets/d/bg-titlepay.jpg') repeat-x}
+                            .contentSec {padding: 10px;text-align:center}
+                            .contentSecPay {padding: 50px 80px;}
+                            .noteScene {
+                                        background: #dee5f7;
+                                        position: inherit;
+                                        max-width: 48% !important;
+                                        margin: 0 auto;
+                                        padding: 30px 0;
+                                        font-size: 12px;
+                                        border-radius: 8px;
+                                        margin-bottom: 10px
+                                    }
+                            .noteScene p {margin: 0 25px;font-size: 11px}
+                            .contScene { margin: 0 auto; height: 50px;padding-left: 30px}
+                            #arrows {
+                                        width: 0;
+                                        height: 0;
+                                        border-style: solid;
+                                        border-width: 8px 0 8px 13.9px;
+                                        border-color: transparent transparent transparent #ccc;
+                                        margin-top: 5px}
+                            .nameScene {width: 70px;float: left; text-align: left;padding-top: 5px;padding-right: 20px;font-size: 12px;font-weight: bold;}
+                            .descScene {float: left;text-align: left;padding-left: 15px}
+
+                            .spanh2Pay,.spanh2Insurance, .spanh2Insurance2, .spanh2Insurance3, .spanh2Insurance4{display:none}
+                            .paycontCol1{margin:0 auto;text-align:center}
+                            .p3 {
+                                text-align: left;
+                                margin: 0 auto 30px;
+                                max-width: 65%;
+                            }
+                            .p2 {font-weight: 700;}
+                            .p4{text-align:center;}  
+                            
+                            @@media only screen and (max-width:767px) {
+                            .chatUs {height: 22px !important;font-size: 12px !important;}
+                            .table {width: 980px !important; margin: 0 auto}
+                            .secTopHeader {height: 140px !important}
+                            .adotDecor {color: white !important}
+                            .dvhChat {width: 30% !important}
+                            body {margin: 0;font-family: Arial; font-size: 12px}
+                            body p {font-family: Arial;font-size: 12px}
+                            .dvContainer {max-width: 980px; margin: 0 auto;}
+                            .payTitle {margin: 0px auto 0px; color: #1B2560;font-size: 1rem;padding: 30px 0 10px 0;font-weight:bold}
+                            .payContent {width: 100%;text-align: left}
+                            .payContent .paycontfooter {width: 100%;float: left}
+                            .titleCol, .title,.titleCol2,.titleCol3,.titleCol4,.titleCol5 {padding: 22px 15px;color: #1B2560;font-size: 1rem;background: white;margin:10px 0; display: flex; justify-content:space-between;}
+                            .contentSec,.contentSec2,.contentSec3,.contentSec4, .contentSec5 {padding: 10px;display:none;background: white;}
+                            .contentSecPay {padding: 50px 0;background: white;margin: 0 auto;text-align: center;}
+                            .contentSecPay span{margin:0 auto}
+                            .noteScene {
+                                        background: #dee5f7;
+                                        position: inherit;
+                                        max-width: 90% !important;
+                                        margin: 0 auto;
+                                        padding: 30px 0;
+                                        font-size: 12px;
+                                        border-radius: 8px;
+                                        margin-bottom: 10px
+                                    }
+                            .noteScene p {margin: 0 25px;font-size: 11px}
+                            .contScene { margin: 0 auto; height: 50px;padding-left: 30px}
+                            #arrows {width: 0;height: 0;border-style: solid;border-width: 8px 0 8px 13.9px;border-color: transparent transparent transparent #ccc; margin-top: 5px}
+                            .nameScene {width: 70px;float: left; text-align: left;padding-top: 5px;padding-right: 20px;font-size: 12px;font-weight: bold;}
+                            .descScene {float: left;text-align: left;padding-left: 15px}
+                            .secondRow{padding:unset!important}          
+                            .spanh2Pay,.spanh2Insurance, .spanh2Insurance2, .spanh2Insurance3, .spanh2Insurance4{display:table-cell;vertical-align:middle;transform: rotate( 90deg);font-size: 20px;font-weight: bold;}
+                            .span1 {display:table-cell;vertical-align:middle;}
+                                 .p4{text-align:center;}
+                            .dvContainer {background: #e7e7e7;}
+                                 }
+                            </style>             
+    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+</head>
+
+<body>
+    <div class="container" style="margin:0 auto;padding:0 5px">
+        <div class="payContent">
+
+            <h1 class="payTitle">Payment Options</h1>
+
+            <div class="row">
+                <div class="col-sm-6 paycontCol1">
+                    <h3 class="titleCol"><span class="span1">Financing your trip through Paypal Credit</span><span class="spanh2Pay">›</span></h3>
+                    <div class="contentSecPay">
+                        <div data-pp-message
+                             data-pp-style-layout="flex"
+                             data-pp-style-ratio="1x1"
+                             data-pp-style-color="white"
+                             data-pp-amount="4500">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 paycontCol2">
+                    <h3 class="title"><span class="span1">Affirm</span><span class="spanh2Insurance">›</span></h3>
+                    <div class="contentSec">
+                        <p class="p1">
+                            <img src="https://cdn-assets.affirm.com/images/black_logo-transparent_bg.png" style="width: 25%" />
+                        </p>
+                        <p class="p2">Monthly Payments</p>
+                        <p class="p3">
+                            With Affirm, you can book today and pay monthly.<br />
+                            Proceeding will take you to Affirm's site.<br />
+                            You will return to this site to start your booking.
+                        </p>
+                        <p class="p4">
+                            <a href="https://www.affirm.com/shop/tripmasters" target="_blank" class="affirmLearn"><img src="https://cdn-assets.affirm.com/images/buttons/42x205-blue.png" /></a>
+                        </p>
+                        <p class="p5"><a href="https://www.affirm.com/help" target="_blank" class="affirmLearn">Learn more</a></p>
+                        <p class="p3">Subject to eligibility.<br />Payment options through Affirm are provided by these lending partners: <a href="https://www.affirm.com/lenders" target="_blank" class="affirmLearn">affirm.com/lenders</a></p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row secondRow">
+                <div class="col-sm-6">
+                    <h3 class="titleCol2"><span class="span1">Amazon Pay</span><span class="spanh2Insurance2">›</span></h3>
+                    <div class="contentSec2">
+                        <p><strong>Are you an Amazon customer?</strong></p>
+                        <p><strong>Pay now with address and payment details stored in your Amazon account.</strong></p>
+                        <p>Amazon pay makes shopping on our website even easier by allowing you to speed through checkout using information already stored in your Amazon account to pay on our site. Simply choose from the payment and delivery information stored in your Amazon account; there's no need to re-enter your payment or address details.</p>
+                        <p> Amazon Pay helps you to shop quickly, safely, and securely.</p>
+                        <br />
+                        <br />
+                        <p style="text-align:center"><img src="https://pictures.tripmasters.com/siteassets/d/US_200x90_BLK.jpg" /></p>
+                    </div>
+                </div>
+                <div class=" col-sm-6 ">
+                    <h3 class="titleCol3"><span class="span1">Credit Cards</span><span class="spanh2Insurance3">›</span></h3>
+                    <div class="contentSec3">
+                        <p>We accept major credit cards: Visa, MasterCard, American Express and Discover.</p>
+                        <p>
+                            If you do not complete your booking online, or if the credit card holder is not traveling, a signed credit card authorization form is required before we can charge your card and process your booking. You will receive an email with instructions on how to submit the required documentation.
+                        </p>
+                        <p>If a debit/check card is submitted, we are not responsible for any bank overdraft fees or any other charges that might be charged by your bank.</p>
+                        <div align="center" style="margin-top: 30px">
+                            <img src="https://pictures.tripmasters.com/siteassets/d/creditcards.png">
+                            <p style="margin: 0"><span style="vertical-align:middle">We also accept &nbsp;</span> <img src="https://pictures.tripmasters.com/siteassets/d/paypal.png" align="middle" style="vertical-align:middle" /></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12  secondRow">
+                <h3 class="titleCol4"><span class="span1">Staggered Payments</span><span class="spanh2Insurance4">›</span></h3>
+                <div class="contentSec4">
+                    <p>
+                        <strong>Staggered payment will be automatically activated in the website if:</strong><br />
+                        1. Package includes international flights from the USA or Canada.<br />
+                        2. Total price is over US$ 2,000.<br />
+                        3. Travel departure date is more than 60 days away.<br />
+                    </p>
+                    <section class="row">
+                        <div class="col-sm-12 col-lg-6  noteScene">
+                            <div class="contScene" align="center">
+                                <div class="nameScene">
+                                    <span>Scenario1 </span>
+                                </div>
+                                <div id="arrows" style="float:left;"></div>
+                                <div class="descScene">
+                                    <span>Travel in between 60 to 90 days<br /> Only 2 payments are offered:</span><br />
+                                </div>
+                            </div>
+                            <div style="clear:both"></div>
+                            <ul style="padding-left:30px;list-style:none">
+                                <li>
+                                    <strong>Payment 1:</strong> DEPOSIT due on booking date (Air portions included)
+                                </li>
+                                <li>
+                                    <strong>Payment 2:</strong> due 30 days before departure
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-6  noteScene">
+                            <div align="center" class="contScene">
+                                <div class="nameScene">
+                                    <span>Scenario2 </span>
+                                </div>
+                                <div id="arrows" style="float:left;"></div>
+                                <div class="descScene">
+                                    <span>Travel in more than 90 days<br /> 3 payments are offered:</span>
+                                </div>
+                            </div>
+                            <div style="clear:both"></div>
+                            <ul style="padding-left:30px;list-style:none">
+                                <li>
+                                    <strong>Payment 1:</strong> DEPOSIT due on booking date (Air portions included)<br />
+                                </li>
+                                <li>
+                                    <strong>Payment 2:</strong> due 30 days after booking date<br />
+                                </li>
+                                <li>
+                                    <strong>Payment 3:</strong> due 30 days before departure
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <p>Our system allows you to stagger your payments using ONLY ONE CREDIT CARD.</p>
+                    <p>Cancellation penalties will be based on the whole amount of the booking not on partial payments processed at the time of cancellation.</p>
+                    <p>If the cancellation penalties exceed what we have been paid, then you agree for us to charge your credit card to cover any unpaid cancellation fees.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div style="clear:both"></div>
+
+
+</body>
+</html>
+
+
+@section Scripts{
+    <script src="https://www.paypal.com/sdk/js?client-id=AWoO3MlpkUvFsL33p6NRa-PstulItsMWHVKr8bViELOmPAPQXm9D1UGxfiANreyxiudZo40fijtQb2Es&components=messages"
+            data-namespace="PayPalSDK">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.openINS').click(function (event) { openNW(this.href); event.preventDefault() })
+            $('.titleCol').click(function () {
+                $('.contentSecPay').is(':visible') === false ?
+                    ($('.contentSecPay').slideDown(), $('.spanh2Pay').css({ 'transform': 'rotate( 270deg)' }))
+                    : ($('.contentSecPay').slideUp(), $('.spanh2Pay').css({ 'transform': 'rotate( 90deg)' }));
+            });
+            $('.title').click(function () {
+                $('.contentSec').is(':visible') === false ?
+                    ($('.contentSec').slideDown(), $('.spanh2Insurance').css({ 'transform': 'rotate( 270deg)' }))
+                    : ($('.contentSec').slideUp(), $('.spanh2Insurance').css({ 'transform': 'rotate( 90deg)' }));
+            });
+            $('.titleCol2').click(function () {
+                $('.contentSec2').is(':visible') === false ?
+                    ($('.contentSec2').slideDown(), $('.spanh2Insurance2').css({ 'transform': 'rotate( 270deg)' }))
+                    : ($('.contentSec2').slideUp(), $('.spanh2Insurance2').css({ 'transform': 'rotate( 90deg)' }));
+            });
+            $('.titleCol3').click(function () {
+                $('.contentSec3').is(':visible') === false ?
+                    ($('.contentSec3').slideDown(), $('.spanh2Insurance3').css({ 'transform': 'rotate( 270deg)' }))
+                    : ($('.contentSec3').slideUp(), $('.spanh2Insurance3').css({ 'transform': 'rotate( 90deg)' }));
+            });
+
+            $('.titleCol4').click(function () {
+                $('.contentSec4').is(':visible') === false ?
+                    ($('.contentSec4').slideDown(), $('.spanh2Insurance4').css({ 'transform': 'rotate( 270deg)' }))
+                    : ($('.contentSec4').slideUp(), $('.spanh2Insurance4').css({ 'transform': 'rotate( 90deg)' }));
+            });
+
+
+
+        });
+        function openNW(nwurl) {
+            var LeftPosition = (screen.width) ? (screen.width - 900) / 2 : 0;
+            var TopPosition = (screen.height) ? (screen.height - 500) / 2 : 0;
+            var settings = 'height=500,width=900,top=' + TopPosition + ',left=' + LeftPosition + ',scrollbars=yes,resizable=yes';
+            window.open(nwurl, '', settings);
+        };
+    </script>
+}

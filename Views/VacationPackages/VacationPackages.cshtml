@@ -1,0 +1,463 @@
+﻿@model MVC_TM.Models.ViewModels.VacPacksViewModel
+@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@inject IOptions<AppSettings> _appsettings
+
+@{ViewBag.Canonical = @String.Format("https://www.tripmasters.com/vacation-packages");}
+
+@section Styles {
+    <environment include="Development">
+        <link href="~/css/vacpack/vacationPackages.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/vacpack/vacationPackages.min.css" rel="stylesheet" />
+    </environment>
+}
+
+@{
+    Int32 rev = ViewBag.Num;
+    Decimal overAllAvg = 0;
+    Decimal defw = 120;
+    Decimal w = 0;
+    overAllAvg = Decimal.Round(ViewBag.Score, 1);
+    w = Decimal.Round((overAllAvg * defw) / 5, 1);
+    //string webServer = "";
+    List<long> offerPrices = new List<long>();
+    List<string> offerUrl = new List<string>();
+    long lowP = 500;
+    long highP = 9999;
+    Int32 proID = 0001;
+    string strOfferts = "";
+    Int32 oCount = 0;
+
+    if (Model.TMStarted.Count > 0)
+    {
+
+        foreach (var p in Model.vacPackManager)
+        {
+            if (p.STP_Save != 999)
+            {
+                offerPrices.Add((Int32)p.STP_Save);
+            }
+            switch (p.DeptNA)
+            {
+                case "ED":
+                    offerUrl.Add("https://www.tripmasters.com/europe/" + p.CountryName.Replace(" ", "_").ToLower() + "/" + p.PDL_Title.Replace(" ", "_").ToLower() + "/package-" + p.PDLID);
+
+                    break;
+                case "TMAS":
+                    offerUrl.Add("https://www.tripmasters.com/asia/" + p.CountryName.Replace(" ", "_").ToLower() + "/" + p.PDL_Title.Replace(" ", "_").ToLower() + "/package-" + p.PDLID);
+                    break;
+                case "LD":
+                    offerUrl.Add("https://www.tripmasters.com/latin/" + p.CountryName.Replace(" ", "_").ToLower() + "/" + p.PDL_Title.Replace(" ", "_").ToLower() + "/package-" + p.PDLID);
+                    break;
+                default:
+                    // code block
+                    break;
+            }
+
+            strOfferts = strOfferts + "}";
+            oCount = +1;
+            if (oCount < Model.TMStarted.Count)
+            {
+                strOfferts = strOfferts + ",";
+            }
+        }
+        if (offerPrices.Count > 0)
+        {
+            lowP = offerPrices.Min();
+            highP = offerPrices.Max();
+        }
+    }
+}
+
+@section structureData{
+    <script type="application/ld+json">
+    [
+        {
+            "@@context": "https://schema.org",
+            "@@type": "Organization",
+            "@@id" : "https://www.tripmasters.com/",
+            "name": "Tripmasters",
+            "description": "Vacation Packages",
+            "url": "https://www.tripmasters.com/",
+            "logo": "https://pictures.tripmasters.com/siteassets/d/tm_header_logo.png",
+            "image": "https://pictures.tripmasters.com/siteassets/d/tm_header_logo.png",
+            "additionalType": "https://en.wikipedia.org/wiki/Travel_agency",
+            "telephone": "+18004300484",
+            "founder": {
+                "@@type": "Person",
+                "name": "Maria Checa",
+                "gender": "Female",
+                "jobTitle": "President"
+             },
+            "foundingDate": "October 1, 1984",
+                "foundingLocation": "Silver Spring , Maryland, United States",
+            "address": {
+                "@@type": "PostalAddress",
+                "streetAddress": "8730 Georgia Ave Suite 600B",
+                "addressLocality": "Silver Spring",
+	            "addressRegion": "MD",
+                "postalCode": "20910",
+	            "addressCountry": "US"
+            },
+            "sameAs": [
+                "https://twitter.com/tripmasters",
+                "https://www.facebook.com/Tripmasters",
+                "https://www.pinterest.com/tripmasters/",
+                "https://www.instagram.com/tripmasterstravel/",
+                "https://www.tumblr.com/privacy/consent?redirect=https%3A%2F%2Ftripmasters.tumblr.com%2F",
+                "https://www.linkedin.com/company/tripmasters",
+                "https://en.everybodywiki.com/Tripmasters",
+                "https://www.youtube.com/tripmasters"
+            ]
+        },
+    {
+        "@@context": "https://schema.org/",
+        "@@type": "Service",
+        "name": "Vacation Packages ideas",
+        "description": "Vacation Packages ideas, Find and Customize Vacation Packages to Europe, Asia, and Latin America."
+    },
+    {
+        "@@context": "https://schema.org/",
+        "@@type": "Product",
+        "name": "Vacation Packages ideas",
+        "sku":"@proID",
+        "mpn":"@proID-vac",
+        "brand": {
+            "@@type": "Brand",
+            "name": "Tripmasters"
+        },
+        "image":"https://pictures.tripmasters.com/siteassets/d/tm_header_logo.png",
+        "review":{
+            "@@type":"Review",
+            "name":"@rev",
+            "author":{
+                "@@type":"Organization",
+                "name":"Tripmasters"
+                }
+        },
+        "description": "Vacation Packages ideas, Find and Customize Vacation Packages to Europe, Asia, and Latin America.",
+        "aggregateRating": {
+            "@@type": "AggregateRating",
+            "ratingValue": "@overAllAvg",
+            "bestRating": "5",
+            "ratingCount": "@rev"
+        },
+        "offers": {
+            "@@type": "AggregateOffer",
+            "priceCurrency":"USD",
+            "highPrice": "@highP",
+            "lowPrice": "@lowP",
+            "offerCount": "6",
+            "offers" : [
+                @foreach (var u in @offerUrl)
+                {@Html.Raw("{")
+                @Html.Raw('"' + "@type" + '"' + ":" + '"' + "Offer" + '"' + "," +
+                '"' + "url" + '"' + ":" + '"' + @u + '"');
+                @Html.Raw("}")
+                if (u != @offerUrl.Last())
+                {
+                @Html.Raw(",");
+                }
+                }
+            ]
+         }
+    },
+    {
+        "@@context": "https://schema.org",
+        "@@type": "WebSite",
+        "url": "https://www.tripmasters.com/",
+        "potentialAction":{
+            "@@type":"SearchAction",
+            "target":"https://www.tripmasters.com/Search.aspx?q={search_term_string}",
+            "query-input":"required name=search_term_string"
+        }
+    },
+    {
+        "@@context": "https://schema.org",
+        "@@type": "TravelAgency",
+        "name": "tripmasters",
+        "image": "https://pictures.tripmasters.com/siteassets/d/tm_header_logo.png",
+        "@@id": "https://www.tripmasters.com/",
+        "priceRange":"699 to 99999",
+        "address": {
+            "@@type": "PostalAddress",
+            "streetAddress": "8730 Georgia Ave Suite 600B",
+            "addressLocality": "Silver Spring",
+	        "addressRegion": "MD",
+            "postalCode": "20910",
+	        "addressCountry": "US"
+        },
+        "geo": {
+            "@@type": "GeoCoordinates",
+            "latitude": 39.044170,
+            "longitude": -77.112991
+        },
+        "url": "https://www.tripmasters.com/",
+        "telephone": "+18004300484"
+    }]
+    </script>
+}
+
+
+
+<section class="secPage secPgTtl">
+    <h1>Ideas for Vacation Packages</h1>
+    <h2>Find and Customize Vacation Packages to Europe, Asia, and The Americas</h2>
+    <p>We have built vacation packages that you can price and customize according to your budget and how much time you want to spend at each destination. We curate and recommend hotels, transportation, and activities for each stop on your itinerary. You can build and price all this in seconds. If you can't find the exact itinerary you want from our suggested itineraries, you can use our booking tools to <a href="https://www.tripmasters.com/advanced_build_your_own_vacation" style="color:#666;text-decoration:underline">build your own itinerary</a> in seconds.</p>
+</section>
+
+<main class="wrapper">
+    <section class="division">
+        <h1>Custom Europe vacation packages</h1>
+        <p>Build or customize a multi-country, multi-city vacation packages in <a href="/europe/">Europe</a>.</p>
+    </section>
+    <ul class="ul-Flex">
+        @{
+            int li = 0;
+            foreach (var ed in Model.vacPackTMED)
+            {
+                if (li <= 9)
+                {
+                    <li>
+                        <div class="figure">
+                            <img class="delay" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src=@String.Format("https://pictures.tripmasters.com{0}", ed.IMG_500Path_URL) alt="no image" title="@ed.PDL_Title" />
+                            <figcaption>
+                                <h2><a href="@String.Format("{0}{1}/{2}/package-{3}", "europe/", ed.CountryName.Replace(" ", "_").ToLower(), ed.PDL_Title.Replace(" ", "_").ToLower(), ed.PDLID)">@ed.PDL_Title</a></h2>
+                                <h3><img src="https://s.w.org/images/core/emoji/13.1.0/svg/1f3f7.svg" style="width: 6%;" />@Html.Raw(String.Format("{0} nights from {1:C0}*", ed.STP_NumOfNights, ed.STP_Save))</h3>
+                                <div>
+                                   
+                                   <button class="a-white" id=@String.Format("info{0}",@ed.PDLID) data-id="@ed.PDLID|ED" onclick="otherMoreDetails('@ed.PDLID',1),toggleClassMoreDetails(@ed.PDLID)">More details<span></span></button>
+
+                                   
+
+                                    <div class="ft-modal is-hidden" id="@String.Format("fti-{0}-modal", ed.PDLID)">
+                                        <div class="ft-modal-content">
+                                            <div class="ft-modal-header">
+                                                <h3>@ed.PDL_Title</h3>
+                                            </div>
+                                            <div class="ft-modal-body">
+                                                <p>@Html.Raw(ed.SPD_Description)</p>
+                                                <div class="divFlexModal">
+                                                    <div>
+                                                        <p>Includes:</p>
+                                                        <ul class="inclist">
+                                                            @{
+                                                                string[] includePopList = ed.Included.Split("\r\n");
+                                                                foreach (var inc in includePopList)
+                                                                {
+                                                                    <li>
+                                                                        @Html.Raw(String.Format("{0}", inc))
+                                                                    </li>
+                                                                }
+                                                            }
+                                                        </ul>
+                                                        <a class="viewPackage" href="@String.Format("{0}{1}/{2}/package-{3}", "europe/", ed.CountryName.Replace(" ", "_").ToLower(), ed.PDL_Title.Replace(" ", "_").ToLower(), ed.PDLID)">View this package</a>
+
+                                                    </div>
+                                                </div>
+                                               
+
+                                            </div>
+                                            <div class="ft-modal-footer">
+                                                <button id="@String.Format("aClose{0}",ed.PDLID)" class="ft-modal-close" onclick="toggleClassMoreDetails(@ed.PDLID)">[&#10006;] Close </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </div>
+                        <h4>@String.Format("Price from {0} to arrive {1}", ed.PLC_Title, ed.STP_StartTravelDate.ToShortDateString())</h4>
+                    </li>
+                }
+                li += 1;
+            }
+        }
+    </ul>
+</main>
+
+<main class="wrapper">
+    <section class="division">
+        <h1>Explore Asia Vacation Packages</h1>
+        <p>Travel through culture, religion, and modern cities when booking vacation packages in <a href="/asia/">Asia</a>. </p>
+    </section>
+    <ul class="ul-Flex">
+        @{
+            li = 0;
+            foreach (var ts in Model.vacPackTMAS)
+            {
+                if (li <= 9)
+                {
+                    <li>
+                        <div class="figure">
+                            <img class="delay" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src=@String.Format("https://pictures.tripmasters.com{0}", ts.IMG_500Path_URL) alt="no image" title="@ts.PDL_Title" />
+                            <figcaption>
+                                <h2><a href="@String.Format("{0}{1}/{2}/package-{3}", "asia/", ts.CountryName.Replace(" ", "_").ToLower(), ts.PDL_Title.Replace(" ", "_").ToLower(), ts.PDLID)">@ts.PDL_Title</a></h2>
+                                <h3><img src="https://s.w.org/images/core/emoji/13.1.0/svg/1f3f7.svg" style="width: 6%;" />@Html.Raw(String.Format("{0} nights from {1:C0}*", ts.STP_NumOfNights, ts.STP_Save))</h3>
+                                <div>
+                                    <button class="a-white" id=@String.Format("info{0}",@ts.PDLID) data-id="@ts.PDLID|ED" onclick="otherMoreDetails('@ts.PDLID',1),toggleClassMoreDetails(@ts.PDLID)">More details<span></span></button>
+                                    <div class="ft-modal is-hidden" id="@String.Format("fti-{0}-modal", ts.PDLID)">
+                                        <div class="ft-modal-content">
+                                            <div class="ft-modal-header">
+                                                <h3>@ts.PDL_Title</h3>
+                                            </div>
+                                            <div class="ft-modal-body">
+                                                <p>@Html.Raw(ts.SPD_Description)</p>
+                                                <div class="divFlexModal">
+                                                    <div>
+                                                        <p>Includes:</p>
+                                                        <ul class="inclist">
+                                                            @{
+                                                                string[] includePopList = ts.Included.Split("\r\n");
+                                                                foreach (var inc in includePopList)
+                                                                {
+                                                                    <li>
+                                                                        @Html.Raw(String.Format("{0}", inc))
+                                                                    </li>
+                                                                }
+                                                            }
+                                                        </ul>
+                                                        <a class="viewPackage" href="@String.Format("{0}{1}/{2}/package-{3}", "asia/", ts.CountryName.Replace(" ", "_").ToLower(), ts.PDL_Title.Replace(" ", "_").ToLower(), ts.PDLID)">View this package</a>
+
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="ft-modal-footer">
+                                                <button id="@String.Format("aClose{0}",ts.PDLID)" class="ft-modal-close" onclick="toggleClassMoreDetails(@ts.PDLID)">[&#10006;] Close </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </div>
+                        <h4>@String.Format("Price from {0} to arrive {1}", ts.PLC_Title, ts.STP_StartTravelDate.ToShortDateString())</h4>
+                    </li>
+                }
+                li += 1;
+            }
+        }
+    </ul>
+</main>
+
+<main class="wrapper">
+    <section class="division">
+        <h1>Discover America's Vacation Packages</h1>
+        <p>Look into festivals with delicious food, drinks, music, and dancing throughout the <a href="/latin/">Americas</a>. </p>
+    </section>
+    <ul class="ul-Flex">
+        @{
+            li = 0;
+            foreach (var ld in Model.vacPackTMLD)
+            {
+                if (li <= 9)
+                {
+                    <li>
+                        <div class="figure">
+                            <img class="delay" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src=@String.Format("https://pictures.tripmasters.com{0}", ld.IMG_500Path_URL) alt="no image" title="@ld.PDL_Title" />
+                            <figcaption>
+                                <h2><a href="@String.Format("{0}{1}/{2}/package-{3}", "latin/", ld.CountryName.Replace(" ", "_").ToLower(), ld.PDL_Title.Replace(" ", "_").ToLower(), ld.PDLID)">@ld.PDL_Title</a></h2>
+                                <h3><img src="https://s.w.org/images/core/emoji/13.1.0/svg/1f3f7.svg" style="width: 6%;" />@Html.Raw(String.Format("{0} nights from {1:C0}*", ld.STP_NumOfNights, ld.STP_Save))</h3>
+                                <div>
+                                    <button class="a-white" id=@String.Format("info{0}",@ld.PDLID) data-id="@ld.PDLID|ED" onclick="otherMoreDetails('@ld.PDLID',1),toggleClassMoreDetails(@ld.PDLID)">More details<span></span></button>
+                                    <div class="ft-modal is-hidden" id="@String.Format("fti-{0}-modal", ld.PDLID)">
+                                        <div class="ft-modal-content">
+                                            <div class="ft-modal-header">
+                                                <h3>@ld.PDL_Title</h3>
+                                            </div>
+                                            <div class="ft-modal-body">
+                                                <p>@Html.Raw(ld.SPD_Description)</p>
+                                                <div class="divFlexModal">
+                                                    <div>
+                                                        <p>Includes:</p>
+                                                        <ul class="inclist">
+                                                            @{
+                                                                string[] includePopList = ld.Included.Split("\r\n");
+                                                                foreach (var inc in includePopList)
+                                                                {
+                                                                    <li>
+                                                                        @Html.Raw(String.Format("{0}", inc))
+                                                                    </li>
+                                                                }
+                                                            }
+                                                        </ul>
+                                                        <a class="viewPackage" href="@String.Format("{0}{1}/{2}/package-{3}", "latin/", ld.CountryName.Replace(" ", "_").ToLower(), ld.PDL_Title.Replace(" ", "_").ToLower(), ld.PDLID)">View this package</a>
+
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="ft-modal-footer">
+                                                <button id="@String.Format("aClose{0}",ld.PDLID)" class="ft-modal-close" onclick="toggleClassMoreDetails(@ld.PDLID)">[&#10006;] Close </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </div>
+                        <h4>@String.Format("Price from {0} to arrive {1}", ld.PLC_Title, ld.STP_StartTravelDate.ToShortDateString())</h4>
+                    </li>
+                }
+                li += 1;
+            }
+        }
+    </ul>
+</main>
+
+@section Scripts{
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.dveachOtherMore').click(function () {
+                var eachID = this.lang;
+                otherMoreDetails(eachID, 1);
+            });
+            $('.dvotherClose span').click(function () {
+                var closeID = this.id;
+                otherMoreDetails(closeID, 0);
+            });
+        })
+
+       
+        var goTo = 0;
+        function otherMoreDetails(objid, cls) {
+            switch (cls) {
+                case 2:
+                    goTo = -1;
+                    break;
+            }
+            console.log("goTo = " + goTo);
+            if (goTo == -1) { return false; }
+
+            $('.secPackInfo').each(function () {
+                var secID = $(this).attr('id');
+                var numID = secID.match(isNumber);
+                numID == objid ? (
+                    !$(this).is(':visible') ?
+                        (
+                            $(this).slideDown(),
+                            $('p[id="down' + numID + '"]').slideDown(),
+                            $('p[id="p' + numID + '"]').find('span').css({ 'transform': 'rotate(-135deg)', 'margin': '7px 10px' })
+                        ) : (
+                            $(this).slideUp(),
+                            $('p[id="down' + numID + '"]').slideUp(),
+                            $('p[id="p' + numID + '"]').find('span').css({ 'transform': 'rotate(45deg)', 'margin': '5px 10px' })
+                        )
+                ) : (
+                    $(this).slideUp(),
+                    $('p[id="down' + numID + '"]').slideUp(),
+                    $('p[id="p' + numID + '"]').find('span').css({ 'transform': 'rotate(45deg)', 'margin': '5px 10px' })
+                );
+            });
+
+        }
+        function toggleClassMoreDetails(packId) {
+            $('body').toggleClass('modal-pack-info-open');
+            $('#fti-' + packId + '-modal').toggleClass('is-hidden');
+        }
+    </script>
+
+  }

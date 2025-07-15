@@ -1,0 +1,751 @@
+﻿@model MVC_TM.Models.ViewModels.HomeViewModel
+@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@inject IOptions<AppSettings> _appsettings
+
+
+@{
+    ViewBag.Canonical = @String.Format("https://www.tripmasters.com/advanced_build_your_own_vacation");
+
+}
+@section Styles {
+    <environment include="Development">
+        <link href="~/css/advanced/dt.style.advanced.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/advanced/dt.style.advanced.min.css" asp-append-version="true" />
+    </environment>
+
+    <style>
+        /*Start Partial Guide css*/
+        .secpartialguide {
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 10px;
+            max-width: 940px;
+            margin: 0 auto;
+            box-shadow: 3px 4px 8px #00000080;
+            display: flex;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+
+        .dvpartialguide span:nth-child(1) {
+            font-size: 20px;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .dvpartialguide span:nth-child(2) {
+            font-size: 46px;
+            text-transform: capitalize;
+            color: #212D6E;
+            display: block;
+            text-align: center;
+        }
+
+        .dvpartialguide span:nth-child(3) {
+            display: block;
+            text-align: center;
+            color: blue;
+            font-size: 14px;
+        }
+
+        .imgarrow img {
+            width: 55px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .swiperSec {
+            margin: 0 auto;
+        }
+
+        .swiper-slide {
+            overflow: hidden;
+        }
+
+        .swiper-slide {
+            -webkit-flex-shrink: 0;
+            -ms-flex: 0 0 auto;
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .swiper-slide-active {
+            overflow: visible;
+        }
+
+        .slider {
+            cursor: pointer;
+        }
+
+        .partialguide {
+            max-width: 1140px;
+            background-color: #fff;
+            border-radius: 10px;
+            min-height: 650px;
+        }
+
+        .guidetitle {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 28px;
+            margin-top: 20px;
+        }
+
+        .guidetext {
+            font-size: 16px;
+            margin-top: 20px;
+            margin-left: 55px;
+            margin-bottom: 10px;
+        }
+
+        .spMnext, .spMprev {
+            font-size: 40px;
+            background-color: #ccc;
+            text-align: center;
+            height: 50px !important;
+        }
+
+        .swiper-wrapper {
+            margin-left: 45px;
+            max-height: 600px;
+        }
+
+            .swiper-wrapper img {
+                max-width: 1040px;
+                min-width: 900px;
+            }
+
+        .swiper-container-android .swiper-slide, .swiper-wrapper {
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -o-transform: translate(0,0);
+            -ms-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+        .swiper-container {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: #000;
+            background-color: rgba(0,0,0,.4);
+        }
+
+        .modal-content {
+            margin: auto;
+            padding: 20px;
+            width: 95%;
+            position: absolute;
+            z-index: 3;
+            display: none;
+        }
+
+        .clsguide {
+            background-color: #ccc;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            width: 33px;
+            height: 33px;
+            line-height: 32px;
+            text-align: center;
+            float: right;
+            color: #fff;
+            margin-right: 5px;
+            margin-top: 5px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .swiper-pagination-bullet {
+            border-radius: 20px !important;
+            width: 55px !important;
+        }
+
+        .swiper-pagination {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .carousel {
+            margin: 0 auto;
+            text-align: center;
+        }
+        .carousel-control-next {
+            margin-right: -60px;
+        }
+        .carousel-control-next-icon, .carousel-control-prev {
+            position: absolute;
+            top: 50%;
+            width: 27px;
+            height: 44px;
+            margin-top: -22px;
+            z-index: 10;
+            cursor: pointer;
+            -moz-background-size: 27px 44px;
+            -webkit-background-size: 27px 44px;
+            background-size: 27px 44px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: gray;
+            color: black;
+        }
+        .carousel-control-prev {
+            margin-left: 13px;
+        }
+        .carousel-indicators{height:0px}
+            .carousel-indicators li {
+                background-color: #007aff!important;
+                opacity: 0.2;
+                transition: opacity 0.6s ease;
+            }
+        /*End Partial Guide css*/
+    </style>
+}
+
+@{
+    Int32 rev = Model.NumComments;
+    Decimal overAllAvg = 0;
+    Decimal defw = 120;
+    Decimal w = 0;
+    overAllAvg = Decimal.Round(Model.Score, 1);
+    w = Decimal.Round((overAllAvg * defw) / 5, 1);
+}
+
+<script>
+        var SiteName = '@_appsettings.Value.ApplicationSettings.SiteName';
+        var TMED_HotelsAPI = '@_appsettings.Value.ApplicationSettings.TMED_HotelsAPI';
+        var designPage = '@ViewBag._utPg';
+</script>
+
+<style>
+    ul.ullist {
+        color: transparent;
+        margin: 180px 0 0 20px;
+        font-size: 11px;
+        position: absolute;
+    }
+</style>
+<div class="dvMask"></div>
+<div class="dvMcompList">
+    <form id="formToBooking" name="formToBooking" method="post">
+        <input type="hidden" name="iRoom" id="iRoom" value="" />
+        <input type="hidden" name="Rooms" id="Rooms" value="" />
+        <!-- *** Standard Control *** -->
+        <input type="hidden" name="SystemID" id="SystemID" value="">
+        <input type="hidden" name="GeneralLoc" id="GeneralLoc" value="@_appsettings.Value.ApplicationSettings.GeneralLoc" />
+        <input type="hidden" name="bFirst" id="bFirst" value="@_appsettings.Value.ApplicationSettings.bFirst" />
+        <input type="hidden" name="PkgId" id="PkgId" value="">
+        <!-- **** NEW PARAMETER FROM WEB SERVISE RESPONSE -->
+        <input type="hidden" name="PackageComponentList" id="PackageComponentList" value="" />
+        <!-- VALUES = "" TO RESOLVE ON ASP -->
+        <input type="hidden" name="sortFlag" id="sortFlag" value="P" />
+        <input type="hidden" name="MinStay" id="MinStay" value="4" />
+        <input type="hidden" name="MaxStay" id="MaxStay">
+        <input type="hidden" name="ByStayNite" id="ByStayNite" value="" />
+        <input type="hidden" name="GetNextDay" id="GetNextDay" value="" />
+        <!-- API(s) FOR SS, TIC and Transfer -->
+        <input type="hidden" name="SSVendorAPI" id="SSVendorAPI" value="" />
+        <input type="hidden" name="TransferVendorAPI" id="TransferVendorAPI" value="" />
+        <input type="hidden" name="PickUpTime" id="PickUpTime">
+        <input type="hidden" name="DropOffTime" id="DropOffTime">
+        <input type="hidden" name="PickUpTime2" id="PickUpTime2">
+        <input type="hidden" name="DropOffTime2" id="DropOffTime2">
+        <!-- CAR -->
+        <input type="hidden" name="CarVendorAPI" id="CarVendorAPI" value="" />
+        <input type="hidden" name="addCar" id="addCar" value="True" />
+        <!-- TRAIN INPUT name=TICVendorAPI type=hidden value="TX1" -->
+        <input type="hidden" name="TICVendorAPI" id="TICVendorAPI" value="" />
+        <!--TX1-->
+        <!-- *** Air Parameter  -->
+        <input type="hidden" name="addFlight" id="addFlight" value="" />
+        <input type="hidden" name="AirVendorAPI" id="AirVendorAPI" value="" />
+        <input type="hidden" name="Cabin" id="Cabin" value="" />
+        <input type="hidden" name="iAirPref" id="iAirPref" />
+        <input type="hidden" name="iDepCity" id="iDepCity" value="" />
+        <input type="hidden" name="iRetCity" id="iRetCity" value="" />
+        <!-- Air Transfer Point2Point -->
+        <input type="hidden" name="AirP2PVendorAPI" id="AirP2PVendorAPI" value="" />
+        <input type="hidden" name="iOutTime" id="iOutTime" value="@_appsettings.Value.ApplicationSettings.iOutTime" />
+        <input type="hidden" name="iInTime" id="iInTime" value="@_appsettings.Value.ApplicationSettings.iInTime" />
+        <input type="hidden" name="addTransfer_IC" id="addTransfer_IC" value="True" />
+        <!-- GIVendorAPI -->
+        <input type="hidden" name="GIVendorAPI" id="GIVendorAPI" value="" />
+        <!-- City S and E -->
+        <input type="hidden" name="StayCityS" id="StayCityS" value="">
+        <input type="hidden" name="StayCityS_Name" id="StayCityS_Name" value="" />
+        <input type="hidden" name="StayCityE" id="StayCityE" value="" />
+        <input type="hidden" name="StayCityE_Name" id="StayCityE_Name" value="" />
+        <!-- GENERAL -->
+        <input type="hidden" name="PkgInstance" id="PkgInstance" value="0" />
+        <input name="utm_campaign" type="hidden" id="utm_campaign" value="" />
+        <input type="hidden" id="goingDep" name="goingDep" value="" />
+        <!-- PAX INFO -->
+        <input type="hidden" name="iRoomsAndPax" id="iRoomsAndPax" value="" />
+        <input type="hidden" name="iAdults" id="iAdults" value="">
+        <input type="hidden" name="iChildren" id="iChildren" value="" />
+        <input type="hidden" name="iChild1" id="iChild1" value="">
+        <input type="hidden" name="iChild2" id="iChild2" value="">
+        <input type="hidden" name="iChild3" id="iChild3" value="">
+        <input type="hidden" name="iChild4" id="iChild4" value="">
+        <input type="hidden" name="Room2_iAdults" id="Room2_iAdults" value="" />
+        <input type="hidden" name="Room2_iChildren" id="Room2_iChildren" value="">
+        <input type="hidden" name="Room2_iChild1" id="Room2_iChild1" value="">
+        <input type="hidden" name="Room2_iChild2" id="Room2_iChild2" value="">
+        <input type="hidden" name="Room2_iChild3" id="Room2_iChild3" value="">
+        <input type="hidden" name="Room2_iChild4" id="Room2_iChild4" value="">
+        <input type="hidden" name="Room3_iAdults" id="Room3_iAdults" value="" />
+        <input type="hidden" name="Room3_iChildren" id="Room3_iChildren" value="">
+        <input type="hidden" name="Room3_iChild1" id="Room3_iChild1" value="">
+        <input type="hidden" name="Room3_iChild2" id="Room3_iChild2" value="">
+        <input type="hidden" name="Room3_iChild3" id="Room3_iChild3" value="">
+        <input type="hidden" name="Room3_iChild4" id="Room3_iChild4" value="">
+    </form>
+</div>
+<div id="dvTransOptResp">
+    <div id="dvOptions"></div>
+</div>
+<div class="dvMContainer">
+<div class="dvTransportation" style="position:absolute; display:none">
+    <div id="dvTranspError" class="dvtranspMainContainer" style="display:none">
+        <div class="dvtranspTitle">
+            <span style="color:#F00">Error</span> <span class="goToStartAgain"><u>Start again</u> <img class="delay" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src="https://pictures.tripmasters.com/siteassets/d/startOver.gif" asp-append-version="true" width="29" height="27" align="absmiddle" alt="" /></span> <br style="clear:both" />
+        </div>
+        <div class="dvtranspByoCalTools">
+            <p>We can not build an itinerary with:</p>
+            <ul id="sptrancities"></ul>
+            <p>please try another combination.</p>
+        </div>
+    </div>
+    <div id="dvWaitGlobe"></div>
+
+    <!--- START - Transp Option --->
+    <div class="dvtranspMainContainer">
+        <!-- Calendar Title  -->
+        <div class="dvtranspTitle">
+            <span>Multiple Cities</span> <span class="goToStartAgain"><u>Start again</u> <img class="delay" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src="https://pictures.tripmasters.com/siteassets/d/startover.gif" asp-append-version="true" width="29" height="27" align="absmiddle" alt="" /></span> <br style="clear:both" />
+        </div>
+
+        <!-- Calendar Air parameters  -->
+        <div class="dvtranspByoCalTools">
+            <form id="frmTransp" method="post" name="frmTransp">
+                <input type="hidden" id="xgoingID" name="xgoingID" value="" />
+                <div class="dvtranspIntlFly">
+                    <span class="goToStartAgain">With Air *</span> <span class="goToStartAgain">Without Air *</span> <span>* from U.S.A / Canada</span>
+                    <input name="xaddFlight" type="hidden" id="xaddFlight" value="True" />
+                    <input name="xLeaveCO" type="hidden" id="xLeaveCO" value="" />
+                    <input name="xReturnCO" type="hidden" id="xReturnCO" value="" />
+                </div>
+                <div class="dvtranspAirParam">
+                    <div>
+                        <label for="xtxtLeavingFrom">Leaving from:</label>
+                        <input id="xtxtLeavingFrom" type="text" value="" name="xtxtLeavingFrom" disabled/>
+                        <input name="xidLeavingFrom" type="hidden" id="xidLeavingFrom" value="" />
+                    </div>
+                    <div>
+                        <label for="xCabin">Cabin Class:</label>
+                        <select id="xCabin" name="xCabin">
+                            <option value="Y">Economy</option>
+                            <option value="W">Premium Economy</option>
+                            <option value="C">Business</option>
+                            <option value="F">First Class</option>
+                        </select>
+                        <input name="xtxtBYArriving" id="xtxtBYArriving" style="text-align:center" value="" type="hidden">
+                    </div>
+                    <br style="clear: both" />
+                    <div class="dvReturnAirParam">
+                        <label for="xtxtReturningTo">Returning to:</label>
+                        <input id="xtxtReturningTo" type="text" value="" name="xtxtReturningTo" disabled/>
+                        <input name="xidReturningTo" type="hidden" id="xidReturningTo" value="" />
+                    </div>
+                    <br style="clear:both" />
+                </div>
+                <!-- Cities list titles -->
+                <div class="dvtranspLabels">
+                    <div>Going to:</div>
+                    <div>Arriving on:</div>
+                    <div>Staying for:</div>
+                    <div><b>Travel by:</b></div>
+                    <br style="clear:both;" />
+                </div>
+                <!-- PAX Rooms parameters -->
+                <div class="dvtranspRooms">
+                    <input type="hidden" name="xiRoom" id="xiRoom" value="1">
+                    <input type="hidden" name="xRooms" id="xRooms" value="1">
+                    <p>
+                        <label for="xiRoomsAndPax">Guest:</label>
+                        <select name="xiRoomsAndPax" id="xiRoomsAndPax" onchange="selectRoomPax(this.value)">
+                            <option value="1|1"> 1 room for 1 adult</option>
+                            <option value="1|2" selected>1 room for 2 adults</option>
+                            <option value="1|3">1 room for 3 adults</option>
+                            <option value="1|Other">1 room with children or other options</option>
+                            <option value="-1" class="hrDots" disabled></option>
+                            <option value="2|2-2">2 rooms for (2 adults + 2 adults)</option>
+                            <option value="2|3-3">2 rooms for (3 adults + 3 adults)</option>
+                            <option value="2|Other">2 rooms with children or other options</option>
+                            <option value="-1" class="hrDots" disabled></option>
+                            <option value="3|2-2-2">3 rooms for (2 adults + 2 adults + 2 adults)</option>
+                            <option value="3|Other">3 rooms with children or other options</option>
+                        </select>
+                    </p>
+                </div>
+                @{
+                    string paxAdults = "";
+                    for (Int32 p = 0; p <= 6; p++)
+                    {
+                        if (p == 0)
+                        { paxAdults = paxAdults + "<option value='" + p + "' selected>" + p + "</option>"; }
+                        else
+                        { paxAdults = paxAdults + "<option value='" + p + "'>" + p + "</option>"; }
+                    }
+                    string paxChild = "";
+                    for (Int32 d = 0; d <= 2; d++)
+                    {
+                        if (d == 0)
+                        { paxChild = paxChild + "<option value='" + d + "' selected>" + d + "</option>"; }
+                        else
+                        { paxChild = paxChild + "<option value='" + d + "'>" + d + "</option>"; }
+                    }
+                    string childAge = "";
+                    for (Int32 c = 1; c <= 11; c++)
+                    {
+                        if (c == 1)
+                        { childAge = childAge + "<option value = '-1' selected></option>"; }
+                        if (c == 2)
+                        { childAge = childAge + "<option value = '" + c + "'>" + c + "</option>"; }
+                        if (c > 2)
+                        { childAge = childAge + "<option value = '" + c + "'>" + c + "</option>"; }
+                    }
+                }
+                <div class="dvtranspAdultChild">
+                    <p id="pPaxLabels">
+                        <span>&nbsp;</span> <span>Adults:</span> <span>Children:</span> <span id="pChildAges">Child Ages:</span> <br style="clear:both;" />
+                    </p>
+                    <p id="pRoom1">
+                        <span>Room1:</span> <span>
+                            <select name="xiAdults" id="xiAdults" onChange="changeAdults(this)">
+                                @Html.Raw(@paxAdults)
+                            </select>
+                        </span> <span>
+                            <select name="xiChildren" id="xiChildren" onChange="childAge(this)">
+                                @Html.Raw(@paxChild)
+                            </select>
+                        </span> <span id="pChildAges1">
+                            <label for="xiChild1">Child age 1:</label>
+                            <select name="xiChild1" id="xiChild1">
+                                @Html.Raw(@childAge)
+                            </select>
+                            <label for="xiChild2">Child age 2:</label>
+                            <select name="xiChild2" id="xiChild2">
+                                @Html.Raw(@childAge)
+                            </select>
+                        </span> <br style="clear:both;" />
+                    </p>
+                    <p id="pRoom2">
+                        <span>Room2:</span> <span>
+                            <select name="xRoom2_iAdults" id="xRoom2_iAdults" onChange="changeAdults(this)">
+                                @Html.Raw(@paxAdults)
+                            </select>
+                        </span> <span>
+                            <select name="xRoom2_iChildren" id="xRoom2_iChildren" onChange="childAge(this)">
+                                @Html.Raw(@paxChild)
+                            </select>
+                        </span> <span id="pChildAges2">
+                            <label for="xRoom2_iChild1">Child age 1:</label>
+                            <select name="xRoom2_iChild1" id="xRoom2_iChild1">
+                                @Html.Raw(@childAge)
+                            </select>
+                            <label for="xRoom2_iChild2">Child age 2:</label>
+                            <select name="xRoom2_iChild2" id="xRoom2_iChild2">
+                                @Html.Raw(@childAge)
+                            </select>
+                        </span> <br style="clear:both;" />
+                    </p>
+                    <p id="pRoom3">
+                        <span>Room3:</span> <span>
+                            <select name="xRoom3_iAdults" id="xRoom3_iAdults" onChange="changeAdults(this)">
+                                @Html.Raw(@paxAdults)
+                            </select>
+                        </span> <span>
+                            <select name="xRoom3_iChildren" id="xRoom3_iChildren" onChange="childAge(this)">
+                                @Html.Raw(@paxChild)
+                            </select>
+                        </span> <span id="pChildAges3">
+                            <label for="xRoom3_iChild1">Child age 1:</label>
+                            <select name="xRoom3_iChild1" id="xRoom3_iChild1">
+                                @Html.Raw(@childAge)
+                            </select>
+                            <label for="xRoom3_iChild2">Child age 2:</label>
+                            <select name="xRoom3_iChild2" id="xRoom3_iChild2">
+                                @Html.Raw(@childAge)
+                            </select>
+                        </span> <br style="clear:both;" />
+                    </p>
+                </div>
+                <div class="dvWording">Please contact us for any special arrangements such as more than three rooms and partial stays.</div>
+                <div class="dvContinueButton"><span class="btnContinue">Continue</span></div>
+                <input name="xutm_campaign" type="hidden" id="xutm_campaign" value="<%'=sCampaignCode%>" />
+            </form>
+        </div>
+    </div>
+    <!--- END - Transp Option --->
+</div>
+</div>
+<div class="ByoCalContainer">
+    <div class="dvImgContainer">
+        <div class="dvLeftByoContainer">
+            <div class="dvByoCalTools">
+                <div class="dvByoCalTitle">
+                    <h1>Design Your Own Vacation Packages</h1>
+                    <h4>Combining world destination expertise with fast and easy booking</h4>
+                </div>
+                <form id="formBYO" method="post" name="formBYO">
+                    <div class="dvIntlFly">
+                        <span class="spselect wair">With Air *</span> <span class="wair">Without Air *</span> <span class="spanCanada">* from U.S.A / Canada</span><span class="spanAdvance">Advanced</span>
+                        <input id="qWair" name="qWair" type="hidden" value="True" />
+                    </div>
+                    <div class="dvAirParam">
+                        <div>
+                            <label for="qLeaveNA">Leaving from:</label>
+                            <input id="qLeaveNA" type="text" value="City or airport" name="qLeaveNA" />
+                            <input name="qLeaveID" type="hidden" id="qLeaveID" value="-1" />
+                        </div>
+                        <div>
+                            <label for="qCabinTxt">Cabin Class:</label>
+                            <select id="qCabinOpt" name="qCabinOpt">
+                                <option value="Y" selected="selected">Economy</option>
+                                <option value="W">Premium Economy</option>
+                                <option value="C">Business</option>
+                                <option value="F">First Class</option>
+                            </select>
+                        </div>
+                        <br style="clear:both" />
+                        <div class="dvReturnAirParam">
+                            <label for="qReturnNA">Returning to:</label>
+                            <input id="qReturnNA" type="text" value="City or airport" name="qReturnNA" />
+                            <input name="qReturnID" type="hidden" id="qReturnID" value="-1" />
+                        </div>
+                        <br style="clear:both" />
+                    </div>
+                    <!-- div city 1 -->
+                    <div class="dvByoCalCity" id="dvCity1">
+                        <div>
+                            <label for="qNACity1">Going to:</label>
+                            <input id="qNACity1" type="text" name="qNACity1" value="City or airport" />
+                            <input type="hidden" name="qIDCity1" id="qIDCity1" value="-1" />
+                            <input name="qCOCity1" type="hidden" id="qCOCity1" value="" />
+                            <input name="qAPICity1" type="hidden" id="qAPICity1" value="" />
+                        </div>
+                        <div>
+                            @{
+                                string dateVal = "mm/dd/yyyy";
+                                dateVal = String.Format("{0:MM/dd/yyyy}", DateTime.Today.AddDays(90));
+                            }
+                            <label for="qArrDate">Arriving on:</label>
+                            <input id="qArrDate" type="text" name="qArrDate" value="@dateVal" readonly="readonly" />
+                        </div>
+                        <div>
+                            <label for="
+">Staying for:</label>
+                              <select name="qSTCity1" id="qSTCity1">
+                                @{
+                                    string optSel = "";
+                                    string optStr = "night";
+                                    for (Int32 d = 1; d <= 14; d++)
+                                    {
+                                        if (d != 1)
+                                        {
+                                            optStr = "nights";
+                                        }
+                                        if (d == 3)
+                                        { optSel = "Selected"; }
+                                        else
+                                        { optSel = ""; }
+                                        @Html.Raw(String.Format("<option value={0} {1}> {2} {3}</option>", d, optSel, d, optStr));
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <br style="clear:both" />
+                    </div>
+                    <input id="qgoingID" type="hidden" name="qgoingID" value="" />
+                    <input id="qutm_campaign" type="hidden" name="qutm_campaign" value="" />
+                </form>
+            </div>
+            <div class="dvByoCalButtons">
+                <div class="btnAddCty" id="1,2">
+                    <img class="delay" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src="https://pictures.tripmasters.com/siteassets/d/add_city_icon.png" alt="Add" title="Add" />
+                    <span>ADD DESTINATION</span>
+                </div>
+                <span class="btnNoMore">Next</span>
+            </div>
+        </div>
+        <div class="dvRightByoContainer">
+            <div class="dvCustComment">
+                <div><a style="font-size: 15px" href="https://www.tripmasters.com/review">@String.Format("{0:C0}", @Model.NumComments).Replace("$", "") Customer Reviews</a></div>
+                <div class="dvStars"> <span class="emptyStars" style="width:167px;"></span> <span class="fullStars" style="width:@w px;"></span> </div>
+                <div class="darkText">@overAllAvg out of 5 stars</div>
+                <div class="btnRevMore" data-go-to="/Review">learn more</div>
+            </div>
+
+        </div>
+        <br style="clear:both" />
+    </div>
+</div>
+
+<section class="secpartialguide">
+    <div class="dvpartialguide">
+        <span>Did you know you can book</span>
+        <span>Partial Stays</span>
+        <span class="slider">See how</span>
+    </div>
+    <div class="imgarrow">
+        <img class="slider" src="https://pictures.tripmasters.com/siteassets/d/right_arrow_icon.png" />
+    </div>
+    <div class="guide">
+
+    </div>
+    <!-- The Modal -->
+    <div id="slider" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="swiperSec">
+
+                    <!-- Swiper -->
+                    <div class="swiper-container partialguide">
+                        <div class="clsguide">X</div>
+                        <div class="guidetitle">How to book partial stays</div>
+                        <div class="guidetext">Booking Partial Stays with us is very easy, just follow these simple steps and you will be able to customize even more your vacation package.</div>
+
+                        <div class="carousel slide pl-4 pr-4" data-ride="carousel" data-interval="false" id="otherFeat">
+                            <ol class="carousel-indicators">
+                                <li data-target="#otherFeat" class="active" data-slide-to="1"></li>
+                                <li data-target="#otherFeat" data-slide-to="2"></li>
+                                <li data-target="#otherFeat" data-slide-to="3"></li>
+                                <li data-target="#otherFeat" data-slide-to="2"></li>
+                                <li data-target="#otherFeat" data-slide-to="4"></li>
+                                <li data-target="#otherFeat" data-slide-to="5"></li>
+                                <li data-target="#otherFeat" data-slide-to="6"></li>
+                                <li data-target="#otherFeat" data-slide-to="7"></li>
+                                <li data-target="#otherFeat" data-slide-to="8"></li>
+
+
+                            </ol>
+                            <div class="carousel-inner">
+                                @{
+                                    for (Int32 i = 1; i <= 8; i++)
+                                    {
+                                        <div class="carousel-item @(i == 1 ? "active" : "") col-12 otherEachSlide pt-4 pl-0 pr-0">
+                                            <img src=@String.Format("https://pictures.tripmasters.com/siteassets/d/slide{0}.png", i) />
+                                        </div>
+                                    }
+                                }
+                            </div>
+                            <a class="carousel-control-prev" href="#otherFeat" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon text-dark" aria-hidden="true"></span>
+                                <span class="sr-only"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#otherFeat" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon text-dark" aria-hidden="true"></span>
+                                <span class="sr-only"></span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</section>
+<section class="instruction">
+    <div class="instruction__wrapper">
+        <div class="instruction__info">
+            <h3>Build your trip more easily</h3>
+            <p>Click on our video for instructions </br> on how to build your dream vacation!</p>
+            <a href="https://www.youtube.com/shorts/lGq27vVf5bQ" target="_blank">https://www.youtube.com/shorts/lGq27vVf5bQ</a>
+        </div>
+        <div class="instruction__image">
+            <a href="https://www.youtube.com/shorts/lGq27vVf5bQ" target="_blank">
+                <img src="https://pictures.tripmasters.com/siteassets/d/advance-byo-video-image.webp" alt="build your trip" />
+            </a>
+        </div>
+    </div>
+</section>
+<div class="dvBlackBox">
+    @{
+        string[] array = { "Book Customizable Multi-city trips in seconds", "Curated Hotels & Services " };
+        Int32 txC = 0;
+        foreach (string tx in array)
+        {
+            <span>@tx</span>
+            @if (txC < array.GetUpperBound(0))
+            {@Html.Raw("<b> &#9679; </b>");
+        }
+            txC += 1;
+        }
+    }
+</div>
+@{
+    string onlyBYO = "";
+    if (ViewBag._utPg == "BYO")
+    {
+        onlyBYO = "style='display:none'";
+    }
+    Int32 no = 0;
+}
+
+@section Scripts
+    {
+
+    <environment include="Development">
+        <script src="~/js/advanced/dt.java.HomePageAdvanced.js" asp-append-version="true"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js" type="text/javascript" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/advanced/dt.java.HomePageAdvanced.min.js" asp-append-version="true"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js" type="text/javascript" asp-append-version="true"></script>
+    </environment>
+    <script>
+        $(document).ready(function () {
+            $('.modal').css("display", "none");
+            $('.slider').click(function () {
+                $('#slider, .modal-content').slideDown(function () { $('.swiperSec').show(); window.scroll(0, 200); });
+
+            });
+            $('.clsguide').click(function () {
+                $('#slider, .modal-content').slideUp();
+                $('.swiperSec').hide().removeAttr('style');
+            })
+            getHomeTownAirport();
+        });
+
+    </script>
+}
+

@@ -1,0 +1,23 @@
+﻿label{padding:3px;margin-right:5px;width:45%;float:left;font:14px Arial,Helvetica,sans-serif;font-size:20px;}
+label span{color:#333;font-size:11px}
+input[type=button]{float:right;cursor:pointer}
+input[type=text]{width:50%;height: 30px;}
+select{width:153px}
+.dvRoundContainer{font-size:14px;}
+.errMsg{background-color:#FF4D63;padding:4px;border-radius:2px;color:#fff;font-weight:700;font-size:12px;margin-left:14px;margin-top:0;position:absolute}
+.dvSaveLeft{padding:29px 25px;font:12px Arial,Helvetica,sans-serif}
+.dvSaveRight{padding:15px 25px;font:12px Arial,Helvetica,sans-serif;text-align: justify;}
+.dvCheckContainer{margin:0 auto;height:auto;padding:25px;border:1px solid #FFD968;text-align:left;border-radius:7px;background:#FFE493}
+.dvCheckTitle{color:#000096;padding:7px 0;font:700 16px Arial,Helvetica,sans-serif}
+.dvCheckContainer p a{float:right;font-size:12px}
+.dvsaveAssist{margin:25px auto; text-align:left}
+.dvsaveAssist div{text-align:left}
+.reminders {
+    background: url("https://pictures.tripmasters.com/siteassets/d/reminder_icon.png") no-repeat left;
+    margin-left: 20px;
+    padding-left: 30px;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: navy
+}

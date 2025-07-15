@@ -1,0 +1,1278 @@
+<!-- ====================================================================================================== -->
+<!--  Name:  NoServiceTP4.xml                                                                      -->
+<!-- ====================================================================================================== -->
+<!-- Date:   01/20/2017                                                                                  -->
+<!-- Notes:  XML for error text for TP4     -->
+<!-- Author: Ciprian                                                                                        -->
+<!-- 09/25/2018		Ccabansag		Created                                                                       -->
+<!-- 04/30/2019	Ccabansag changed contact number to TM contact number; BPG-845 -->
+<!-- =====================================================================================================  -->
+
+<Errors>
+
+  <Error1000>
+    <![CDATA[
+    <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 1001:</span><br><br>
+
+      <span class="pre">
+			  We can't find any available flights <br>for the dates selected. 
+      </span><br>
+      
+      <span class="pre">
+        Try to search again without flight.
+			</span><br>
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			Call us 24 Hours a Day, <br>7 Days a Week <br> toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+    
+		<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+    
+  ]]>
+  </Error1000>
+  <Error1001>
+    <![CDATA[
+    <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 1001:</span><br><br>
+			
+      <span class="pre">
+			  We can't find any available flights <br>for the dates selected. 
+        <br>Call an agent if you can't find any in other dates.
+			</span>
+			<br>
+      <span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			Call us 24 Hours a Day, <br>7 Days a Week <br> toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </Error1001>
+  <Error1001C>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 1001C:</span><br><br>
+			
+      <span class="pre">
+			  We were unable to find a combination of flights <br>from @CityName@.
+      </span><br><br>
+			<span class="pre">
+			What you can do next is try a different date <br>or select a different city. 
+      </span><br><br>
+      <span class="pre">
+			If the problem persists, our agents are more than <br>happy to assist you with your travel planning. <br>
+			Call us 24 Hours a Day, 7 Days a Week toll-free 
+      </span><br>
+      <span class="pre font-weight-bold">1-800-430-0484.</span>
+			
+		</div>
+
+	  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+      
+  ]]>
+  </Error1001C>
+  <Error1002>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 1002:</span><br><br>
+      
+      <span class="pre">
+			  We can't find any available flights <br>for the dates selected. 
+        <br><br>
+        Call an agent if you can't find any in other dates.
+			</span>
+      
+			<br><br>
+      <span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+      <br><br>
+			Call us 24 Hours a Day, 7 Days a Week <br> toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+  </div>
+	
+  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </Error1002>
+  <Error1002C>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 1002C:</span><br><br>
+			
+			<span class="pre">
+      We can't find any available hotels in <br> @CityName@ <br>
+      for the dates selected. 
+      <br><br>
+      Call an agent if you can't find any on other dates.
+			</span>
+      <br><br>
+      
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+  </div>
+  
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </Error1002C>
+  <Error1002H>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 1002H:</span><br><br>
+      
+      <span class="pre">
+			We can't find the specific hotel you requested <br>for the dates selected. 
+      <br><br>
+      Call an agent if we don't have it available <br>on other dates.
+			</span>
+			<br><br>
+      
+      <span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+      <br><br>
+			Call us 24 Hours a Day, <br>7 Days a Week <br> toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </Error1002H>
+  <Error1003>
+    <![CDATA[
+ <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 1003:</span>
+      <br><br>
+      
+       <span class="pre">
+			There are no available transfers <br>for the dates you selected. 
+      <br><br>
+      Call us and an agent will try to find one for you.
+			</span>
+			<br><br>
+      
+			 <span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </Error1003>
+  <Error1004>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 1004:</span><br><br>
+			
+      <span class="pre">
+			There are no available sightseeing activities <br>for the dates you selected. 
+      <br><br>
+      
+      Call us and an agent will try to find one for you.
+			</span>
+			<br><br>
+      
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </Error1004>
+  <Error1005>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 1005:</span><br><br>
+      
+			<span class="pre">
+			Unable to Book Your Itinerary. 
+      <br><br>
+      
+      Call us and an agent will help you book it.
+			</span>
+      <br><br>
+      
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </Error1005>
+  <Error1006>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 1006:</span><br><br>
+			
+			Unable to Process Your Payment. 
+      <br><br>
+      Please Call toll-free 
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+	</div>
+  
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </Error1006>
+  <Error1007>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 1007:</span>
+      <br><br>
+      
+      <span class="pre">
+			Unable to Process Your Request At This Time. 
+      <br>
+      Please Try Later.
+			</span>
+      <br><br>
+      
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </Error1007>
+  <Error1008>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 1008:</span>
+      <br><br>
+      
+      <span class="pre">
+			No Detailed Description Available for this Product.
+			</span><br><br>
+      
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </Error1008>
+  <Error1009>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer servicemessage 1009:</span>
+      <br><br>
+      
+      <span class="pre">
+			Unable To Get Insurance Information. <br><br>Can't Continue..
+			</span>
+      <br><br>
+      
+      <span class="pre">
+        Please call Customer Service. <br/><br/>
+      </span>
+      
+      <span class="pre">
+            Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+    
+  ]]>
+  </Error1009>
+  <Error10010>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer servicemessage 10010:</span>
+      <br><br>
+      
+      <span class="pre">
+			Unable To Get Shipping Information. <br><br>Can't Continue..
+			</span>
+      
+      <br><br>
+      <span class="pre">
+        Please call Customer Service. 
+      <br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+  ]]>
+  </Error10010>
+  <Error10011>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer servicemessage 10011:</span>
+      <br><br>
+      
+      <span class="pre">
+			Unable To Process Passenger Information. <br><br>Can't Continue..
+			</span>
+      <br><br>
+      
+      <span class="pre">
+        Please call Customer Service. <br/><br/>
+        Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+  ]]>
+  </Error10011>
+  <Error10012>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer servicemessage 10012:</span>
+      <br><br>
+      
+      <span class="pre">
+			Unable To Book Your Itinerary. <br><br>Can't Continue..
+			</span>
+      
+      <span class="pre">
+        Please call Customer Service. <br/><br/>
+        
+        Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+  ]]>
+  </Error10012>
+  <Error10013>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer servicemessage 10013:</span>
+      <br><br>
+      
+      <span class="pre">
+			Unable To Confirm Your Itinerary. <br><br>Can't Continue..
+			</span>
+      <br><br>
+
+      <span class="pre">
+        Please call Customer Service. <br/><br/>
+        
+        Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+  ]]>
+  </Error10013>
+  <Error10014>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer servicemessage 10014:</span>
+      <br><br>
+      
+      <span class="pre">
+			Unable To Check your IATA/PIN. <br><br>Can't Continue..
+			</span>
+      <br><br>
+      
+      <span class="pre">
+        Please call Customer Service. <br/><br/>
+        
+        Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+  ]]>
+  </Error10014>
+  <Error10015>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer servicemessage 10015:</span>
+      <br><br>
+      
+      <span class="pre">
+			Please verify Your IATA/PIN.
+			</span>
+      <br><br>
+      <span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+  ]]>
+  </Error10015>
+  <Error10016>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer servicemessage 10016:</span>
+      <br><br>
+      
+      <span class="pre">
+			Please Enter Your IATA/PIN.
+			</span>
+      <br><br>
+
+      <span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+  ]]>
+  </Error10016>
+  <Error10017>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer servicemessage 10017:</span>
+      <br><br>
+      
+      <span class="pre">
+			Please Check Your Booking No/Email Address.
+			</span>
+      <br><br>
+      
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+  ]]>
+  </Error10017>
+  <Error10023R>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 10023R:</span>
+      <br><br>
+      
+      <span class="pre">
+			Your reservation has successfully been <br>made previously.
+			</span>
+      <br><br>
+      
+			<span class="pre">
+			Check Your Booking# @BookingNo@ <br><br>
+      <span>
+      
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+  </div>
+  
+  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        
+        <span class="pre font-weight-bold">
+        Go to <a href="http://www.europeandestinations.com/">Europeandestinations home page </a>
+        </span>
+      </div>
+	  </div>
+
+  ]]>
+  </Error10023R>
+  <Error10023r>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 10023r:</span>
+      <br><br>
+      
+      <span class="pre">
+			Your reservation has been made previously, <br>
+      but we can't book the air. 
+      <br>
+      Please call customer service.
+      <br><br>
+      </span>
+      
+      <span class="pre">
+			Check Your Booking#<span class="pre font-weight-bold">@BookingNo@</span>
+      <br><br>
+			</span>
+      
+      <span class="pre">
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+    
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </Error10023r>
+  <Error10024>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 10024:</span>
+      <br><br>
+      
+      <span class="pre">
+			In order to protect the privacy and <br>security of your interactions, 
+      <br>europeandestinations.com times out sessions <br>
+      after 120 minutes of inactivity. <br>
+			Any transactions for which you have <br>
+      received confirmation during the <br>
+      session are not affected, <br>
+      however you must restart any <br>
+      searches or any incomplete transactions. 
+			</span>
+      
+      <br><br>
+      <span class="pre">
+            Please return to the <br>
+            europeandestinations.com home page.<br/><br/>
+            
+            Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+    
+	  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </Error10024>
+  <Error10025>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 10025:</span>
+      <br><br>
+      
+      <span class="pre">
+			  Unable to validate your payment information.
+			</span>
+      <br><br>
+       
+       Please call Customer Service. <br/><br/>
+       
+       Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+    
+	 <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </Error10025>
+  <ErrorRule0001>
+
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message Rule0001</span>
+      <br><br>
+      
+      <span class="pre">
+			Minimum night available for <br>this package is @MinStay@ night(s).
+			</span>
+      
+      <br><br>
+      
+      <span class="pre">
+            Please call Customer Service. 
+            
+            br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </ErrorRule0001>
+  <ErrorRule0002>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message Rule0002</span>
+      <br><br>
+      
+      <span class="pre">
+			Maximum night available for <br>
+      this package is @MaxStay@ night(s).
+			</span>
+      <br><br>
+      
+      <span class="pre">
+            Please call Customer Service. 
+            
+            <br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </ErrorRule0002>
+  <ErrorRule0003>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Msg:Rule0003</span>
+      
+      <br><br>
+      
+      <span class="pre">
+	      We're sorry, our system can only search <br>
+        for prices within @MaxDayToPrice@ days <br>from today. 
+        
+        <br><br>
+        Please change your dates and <br>
+        try your search again.<br/>
+     </span>
+   </div>
+    
+    <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+    
+  ]]>
+  </ErrorRule0003>
+
+  <ErrorRule0004>
+    <![CDATA[
+  
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+  
+    <span class="pre">
+      <h5>Please refresh your itinerary <br>for the latest prices</h5>
+    </span>
+    <br><br>
+    
+		<span class="pre">
+		    Due to the dynamism of air and hotel prices <br>
+        our system only maintains prices for <br>
+        itineraries created within <br>
+        the last @MaxSessionTolerancehour@ hours. <br><br>
+        
+        Please price your itinerary again. 
+		</span>
+  </div>
+  
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+			<a href="@RefUrl@">Reprice your itinerary</a>
+		  </div>
+  </div>
+  ]]>
+  </ErrorRule0004>
+
+  <ErrorRule0004r>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+  
+    <span class="pre">
+      <h5>Please refresh your itinerary <br>for the latest prices</h5>
+		</span>
+    <br><br>
+    
+		<span class="pre">
+		    Due to the dynamism of air and <br>
+        hotel prices our <br>
+        system only maintains <br>
+        prices for itineraries created <br>
+        within the last @MaxSessionTolerancehour@ hours. <br>
+        Please price your itinerary again. <br><br>
+		 </div>
+		 
+     <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+			<a href="@RefUrl@">Reprice your itinerary</a>
+		  </div>
+    </div>
+  ]]>
+  </ErrorRule0004r>
+
+  <ErrorRule0005>
+    <![CDATA[ 
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message Rule0005</span>
+      <br><br>
+      
+      <span class="pre">
+        We are unable to process your <br>
+        request at this time. <br>
+        Maximum total adults and children <br>
+        are 6 and Maximum children <br>
+        are 4 for each request.
+      </span>
+      <br><br>
+      
+      <span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  
+  ]]>
+  </ErrorRule0005>
+  <Error10018>
+    <![CDATA[ 
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 10018</span>
+      <br><br>
+      
+      <span class="pre">
+        We're sorry, our system can only <br>
+        add sightseeing only <br>
+        with @MaxDaysToAddSS@ days <br>
+        before your departure day.
+      </span>
+      <br><br>
+      
+      <span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  
+  ]]>
+  </Error10018>
+  <ErrorM0001>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message M0001:</span>
+      <br><br>
+      
+      <span class="pre">
+			We have a problem with a <br>
+      mini-package in your itinerary. <br>
+      Please call and an agent will help you.
+			</span>
+      <br><br>
+      
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </ErrorM0001>
+  <ErrorP0001>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message P0001:</span>
+      <br><br>
+      
+      <span class="pre">
+			We can't find this package. <br>
+      Call and an agent will book <br>
+      the itinerary you want.
+			</span>
+      <br><br>
+      
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </ErrorP0001>
+  <ErrorP0002>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message P0002:</span>
+      <br><br>
+      
+      <span class="pre">
+			We can't find this package. <br>
+      Call and an agent will book <br>
+      the itinerary you want.
+			</span>
+      <br><br>
+      
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </ErrorP0002>
+  <ErrorA0001>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message A0001:</span>
+      <br><br>
+      
+      <span class="pre">
+			We cannot search for departure date <br>
+      before @DepartureDate@
+			</span>
+      <br><br>
+			
+      <span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </ErrorA0001>
+  <ErrorC0001>
+    <![CDATA[
+
+    <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message C0001:</span><br><br>
+			<span class="pre">Unable to Find Car Rental.</span><br>
+			
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			Call us 24 Hours a Day, <br>7 Days a Week <br> toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	  <div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+
+  ]]>
+  </ErrorC0001>
+  <ErrorX0001>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message X0001:</span>
+      <br><br>
+      
+      <span class="pre">
+			We can't find this cruise. <br>
+      Call and an agent will book <br>
+      the itinerary you want.
+			</span>
+      <br><br>
+      
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </ErrorX0001>
+  <ErrorBMLFail>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">
+			Customer service message <br>
+      ErrorPayPalCreditFail:
+      </span>
+      <br><br>
+      
+      <span class="pre">
+			PayPal Credit was unable <br>
+      to authorize your transaction. <br>
+      Please select another payment <br>
+      method to complete your order.<br/>
+      </span>
+			<br><br>
+      
+			 <span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </ErrorBMLFail>
+  <ErrorPaypalFail>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">
+			Customer service message ErrorPaypalFail:
+      </span>
+      <br><br>
+      
+      <span class="pre">
+			Paypal was unable to <br>
+      authorize your transaction. <br>
+      Please select another payment <br>
+      method to complete your order.<br/>
+      </span>
+      <br><br>
+			
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </ErrorPaypalFail>
+  <ErrorRetrieveItin0001>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message RetrieveItin0001:</span>
+      <br><br>
+      
+      <span class="pre">
+			There's a glitch with this itinerary. <br>
+      Please call an agent to help you <br>
+      with this itinerary.
+			</span>
+      <br><br>
+      
+			<span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </ErrorRetrieveItin0001>
+  <ErrorRetrieveItin0002>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message RetrieveItin0002:</span>
+      <br><br>
+      
+      <span class="pre">
+			This itinerary has not been saved. <br>
+      Call an agent and an agent can <br>
+      help you book it or try <br>
+      to rebook it online.
+			</span>
+      <br><br>
+			
+      <span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </ErrorRetrieveItin0002>
+  <ErrorRetrieveItin0003>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message RetrieveItin0003</span>
+      <br><br>
+      
+      <span class="pre">
+			Zip Code needed for this Itinerary<br>
+      or Zip Code does not match
+			</span>
+      <br><br>
+			
+      <span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </ErrorRetrieveItin0003>
+  <ErrorRetrieveItin0004>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message RetrieveItin0004</span>
+      <br><br>
+      
+      <span class="pre">
+			Digit parameter needed for this <br>
+      Itinerary or Digit does not match
+			</span>
+      <br><br>
+			
+      <span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </ErrorRetrieveItin0004>
+  <Error10024r>
+    <![CDATA[
+  <div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message 10024r:</span>
+      <br><br>
+      
+      <span class="pre">
+			Your reservation may have <br>
+      been made previously, <br>
+      but we encounter problem <br>
+      with your booking.
+			</span>
+      <br><br>
+      
+      <span class="pre">
+            Please call Customer Service. <br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+  ]]>
+  </Error10024r>
+  <ErrorItineraryChanged>
+    <![CDATA[
+	<div class="col border mt-5 mb-4 my-1 textGrey13 badge-1rem badge-light-white shadow-sm p-3">
+			<span class="pre font-weight-bold">Customer service message <br>ErrorItineraryChanged:</span>
+      <br><br>
+      
+      <span class="pre">
+			Your itinerary was changed <br>
+      with other browser session.<br/>
+      
+      Please review it. (<a href="@ItineraryUrl@">click here</a>)
+			</span>
+      <br><br>
+      
+      <span class="pre">Our agents are more than happy to assist you<br> with your travel planning.
+			<br><br>
+      Call us 24 Hours a Day, 7 Days a Week <br>toll-free 
+      </span>
+      <span class="pre font-weight-bold">
+      1-800-430-0484.
+      </span>
+    </div>
+
+	<div class="w-100">
+      <div class="col ml-5 pl-5 pb-3">
+        <button type="button" onclick="history.go(-1);" class="btn btn-primary">New Search</button>
+      </div>
+	  </div>
+	]]>
+  </ErrorItineraryChanged>
+</Errors>

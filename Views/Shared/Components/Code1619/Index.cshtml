@@ -1,0 +1,105 @@
+﻿@using static MVC_TM.Models.ViewModels.GeneralPurposeViewModel;
+
+@{
+    List<DisplayTheme> ProdKind1619 = new List<DisplayTheme>();
+    ProdKind1619 = Model.leftDisplay;
+    ProdKind1619 = ProdKind1619.FindAll(ex => ex.SDP_GroupProdKindID == 1619);
+
+    String xpicURL = "";
+    foreach (var its in ProdKind1619)
+    {
+
+        <section id="1619" class="packages">
+            <div class="first-container">
+                <h2 class="packages__title">
+                    @its.SDP_DisplayTitle
+                </h2>
+                <p class="packages__text">
+                    @its.SDP_Description
+                </p>
+                @Html.Raw("<ul class='ulMore'>")
+
+                @{
+                    List<BoxContent> Interest = Model.boxContent;
+                    Interest = Interest.FindAll(hi => hi.STX_ProdKindID == 1619);
+                    Int32 noInterest = 0;
+                    foreach (var hi in Interest)
+                    {
+                        Int32 pW = 50;
+                        Int32 pH = 50;
+                        if (hi.STX_PictureHeightpx != 0)
+                        {
+                            pH = hi.STX_PictureHeightpx;
+                        }
+                        if (hi.STX_PictureWidthpx != 0)
+                        {
+                            pW = hi.STX_PictureWidthpx;
+                        }
+                        string xURL = hi.STX_Title;
+                        if (hi.STX_URL != "none")
+                        {
+                            xpicURL = hi.STX_URL;
+                            if (xpicURL[0].ToString() == "/")
+                            {
+                                xpicURL = @ViewBag.AppBasePath + xpicURL.Replace("%20", "_").Replace("/europe", "");
+                            }
+                            if (xpicURL[0].ToString() == "h")
+                            {
+                                if (System.Text.RegularExpressions.Regex.Match(xpicURL, "\bbeach\b.|\blatin\b.|\beurope\b.|\basia\b.", System.Text.RegularExpressions.RegexOptions.IgnoreCase).Success)
+                                {
+
+                                }
+                            }
+                            xURL = xpicURL;
+                        }
+
+                        if (hi.STX_CMSID == 0)
+                        {
+                            if (noInterest == 4)
+                            {
+                                @Html.Raw("</ul>")
+                                ;
+                                <br style="clear:both" />
+                                @Html.Raw("<ul id='dvEachHideInterest' class='dvEachHideInterest'>")
+                                ;
+                            }
+
+                            <li class="dvhighlight3">
+                                <div class="highlight3div">
+                                    @if (hi.STX_PictureURL != "none")
+                                    {
+                                        string imgSRC = hi.STX_PictureURL.Replace("http:", "https:");
+                                        <a href=@String.Format("{0}", @hi.STX_URL.Replace(" ","_").ToLower())><img class="delay" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src="@imgSRC.ToLower()" alt="@hi.STX_Title" style="max-height:200px;max-width:200px;" /></a>
+                                    }
+
+
+                                    <div class="divTilteHighlight3"><span><a href=@String.Format("{0}", @hi.STX_URL.Replace(" ","_").ToLower())>@hi.STX_Title </a></span></div>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+                            <div style="display:block">
+                                <div style=" overflow:auto">@hi.CMS_Content.Replace("http:", "https:")</div>
+                            </div>
+
+                        }
+                        noInterest = noInterest + 1;
+
+                    }
+
+                    <div style="clear:both"></div>
+                }
+                @Html.Raw("</ul>")
+                @if (Interest.Count() > 4)
+                {
+                    <div class="moreButtonInt" id="moreButtonInt">See @its.SDP_DisplayTitle</div>
+
+                }
+
+            </div>
+        </section>
+
+    }
+
+}

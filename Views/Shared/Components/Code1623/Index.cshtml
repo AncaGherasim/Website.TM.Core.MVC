@@ -1,0 +1,43 @@
+﻿@using static MVC_TM.Models.ViewModels.GeneralPurposeViewModel;
+
+@{
+    List<DisplayTheme> ProdKind1623 = new List<DisplayTheme>();
+    ProdKind1623 = Model.leftDisplay;
+    ProdKind1623 = ProdKind1623.FindAll(ex => ex.SDP_GroupProdKindID == 1623);
+
+    List<BoxContent> display1623 = new List<BoxContent>();
+    display1623 = Model.boxContent;
+    display1623 = display1623.FindAll(hi => hi.STX_ProdKindID == 1623);
+  
+    foreach (var hgl in ProdKind1623)
+        {
+
+        <section id="1623" class="packages">
+            <div class="first-container">
+                <h2 class="packages__title">
+                    @hgl.SDP_DisplayTitle
+                </h2>
+                <p class="packages__text">
+                    @hgl.SDP_Description
+                </p>
+
+                <ul class="packages__list2">
+                    @{
+                        foreach (var hg in display1623)
+                        {
+
+                            <li>
+                                <a href="@String.Format("{0}", hg.STX_URL.Replace(" ","_").ToLower())">
+                                    <img class="lazyload" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src=@String.Format("{0}", @hg.STX_PictureURL) asp-append-version="true" alt="@hg.STX_Title" />
+                                    <span>@hg.STX_Title</span>
+                                </a>
+                                <p>@Html.Raw(MVC_TM.Infrastructure.Utilities.TruncateHtml(@hg.STX_Description, 160))</p>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </section>
+
+        }
+    }

@@ -1,0 +1,81 @@
+﻿@using static MVC_TM.Models.ViewModels.GeneralPurposeViewModel;
+
+@{
+    List<DisplayTheme> ProdKind2478_70 = new List<DisplayTheme>();
+    ProdKind2478_70 = Model.leftDisplay;
+    ProdKind2478_70 = ProdKind2478_70.FindAll(ex => ex.SDP_GroupProdKindID == 2478 || ex.SDP_GroupProdKindID == 2470);
+
+
+    foreach (var tra in ProdKind2478_70)
+    {
+        var kindId = tra.SDP_GroupProdKindID;
+            <section id="@kindId" class="packages">
+                <div class="first-container">
+                    <h2 class="packages__title">
+                        @tra.SDP_DisplayTitle
+                    </h2>
+                    <p class="packages__text">
+                        @tra.SDP_Description
+                    </p>
+
+                @Html.Raw("<ul class='ulinterests'>")
+                @{
+                    List<BoxContent> leftOrientLong = Model.boxContent;
+                    leftOrientLong = leftOrientLong.FindAll(hi => hi.STX_ProdKindID == kindId);
+                    Int32 noInterest = 0;
+
+                    foreach (var at in @leftOrientLong)
+                    {
+
+                        if (at.STX_CMSID == 0)
+                        {
+                            if (noInterest == 2)
+                            {
+                                @Html.Raw("</ul>")
+                                ;
+                                <br style="clear:both" />
+                                @Html.Raw("<ul id='dvEachHideTravel' class='dvEachHideTravel'>")
+                                ;
+                            }
+                            @if (at.STX_PictureURL != "none")
+                            {
+                                string imgSRC = at.STX_PictureURL.Replace("http:", "https:");
+                                <li class="liInterest">
+                                    <div class="imgInterests">
+                                        <a href=@String.Format("{0}", at.STX_URL.ToLower().Replace(" ","_"))><img class="delay" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src="@at.STX_PictureURL.ToLower()" /></a>
+                                    </div>
+                                    <div class="titleDescription">
+                                        <h2 class="Text_Arial20_Blue"><a href=@String.Format("{0}", at.STX_URL)>@at.STX_Title</a></h2>
+                                        <p class="descriptionBest">@at.STX_Description</p>
+                                    </div>
+
+                                </li>
+                            }
+
+                            <div style="clear:both"></div>
+
+                        }
+                        else
+                        {
+                            <div style="margin:3px 5px 10px 5px; display:block">
+                                <div style=" overflow:auto">
+                                    @at.CMS_Content.Replace("http:", "https:")
+                                </div>
+                            </div>
+                        }
+                        noInterest = noInterest + 1;
+
+                    }
+                    @Html.Raw("</ul>")
+                    @if (leftOrientLong.Count() > 2)
+                    {
+                        <div class="moreButtonTravel" id="moreButtonTravel">See All @tra.SDP_DisplayTitle</div>
+
+                    }
+                }
+            </div>
+        </section>
+
+
+    }
+}

@@ -1,0 +1,1067 @@
+<!-- ====================================================================================================== -->
+<!--  Name:  NoServiceTP4.xml                                                                      -->
+<!-- ====================================================================================================== -->
+<!-- Date:   01/20/2017                                                                                  -->
+<!-- Notes:  XML for error text for TP4     -->
+<!-- Author: Ciprian                                                                                        -->
+<!-- 01/20/2017		Ciprian		Created                                                            -->
+<!-- 06/22/2017		Ciprian		File branch from TM and changed templates used with ED info-->
+<!-- 06/27/2018   Ion Changed ErrorRule0004 and ErrorRule0004r -->
+<!-- 04/30/2019	Ccabansag changed contact number to TM contact number; BPG-845 -->
+<!-- =====================================================================================================  -->
+<Errors>
+	<Header>
+					<![CDATA[
+  <body class="BodyBookingProcess">
+	<table width="940px" border="0" align="center" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td valign="top" colspan="2">
+				<a href="http://www.europeandestinations.com">
+				<img name="TripMasters" border="0" align="middle" Src="https://pictures.tripmasters.com/siteassets/d/header_logo.jpg" />
+				</a>
+			</td>
+		</tr>
+  ]]></Header>
+	<Error1000><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1001:</strong><br>
+			<b><br/></b>
+			We can't find any available flights for the dates selected. Try to search again without flight.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font>
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="151"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New search</u></a> </font></b></font></td>
+   </tr>
+		<td width="728"> <strong> </strong></td>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error1000>
+	<Error1001><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1001:</strong><br>
+			<b><br/></b>
+			We can't find any available flights for the dates selected. Call an agent if you can't find any in other dates.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="151"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New search</u></a> </font></b></font></td>
+		<td width="728"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error1001>
+	<Error1001C><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1001C:</strong><br>
+			<b><br></b>
+			We were unable to find a combination of flights from @CityName@.</font></p>
+			<p><font face="verdana" size="2">
+			What you can do next is try a different date or select a different city. <br><br>
+			If the problem persists, our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="151"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New search</u></a> </font></b></font></td>
+		<td width="728"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error1001C>
+	<Error1002><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1002:</strong><br>
+			<b><br></b>
+			We can't find any available hotels for the dates selected. Call an agent if you can't find any in other dates.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than to assist you with your travel planning. <br>
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="151"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New search</u></a> </font></b></font></td>
+		<td width="728"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error1002>
+	<Error1002C><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1002C:</strong><br>
+			<b><br></b>
+			We can't find any available hotels in @CityName@ for the dates selected. Call an agent if you can't find any on other dates.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="151"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New search</u></a> </font></b></font></td>
+		<td width="728"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error1002C>
+	<Error1002H><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1002H:</strong><br>
+			<b><br></b>
+			We can't find the specific hotel you requested for the dates selected. Call an agent if we don't have it available on other dates.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="151"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New search</u></a> </font></b></font></td>
+		<td width="728"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error1002H>
+	<Error1003><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1003:</strong><br>
+			<b><br></b>
+			There are no available transfers for the dates you selected. Call us and an agent will try to find one for you.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="151"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New search</u></a> </font></b></font></td>
+		<td width="728"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error1003>
+	<Error1004><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1004:</strong><br>
+			<b><br></b>
+			There are no available sightseeing activities for the dates you selected. Call us and an agent will try to find one for you.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New search</u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error1004>
+	<Error1005><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1005:</strong><br>
+			<b><br></b>
+			Unable to Book Your Itinerary. Call us and an agent will help you book it.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning.
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New search</u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error1005>
+	<Error1006><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1006:</strong><br>
+			<b><br></b>
+			Unable to Process Your Payment. Please Call toll-free 1-800-430-0484
+			</font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New Search </u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error1006>
+	<Error1007><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1007:</strong><br>
+			<b><br></b>
+			Unable to Process Your Request At This Time. Please Try Later
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New Search</u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error1007>
+	<Error1008><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1008:</strong><br>
+			<b><br></b>
+			No Detailed Description Available for this Product.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font face="verdana" size="2" color="blue">
+		<a style="cursor:hand" onClick="history.go(-1)"><u>Continue with your itinerary</u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error1008>
+	<Error1009><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+        <td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer servicemessage 1009:</strong><br>
+			<b><br></b>
+			Unable To Get Insurance Information. Can't Continue..
+			</font></p>
+            <p><font size="2" face="verdana">
+            Please call Customer Service. <br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error1009>
+	<Error10010><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+        <td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer servicemessage 10010:</strong><br>
+			<b><br></b>
+			Unable To Get Shipping Information. Can't Continue..
+			</font></p>
+            <p><font size="2" face="verdana">
+            Please call Customer Service. <br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error10010>
+	<Error10011><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+        <td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer servicemessage 10011:</strong><br>
+			<b><br></b>
+			Unable To Process Passenger Information. Can't Continue..
+			</font></p>
+            <p><font size="2" face="verdana">
+            Please call Customer Service. <br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error10011>
+	<Error10012><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+        <td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer servicemessage 10012:</strong><br>
+			<b><br></b>
+			Unable To Book Your Itinerary. Can't Continue..
+			</font></p>
+            <p><font size="2" face="verdana">
+            Please call Customer Service. <br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error10012>
+	<Error10013><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+        <td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer servicemessage 10013:</strong><br>
+			<b><br></b>
+			Unable To Confirm Your Itinerary. Can't Continue..
+			</font></p>
+            <p><font size="2" face="verdana">
+            Please call Customer Service. <br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error10013>
+	<Error10014><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+        <td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer servicemessage 10014:</strong><br>
+			<b><br></b>
+			Unable To Check your IATA/PIN. Can't Continue..
+			</font></p>
+            <p><font size="2" face="verdana">
+            Please call Customer Service. <br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error10014>
+	<Error10015><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+        <td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer servicemessage 10015:</strong><br>
+			<b><br></b>
+			Please verify Your IATA/PIN.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error10015>
+	<Error10016><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+        <td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer servicemessage 10016:</strong><br>
+			<b><br></b>
+			Please Enter Your IATA/PIN.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error10016>
+	<Error10017><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+        <td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer servicemessage 10017:</strong><br>
+			<b><br></b>
+			Please Check Your Booking No/Email Address.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error10017>
+	<Error10023R><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 10023R:</strong><br>
+			<b><br></b>
+			Your reservation has successfully been made previously.</strong>
+			</font></p>
+			<p><font face="verdana" size="2">
+			Check Your Booking# @BookingNo@ <br><br>
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="361"><font face="verdana" size="2"><b>
+		<strong>Go to <a href="http://www.europeandestinations.com/">TripMasters home page </a></strong></b></font></td>
+		<td width="518"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error10023R>
+	<Error10023r><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 10023r:</strong><br>
+			<b><br></b>
+			Your reservation has been made previously, but we can't book the air. Please call customer service.<br><br>
+			Check Your Booking#<strong>@BookingNo@</strong> <br><br>
+			</font></p>
+            <p><font size="2" face="verdana">
+            Please call Customer Service. <br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="518"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+		<a href="http://www.europeandestinations.com/">New Search</a></font></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error10023r>
+	<Error10024><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 10024:</strong><br>
+			<b><br></b>
+			In order to protect the privacy and security of your interactions, europeandestinations.com times out sessions after 120 minutes of inactivity. <br>
+			Any transactions for which you have received confirmation during the session are not affected, however you must restart any searches or any incomplete transactions. 
+			</font></p>
+            <p><font size="2" face="verdana">
+            Please return to the europeandestinations.com home page.<br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New Search</u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error10024>
+	<Error10025><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 10025:</strong><br>
+			<b><br></b>
+			Unable to validate your payment information.
+			</font></p>
+            <p><font size="2" face="verdana">
+            Please call Customer Service. <br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New Search</u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error10025>
+	<ErrorRule0001>
+	
+	<![CDATA[
+  <table cellspacing="0" cellpadding="0" border="0" align="center" width="940px"><tbody><tr><td align="left"><div class="primarybox" style="margin-top: 10px;"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message Rule0001</strong><br>
+			<b><br></b>
+			Minimum night available for this package is @MinStay@ night(s).
+			</font></p>
+            <p><font size="2" face="verdana">
+            Please call Customer Service. <br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New Search</u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></td></tr><tbody></table>
+  ]]></ErrorRule0001>
+	<ErrorRule0002><![CDATA[
+  <table cellspacing="0" cellpadding="0" border="0" align="center" width="940px"><tbody><tr><td align="left"><div class="primarybox" style="margin-top: 10px;"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message Rule0002</strong><br>
+			<b><br></b>
+			Maximum night available for this package is @MaxStay@ night(s).
+			</font></p>
+            <p><font size="2" face="verdana">
+            Please call Customer Service. <br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New Search</u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></td></tr><tbody></table>
+  ]]></ErrorRule0002>
+    <ErrorRule0003>
+  <![CDATA[
+  <table cellspacing="0" cellpadding="0" border="0" align="center" width="940px"><tbody><tr><td align="left"><div class="primarybox" style="margin-top: 10px;"><div style="padding:40px 40px;" ><center>  
+
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+     <font face="verdana" size="2">
+     <b>
+     <br/><br/>
+     <strong>Msg:Rule0003</strong><br/>
+	 We're sorry, our system can only search for prices within @MaxDayToPrice@ days from today. Please change your dates and try your search again.<br/>
+     </b>
+     </font>
+    </td>
+   </tr>
+  </table>
+</center></div></div></td></tr><tbody></table>
+  ]]>
+ </ErrorRule0003>
+
+  <ErrorRule0004>
+    <![CDATA[
+  
+  <div class="main-noservice-root">
+	  <div class="noservice-content">
+      <h3>Please refresh your itinerary for the latest prices</h3>
+		  <div style="padding-left:30px;">
+		    Due to the dynamism of air and hotel prices our system only maintains prices for itineraries created within the last @MaxSessionTolerancehour@ hours. Please price your itinerary again. 
+		  </div>
+		 <div class="noserv-btn">
+			<a href="@RefUrl@">Reprice your itinerary</a>
+		  </div>
+	  </div>
+	</div>
+  ]]>
+  </ErrorRule0004>
+
+  <ErrorRule0004r>
+    <![CDATA[
+  <div class="main-noservice-root">
+	  <div class="noservice-content">
+      <h3>Please refresh your itinerary for the latest prices</h3>
+		  <div style="padding-left:30px;">
+		    Due to the dynamism of air and hotel prices our system only maintains prices for itineraries created within the last @MaxSessionTolerancehour@ hours. Please price your itinerary again. 
+		 </div>
+		 <div class="noserv-btn">
+			<a href="@RefUrl@">Reprice your itinerary</a>
+		</div>
+	  </div>
+	</div>
+  ]]>
+  </ErrorRule0004r> 
+ 
+ <ErrorRule0005>
+- <![CDATA[ 
+  <table cellspacing="0" cellpadding="0" border="0" align="center" width="940px"><tbody><tr><td align="left"><div class="primarybox" style="margin-top: 10px;"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+             <td colspan="2">
+                     <p><font face="verdana" size="2">
+                     <strong>Customer service message Rule0005</strong><br>
+                     <b><br></b>
+            We are unable to process your request at this time. Maximum total adults and children are 6 and Maximum children are 4 for each request.
+                     </font></p>
+            <p><font size="2" face="verdana">
+            Our agents are more than happy to assist you with your travel planning.<br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+             </td>
+      </tr>
+      <tr>
+             <td width="322"><font face="verdana" size="2"><b><font color="blue">
+             <a href="#" onClick="history.go(-1);return false;"><u>New Search</u></a> </font></b></font></td>
+             <td width="557"> <strong> </strong></td>
+      </tr>
+  </table>
+  </center></div></div></td></tr><tbody></table>
+  
+  ]]> 
+  </ErrorRule0005>
+<Error10018>
+- <![CDATA[ 
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+             <td colspan="2">
+                     <p><font face="verdana" size="2">
+                     <strong>Customer service message 10018</strong><br>
+                     <b><br></b>
+                     We're sorry, our system can only add sightseeing only with @MaxDaysToAddSS@ days before your departure day.
+                     </font></p>
+            <p><font size="2" face="verdana">
+            Our agents are more than happy to assist you with your travel planning.<br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+             </td>
+      </tr>
+      <tr>
+             <td width="322"><font face="verdana" size="2"><b><font color="blue">
+             <a href="#" onClick="history.go(-1);return false;"><u>New Search</u></a> </font></b></font></td>
+             <td width="557"> <strong> </strong></td>
+      </tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  
+  ]]> 
+  </Error10018>
+	<ErrorM0001><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message M0001:</strong><br>
+			<b><br></b>
+			We have a problem with a mini-package in your itinerary. Please call and an agent will help you.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New Search</u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></ErrorM0001>
+	<ErrorP0001><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message P0001:</strong><br>
+			<b><br></b>
+			We can't find this package. Call and an agent will book the itinerary you want.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New Search</u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></ErrorP0001>
+	<ErrorP0002><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message P0002:</strong><br>
+			<b><br></b>
+			We can't find this package. Call and an agent will book the itinerary you want.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New Search</u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></ErrorP0002>
+	<ErrorA0001><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message A0001:</strong><br>
+			<b><br></b>
+			We cannot search for departure date before @DepartureDate@
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New Search</u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></ErrorA0001>
+	<ErrorC0001><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message C0001:</strong><br>
+			<b><br></b>
+			Unable to Find Car Rental.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New Search</u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></ErrorC0001>
+	<ErrorX0001><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message X0001:</strong><br>
+			<b><br></b>
+			We can't find this cruise. Call and an agent will book the itinerary you want.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="322"><font face="verdana" size="2"><b><font color="blue">
+		<a href="#" onClick="history.go(-1);return false;"><u>New Search</u></a> </font></b></font></td>
+		<td width="557"> <strong> </strong></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></ErrorX0001>
+	<ErrorBMLFail><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<font face="verdana" size="2"><b><br/><br/>
+			Customer service message ErrorPayPalCreditFail:<br/>
+			PayPal Credit was unable to authorize your transaction. Please select another payment method to complete your order.<br/></b>
+			</font>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.<br/><br/>
+			</font></p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><font face="verdana" size="2"><b><font face="verdana" size="2">
+		<a href="#" onClick="history.go(-1);return false;"><u>Continue to select another payment method</u></a>
+		</font></b></font></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></ErrorBMLFail>
+	<ErrorPaypalFail><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<font face="verdana" size="2"><b><br/><br/>
+			Customer service message ErrorPaypalFail:<br/>
+			Paypal was unable to authorize your transaction. Please select another payment method to complete your order.<br/></b>
+			</font>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.<br/><br/>
+			</font></p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><font face="verdana" size="2"><b><font face="verdana" size="2">
+		<a href="#" onClick="history.go(-1);return false;"><u>Continue to select another payment method</u></a>
+		</font></b></font></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></ErrorPaypalFail>
+	<ErrorRetrieveItin0001><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message RetrieveItin0001:</strong><br>
+			<b><br></b>
+			There's a glitch with this itinerary. Please call an agent to help you with this itinerary.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><font face="verdana" size="2"><b><font face="verdana" size="2">
+		<a style="cursor:hand" onClick="history.go(-1)">Please try again</a></font></b></font></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></ErrorRetrieveItin0001>
+	<ErrorRetrieveItin0002><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message RetrieveItin0002:</strong><br>
+			<b><br></b>
+			This itinerary has not been saved. Call an agent and an agent can help you book it or try to rebook it online.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><font face="verdana" size="2"><b><font face="verdana" size="2">
+		<a style="cursor:hand" onClick="history.go(-1)">Please try again</a></font></b></font></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></ErrorRetrieveItin0002>
+	<ErrorRetrieveItin0003><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message RetrieveItin0003</strong><br>
+			<b><br></b>
+			Zip Code needed for this Itinerary or Zip Code does not match
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><font face="verdana" size="2"><b><font face="verdana" size="2">
+		<a style="cursor:hand" onClick="history.go(-1)">Please try again</a></font></b></font></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></ErrorRetrieveItin0003>
+	<ErrorRetrieveItin0004><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message RetrieveItin0004</strong><br>
+			<b><br></b>
+			Digit parameter needed for this Itinerary or Digit does not match
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><font face="verdana" size="2"><b><font face="verdana" size="2">
+		<a style="cursor:hand" onClick="history.go(-1)">Please try again</a></font></b></font></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></ErrorRetrieveItin0004>
+  <Error10024r><![CDATA[
+  <tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 10024r:</strong><br>
+			<b><br></b>
+			Your reservation may have been made previously, but we encounter problem with your booking.<br><br>
+			</font></p>
+            <p><font size="2" face="verdana">
+            Please call Customer Service. <br/><br/>
+            Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="518"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+		<a href="http://www.europeandestinations.com/">New Search</a></font></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+  ]]></Error10024r>
+	<ErrorItineraryChanged><![CDATA[
+	<tr ><td colspan="2" style="padding-top:60px;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="940px" style="background-color:#FFF"><tbody><tr><td align="left"><div class="Bx_CR"><div class="Bx_BM"><div class="Bx_CL"><div class="Bx_TM"><div class="Bx_BL"><div class="Bx_BR"><div class="Bx_TL"><div class="Bx_TR"><div style="padding:40px 40px;" ><center>
+  <table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message ErrorItineraryChanged:</strong><br>
+			<b><br></b>
+			Your itinerary was changed with other browser session.
+			<br/>Please review it. (<a href="@ItineraryUrl@">click here</a>)
+			<br><br>
+			</font></p>
+            <p><font size="2" face="verdana">
+            Or please call Customer Service. <br/>
+            Our agents are more than happy to assist you with your travel planning. 
+			Call us 24 Hours a Day, 7 Days a Week toll-free <strong>1-800-430-0484</strong>.</font>
+            <font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="518"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+		<a href="http://www.europeandestinations.com/">New Search</a></font></td>
+	</tr>
+  </table>
+  </center></div></div></div></div></div></div></div></div></div></div></td></tr><tbody></table></td></tr></tbody></table></body>
+	]]></ErrorItineraryChanged>
+</Errors>

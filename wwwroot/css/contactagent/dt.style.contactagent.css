@@ -1,0 +1,224 @@
+﻿.dvContainer {
+    max-width: 980px;
+    min-width: 980px;
+    background-color: #e2e2e2;
+    margin: 30px auto;
+    padding-top: 30px;
+}
+
+.dvAgInfo {
+    margin: 0 auto;
+    width: 95%;
+    background-color: #fff;
+    min-height: 300px;
+}
+
+.dvHeadTitle {
+    padding: 15px 20px;
+    background-color: #638bd1;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.dvAgDetails {
+    width: 100%;
+    min-height: 250px;
+    padding-top: 20px;
+    display: flex;
+}
+
+.dvLeft {
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+    .dvLeft img {
+        border: 1px solid #ccc;
+        padding: 3px;
+        border-radius: 5px;
+        max-width: 200px;
+        margin-top: 15px;
+    }
+
+.dvCenter {
+    width: 40%;
+    float: left;
+}
+
+    .dvCenter div {
+    }
+
+.dvCenterInfo {
+    padding: 40px 0px 20px 0;
+}
+
+    .dvCenterInfo span {
+        display: block;
+        font-size: 16px;
+    }
+
+    .dvCenterInfo b {
+        color: #000;
+        font-weight: 500;
+    }
+
+    .dvCenterInfo span:nth-child(1) {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .dvCenterInfo span:nth-child(2) {
+        font-size: 14px;
+        color: #ccc;
+    }
+
+    .dvCenterInfo span:nth-child(4) {
+        color: #666;
+        padding-top: 5px;
+    }
+
+    .dvCenterInfo span:nth-child(5) {
+        color: #666;
+        padding-top: 5px;
+    }
+
+.spStatus.available {
+    font-size: 20px;
+    color: #009900;
+    padding-top: 30px;
+    display: block;
+    font-weight: 700
+}
+
+.spStatus.offline {
+    font-size: 20px;
+    color: #cc0000;
+    padding-top: 30px;
+    display: block;
+    font-weight: 700;
+}
+
+.separetor {
+    float: left;
+    border-left: 2px dotted #ccc;
+    min-height: 230px;
+    margin: 0 3px;
+    margin-bottom: 20px;
+}
+
+.dvRight {
+    width: 33%;
+    float: left;
+    background-color: #ecf1ff;
+    margin-bottom: 20px;
+}
+
+    .dvRight label {
+        font-size: 14px;
+        color: #009;
+    }
+
+    .dvRight input {
+        border-radius: 5px;
+        padding: 14px 10px;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+        width: 93%;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .dvRight span {
+        font-size: 12px;
+    }
+
+.btnCall {
+    background: #fffecd linear-gradient(to bottom,#fffecd 18%,#fffecd 4%,#ffd968 50%,#ffd968 100%) repeat scroll 0 0;
+    border: 1px solid #d9a300;
+    color: #009;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.online {
+    padding: 14px 10px;
+}
+
+.notAvailableOn {
+    padding: 85px 10px;
+    text-align: center;
+}
+
+    .notAvailableOn span {
+        font-size: 16px;
+    }
+
+.schedule {
+    display: block;
+    font-size: 14px;
+    color: #666;
+}
+
+.done, .notAvailable {
+    display: none;
+    padding: 95px 10px;
+    text-align: center;
+}
+
+    .done span, .notAvailable span {
+        display: block;
+        font-size: 16px;
+    }
+
+.dvSchedule {
+    padding-bottom: 20px;
+    display: none;
+}
+
+.dvDaySchedule {
+    padding: 8px;
+    font-size: 14px;
+    width: 90%;
+}
+
+    .dvDaySchedule:nth-child(odd) {
+        background-color: #ecf1ff;
+    }
+
+    .dvDaySchedule span:nth-child(1) {
+        width: 40%;
+        color: lightskyblue;
+        display: inline-block;
+    }
+
+.spExpand {
+    color: lightskyblue;
+    width: 30%;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+    .spExpand.collapsed:after {
+        transform: rotate(270deg);
+    }
+
+    .spExpand:after {
+        content: "\203A";
+        transform: rotate(90deg);
+        float: right;
+        font-size: 26px;
+        color: lightskyblue;
+        position: relative;
+        top: -5px;
+    }

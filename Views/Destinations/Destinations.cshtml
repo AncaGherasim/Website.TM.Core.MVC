@@ -1,0 +1,142 @@
+﻿@model MVC_TM.Models.ViewModels.DestinationsViewModel;
+@using MVC_TM.Infrastructure;
+@using Microsoft.Extensions.Options;
+@using System.Text.RegularExpressions;
+@inject IOptionsMonitor<AppSettings> _appsettings;
+@{
+    ViewBag.Canonical = @String.Format("https://www.tripmasters.com/destinations");
+
+}
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/destinations/dt.style.destinations.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/destinations/dt.style.destinations.min.css" />
+    </environment>
+}
+
+<div id="dvGoTop"><span>&raquo;</span></div>
+
+<section class="hero">
+    <img class="hero__image delay" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src="https://pictures.tripmasters.com/siteassets/d/destination_cover.png" />
+    <div class="hero__wrapper">
+        <h1 class="hero__title">Explore Our Destinations</h1>
+        <h4>Type the first letter or begin typing the name of the desired country.</h4>
+        <div class="hero__filter" id="filterBox">
+            <input id="i1" type="text" maxlength="15" value="" placeholder="Country Name" />
+            <span>&#128269;</span>
+        </div>
+    </div>   
+</section>
+<section name="CountryList" class="template-countrylistbyregion">
+    @foreach (var c in @Model.countries)
+    {
+        string site = "";
+        var goodInfo = "";
+        if (c.Info == null)
+            goodInfo = c.Name;
+        else
+            goodInfo = Regex.Replace(c.Info, "<.*?>", String.Empty);
+
+        Match m = Regex.Match(goodInfo, @"\bRecommended", RegexOptions.IgnoreCase);
+        if (m.Success)
+            goodInfo = c.Info.Substring(0, m.Index);
+
+        switch (c.RegionId)
+        {
+            case 243:
+                site = "https://www.tripmasters.com/europe/";
+                break;
+            case 182:
+                site = "https://www.tripmasters.com/latin/";
+                break;
+            case 595:
+                site = "https://www.tripmasters.com/asia/";
+                break;
+        }
+        <div id="@c.Id" data-name="@c.Name" class="outer-div">
+            <div class="outer-div-grid" data-id="@c.Id">
+                <div class="outer-div-column1">
+                    <a href=@String.Format("{0}{1}/vacations", @site , @c.Name.Replace(" ", "_").ToLower())>@c.Name</a>
+                </div>
+                <div class="outer-div-column2">
+                    @foreach (var cty in c.Cities.Take(3))
+                    {
+                        <div class="outer-div2-1">
+                            @{
+                                var infoImage = "info_icon.png";
+                                var cursorType = "cursor:pointer";
+                            }
+                            @if (cty.CtyInfo == "none" || cty.CtyInfo == null)
+                            {
+                                infoImage = "noinfo_icon.png";
+                                cursorType = "cursor:default";
+                            }
+                            <label for="@cty.Name" style="@cursorType">
+                                <img src='@String.Format("https://pictures.tripmasters.com/siteassets/d/{0}",infoImage)' />
+                            </label>
+                            @if (cty.CtyInfo != null || cty.CtyInfo != "none")
+                            {
+                                <input type="checkbox" id="@cty.Name" class="modal-state">
+                                <div class="modal">
+                                    <label for="@cty.Name" class="modal_bg"></label>
+                                    <div class="modal__inner">
+                                        <label class="modal__close" for="@cty.Name"></label>
+                                        <h2>@cty.Name</h2>
+                                        <div class="modal__description">@Html.Raw(String.Format("{0}", cty.CtyInfo.Trim()))</div>
+                                    </div>
+                                </div>
+
+                            }
+
+                            <a href=@String.Format("{0}{1}/vacations", @site , @cty.Name.Replace(" ", "_").ToLower())>
+                                @cty.Name
+                            </a>
+
+                        </div>
+                    }
+                </div>
+                <div class="outer-div-column3" id="@String.Format("open{0}",c.Id)" data-id="@c.Id">+</div>
+            </div>
+            <div class="more-close" id="@String.Format("more-open{0}",c.Id)">
+                @if (c.Total > 3)
+                {
+                    <h2 class="more-title">
+                            More cities A-Z:
+                    </h2>
+                    <div class="outer-div-grid">
+                        <div>
+                        </div>
+                        <div class="outer-div-column2" id=@String.Format("azcites{0}",@c.Id)>
+                        </div>
+                        <div class="outer-div-column3">&emsp; </div>
+                    </div>
+                }
+
+                <div class="outer-div3">
+                    <div class="outer-div1"></div>
+                    <details class="inner-detail">
+                        <summary class="inner-summary">More about @c.Name</summary>
+                        <div class="outer-div4">@Html.Raw(String.Format("{0}", goodInfo.Trim()))</div>
+                        <div class="more-cities">
+                            <div class="outer-div-column2" id=@String.Format("azmorecites{0}",@c.Id)>
+                            </div>
+                            <div class="outer-div-column3">&emsp; </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    }
+</section>
+
+@section Scripts
+    {
+    <environment include="Development">
+        <script src="~/js/destinations/dt.java.destinations.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/destinations/dt.java.destinations.min.js"></script>
+    </environment>
+}

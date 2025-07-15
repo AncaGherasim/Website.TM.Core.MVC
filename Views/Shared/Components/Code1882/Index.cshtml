@@ -1,0 +1,88 @@
+﻿@using static MVC_TM.Models.ViewModels.GeneralPurposeViewModel;
+
+@{
+    List<DisplayTheme> ProdKind1882 = new List<DisplayTheme>();
+    ProdKind1882 = Model.leftDisplay;
+    ProdKind1882 = ProdKind1882.FindAll(ex => ex.SDP_GroupProdKindID == 1882);    
+    List<GP_PackOnInterestPriority> woutReviews = new List<GP_PackOnInterestPriority>();
+    woutReviews = Model.featSugg;
+   
+    
+}
+<section class="packages" id="1882">
+    <div class="first-container">
+    @{
+        foreach (var its in ProdKind1882)
+        {
+            <h2 class="packages__title">
+                @its.SDP_DisplayTitle
+            </h2>
+            <p class="packages__text">
+                @its.SDP_Description
+            </p>
+        }
+        <ul id="suggestedList" class="packages__list">
+            @{
+                int topC = 0;
+            }
+            @foreach (var top in woutReviews)
+            {
+                string siteURL = "/";
+                topC = topC + 1;
+                    string hideClass = topC > 3 ? "packages__item-hidden" : "";
+
+                    switch (top.deptID)
+                    {
+                        case 243:
+                            siteURL = "/europe/";
+                            break;
+
+                        case 595:
+                            siteURL = "/asia/";
+                            break;
+
+                        case 182:
+                            siteURL = "/latin/";
+                            break;
+
+                        case 356:
+                            siteURL = "/luxury/";
+                            break;
+                    }                    
+                    <li class="@($"packages__item {hideClass}")">
+                        <div class="packages__image">
+                            <a href=@String.Format("{0}{1}/{2}/package-{3}", siteURL, top.CountryName.Replace(" ", "_").ToLower(), top.PDL_Title.Replace(" ", "_").ToLower(), top.PDLID)>
+                                <img class="lazyload" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src=@String.Format("https://pictures.tripmasters.com{0}", top.IMG_Path_URL.ToLower()) alt="@top.PDL_Title" title="@top.PDL_Title" />
+                                <div class="packages__wrapper">
+                                    <h3>@top.PDL_Title</h3>
+                                        @if (top.STP_Save != 9999)
+                                        {
+                                            <p>@Html.Raw(String.Format("{0} nights from <font>{1:C0}*</font>", @top.PDL_Duration, top.STP_Save))</p>
+                                        }
+                                        else
+                                        {
+                                            <p>&nbsp;</p>
+                                        }
+                                    </div>
+                            </a>
+                        </div>
+                        <div class="packages__info">
+                                <p class="@String.Format("packages__description packages__description-{0}", @top.PDLID)">
+                                    @Html.Raw(@MVC_TM.Infrastructure.Utilities.TruncateHtml(top.SPD_Description, 160))
+                                </p>
+                            @* <span class=@String.Format("packages__date packages__date-{0}", @top.PDLID)>Traveled on: </span>
+                            <a class="packages__view" href=@String.Format("{0}{1}/{2}/package-{3}", siteURL, top.CountryName.Replace(" ", "_").ToLower(), top.PDL_Title.Replace(" ", "_").ToLower(), top.PDLID)>VIEW IT <span>›</span></a>*@
+                        </div>
+                    </li>
+            }
+        </ul> 
+            if (topC > 3)
+            {
+                <button id="suggestedButton" class="packages__button" aria-expanded="false">See all suggested packages</button>
+              
+            }
+    }
+    </div>
+</section>
+
+

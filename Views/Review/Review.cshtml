@@ -1,0 +1,152 @@
+﻿@model MVC_TM.Models.ViewModels.ReviewViewModel
+@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@inject IOptions<AppSettings> _appsettings
+
+
+@{
+   
+         // ViewBag.Canonical = @String.Format("https://www.tripmasters.com/reviews");
+
+    
+    var rws = ViewBag.reviews;
+    var pgTtl = rws ? "Reviews from our customers" : "Customer Reviews";
+}
+@section Styles {
+    <environment include="Development">
+        <link href="~/css/review/dt.style.bodypages.css" rel="stylesheet" />
+        <link href="~/css/review/dt.style.pgwslider.css" rel="stylesheet" />
+        <link href="~/css/review/dt.style.reviewpage.css" rel="stylesheet" />
+        <link href="~/css/review/dt.style.simplepagination.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/review/review.min.css" asp-append-version="true" />
+    </environment>
+
+    <style>
+        div.dvPaginNoContent {
+            border-bottom: 1px solid #999;
+            border-top: 1px solid #999;
+            margin: 10px auto;
+            padding: 8px;
+            text-align: center
+        }
+    </style>
+}
+
+<input type="hidden" value="@rws" />
+<div class="dvMainContainer" style="margin-top:18px;">
+    <div class="dvRoundContainer">
+        <span class="spRTitle">@pgTtl</span> <span class="spRTxtGray"></span> <br style="clear:both;" />
+        <div>
+            <div id="dvLeft">
+                <div style="position:relative;margin:0px 0px 30px -4px;">
+                    @{
+                        Int32 total = 0;
+                        Decimal overAllAvg = 0;
+                        Decimal defw = 120;
+                        Decimal w = 0;
+                        if (Model.scores.Count > 0)
+                        {
+                            total = Model.scores.Where(x => x.Name == "Total").First().Id;
+                            overAllAvg = Model.scores.Where(x => x.Name != "Total").Sum(x => Decimal.Parse(x.Name) * x.Id) / total;
+                            overAllAvg = Decimal.Round(overAllAvg, 1);
+                            w = Decimal.Round((overAllAvg * defw) / 5, 1);
+                        }
+                    }
+                    <div class="emptyStars" style=@String.Format("width:{0}px;", defw)></div>
+                    <div class="fullStars" style=@String.Format("width:{0}px;", w)></div>
+                    <div style="float:left;position:absolute;left:130px;width:150px;top:5px;font-weight:bold;font-size:14px">@total.ToString("#,##0") Reviews</div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="darkText" style="padding-bottom:2px!important;">@overAllAvg out of 5 stars</div>
+                @if (!rws)
+                {
+                    <div style="margin-top:20px;">
+                        @for (Int32 i = 5; i >= 1; i--)
+                        {
+                            Int32 currentVal = 0;
+                            string current = "";
+                            Decimal perCent = 0;
+                            if (Model.scores.Count > 0)
+                            {
+                                current = i.ToString();
+                                if (Model.scores.Where(x => x.Name == current).ToList().Count > 0)
+                                {
+                                    currentVal = Model.scores.Where(x => x.Name == current).First().Id;
+                                    w = Decimal.Round((currentVal * defw) / total);
+                                    perCent = Decimal.Round((currentVal * 100) / total);
+                                }
+                                else
+                                {
+                                    currentVal = 0;
+                                    w = 0;
+                                    perCent = 0;
+                                }
+                            }
+                            <div class="dvfilter" id="@i">
+                                @{
+                                    string stars = "star";
+                                    if (i > 1)
+                                    {
+                                        stars = "stars";
+                                    }
+                                    string percentDisplay = "block";
+                                    if (perCent < 1)
+                                    {
+                                        percentDisplay = "none";
+                                    }
+                                }
+                                <div class="starNum">@i @stars </div>
+                                <div class="emptyBar" style=@String.Format("width:{0}px;", defw)></div>
+                                <div class="fullBar" style=@String.Format("width:{0}px;display:{1}", w, percentDisplay)></div>
+                                <div class="perCent" style="padding-bottom:2px!important;">@perCent% </div>
+                                <div style="clear:both;"></div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+            <div id="@(!rws ? "dvRight" : "dvRightReviews")">
+                @if (!rws)
+                {
+                    <div style="margin:45px 0 25px 0;">Share your thoughts with other travelers</div>
+                }
+                <a href="https://www.tripmasters.com/checkbookingforreview"><span class="submitButton" id="submitBotton">Write a Review</span></a>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="dvPagin"> <span class="dvPaginas"></span> </div>
+        <div id="dvReviews" style="padding:10px; margin:0 auto"><img src="https://pictures.tripmasters.com/siteassets/d/ajax-loader.gif" alt="" /></div>
+        <div class="dvPagin"> <span class="dvPaginas"></span> </div>
+    </div>
+</div>
+<input type="hidden" id="reviewTotal" value="" />
+
+
+@section Scripts
+    {
+
+    <environment include="Development">
+        @if (!rws)
+        {
+            <script src="~/js/review/dt.java.reviewpage.js" asp-append-version="true"></script>
+        }
+        else
+        {
+            <script src="~/js/reviews/dt.java.reviewspage.js" asp-append-version="true"></script>
+        }
+        <script src="~/js/site/dt.java.simplepagination.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        @if (!rws)
+        {
+            <script src="~/js/review/dt.java.reviewpage.min.js" asp-append-version="true"></script>
+        }
+        else
+        {
+            <script src="~/js/reviews/dt.java.reviewspage.min.js" asp-append-version="true"></script>
+        }
+        <script src="~/js/site/dt.java.simplepagination.js" asp-append-version="true"></script>
+    </environment>
+}

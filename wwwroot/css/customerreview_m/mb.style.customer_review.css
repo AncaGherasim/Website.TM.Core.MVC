@@ -1,0 +1,101 @@
+.txt_boldNavy18{font-family:Arial;font-size:18px;font-weight:700;color:#19255f}
+.dvhr{border-top:2px dotted #9a9a9b;height:20px;margin:10px -1em 0 -1em;}
+.dvhr1{border-top:1px solid #19255f;height:20px;margin:10px -1em 0 -1em;}
+.txt_boldBlack14{font-family:Arial;font-size:14px;font-weight:700}
+.txt_boldBlack12{font-family:Arial;font-size:12px;font-weight:700}
+ul.options{margin:20px 0 30px 5px;padding:0px;}
+ul.options li{margin:0 0 8px;line-height:2.5em;list-style-type:none;padding:0 0 0 35px;position:relative;}
+    ul.options li.unselectedItem:before {
+        content: url("https://pictures.tripmasters.com/siteassets/m/sel_unchecked.png");
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        left: 7px;
+        top: 5px;
+    }
+    ul.options li.selectedItem:before {
+        content: url("https://pictures.tripmasters.com/siteassets/m/sel_checked.png");
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        left: 7px;
+        top: 5px;
+    }
+ul.optionsSel{margin:20px 0 30px 5px;padding:0px;}
+ul.optionsSel li{margin:0 0 8px;line-height:2.5em;list-style-type:none;padding:0 0 0 35px;position:relative;}
+ul.optionsSel li.unselectedItemSel:before{content:"";cursor:pointer;display:block;position:absolute;left:7px;top:5px;}
+    ul.optionsSel li.selectedItemSel:before {
+        content: url("https://pictures.tripmasters.com/siteassets/m/sel_checked.png");
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        left: 7px;
+        top: 5px;
+    }
+
+ul.usingAgain{margin:18px 0px 0px 13px;padding:0px;}
+ul.usingAgain li{list-style-type:none;height:38px;width:100px;text-align:center;line-height:38px;margin-left:-3px;display:inline-block;font-size:18px;font-weight:400;border:solid 1px #d0d0d0;}
+ul.usingAgain li.selectedItem{cursor:pointer;background-color:#28377c;color:White;border:solid 1px #28377c;}
+    ul.usingAgain li.selectedItem:before {
+        content: url('https://pictures.tripmasters.com/siteassets/m/check_mark.png');
+        margin-left: -3px;
+    }
+ul.usingAgain li.unselectedItem{cursor:pointer;background:#ffffff linear-gradient(to bottom,#ffffff 5%,#efefef 100%) repeat scroll 0 0;}
+ul.usingAgain li.unselectedItem:before{content:"";}
+.disabledText{color:#cccccc;}
+
+ul.usingAgainSel{margin:18px 0px 0px 13px;padding:0px;}
+ul.usingAgainSel li{list-style-type:none;height:38px;width:100px;text-align:center;line-height:38px;margin-left:-3px;display:inline-block;font-size:18px;font-weight:400;border:solid 1px #d0d0d0;}
+ul.usingAgainSel li.selectedItemSel{cursor:pointer;background-color:#28377c;color:White;border:solid 1px #28377c;}
+    ul.usingAgainSel li.selectedItemSel:before {
+        content: url('https://pictures.tripmasters.com/siteassets/m/check_mark.png');
+        margin-left: -3px;
+    }
+ul.usingAgainSel li.unselectedItemSel{cursor:pointer;background:#ffffff linear-gradient(to bottom,#ffffff 5%,#efefef 100%) repeat scroll 0 0;color:#cccccc;}
+ul.usingAgainSel li.unselectedItemSel:before{content:"";}
+
+div.star-rating {
+    background: transparent url('https://pictures.tripmasters.com/siteassets/d/stars_empty.png') no-repeat scroll 0 0 !important;
+    overflow: hidden !important;
+    cursor: pointer;
+    display: inline-block;
+    height: 23px;
+    width: 27px
+}
+div.star-rating-selected {
+    background: transparent url('https://pictures.tripmasters.com/siteassets/d/stars_full.png') no-repeat scroll 0 0 !important;
+    overflow: hidden !important;
+    cursor: pointer;
+    display: inline-block;
+    height: 23px;
+    width: 27px
+}
+div.ServiceContainer{margin-left:-3px;float:left;}
+
+div.ServiceContainer-preselected{float:left;margin-left:-3px;}
+div.star-rating-selected {
+    background: transparent url(https://pictures.tripmasters.com/siteassets/d/stars_full.png) no-repeat scroll 0 0 !important;
+    overflow: hidden !important;
+    cursor: pointer;
+    display: inline-block;
+    height: 23px;
+    width: 27px
+}
+div.star-rating-preselected {
+    background: transparent url('https://pictures.tripmasters.com/siteassets/d/stars_empty.png') no-repeat scroll 0 0 !important;
+    overflow: hidden !important;
+    display: inline-block;
+    height: 23px;
+    width: 24px
+}
+
+.satisfied{color:Green;font-weight:700}
+.some_satisfied{color:Orange;font-weight:700}
+.disatisfied{color:red;font-weight:700}
+.Comment{margin:10px 10px 20px 10px;width:92.6%;height:250px;max-height:450px;}
+.submitButton{background:#fffecd linear-gradient(to bottom,#fffecd 5%,#ffd968 100%) repeat scroll 0 0;border:1px solid #f4cd1a;color:#000;cursor:pointer;display:inline-block;font:12px arial;padding:11px 60px;text-decoration:none}
+.triggerButton{margin-right:10px; display:none;}
+.validator{color:Red;font-size:12px;margin-left:10px}
+.dvEachSrvc{height: 46px; margin: 0 0 0 10px; padding: 10px 0 10px 10px;}
+.dvEachSrvc:nth-child(odd){background-color: #eff4fa}
+.dvEachSrvc:nth-child(even){background-color:#FFF}

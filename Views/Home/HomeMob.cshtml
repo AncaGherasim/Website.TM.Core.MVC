@@ -1,0 +1,420 @@
+﻿@model MVC_TM.Models.ViewModels.HomeViewModel
+@using MVC_TM.Infrastructure
+@using Microsoft.Extensions.Options
+@inject IOptions<AppSettings> _appsettings
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/responsive_calendar/responsive_calendar.css" />
+        <link href="~/css/home_m/mb.style.tmSite.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/responsive_calendar/responsive_calendar.min.css" asp-append-version="true" />
+        <link href="~/css/home_m/mb.style.tmSite.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+
+    <style>
+        div.dvMbestseller {
+            padding: 0 10px 20px 10px;
+        }
+
+        div.dvMeachTop a {
+            text-decoration: none;
+        }
+
+        div.dvMeachTop img {
+            margin-right: 10px
+        }
+
+        div.dvMeachTop span {
+            text-align: left;
+            display: block;
+            padding: 0 5px;
+            text-decoration: none;
+        }
+
+            div.dvMeachTop span.spBSTitle {
+                font-family: Arial, Helvetica, sans-serif;
+                word-wrap: break-word;
+                font-size: 16px;
+                color: #12174C;
+            }
+
+            div.dvMeachTop span.spBSPrice {
+                font-size: 14px;
+                color: #666;
+                margin-top: 10px;
+            }
+
+                div.dvMeachTop span.spBSPrice b {
+                    color: #ff6600;
+                }
+    </style>
+}
+@{ViewBag.Canonical = @String.Format("https://www.tripmasters.com/");}
+@{
+    <script>var SiteName = '@_appsettings.Value.ApplicationSettings.SiteName' </script>
+    <script>var TMED_HotelsAPI = '@_appsettings.Value.ApplicationSettings.TMED_HotelsAPI' </script>
+    <script>var designPage = '@ViewBag._utPg' </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+}
+
+@{
+    Int32 rev = Model.NumComments;
+    Decimal overAllAvg = 0;
+    Decimal defw = 120;
+    Decimal w = 0;
+    overAllAvg = Decimal.Round(Model.Score, 1);
+    w = Decimal.Round((overAllAvg * defw) / 5, 1);
+
+    string webServer = "";
+    List<long> offerPrices = new List<long>();
+    List<string> offerUrl = new List<string>();
+    long lowP = 500;
+    long highP = 9000;
+    Int32 proID = 243;  /*UserId-europe*/
+    string strOfferts = "";
+    Int32 oCount = 0;
+    if (Model.TMStarted.Count > 0)
+    {
+        foreach (var p in Model.TMStarted.Take(4))
+        {
+            if (p.STP_Save != 999)
+            {
+                offerPrices.Add((Int32)p.STP_Save);
+            }
+            offerUrl.Add("/" + p.CountryName + "/" + p.PDL_Title.Replace(" ", "_").ToLower() + "/package-" + p.PDLID);
+
+            switch (p.DeptNA)
+            {
+                case "ED":
+                    offerUrl.Add("https://www.tripmasters/europe/" + p.CountryName.Replace(" ", "_").ToLower() + "/" + p.PDL_Title.Replace(" ", "_").ToLower() + "/package-" + p.PDLID);
+
+                    break;
+                case "TMAS":
+                    offerUrl.Add("https://www.tripmasters/asia/" + p.CountryName.Replace(" ", "_").ToLower() + "/" + p.PDL_Title.Replace(" ", "_").ToLower() + "/package-" + p.PDLID);
+                    break;
+                case "LD":
+                    offerUrl.Add("https://www.tripmasters/latin/" + p.CountryName.Replace(" ", "_").ToLower() + "/" + p.PDL_Title.Replace(" ", "_").ToLower() + "/package-" + p.PDLID);
+                    break;
+                default:
+                    // code block
+                    break;
+            }
+            strOfferts = strOfferts + "}";
+            oCount = +1;
+            if (oCount < Model.TMStarted.Count)
+            {
+                strOfferts = strOfferts + ",";
+            }
+        }
+        if (offerPrices.Count > 0)
+        {
+            lowP = offerPrices.Min();
+            highP = offerPrices.Max();
+        }
+
+
+    }
+}
+
+@section structureData{
+    <script type="application/ld+json">
+        [{
+	          "@@context": "https://schema.org",
+                "@@type": "Organization",
+                "@@id" : "https://www.tripmasters.com/",
+                "name": "Tripmasters",
+        	    "description": "Vacation Packages",
+                "url": "https://www.tripmasters.com/",
+                "logo": "https://pictures.tripmasters.com/siteassets/d/tm_header_logo.png",
+	           "image": "https://pictures.tripmasters.com/siteassets/d/tm_header_logo.png",
+                "additionalType": "https://en.wikipedia.org/wiki/Travel_agency",
+	          "telephone": "+18004300484",
+                     "founder": {
+                                "@@type": "Person",
+                                "name": "Maria Checa",
+                                "gender": "Female",
+                                "jobTitle": "President"
+                },
+                "foundingDate": "October 1, 1984",
+                "foundingLocation": "Silver Spring , Maryland, United States",
+        	          "address": {
+	            "@@type": "PostalAddress",
+                "streetAddress": "8730 Georgia Ave Suite 600B",
+                "addressLocality": "Silver Spring",
+	            "addressRegion": "MD",
+                "postalCode": "20910",
+	            "addressCountry": "US"
+	          },
+
+               "sameAs": [
+                    "https://twitter.com/tripmasters",
+                    "https://www.facebook.com/Tripmasters",
+                    "https://www.pinterest.com/tripmasters/",
+                    "https://www.instagram.com/tripmasterstravel/",
+                    "https://www.tumblr.com/privacy/consent?redirect=https%3A%2F%2Ftripmasters.tumblr.com%2F",
+                    "https://www.linkedin.com/company/tripmasters",
+                    "https://en.everybodywiki.com/Tripmasters",
+                    "https://www.youtube.com/tripmasters"
+                ]
+	       },
+        {
+        "@@context": "https://schema.org/",
+        "@@type": "Service",
+            "name": "Custom Vacation Packages",
+            "description": "Vacation Packages deals to Europe, Asia, and Latin America destinations. Book multi-country, multi-city custom vacation trips, selecting flights, hotels, transfers, and city tours that suit you best."
+        },
+        {
+        "@@context": "https://schema.org/",
+        "@@type": "Product",
+        "name": "Vacation Packages",
+        "sku":"0001",
+        "mpn":"0001-vacmob",
+        "brand": {
+            "@@type":"Brand",
+            "name":"Tripmasters Vacation Packages",
+            "url":"https://www.tripmasters.com",
+            "logo":"https://pictures.tripmasters.com/siteassets/d/tm_header_logo.png"
+        },
+            "image":"https://pictures.tripmasters.com/siteassets/d/tm_header_logo.png",
+        "review":{
+        "@@type":"Review",
+        "name":"@rev",
+        "author":{
+        "@@type":"Organization",
+        "name":"Tripmasters"
+        }
+        },
+            "description": "Vacation Packages deals to Europe, Asia, and Latin America destinations. Book multi-country, multi-city custom vacation trips, selecting flights, hotels, transfers, and city tours that suit you best.",
+        "aggregateRating": {
+        "@@type": "AggregateRating",
+        "ratingValue": "@overAllAvg",
+        "bestRating": "5",
+        "ratingCount": "@rev"
+        },
+        "offers": {
+            "@@type": "AggregateOffer",
+            "priceCurrency":"USD",
+            "highPrice": "@highP",
+            "lowPrice": "@lowP",
+            "offerCount": "4",
+            "offers" : [
+        @foreach (var u in @offerUrl)
+        {@Html.Raw("{")
+        @Html.Raw('"' + "@type" + '"' + ":" + '"' + "Offer" + '"' + "," +
+            '"' + "url" + '"' + ":" + '"' + @u + '"');
+        @Html.Raw("}")
+        if (u != @offerUrl.Last())
+        {
+            @Html.Raw(",");
+        }
+
+    }
+            ]
+            }
+        },
+    {
+        "@@context": "https://schema.org",
+        "@@type": "WebSite",
+        "url": "https://www.tripmasters.com/",
+            "potentialAction":{
+        "@@type":"SearchAction",
+        "target":"https://www.tripmasters.com/search?q={search_term_string}",
+        "query-input":"required name=search_term_string"
+        }
+
+            },
+       {
+            "@@context": "https://schema.org",
+            "@@type": "LocalBusiness",
+            "name" : "Tripmasters ",
+            "url": "https://tripmasters.com",
+            "logo": "https://pictures.tripmasters.com/siteassets/d/tm_header_logo.png",
+            "image": "https://pictures.tripmasters.com/siteassets/d/tm_header_logo.png",
+            "description": "Vacation Packages deals to Europe, Asia, and Latin America destinations. Book multi-country, multi-city custom vacation trips, selecting flights, hotels, transfers, and city tours that suit you best.",
+            "telephone": "+1(800)430-0484",
+            "address": {
+                    "@@type": "PostalAddress",
+                    "streetAddress": "8730 Georgia Ave Suite 600B",
+                    "addressLocality": "Silver Spring",
+                    "addressRegion": "MD",
+                    "postalCode": "20910",
+                    "addressCountry": "US"
+            },
+            "geo": {
+                    "@@type": "GeoCoordinates",
+                    "latitude": 38.99811,
+                    "longitude": -77.03066
+                      },
+            "openingHours": [
+                "Mo-Fr 09:00-17:00"
+            ],
+            "priceRange":"699 to 99999"
+	       }
+        ]
+    </script>
+}
+
+<section class="mobile-hero">
+    <h1 class="mobile-hero__title"><span>Custom</span> <span>Vacation Packages</span> <span>Since 1984</span></h1>
+    <h2 class="mobile-hero__subtitle"><span>Combining Destination Expertise with </span><span>  Fast and Easy Booking  </span></h2>
+</section>
+<div class="hero__background">
+    <div class="calendar-review__wrapper">
+        <section class="calendar">
+            <div class="calendar__header">
+                <span>Build your vacation</span>
+                <span>Select up to 12 destinations!</span>
+            </div>
+            <div>
+                @await Component.InvokeAsync("UC_TM_ResponsiveCalendar")
+            </div>
+        </section>
+        <section class="review">
+            <div class="review__wrapper">
+                <span class="review__number">@Model.NumComments Customer Reviews</span>
+                <div class="review__stars">
+                    <div class="review__stars-wrapper">
+                        <div class="review__empty-stars"></div>
+                        <div class="review__full-stars" style="width:@(w)px"></div>
+                    </div>
+                    <span class="review__rating">@overAllAvg out of 5 stars</span>
+                </div>
+                <a class="review__link" href="/review">LEARN MORE</a>
+            </div>
+        </section>
+    </div>
+</div>
+<section class="row secnavbtns">
+    <div class="col-12 pt-2 pb-2 mb-1 bg-white">
+        <button class="btn btn-outline-light btn-block text-left pl-0 pr-0 aBtnTab blueText border-0 collapsed" data-toggle="collapse" aria-expanded="false" href="#dvMBestVac" aria-controls="dvMBestVac">
+            Best seller vacation packages
+        </button>
+        <div id="dvMBestVac" class="dvMbestseller col-12 pl-0 pr-0 pt-3 pb-3 collapse bg-white">
+            @{
+                foreach (var pk in Model.managerPop)
+                {
+                    string siteURL = "/";
+                    switch (pk.deptNA)
+                    {
+                        case "ED":
+                            siteURL = "/europe/";
+                            break;
+
+                        case "TMAS":
+                            siteURL = "/asia/";
+                            break;
+
+                        case "LD":
+                            siteURL = "/latin/";
+                            break;
+                    }
+                    <div class="dvMeachBstSell">
+                        <div class="dvMeachTop">
+                            <img src=@String.Format("https://pictures.tripmasters.com{0}", pk.IMG_Path_URL.ToLower()) alt="@pk.PDL_Title" title="@pk.PDL_Title" width="100" height="100" align="left" />
+                            <a data-ajax="false" href=@String.Format("{0}{1}/{2}/package-{3}", siteURL, @pk.CountryNA.Replace(' ', '_'), @pk.PDL_Title.Replace(' ', '_'), @pk.PDLID)><span class="spBSTitle"><b>@pk.PDL_Title</b></span></a> <span class="spBSPrice">@pk.Duration nights from <b>@String.Format("{0:c0}", @pk.STP_Save) *</b></span>
+                            <br style="clear: both" />
+                        </div>
+                        <div class="dvMeachLower">
+                            <p>@Html.Raw(@Utilities.FormatCustomerComment(pk.Comment, 120))</p>
+                            <p><a data-ajax="false" href=@String.Format("{0}{1}/{2}/feedback-{3}", siteURL, pk.CountryNA.Replace(" ", "_").ToLower(), pk.PDL_Title.Replace(" ", "_").ToLower(), pk.PDLID)>Read more - See this traveler's itinerary</a></p>
+                            <p><span class="spMtraveldate">Traveled on: @pk.dep_date</span></p>
+                            <p><a data-ajax="false" href=@String.Format("{0}{1}/{2}/package-{3}", siteURL, @pk.CountryNA.Replace(' ', '_'), @pk.PDL_Title.Replace(' ', '_'), @pk.PDLID)><span class="spMviewprice">View Price</span></a></p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <div class="col-12 pt-2 pb-2 mb-1 bg-white">
+        <button class="btn btn-outline-light btn-block text-left pl-0 pr-0 aBtnTab blueText border-0 collapsed" data-toggle="collapse" aria-expanded="false" href="#dvMvisitContainer" aria-controls="dvMvisitContainer">
+            Recently viewed
+        </button>
+        <div id="dvMvisitContainer" class="dvMvisit col-12 pl-0 pr-0 pt-3 pb-3 collapse bg-white"></div>
+    </div>
+    <div class="col-12 pt-2 pb-2 mb-1 bg-white">
+        <a class="btn btn-outline-light btn-block text-left pl-0 pr-0 aBtnTabFx blueText border-0" href="/Review">
+            Vacations Packages' Reviews
+        </a>
+    </div>
+    <div class="col-12 pt-2 pb-2 mb-1 bg-white">
+        <a class="btn btn-outline-light btn-block text-left pl-0 pr-0 aBtnTabFx blueText border-0" href="/Destinations">
+            Destinations
+        </a>
+    </div>
+</section>
+
+<section class="row secexplore">
+    <h5 class="col-12 text-uppercase pt-3 pl-3 pb-0 dvMbOtherFeatTtl">Explore</h5>
+    <div class="col">
+        <div class="carousel slide border border-light bg-white shadow mb-3 pointer-event" data-ride="carousel" data-interval="false" id="otherFeat">
+            <ol class="carousel-indicators">
+                <li data-target="#otherFeat" class="active" data-slide-to="0"></li>
+                <li data-target="#otherFeat" data-slide-to="1"></li>
+                <li data-target="#otherFeat" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                @{
+                    @for (Int32 pk = 0; pk <= 2; pk++)
+                    {
+                        string siteURL = "/";
+                        switch (Model.TMStarted[pk].DeptNA)
+                        {
+                            case "ED":
+                                siteURL = "/europe/";
+                                break;
+
+                            case "TMAS":
+                                siteURL = "/asia/";
+                                break;
+
+                            case "LD":
+                                siteURL = "/latin/";
+                                break;
+                        }
+                        string dvStyle = "";
+                        <div class="carousel-item @(pk == 0 ? "active" : "") col-12 otherEachSlide pt-4 pl-0 pr-0">
+                            <a href=@String.Format("{0}{1}/{2}/package-{3}", siteURL, Model.TMStarted[pk].CountryName.Replace(' ', '_'), Model.TMStarted[pk].PDL_Title.Replace(' ', '_'), Model.TMStarted[pk].PDLID)>
+                                <div class="row mx-auto justify-content-center dvMSlideProduct mb-3">
+                                    <div class="col-12">
+                                        <img class="img-fluid delay" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src=@String.Format("https://pictures.tripmasters.com{0}", Model.TMStarted[pk].IMG_500Path_URL.ToLower()) alt="@Model.TMStarted[pk].PDL_Title" title="@Model.TMStarted[pk].PDL_Title" />
+                                        <div class="carousel-caption d-md-block packcaption">
+                                            <h6>@Model.TMStarted[pk].PDL_Title</h6>
+                                            <p>@Model.TMStarted[pk].STP_NumOfNights nights from <b>@String.Format("{0:c0}", @Model.TMStarted[pk].STP_Save)</b></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+
+                }
+            </div>
+            <a class="carousel-control-prev mb-3" href="#otherFeat" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon text-dark" aria-hidden="true">&lsaquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next mb-3" href="#otherFeat" role="button" data-slide="next">
+                <span class="carousel-control-next-icon text-dark" aria-hidden="true">&rsaquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts{
+
+    <environment include="Development">
+        <script src="~/js/home_m/mb.java.superhomepage.js" asp-append-version="true"></script>
+        <script src="~/js/responsive_calendar/dm.java.TM.Calendar.js" asp-append-version="true"></script>
+        <script src="~/js/responsive_calendar/dt.java.TM.CommonFunctions.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home_m/mb.java.superhomepage.min.js" asp-append-version="true"></script>
+        <script src="~/js/responsive_calendar/dm.smallcalendar.min.js" asp-append-version="true"></script>
+    </environment>
+}
+

@@ -1,0 +1,197 @@
+<!-- ====================================================================================================== -->
+<!--  Name:  NoServiceDO.xml                                                                      -->
+<!-- ====================================================================================================== -->
+<!-- Date:   09/12/2014                                                                                  -->
+<!-- Notes:  XML for error text only on +/-3 days ajax requests     -->
+<!-- Author: Ciprian                                                                                        -->
+<!--                                                                                                        -->
+<!-- 09/12/2014  Ciprian		Created                     -->
+<!-- 07/01/2020 Ccabansag Updated error messages schedule -->
+<!-- =====================================================================================================  -->
+<Errors>
+<DOErrorHeaderBegin><![CDATA[
+<div style="border-top-style: dashed; border-top-width: 1px; border-top-color: #638BD1; padding-top: 5px;">
+]]>
+</DOErrorHeaderBegin>
+<DOErrorHeaderEnd><![CDATA[
+</div>
+]]>
+</DOErrorHeaderEnd>
+<DOErrorBottom><![CDATA[
+<table width="920" cellpadding="0" cellspacing="0" border="0" align="center">
+		<tbody>
+			<tr>
+				<td valign="bottom" height="10px" align="center">
+					<div style="align: center;">
+						<img width="920px" height="1px" src="@GeneralLoc@hr_w960px.gif">
+						</img>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div style="clear: both;">
+		<img border="0" width="0" height="5" src="@GeneralLoc@spacer.gif"></img>
+	</div>
+]]>
+</DOErrorBottom>
+<DOError1007><![CDATA[
+	<center>
+		<table width="750" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2">
+					<p><font face="verdana" size="2">
+						<strong>Customer service message 1007:</strong><br>
+						<b><br></b>
+						Unable to Process Your Request At This Time. Please Try Later
+					</font></p>
+					<p><font face="verdana" size="2">
+					Our agents are more than happy to assist you with your travel planning. 
+					Call us 7 Days a Week from 8AM to Midnight ET toll-free <strong>1-800-430-0484</strong>.</font>
+					<font face="verdana" size="2"><br><br></font></p>
+				</td>
+			</tr>
+		</table>
+	</center>
+	
+	]]>
+	</DOError1007>
+	<DOErrorRule0003><![CDATA[
+	<center>
+		<table width="750" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+    <td colspan="2">
+     <font face="verdana" size="2">
+     <b>
+     <br/><br/>
+     <strong>Msg:Rule0003</strong><br/>
+	 We're sorry, our system can only search for prices within @MaxDayToPrice@ days from today. Please change your dates and try your search again.<br/>
+     </b>
+     </font>
+    </td>
+   </tr>
+  </table>
+	</center>
+		]]>
+	</DOErrorRule0003>
+	<DOError1001><![CDATA[
+		<center>
+			<table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1001:</strong><br>
+			<b><br/></b>
+			We can't find any available flights for the dates selected. Call an agent if you can't find any in other dates.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 7 Days a Week from 8AM to Midnight ET toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+		</center>
+		]]>
+	</DOError1001>
+	<DOError1002C><![CDATA[
+	<center>
+		<table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1002C:</strong><br>
+			<b><br></b>
+			We can't find any available hotels in @CityName@ for the dates selected. Call an agent if you can't find any on other dates.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 7 Days a Week from 8AM to Midnight ET toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+	</center>
+	]]>
+	</DOError1002C>
+	<DOError1002H><![CDATA[
+		<center>
+			<table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1002H:</strong><br>
+			<b><br></b>
+			We can't find the specific hotel you requested for the dates selected. Call an agent if we don't have it available on other dates.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 7 Days a Week from 8AM to Midnight ET toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+		</center>
+	]]>
+	</DOError1002H>
+	<DOErrorP0001><![CDATA[
+	<center>
+		<table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message P0001:</strong><br>
+			<b><br></b>
+			We can't find this package. Call and an agent will book the itinerary you want.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 7 Days a Week from 8AM to Midnight ET toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+	</center>
+	]]>
+	</DOErrorP0001>
+	<DOErrorX0001><![CDATA[
+		<center>
+			<table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message X0001:</strong><br>
+			<b><br></b>
+			We can't find this cruise. Call and an agent will book the itinerary you want.
+			</font></p>
+			<p><font face="verdana" size="2">
+			Our agents are more than happy to assist you with your travel planning. 
+			Call us 7 Days a Week from 8AM to Midnight ET toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+		</center>
+	]]>
+	</DOErrorX0001>
+	<DOError1001C><![CDATA[
+		<center>
+			<table width="750" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p><font face="verdana" size="2">
+			<strong>Customer service message 1001C:</strong><br>
+			<b><br></b>
+			We were unable to find a combination of flights from @CityName@.</font></p>
+			<p><font face="verdana" size="2">
+			What you can do next is try a different date or select a different city. <br><br>
+			If the problem persists, our agents are more than happy to assist you with your travel planning. 
+			Call us 7 Days a Week from 8AM to Midnight ET toll-free <strong>1-800-430-0484</strong>.</font>
+			<font face="verdana" size="2"><br><br></font></p>
+		</td>
+	</tr>
+  </table>
+		</center>
+	]]>
+	</DOError1001C>
+</Errors>

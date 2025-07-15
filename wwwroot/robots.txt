@@ -1,0 +1,65 @@
+﻿Sitemap: https://www.tripmasters.com/sitemap.xml
+
+User-agent: *
+Disallow: /europe/none/
+Disallow: /asia/none/
+Disallow: /latin/none/
+Disallow: /europe/Area/europe/
+Disallow: /europe//
+Disallow: /asia//
+Disallow: /latin//
+Disallow: */_*
+Disallow: */<https://*
+Disallow: */dt.java.hotelsoncity*
+Disallow: */api/*
+Disallow: */Api/*
+Disallow: */API/*
+Disallow: */s/*
+Disallow: *.aspx
+Disallow: */Cms/*
+Disallow: */cms
+Disallow: */tours
+Disallow: */trips
+Disallow: */travel
+Disallow: */visit
+Disallow: */holidays
+Disallow: *_faq/europe/
+Disallow: /Portugal/*
+Allow: */trips_taken_by_travelers
+Allow: */europe/Best_Vacations/Europe_-_Best_of_Europe_by_Train.aspx
+
+User-agent: BLEXBot
+Crawl-delay: 10
+Disallow:/Tourpackage4/
+
+User-agent: SeekportBot
+Crawl-delay: 30
+Disallow:/Tourpackage4/
+
+User-agent: Neevabot
+Crawl-delay: 30
+Disallow: /Tourpackage4/
+
+User-agent: DataForSeoBot
+Crawl-delay: 30
+Disallow: /Tourpackage4/
+
+User-agent: MegaIndex
+User-agent: MegaIndex.ru
+User-agent: MegaIndexBot
+User-agent: MegaIndex Bot
+User-agent: megaindex*
+Crawl-delay: 30
+Disallow: /Tourpackage4/
+
+User-Agent: Amazonbot
+User-Agent: amazonbot
+Crawl-delay: 30
+
+User-agent: ClaudeBot
+Crawl-delay: 30
+Disallow: /Tourpackage4/
+
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+Crawl-delay: 60

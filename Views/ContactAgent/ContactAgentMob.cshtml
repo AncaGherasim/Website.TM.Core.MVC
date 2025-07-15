@@ -1,0 +1,168 @@
+﻿@model MVC_TM.Models.ViewModels.ContactAgentViewModel
+@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@using System.Text.RegularExpressions
+@inject IOptions<AppSettings> _appsettings
+
+@section Styles {
+    <environment include="Development">
+        <link href="~/css/contactagent_m/mb.style.contactagent.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/contactagent_m/mb.style.contactagent.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+<div class="dvMcontagt">
+    <div class="dvMheadTitle">Talk to your agent!</div>
+    @{
+        if (ViewBag.IsValid == true)
+        {
+            foreach (var agt in Model.contactAgent)
+            {
+                <div class="dvMagtimg">
+                    <img src="https://pictures.tripmasters.com/intranet/@(agt.AgentId).jpg" alt="@agt.FirstName @agt.LastName" />
+                </div>
+                <div class="dvAgtDetails">
+                    <div class="dvCenterInfo">
+                        <span>@agt.FirstName @agt.LastName</span>
+                        <span>@agt.AgentEmail</span>
+                        <span class="separator"></span>
+                        @{
+                            string strCheck = "AfterCallWork|AgentHungUp|CallingCustomer|PendingBusy|Occupied|Be Right Back|Lunch|Offline|FailedConnectCustomer|FailedConnectAgent";
+                            switch (true)
+                            {
+                                case true when Regex.IsMatch(agt.AgentStatus, strCheck, RegexOptions.IgnoreCase):
+                                    <span class="spStatus offline">Not available</span>
+                                    break;
+                                case true when Regex.IsMatch(agt.AgentStatus, "Busy", RegexOptions.IgnoreCase):
+                                    <span class="spStatus offline">Not available (on a call)</span>
+                                    break;
+                                case true when Regex.IsMatch(agt.AgentStatus, "OnChat", RegexOptions.IgnoreCase):
+                                    <span class="spStatus offline">Not available (on a chat)</span>
+                                    break;
+                                case true when Regex.IsMatch(agt.AgentStatus, "Available", RegexOptions.IgnoreCase):
+                                    <span class="spStatus available">@agt.AgentStatus</span>
+                                    break;
+
+                            }
+                        }
+                        <span><b>@DateTime.Now.ToString("dddd MMMM d, yyyy")</b></span>
+                        @{
+                            if (Model.workToday.Item2 != "")
+                            {
+                                <span><b>@Model.workToday.Item2 - @Model.workToday.Item3 ET</b></span>
+                            }
+                            else
+                            {
+                                <span><b>Day Off</b></span>
+                            }
+                        }
+                        <span class="spExpand">Full Schedule</span>
+                    </div>
+                    <div class="dvSchedule">
+                        @{
+                            foreach (var wk in Model.schedule)
+                            {
+                                <div class="dvDaySchedule">
+                                    <span class="spDay">@wk.Item1</span>
+                                    @{
+                                        if (wk.Item2 != "")
+                                        {
+                                            <span class="spDayHours">@wk.Item2 - @wk.Item3 ET</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="spDayHours">Day Off</span>
+                                        }
+                                    }
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="dvMCall">
+                    @{
+                        if (agt.AgentStatus == "Available")
+                        {
+                            <div class="online">
+                                <label for="phoneCust">Your number</label>
+                                <input type="tel" name="phoneCust" id="phoneCust" title="Phone number" placeholder="e.g. (555) 555-5555" pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" required />
+                                <div class="btnCall">Call Me Now</div>
+                                <span>Click the "Call me now" button to talk @agt.FirstName.</span>
+                                <span>We will call you immediately</span>
+                            </div>
+                            <div class="notAvailableOn" style="display: none">
+                                <span>This agent is currently busy on another call.</span>
+                                <span>Once @agt.FirstName becomes available you will be able to place your call.</span>
+                            </div>
+                            <div class="notAvailable" style="display:none">
+                                <span>This agent is not available at this time.</span>
+                            </div>
+                        }
+                        else if (agt.AgentStatus == "Busy" || agt.AgentStatus == "OnChat")
+                        {
+                            string stsWord = agt.AgentStatus == "OnChat" ? stsWord = "a chat" : "another call";
+                            <div class="online" style="display: none">
+                                <label for="phoneCust">Your number</label>
+                                <input type="tel" name="phoneCust" id="phoneCust" title="Phone number" placeholder="e.g. (555) 555-5555" pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" required />
+                                <div class="btnCall">Call Me Now</div>
+                                <span>Click the "Call me now" button to talk @agt.FirstName.</span>
+                                <span>We will call you immediately</span>
+                            </div>
+
+                            <div class="notAvailableOn">
+
+                                <span>This agent is currently busy on @stsWord.</span>
+                                <span>Once @agt.FirstName becomes available you will be able to place your call.</span>
+                            </div><div class="notAvailable" style="display:none">
+                                <span>This agent is not available at this time.</span>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="online" style="display: none">
+                                <label for="phoneCust">Your number</label>
+                                <input type="tel" name="phoneCust" id="phoneCust" title="Phone number" placeholder="e.g. (555) 555-5555" pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" required />
+                                <div class="btnCall">Call Me Now</div>
+                                <span>Click the "Call me now" button to talk @agt.FirstName.</span>
+                                <span>We will call you immediately</span>
+                            </div>
+                            <div class="notAvailableOn" style="display:none">
+                                <span>This agent is currently busy on another call.</span>
+                                <span>Once @agt.FirstName becomes available you will be able to place your call.</span>
+                            </div>
+                            <div class="notAvailable" style="display:block">
+                                <span>This agent is not available at this time.</span>
+                            </div>
+                        }
+                        <div class="done">
+                            <span>We are calling you now!</span>
+                        </div>
+                    }
+                </div>
+                <input type="hidden" id="agtStatus" value="@agt.AgentStatus" />
+                <input type="hidden" id="agtName" value="@agt.FirstName @agt.LastName" />
+            }
+        }
+        else
+        {
+            <div class="dvMAgentInfo">
+                <div class="errMess" style="margin:0 auto;text-align:center;padding:40px 10px;">
+                    <p style="font-size:18px">Sorry, something went wrong, please contact your agent via email providing the link you received. </p>
+                </div>
+            </div>
+        }
+    }
+</div>
+@section Scripts
+    {
+    <script>
+            var validation = "@(ViewBag.IsValid)"
+    </script>
+    <environment include="Development">
+        <script src="~/js/contactagent_m/mb.java.contactagent.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/contactagent_m/mb.java.contactagent.min.js" asp-append-version="true"></script>
+    </environment>
+}

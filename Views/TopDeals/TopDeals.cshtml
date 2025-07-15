@@ -1,0 +1,197 @@
+﻿@model MVC_TM.Models.ViewModels.TopDealsViewModel
+@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@inject IOptions<AppSettings> _appsettings
+
+@section Styles {
+    <environment include="Development">
+        <link href="~/css/topdeals/dm.style.topdeals.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/topdeals/dm.style.topdeals.min.css" asp-append-version="true" />
+    </environment>
+}
+@{<script>
+        var SiteName_ = '@ViewBag.SiteName';
+    </script>
+}
+@{
+    ViewBag.Canonical = @String.Format("https://www.tripmasters.com/top_deals");
+    var oneYearAgo = DateTime.Now.AddYears(-1);
+}
+
+<div class="main-title second-container">
+    <h1>Top Deals - Vacation Packages</h1>
+    <p>Our vacation packages offer our clients a unique, fully custom approach to vacation planning. Begin with one of our suggested itineraries and customize the flights, hotels, transportation, and activities, making the package your own!</p>
+</div>
+
+<section class="packages first-container">
+    <h2 class="visually-hidden">Deals of the week</h2>
+    <ul class="packages-list">
+        @foreach (var p in Model.featTopDeals)
+        {
+            string siteURL = p.STP_UserID switch
+            {
+                243 => "/europe",
+                595 => "/asia",
+                182 => "/latin",
+                _ => "/"
+            };
+
+            string comment = !string.IsNullOrEmpty(p.Comment)
+            ? (p.Comment.Length > 205 ? p.Comment.Substring(0, 205) + "..." : p.Comment)
+            : "";
+
+            <li class="packages-item">
+                <article>
+                    <a href="@($"{siteURL}/{p.CountryName.Replace(" ", "_").ToLower()}/{p.PDL_Title.Replace(" ", "_").ToLower()}/package-{p.PDLID}")">
+                        <div class="packages-item__img">
+                            <img class="lazyload"
+                            src="https://pictures.tripmasters.com/siteassets/d/spacer.gif"
+                            data-src="@($"https://pictures.tripmasters.com{@p.IMG_500Path_URL}")"
+                            alt="Travel deal: @p.PDL_Title in @p.CountryName - starting at @($"{p.STP_Save:C0}")"
+                            onerror="this.src='https://pictures.tripmasters.com/siteassets/d/no-image.jpg'" />
+                        </div>
+                        <div class="packages-item__info">
+                            <div>
+                                <div class="packages-item__wrapper">
+                                    <h3 class="packages-item__name">@p.PDL_Title</h3>
+                                    <div class="packages-item__nights">
+                                        <span>@p.STP_NumOfNights nights from</span>
+                                        <span>@($"{p.STP_Save:C0}*")</span>
+                                    </div>
+                                </div>
+                                @if (p.NoOfFeeds > 0)
+                                {
+                                    <div class="packages-item__stars" style="--rating: @Decimal.Round(p.OverallScore, 1)" aria-label="Rated @Decimal.Round(p.OverallScore, 1) out of 5"></div>
+                                    <span class="packages-item__score">@Decimal.Round(p.OverallScore, 1) out of 5</span>
+                                }
+                                <p class="packages-item__comment">@comment</p>
+                            </div>
+                            @if (!string.IsNullOrEmpty(p.Comment) && p.dep_date >= oneYearAgo)
+                            {
+                                <span class="packages-item__date">Traveled on: @p.dep_date.ToString("MM/dd/yyyy")</span>
+                            }
+                        </div>
+                    </a>
+                </article>
+            </li>
+        }
+    </ul>
+</section>
+
+@foreach (var (deals, index) in new[] { Model.moreTMEDTopDeals, Model.moreTMASTopDeals, Model.moreTMLDTopDeals }.Select((value, i) => (value, i)))
+{
+    string siteURL = "/";
+    string division = "";
+    string imgSrc = "";
+    string titleDescription = "";
+    Int32 count = 1;
+
+    switch (index)
+    {
+        case 0:
+            siteURL = "/europe";
+            division = "Europe, Africa and the Middle East";
+            imgSrc = "https://pictures.tripmasters.com/images/web/tm/tmed/t4/england.jpg";
+            titleDescription = "Explore our top deals to Europe, which allow you to visit multiple cities or countries and enjoy vibrant culture, rich history, high-end shopping, fine dining, and enchanting landscapes. Don't just visit Europe - live it! Our top deals to Africa and the Middle East let you experience exotic, adventurous, and historic destinations, from the Cradle of Civilization to cosmopolitan cities like Dubai and warm beaches to wildlife reserves like Kruger National Park! ";
+
+            break;
+        case 1:
+            siteURL = "/asia";
+            division = "Asia and the South Pacific";
+            imgSrc = "https://pictures.tripmasters.com/images/web/tm/tmas/t4/china.jpg";
+            titleDescription = "With our top deals to Asia and the South Pacific, you will uncover ancient empires, imperial dynasties, aboriginal cultures, and colonial history among diverse natural landscapes, exotic islands, and glittering skylines.";
+            break;
+        case 2:
+            siteURL = "/latin";
+            division = "Latin America,  the Caribbean, USA and Canada";
+            imgSrc = "https://pictures.tripmasters.com/images/web/tm/tmld/t4/britishvirginislands.jpg";
+            titleDescription = "Enjoy our top deals to Latin America and the Caribbean, featuring breathtaking beaches and lush natural landscapes, Colonial history, ancient civilizations, and flavorful cuisine. Our top deals to USA and Canada. Stay close to home and discover National Parks, beaches, sophisticated cities, picturesque countryside, arts and culture, and more with our top deals in the USA and Canada. ";
+            break;
+    }
+
+    <section class="packages2 first-container">
+        <div class="packages2-img">
+            <img class="lazyload"
+                 src="https://pictures.tripmasters.com/siteassets/d/spacer.gif"
+                 data-src="@imgSrc"
+                 alt="@division"
+                 onerror="this.src='https://pictures.tripmasters.com/siteassets/d/no-image.jpg'" />
+            <div class="packages2-shadow"></div>
+            <h2 class="packages2-title">Best Deals to @division</h2>
+        </div>
+        <p class="packages2__title-description">@titleDescription</p>
+        <ul id="@($"packagesList{index + 1}")" class="packages2-list">
+            @foreach (var p in deals)
+            {
+                string hideClass = count > 3 ? "packages2-item__hidden" : "";
+                string comment = !string.IsNullOrEmpty(p.Comment)
+                ? (p.Comment.Length > 270 ? p.Comment.Substring(0, 270) + "..." : p.Comment)
+                : "";
+
+                    <li class="@($"packages2-item {hideClass}")">
+                        <a href="@($"{siteURL}/{p.CountryName.Replace(" ", "_").ToLower()}/{p.PDL_Title.Replace(" ", "_").ToLower()}/package-{p.PDLID}")">
+                            <div>
+                                <div>
+                                    <h3 class="packages2-item__name">@p.PDL_Title</h3>
+                                    <p class="packages2-item__comment">@comment</p>
+                                </div>
+                                @if (!string.IsNullOrEmpty(p.Comment) && p.dep_date >= oneYearAgo)
+                                {
+                                    <span class="packages2-item__date">Traveled on: @p.dep_date.ToString("MM/dd/yyyy")</span>
+                                }
+                            </div>
+                            <div>
+                                @if (p.NoOfFeeds > 0)
+                                {
+                                    <div class="packages2-item__stars" style="--rating: @Decimal.Round(p.OverallScore, 1)" aria-label="Rated @Decimal.Round(p.OverallScore, 1) out of 5"></div>
+                                    <div class="packages2-item__score">
+                                        <span>@Decimal.Round(p.OverallScore, 1) out of 5</span>
+                                    </div>
+                                }
+                                <span class="packages2-item__nights">@p.STP_NumOfNights nights from <span>@($"{p.STP_Save:C0}*")</span></span>
+                            </div>
+                        </a>
+                    </li>
+                    count++;
+                }
+            </ul>
+        <button id="@($"toggleButton{index + 1}")" class="packages2-button" aria-expanded="false">Show more</button>
+    </section>
+}
+<section class="countries">
+    <div class="first-container">
+        <div class="countries-wrapper">
+            <h2>Top Deals by country</h2>
+            <ul class="countries-list">
+                @foreach (var country in Model.allCountry)
+                {
+                    string siteURL = country.DepartNA switch
+                    {
+                        "ED" => "/europe",
+                        "TMAS" => "/asia",
+                        "LD" => "/latin",
+                        _ => "/"
+                    };
+            
+                    <li class="countries-item">
+                        <a href="@($"{siteURL}/{country.CountryNA.Replace(" ", "_").ToLower()}/vacations")" title="@country.CountryNA Vacation Packages">@country.CountryNA</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</section>
+
+@section Scripts
+    { 
+    <environment include="Development">
+        <script src="~/lib/lazysizes.min.js" asp-append-version="true"></script>
+        <script src="~/js/topdeals/dm.java.topdeals.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/lib/lazysizes.min.js" asp-append-version="true"></script>
+        <script src="~/js/topdeals/dm.java.topdeals.min.js" asp-append-version="true"></script>
+    </environment>
+}

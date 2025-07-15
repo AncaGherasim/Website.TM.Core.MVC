@@ -1,0 +1,124 @@
+﻿@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@inject IOptions<AppSettings> _appsettings
+
+@{
+
+    ViewData["Title"] = "Manage Subscription";
+    if (ViewBag.Mobile == 0)
+    {
+        <environment include="Development">
+
+        </environment>
+        <environment exclude="Development">
+
+        </environment>
+    }
+    else
+    {
+        <environment include="Development">
+
+        </environment>
+        <environment exclude="Development">
+
+        </environment>
+    }
+}
+
+@section Styles {
+<style>
+    @@media only screen and (max-width:700px) {
+        div.dvMhomeContainer {
+            background-color: white !important;
+        }
+    }
+</style>
+}
+
+<div class="subsNav"> <a href="http://www.tripmasters.com">Home</a> | Manage subscription </div>
+
+<div class="dvSubContent">
+    <div class="mainSubsDiv">
+        <div id="pnlSubscribe">
+            <p class="subsTitles">Subscription Manager</p>
+            <div class="grdContent">
+                <div class="item_">
+                    <img src="https://pictures.tripmasters.com/siteassets/d/tm_logo.jpg">
+                </div>
+                <div class="item_">Receive the latest deals for travel to Africa, Asia, Europe, The Americas, </div>
+                <div class="chkSubsc item_">
+                    <div>
+                        <span id="TxtSubsTM">Subscribe</span>
+                        <input type="checkbox" id="SubscribeTM" class="chkSubscription" />
+                    </div>
+                    <div>
+                        <span id="TxtUnSubsTM">Unsubscribe</span>
+                        <input type="checkbox" id="UnsubscribeTM" class="chkSubscription" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="itemb">
+                <button id="SubmitReasons" class="submitSubscr">Submit</button>
+            </div>
+        </div>
+        <div id="pnlReason">
+            <p>You have been unsubscribed from our emails for:</p>
+            <p>We're sorry to see you go. You will no longer receive travel deals from</p>
+            <p>What are the reasons for unsubscribing? (select all that apply)</p>
+            <ul class="lstReasons" style="list-style-type:none;padding:0">
+                <li>
+                    <input type="checkbox" id="R1" />
+                    <label for="R1">Don't like receiving promotional emails from any site</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="R2" />
+                    <label for="R2">I'm receiving too many emails and can't keep my inbox organized</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="R3" />
+                    <label for="R3">The travel deals I receive are not relevant to my interest/budget</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="R4" />
+                    <label for="R4">Other</label>
+                    <input type="text" id="txtOtherReason" />
+                </li>
+                <li>
+                    <label for="Ideas" style="display:block">Is there anything we can do to improve our emails?</label>
+                    <textarea rows="5" cols="40" id="Ideas"></textarea>
+
+                </li>
+            </ul>
+            <button id="UpdateSbscriptionButton" class="submitSubscr">Submit</button>
+        </div>
+        <div id="pnlResult">
+            <div class="subscriptionUpdated">
+                We have updated your subscription
+                preferences.<BR>
+                Keep browsing <a href="/">www.tripmasters.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    if (ViewBag.Mobile == 1)
+    {
+    <environment include="Development">
+        <script src="~/js/site/dt.java.MrktEmailSubscriber.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/site/dt.java.MrktEmailSubscriber.js" asp-append-version="true"></script>
+    </environment>
+
+    }
+    <script>
+        $(document).ready(function () {
+            var urlEmail = new URLSearchParams(window.location.search);
+            //console.log(urlEmail.get('email'));
+            getSubscribe(urlEmail.get('email'));
+        });
+    </script>
+}

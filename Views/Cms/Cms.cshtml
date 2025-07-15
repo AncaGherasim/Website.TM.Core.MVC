@@ -1,0 +1,108 @@
+﻿@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@inject IOptions<AppSettings> _appsettings
+@model MVC_TM.Models.ViewModels.CmsViewModel
+
+@{
+@if (Model.nameCanonical != null && Model.idCanonical != "")
+            {
+        ViewBag.Canonical =Html.Raw(@String.Format("https://www.tripmasters.com/{0}/cms?cms={1}&wH=0&wF=0", Model.nameCanonical,Model.idCanonical));
+
+            }
+}
+@section Styles{
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/cms/css.CMS_htmlEditor.css" />
+        <link rel="stylesheet" href="~/css/cms/css.CMS_HTMLOptimized.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/cms/cms.min.css" asp-append-version="true" />
+    </environment>
+    <style>
+        .container-fluid dvClassContent {
+            padding: 20px 20px;
+            margin: 0 auto;
+        }
+
+        @@media only screen and (max-width:800px) {
+            .container-fluid dvClassContent {
+                width: auto !important;
+                padding: 5px 5px !important;
+            }
+
+            table {
+                width: 100% !important;
+                font-size: 12px;
+            }
+
+            p {
+                font-size: 13px !important;
+            }
+
+            table img {
+                width: 100% !important
+            }
+        }
+    </style>
+}
+
+<center>
+    <div class="row container-fluid dvClassContent">
+        @Html.Raw(@Model.cms.First().CMS_Content.Replace("http://", "https://"))
+    </div>
+</center>
+
+@section Scripts{
+    <environment include="Development">
+        <script src="~/js/cms/java.CMS_javaScriptLinks.js" asp-append-version="true"></script>
+        <script src="~/js/cms/java.CMS_javaScript_Optimized.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/cms/cms.min.js" asp-append-version="true"></script>
+    </environment>
+    <!-- script logic to solve links issues on old CMS -->
+    <script type="text/javascript">
+        var thisPlace = '<%=cmsPlace%>';
+        var nbr = /\d+/;
+        var isNumber = /[0-9]+/g;
+        $(document).ready(function () {
+            cleanCMSLinks();
+            // **** To fit content ****
+            var dvW = $('div:first').width() + 100;
+            var w, d, b, dw, bw;
+            w = $(window); d = $(document); b = $('body');
+            dw = dvW;
+            bw = dvW;
+            window.resizeBy(((bw - w.width()) || dw - w.width()), 0);
+            b.height() < 650 ? window.resizeBy(0, ((b.height() - w.height()) || d.height() - w.height())) : '';
+            var nwW = Number((screen.width / 2) - (w.width() / 2));
+            var nwH = Number((screen.height / 2) - (w.height() / 2));
+            window.moveTo(nwW, nwH);
+        });
+        //https://www.tripmasters.com/cms/10893/Web_Content.aspx?cms&wh=0&wf=0
+        //http://www.cdc.gov/coronavirus/2019-ncov/travelers/index.html
+        function cleanCMSLinks() {
+
+            $('.dvClassContent a').each(function () {
+                var hrefTxt = decodeURIComponent($(this).attr('href'));
+               
+                var hrefTtl = $(this).text().toLowerCase().replace(/\b[a-z]/g, function (txtval) {
+                    return txtval.toUpperCase();
+                });
+                hrefTtl = hrefTtl.replace(/\&/g, "and");
+                var urlNum = '/' + hrefTxt.match(nbr) + '/';
+                var hrefNum = urlNum.match(nbr);
+                if (hrefTxt.match(urlNum) !== null) {
+                   $(this).attr('href', '/' + encodeURI($.trim(hrefTtl)) + '/' + hrefNum[0] + '/cms.aspx?cms&wh=0&wf=0').popupCMSNewWindow({ centerBrowser: 1, heigh: 500, width: 700 });
+
+                }
+                else {
+                    hrefTxt.charAt(0) == "/" && hrefTxt.charAt(1) == "t" ?
+                        hrefTxt = hrefTxt.replace('/t', 'ht')
+                        : '';
+                    $(this).attr('href', hrefTxt.substring(0, hrefTxt.length))
+                }
+            });
+        };
+    </script>
+}

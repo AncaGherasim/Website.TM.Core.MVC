@@ -1,0 +1,164 @@
+﻿@model MVC_TM.Models.ViewModels.HomeViewModel
+@using MVC_TM.Infrastructure
+@using Microsoft.Extensions.Options
+@inject IOptions<AppSettings> _appsettings
+
+
+@{
+    ViewBag.Canonical = @String.Format("https://www.tripmasters.com/build_your_own_vacation");
+
+}
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/responsive_calendar/responsive_calendar.css" />
+        <link href="~/css/home_m/mb.style.tmSite.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/responsive_calendar/responsive_calendar.min.css" asp-append-version="true" />
+        <link href="~/css/home_m/mb.style.tmSite.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+
+@{
+    <script>var SiteName = '@_appsettings.Value.ApplicationSettings.SiteName' </script>
+    <script>var TMED_HotelsAPI = '@_appsettings.Value.ApplicationSettings.TMED_HotelsAPI' </script>
+    <script>var designPage = '@ViewBag._utPg' </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+}
+
+@{
+    Int32 rev = Model.NumComments;
+    Decimal overAllAvg = 0;
+    Decimal defw = 120;
+    Decimal w = 0;
+    overAllAvg = Decimal.Round(Model.Score, 1);
+    w = Decimal.Round((overAllAvg * defw) / 5, 1);
+}
+
+<div class="dvMMask">&nbsp;</div>
+
+<section class="mobile-hero" style="background-image: linear-gradient(transparent 50%,rgba(0,0,0,.85)),url('https://pictures.tripmasters.com/images/web/ed/promo/colosseum.jpg')">
+    <h1 class="mobile-hero__title"><span>Custom</span> <span>Vacation Packages</span> <span>Since 1984</span></h1>
+    <h2 class="mobile-hero__subtitle"><span>Book Customizable Multi-city trips in seconds  </span><span>   Curated Hotels & Services    </span></h2>
+</section>
+<div class="hero__background">
+    <div class="calendar-review__wrapper">
+        <section class="calendar">
+            <div class="calendar__header">
+                <span>Build your vacation</span>
+                <span>Select up to 12 destinations!</span>
+            </div>
+            <div>
+                @await Component.InvokeAsync("UC_TM_ResponsiveCalendar")
+            </div>
+        </section>
+    </div>
+</div>
+<div class="row">
+    <section class="secpartialguide">
+        <div class="guide">
+            <div class="dvpartialguide">
+                <span>Did you know you can book</span>
+                <span>Partial Stays</span>
+                <span class="slider">
+                    See how
+                </span>
+            </div>
+            <div class="imgarrow">
+                <img class="slider" src="https://pictures.tripmasters.com/siteassets/d/right_arrow_icon.png" />
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div id="slider" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <!-- Modal content -->
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="swiperSec">
+
+                        <!-- Swiper -->
+                        <div class="swiper-container partialguide">
+                            <div class="clsguide">X</div>
+                            <div class="guidetitle">How to book partial stays</div>
+                            <div class="guidetext">Booking Partial Stays with us is very easy, just follow these simple steps and you will be able to customize even more your vacation package.</div>
+
+
+                            <div class="carousel slide pl-4 pr-4" data-ride="carousel" data-interval="false" id="otherFeat">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#otherFeat" class="active" data-slide-to="0"></li>
+                                    <li data-target="#otherFeat" data-slide-to="1"></li>
+                                    <li data-target="#otherFeat" data-slide-to="2"></li>
+                                    <li data-target="#otherFeat" data-slide-to="3"></li>
+                                    <li data-target="#otherFeat" data-slide-to="2"></li>
+                                    <li data-target="#otherFeat" data-slide-to="4"></li>
+                                    <li data-target="#otherFeat" data-slide-to="5"></li>
+                                    <li data-target="#otherFeat" data-slide-to="6"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    @{
+                                        for (Int32 i = 0; i <= 6; i++)
+                                        {
+                                            <div class="carousel-item @(i == 0 ? "active" : "") col-12 otherEachSlide pt-4 pl-0 pr-0">
+                                                <img src=@String.Format("https://pictures.tripmasters.com/siteassets/d/image{0}.png", i) />
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                                <a class="carousel-control-prev" href="#otherFeat" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon text-dark" aria-hidden="true">&lsaquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#otherFeat" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon text-dark" aria-hidden="true">&rsaquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </section>
+</div>
+<section class="instruction">
+    <div class="instruction__wrapper">
+        <div class="instruction__info">
+            <h3>Build your trip more easily</h3>
+            <p>Click on our video for instructions </br> on how to build your dream vacation!</p>
+            <a href="https://www.youtube.com/shorts/lGq27vVf5bQ" target="_blank">https://www.youtube.com/shorts/lGq27vVf5bQ</a>
+        </div>
+        <div class="instruction__image">
+            <a href="https://www.youtube.com/shorts/lGq27vVf5bQ" target="_blank">
+                <img src="https://pictures.tripmasters.com/siteassets/m/advance-byo-video-image.webp" alt="build your trip" />
+            </a>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <environment include="Development">
+        <script src="~/js/home_m/mb.java.superhomepage.js"></script>
+        <script src="~/js/responsive_calendar/dm.java.TM.Calendar.js" asp-append-version="true"></script>
+        <script src="~/js/responsive_calendar/dt.java.TM.CommonFunctions.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home_m/mb.java.superhomepage.min.js"></script>
+        <script src="~/js/responsive_calendar/dm.smallcalendar.min.js" asp-append-version="true"></script>
+    </environment>
+
+            <script>
+                $(document).ready(function () {
+                    $('.slider').click(function () {
+                        $('#slider, .modal-content').slideDown(function () { $('.swiperSec').show(); window.scroll(0, 200); });
+
+                    });
+                    $('.clsguide').click(function () {
+                        $('#slider, .modal-content').slideUp();
+                        $('.swiperSec').hide().removeAttr('style');
+                    })
+                });
+
+            </script>
+}

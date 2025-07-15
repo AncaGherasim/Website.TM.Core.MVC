@@ -1,0 +1,464 @@
+﻿@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@inject IOptions<AppSettings> _appsettings
+
+@{
+    ViewBag.Mobile = 0;
+
+    <script>var SiteName = '@_appsettings.Value.ApplicationSettings.SiteName'</script>
+}
+@{
+    ViewBag.Canonical = @String.Format("https://www.tripmasters.com/contact_us");
+
+}
+<head>
+    <environment include="Development">
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+
+    @{
+        <style>
+            .dvbContainer {
+                width: 980px
+            }
+
+            .table {
+                width: 980px !important;
+                margin: 0 auto
+            }
+
+            .secTopHeader {
+                height: 140px !important
+            }
+
+            .adotDecor {
+                color: white !important
+            }
+
+            input[type=checkbox] {
+                display: none
+            }
+
+                input[type=checkbox] + label {
+                    background-image: url(https://pictures.tripmasters.com/siteassets/d/checkbox.gif);
+                    background-position: 0 -1px;
+                    background-repeat: no-repeat;
+                    padding-left: 22px;
+                    font-size: 12px;
+                    float: none;
+                }
+
+                input[type=checkbox]:checked + label {
+                    background-image: url(https://pictures.tripmasters.com/siteassets/d/checkbox.gif);
+                    background-position: 0 -26px;
+                    background-repeat: no-repeat;
+                    padding-left: 22px;
+                }
+
+            .reachEmail {
+                background: #dee5f7;
+                margin-top: 7px;
+            }
+
+                .reachEmail select {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    background-image: url('https://pictures.tripmasters.com/siteassets/d/byo_ArrowBlue2.gif');
+                    background-position: right center;
+                    background-repeat: no-repeat;
+                    border: 1px solid #dedede;
+                    width: 302px;
+                    border-radius: 6px;
+                    padding: 5px 0 5px 5px;
+                    color: #828282;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 16px;
+                }
+
+            select::-ms-expand {
+                display: none;
+                background-image: url('https://pictures.tripmasters.com/siteassets/d/byo_ArrowBlue2.gif');
+                background-position: right center;
+                background-repeat: no-repeat;
+                border: 1px solid #dedede;
+                width: 65%;
+                border-radius: 2px;
+                padding: 5px 0 5px 8px;
+            }
+
+            .reachEmail option {
+                border-radius: 10px 0;
+                box-shadow: inset 0 0 5px rgba(000,000,000,0.5)
+            }
+
+            .reachEmail input[type="text"] {
+                border: 1px solid #dedede;
+                width: 95%;
+                border-radius: 6px;
+                padding: 5px 0 5px 8px;
+                float: left;
+                font-size: 16px;
+            }
+
+            .reachEmail textarea {
+                border: 1px solid #dedede;
+                border-radius: 2px;
+                padding: 5px 0 5px 8px;
+                width: 95%;
+                height: 120px;
+                margin-right: 16px;
+                resize: none;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 16px;
+                border-radius: 6px;
+            }
+
+            .reachEmail label {
+                line-height: 2em;
+                float: left;
+                padding-right: 35px;
+                text-align: left;
+                font: 12px Arial, Helvetica, sans-serif;
+            }
+
+            .dvRow {
+                padding: 5px 20px 10px 20px;
+                padding-top: 20px;
+            }
+
+                .dvRow span {
+                    color: red;
+                    margin-left: 4px;
+                }
+
+            .reachEmail input[type=button] {
+                background-image: linear-gradient(to bottom, #f9e5ab 30%, #ffcc66 100%) !important;
+                border: 1px solid #ffcc66;
+                border-radius: 5px;
+                color: #000085;
+                font-family: Arial;
+                font-size: 12px;
+                font-weight: normal;
+                padding: 3px 50px;
+                margin-left: 270px;
+                margin-bottom: 10px;
+            }
+
+            #imgLoading {
+                background-image: linear-gradient(to bottom, #f7f4ea 30%, #f2efe9 100%) !important;
+                border: 1px solid #ffcc66;
+                border-radius: 5px;
+                color: #000085;
+                font-family: Arial;
+                font-size: 12px;
+                font-weight: normal;
+                padding: 3px 50px;
+                margin-left: 270px;
+                margin-top: 30px;
+                margin-bottom: 10px;
+            }
+
+
+            .reachEmail input[type=button]:hover {
+                background-image: linear-gradient(to top, #ffcc66 30%, #f9e5ab 100%) !important;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            .errMsg {
+                background-color: #ff4d63;
+                border-radius: 2px;
+                color: white;
+                font-size: 10px;
+                font-weight: normal;
+                padding: 1.5px;
+            }
+
+            .warning {
+                background: white url('https://pictures.tripmasters.com/siteassets/d/warning-small.png') no-repeat 95.5% center;
+                border: 2px solid #8b0300;
+            }
+
+            .errorBox {
+                display: block;
+                position: absolute;
+                width: auto;
+                margin-bottom: 10px;
+            }
+
+                .errorBox div {
+                    font-size: 12px;
+                    color: white;
+                    background: #8b0300;
+                    background: rgba(199, 24, 7, 0.7);
+                    padding: 10px;
+                    border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    list-style: none;
+                    line-height: 16px;
+                    filter: alpha(opacity=100);
+                    margin: 0px;
+                    font-weight: bold;
+                    font-family: Arial, Helvetica, sans-serif;
+                    float: left;
+                }
+
+                .errorBox span {
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    border-top: 8px solid transparent;
+                    border-bottom: 8px solid transparent;
+                    border-left: 8px solid #c71807;
+                    border-left: 8px solid rgba(199, 24, 7, 0.7);
+                    border-right: 0 dashed;
+                    margin-top: 7px;
+                    filter: alpha(opacity=100);
+                    float: left;
+                }
+
+            #inpDest {
+                background-image: url('https://pictures.tripmasters.com/siteassets/d/byo_ArrowBlue2.gif');
+                background-position: right center;
+                background-repeat: no-repeat;
+                border: 1px solid #dedede;
+                width: 65%;
+                border-radius: 2px;
+                padding: 5px 0 5px 8px;
+            }
+
+            .searchTrip {
+                height: 25px
+            }
+
+            .dvhChat {
+                width: 30% !important
+            }
+
+            .spanCall {
+                color: #5e91c3;
+                font-size: 18px;
+                font-weight: bold;
+                padding-left: 24px;
+            }
+
+            .chatUsDesktop {
+                font-size: 13px;
+                float: left;
+                width: 90%;
+                padding-bottom: 40px;
+                border-bottom: 1px solid #CFCFCF;
+                text-align: left;
+            }
+
+            .chatUsMob {
+                display: none
+            }
+
+            .wrapper-content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding: 15px 0 20px 0;
+            }
+
+            .wrapper-item {
+                width: 37%;
+            }
+
+            @@media only screen and (max-width:767px) {
+                .dvMhomeContainer {
+                    max-width: 100%;
+                    background-color: white !important
+                }
+
+                .wrapper-item {
+                    width: 100%;
+                }
+
+                .wrapper-item2 {
+                    width: 90%;
+                    margin: 0 auto;
+                }
+
+                .dvbContainer {
+                    width: 100% !important;
+                    background: white;
+                }
+
+                .reachEmail input[type=button] {
+                    margin-left: 0px !important;
+                }
+
+                .reachEmail #imgLoading {
+                    margin-left: 0px !important;
+                }
+
+                .reachEmail select {
+                    width: 94% !important;
+                    background-color: white;
+                }
+
+                .dvcontact {
+                    width: 100% !important;
+                }
+
+                .txt_orange16 {
+                    font-size: 16px;
+                    color: #f60;
+                }
+
+                .spanCall {
+                    color: #5e91c3;
+                    font-size: 16px;
+                    font-weight: bold;
+                    padding-left: 10px;
+                }
+
+                .chatUsDesktop {
+                    display: none
+                }
+
+                .chatUsMob {
+                    display: contents
+                }
+            }
+
+            .popover {
+                background-color: #8b0300;
+                opacity: 0.8;
+            }
+
+            .popover-body {
+                color: #fff !important;
+            }
+
+            .bs-popover-top > .arrow::after {
+                border-top: 9px solid rgb(139, 3, 0);
+                opacity: 0.9;
+            }
+
+            .contactus {
+                color: #2A2C5D;
+                font-size: 60px;
+                margin-top: 60px;
+                margin-bottom: 20px
+            }
+        </style>
+    }
+    <meta name="description" content="TripMasters.com - general information including corporation information and description of operations." />
+    <meta name="keywords" content="Trip Masters, World wide vacations, World wide destinations." />
+</head>
+
+
+<div class="container" style="margin:15px auto 0 auto; max-width: 1010px;">
+
+    <div class="contactus" style="margin-bottom:10px;">Contact Us</div><br />
+    <div style="border-bottom:1px solid #CFCFCF;padding-bottom:10px;display:flex;">
+        <img src="https://pictures.tripmasters.com/siteassets/d/Arrow_Orange_Right.gif" />
+        <span class="spanCall">Call US 7 days a week from 8AM to Midnight ET </span>
+    </div>
+
+
+    <div class="wrapper-content">
+
+        <div class="wrapper-item">
+            <div style="width:100%; float:left">
+                <div style="color:#053179; font-weight:bold;font-size:15px;padding-bottom:3px;text-align:left;">Chat with Us:</div>
+                <div class="chatUsDesktop" style="">You can chat with us by clicking on the Chat icon at the right top.</div>
+                <div class="chatUsMob">You can chat with us by clicking on the Chat icon<a href="/chat"><img src="https://image.providesupport.com/image/tm-webchat/online-904291021.png" /></a></div>
+            </div>
+            <div style="width:100%; float:left">
+                <div style="color:#053179; font-weight:bold;font-size:15px;padding:25px 0 7px 0;text-align:left;">Call Us:</div>
+                <div style="text-align:left;padding: 0 0 5px 3px;">
+                    <img src="https://pictures.tripmasters.com/siteassets/d/phone2.png" style="vertical-align:text-bottom" />
+                    <span style="color:#999999;font-size:12px;">Toll Free:</span>
+                    <span><strong>1-800-430-0484</strong></span>
+                </div>
+                <div style="text-align:left;padding: 0 0 5px 3px;">
+                    <img src="https://pictures.tripmasters.com/siteassets/d/phone2.png" style="vertical-align:text-bottom" />
+                    <span style="color:#999999;font-size:12px;">Outside the US:</span>
+                    <span><strong>1-202-349-7579</strong></span>
+                </div>
+                <div style="font-size:13px;float:left;width:90%;padding-bottom:40px;border-bottom:1px solid #CFCFCF;text-align:left;"></div>
+            </div>
+            <div style="width:100%; float:left;">
+                <div style="color:#053179; font-weight:bold;font-size:15px;padding:25px 0 7px 0;text-align:left;">Mailing Address:</div>
+                <div style="text-align:left">
+                    <img src="https://pictures.tripmasters.com/siteassets/d/email.png" style="vertical-align:text-bottom; padding-top:2px;" />
+                    <span style="vertical-align:top"><strong>Tripmasters.com</strong></span>
+                </div>
+                <span style="text-align:left;padding-left:33px;float:left;font-size:13px;">8730 Georgia Ave Suite 600B</span><br />
+                <span style="text-align:left;padding-left:33px;float:left;font-size:13px;">Silver Spring, MD 20910</span>
+                <div style="font-size:13px;float:left;width:90%;padding-bottom:40px;border-bottom:1px solid #CFCFCF;text-align:left;"></div>
+            </div>
+            <div style="width:100%; float:left;">
+                <span style="text-align:left;float:left; font-size:12px;line-height:150%;font-weight:bold;padding-top:25px;">Check the status of your booking, check air itineraries, print e-ticket<br /> receipts and e-vouchers at: <a asp-controller="Footer" asp-action="BookingConfirmation">Check bookings</a></span>
+            </div>
+        </div>
+
+
+
+        <div class="wrapper-item2">
+            <div style="color:#053179; font-weight:bold;text-align:left;font-size:15px;">Get in touch:</div>
+            <div class="reachEmail">
+                <form id="contactForm" name="contactForm">
+                    <div class="dvRow reason">
+                        <select id="frmReason" name="frmReason" class="userSelReason example-popover" data-container="body" data-toggle="popover" data-placement="top" data-content="Please select the reason for your contact." onfocus="hideInfo(this.id)" onchange="hideDataContent(this.id)">
+                            <option value="Select the reason for your contact" selected>Select the reason for your contact</option>
+                            <option value="NoBooking">I don’t have a booking</option>
+                            <option value="WithBooking">I have a booking</option>
+                            <option value="WithTrip">I completed a trip</option>
+                        </select>
+                        <span>*</span>
+                    </div>
+
+                    <div class="dvRow dvBknum" id="bkgNumber" style="display:none;">
+                        <input name="frmBKN" maxlength="10" id="frmBKN" placeholder="Booking number" onkeydown="hideInfo(this.id)" style="width:150px;" type="text" />
+                        <span style="margin-right:140px;">*</span>
+                    </div>
+                    <div class="dvRow dvcontact">
+                        <input name="frmFullName" id="frmFullName" class="userFlName example-popover" placeholder="Full Name" data-container="body" data-toggle="popover" data-placement="top" data-content="Please enter your full name." onkeydown="hideInfo(this.id)" type="text" />
+                        <span>*</span>
+                    </div>
+                    <div class="dvRow dvcontact">
+                        <input name="frmEmail" id="frmEmail" class="userEmail example-popover" placeholder="Email address" data-container="body" data-toggle="popover" data-placement="top" data-content="Please enter your email address." onkeydown="hideInfo(this.id)" type="text" />
+                        <span>*</span>
+                    </div>
+                    <div class="dvRow dvcontact">
+                        <textarea name="frmMsg" rows="12" cols="20" id="frmMsg" class="userMsg example-popover" placeholder="Your message to us" data-container="body" data-toggle="popover" data-placement="top" data-content="Please enter your message to us." onkeydown="hideInfo(this.id)"></textarea>
+                        <p style="color:#999999;font-size:12px;">
+                            <span style="color:red;">*</span>
+                            <em>Mandatory fields</em>
+                        </p>
+                    </div>
+                    <div class="dvRow dvcontact">
+                        <input type="button" name="submitMsg" value="Submit" onclick="return validate();" id="submitMsg">
+                        <img class="delay" id="imgLoading" src="https://pictures.tripmasters.com/siteassets/d/spacer.gif" data-src="https://pictures.tripmasters.com/siteassets/d/ajax-indicator.gif" asp-append-version="true" style="display:none;" alt="" asp-append-version="true" />
+                    </div>
+                </form>
+                <div id="divError" class="errorBox">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts
+    {
+
+    <environment include="Development">
+        <script src="~/js/contactus/dt.script.contactUs.js" asp-append-version="true"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/contactus/dt.script.contactUs.min.js" asp-append-version="true"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    </environment>
+}

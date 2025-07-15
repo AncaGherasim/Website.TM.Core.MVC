@@ -1,0 +1,293 @@
+﻿@model MVC_TM.Models.ViewModels.SearchViewModel
+@using Microsoft.Extensions.Options
+@using MVC_TM.Infrastructure
+@inject IOptions<AppSettings> _appsettings
+
+@section Styles {
+    <environment include="Development">
+        <link href="~/css/search/dt.style.bodypages.css" rel="stylesheet" />
+        <link href="~/css/search/dt.style.search.css" rel="stylesheet" />
+        <link href="~/css/search/dt.style.simplepagination.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/search/search.min.css" asp-append-version="true" />
+    </environment>
+
+}
+
+<div class="dvbContainer" id="mainContainer">
+    <div class="dvbpageTitle">
+        <div>Itineraries for: <span style="text-transform: capitalize">@ViewBag.q</span> </div>
+        <div><a href="/">Home</a></div>
+        <br style="clear:both;" />
+    </div>
+    <div class="dvbRoundBoxes" style="padding:15px 10px;">
+        <div class="dvbLeftColW" style="width:23%;">
+            @if (Model.packages.Count > 0)
+            {
+                <div class="blueTitle_Arial_14" style="margin-bottom:10px;">Select Criteria:</div>
+                <div class="resetFilters" onclick="UncheckOptions()">Reset Filters</div>
+            }
+
+            <!-- Interests filter -->
+            @if (Model.Interests.Count > 0)
+            {
+                <div class="blueTitle_Arial_12" id="divInterests">Interests:</div>
+                <div id="topInterests">
+                    @foreach (var i in Model.Interests.Take(10))
+                    {
+                        string icount = "";
+                        @if (i.Id > 0)
+                        {
+                            icount = " (" + i.Id.ToString() + ")";
+                        }
+                        <div class="filterItem">
+                            <a href=@String.Format("#dotInter{0}", i.Name.Replace(" ", "_")) class="falsecheck_1" id=@String.Format("falsedotInter{0}", i.Name.Replace(" ", "_"))>@i.Name  @icount</a>
+                            <input type="checkbox" name=@String.Format("dotInter{0}", i.Name.Replace(" ", "_")) id=@String.Format("dotInter{0}", i.Name.Replace(" ", "_")) style="display:none;" value="@i.Name.Replace(" ", "_")" />
+                        </div>
+                    }
+                </div>
+                @if (Model.Interests.Count > 10)
+                {
+                    <div id="MoreInterestsLink" class="linkMoreContainer"><span class="linkMoreObjects" onclick="ShowMoreObjects('MoreInterests');">+ More interests</span></div>
+                    <div id="MoreInterests" class="dvbRoundBoxes moreObjects">
+                        <span class="closeLink" onclick="CloseMoreObjects('MoreInterests')">Close [x]</span>
+                        @{
+                            Decimal dd = Model.Interests.Count / 4;
+                            Int32 n = Int32.Parse(Math.Ceiling(Decimal.Parse(dd.ToString())).ToString());
+                            string cssBorder = "";
+                            for (Int32 i = 1; i <= 4; i++)
+                            {
+                                if (i > 1 && i < 4)
+                                {
+                                    cssBorder = "border-left:solid 1px #e4e4e4;";
+                                }
+                                <div style=@String.Format("float:left;width:220px;padding:10px 10px 10px 0;{0}", cssBorder)>
+                                    @foreach (var intrst in Model.Interests.OrderBy(x => x.Name).Skip((i - 1) * n).Take(n))
+                                    {
+                                        string intrstcount = "";
+                                        @if (intrst.Id > 0)
+                                        {
+                                            intrstcount = " (" + intrst.Id.ToString() + ")";
+                                        }
+                                        <div class="filterItem">
+                                            <a href=@String.Format("#2dotInter{0}", intrst.Name.Replace(" ", "_")) class="falsecheck_1" id=@String.Format("2falsedotInter{0}", intrst.Name.Replace(" ", "_"))>@intrst.Name @intrstcount</a>
+                                            <input type="checkbox" name=@String.Format("2dotInter{0}", intrst.Name.Replace(" ", "_")) id=@String.Format("2dotInter{0}", intrst.Name.Replace(" ", "_")) style="display:none;" value="@intrst.Name.Replace(" ", " _")" />
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        }
+                        <div style="clear:both;"></div>
+                        <div class="applyFilters" onclick="ApplyFilters('MoreInterests');">Apply filters</div>
+                    </div>
+                }
+            }
+
+
+            <!-- Countries filter -->
+            @if (Model.Countries.Count > 0)
+            {
+                <div class="blueTitle_Arial_12">Countries:</div>
+                <div id="topCountries">
+                    @foreach (var c in Model.Countries.Take(12))
+                    {
+                        string icount = "";
+                        @if (c.Id > 0)
+                        {
+                            icount = " (" + c.Id.ToString() + ")";
+                        }
+                        <div class="filterItem">
+                            <a href=@String.Format("#dotCountry{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")","")) class="falsecheck_1" id=@String.Format("falsedotCountry{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")",""))>@c.Name  @icount</a>
+                            <input type="checkbox" name=@String.Format("dotCountry{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")","")) id=@String.Format("dotCountry{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")","")) ) style="display:none;" value="@c.Name.Replace(" ", "_")" />
+                        </div>
+                    }
+                </div>
+                @if (Model.Countries.Count > 12)
+                {
+                    <div id="MoreCountriesLink" class="linkMoreContainer"><span class="linkMoreObjects" onclick="ShowMoreObjects('MoreCountries');">+ More countries</span></div>
+                    <div id="MoreCountries" class="dvbRoundBoxes moreObjects">
+                        <span class="closeLink" onclick="CloseMoreObjects('MoreCountries')">Close [x]</span>
+                        @{
+                            Decimal dd = Model.Countries.Count / 4;
+                            Int32 n = Int32.Parse(Math.Ceiling(Decimal.Parse(dd.ToString())).ToString());
+                            string cssBorder = "";
+                            for (Int32 i = 1; i <= 4; i++)
+                            {
+                                if (i > 1 && i < 4)
+                                {
+                                    cssBorder = "border-left:solid 1px #e4e4e4;";
+                                }
+                                <div style=@String.Format("float:left;width:160px;padding:10px 10px 10px 0;{0}", cssBorder)>
+                                    @foreach (var c in Model.Countries.OrderBy(x => x.Name).Skip((i - 1) * n).Take(n))
+                                    {
+                                        string intrstcount = "";
+                                        @if (c.Id > 0)
+                                        {
+                                            intrstcount = " (" + c.Id.ToString() + ")";
+                                        }
+                                        <div class="filterItem">
+                                            <a href=@String.Format("#2dotCountry{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")","")) class="falsecheck_1" id=@String.Format("2falsedotCountry{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")",""))>@c.Name @intrstcount</a>
+                                            <input type="checkbox" name=@String.Format("2dotCountry{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")","")) id=@String.Format("2dotInter{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")","")) style="display:none;" value="@c.Name.Replace(" ", " _")" />
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        }
+                        <div style="clear:both;"></div>
+                        <div class="applyFilters" onclick="ApplyFilters('MoreCountries');">Apply filters</div>
+                    </div>
+                }
+            }
+
+            <!-- Cities filter -->
+            @if (Model.Cities.Count > 0)
+            {
+                <div class="blueTitle_Arial_12" id="divCities">Cities:</div>
+                <div id="topCities">
+                    @foreach (var c in Model.Cities.Take(15))
+                    {
+                        string icount = "";
+                        @if (c.Id > 0)
+                        {
+                            icount = " (" + c.Id.ToString() + ")";
+                        }
+                        <div class="filterItem">
+                            <a href=@String.Format("#dotCity{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")","")) class="falsecheck_1" id=@String.Format("falsedotCity{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")",""))>@c.Name  @icount</a>
+                            <input type="checkbox" name=@String.Format("dotCity{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")","")) id=@String.Format("dotCity{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")","")) ) style="display:none;" value="@c.Name.Replace(" ", "_").Replace("(","").Replace(")",""))" />
+                        </div>
+                    }
+                </div>
+                @if (Model.Cities.Count > 15)
+                {
+                    <div id="MoreCitiesLink" class="linkMoreContainer"><span class="linkMoreObjects" onclick="ShowMoreObjects('MoreCities');">+ More cities</span></div>
+                    <div id="MoreCities" class="dvbRoundBoxes moreObjects">
+                        <span class="closeLink" onclick="CloseMoreObjects('MoreCities')">Close [x]</span>
+                        @{
+                            Decimal dd = Model.Countries.Count / 4;
+                            Int32 n = Int32.Parse(Math.Ceiling(Decimal.Parse(dd.ToString())).ToString());
+                            string cssBorder = "";
+                            for (Int32 i = 1; i <= 4; i++)
+                            {
+                                if (i > 1 && i < 4)
+                                {
+                                    cssBorder = "border-left:solid 1px #e4e4e4;";
+                                }
+                                <div style=@String.Format("float:left;width:160px;padding:10px 10px 10px 0;{0}", cssBorder)>
+                                    @foreach (var c in Model.Cities.OrderBy(x => x.Name).Skip((i - 1) * n).Take(n))
+                                    {
+                                        string intrstcount = "";
+                                        @if (c.Id > 0)
+                                        {
+                                            intrstcount = " (" + c.Id.ToString() + ")";
+                                        }
+                                        <div class="filterItem">
+                                            <a href=@String.Format("#2dotCity{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")","")) class="falsecheck_1" id=@String.Format("2falsedotCity{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")",""))>@c.Name @intrstcount</a>
+                                            <input type="checkbox" name=@String.Format("2dotCity{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")","")) id=@String.Format("2dotCity{0}", c.Name.Replace(" ", "_").Replace("(","").Replace(")","")) style="display:none;" value="@c.Name.Replace(" ", " _")" />
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        }
+                        <div style="clear:both;"></div>
+                        <div class="applyFilters" onclick="ApplyFilters('MoreCities');">Apply filters</div>
+                    </div>
+                }
+            }
+
+            <!-- Length filter -->
+            @if (Model.StayLengths.Count > 0)
+            {
+                <div class="blueTitle_Arial_12" id="divCities">Length of stay:</div>
+                @foreach (var s in Model.StayLengths.OrderBy(x => x.Index))
+                {
+                    <div class="filterItem">
+                        <a href=@String.Format("#dotLen{0}", s.Value) class="falsecheck_1" id=@String.Format("falsedotLen{0}", s.Value)>@s.Title</a>
+                        <input type="checkbox" name=@String.Format("dotLen{0}", s.Value) id=@String.Format("dotLen{0}", s.Value) style="display:none;" value="@s.Value" />
+                    </div>
+                }
+            }
+
+            <!-- Price filter -->
+            @if (Model.Prices.Count > 0)
+            {
+                <div class="blueTitle_Arial_12">Price per person (USD)</div>
+                @foreach (var f in Model.Prices.OrderBy(x => x.Index))
+                {
+                    <div class="filterItem">
+                        <a href=@String.Format("#dotPrice{0}", f.Value) class="falsecheck_1" id=@String.Format("falsedotPrice{0}", f.Value)>@f.Title</a>
+                        <input type="checkbox" name=@String.Format("dotPrice{0}", f.Value) id=@String.Format("dotPrice{0}", f.Value) style="display:none;" value="@f.Value" />
+                    </div>
+                }
+            }
+        </div>
+        <div class="dvbRightColW">
+            @if (Model.packages.Count > 0)
+            {
+                <div id="topContainer" style="padding:6px 4px 6px 8px;background-color:#edf2f8;">
+                    <span id="totalPacks1" class="Text_14Arial_Bold"></span>
+                    <span class="Text_12Arial_BlackBold" style="float:right;">
+                        Order by&nbsp;
+                        <select id="Sort" style="width:170px;height:21px;">
+                            <option value="0">Most Popular</option>
+                            <option value="1">Length of Stay</option>
+                            <option value="2">Price: Low to High</option>
+                            <option value="3">Price: High to Low</option>
+                            <option value="4">Package Name</option>
+                            <option value="5" selected="selected">Relevance</option>
+                            <option value="6">Luxury</option>
+                        </select>
+                    </span>
+                    <div style="clear:both;"></div>
+                </div>
+                <div id="idPages1"></div>
+            }
+            <div style="clear:both;"></div>
+            <div id="dvWait" style="padding:30px; height:200px; margin-top:50px;display:none;text-align:center;"></div>
+            <div id="dvPacks" style="min-height:220px;"></div>
+            @if (Model.packages.Count > 0)
+            {
+                <div id="idPages2"></div>
+            }
+
+        </div>
+        <br style="clear:both;" />
+    </div>
+</div>
+
+<input name="awsQ" type="hidden" id="awsQ" value="@ViewBag.q" />
+<input name="site" type="hidden" id="site" value="''" />
+<input type="hidden" id="inpGuided" value="This is an escorted pre-set group itinerary. The in and out nights may be on an independent basis where you can select hotels, transfers, and activities." />
+<input type="hidden" id="inpparGuided" value="Portions of the trip are escorted and pre-set as per the itinerary. Other parts are independent where you can select your hotels,  transfers, and activities." />
+
+<div id="errMessage" class="dvbContainer" style="display:none;">
+    <div class="dvbRoundBoxes">
+        <div class="dvbpageTitle" style="font-size:18px;font-weight: 700;padding: 8px 13px;text-align: left;font-size:18px!important;">
+            Your Search Result
+        </div>
+        <div style="font-size:16px;font-weight:bold;padding:10px 0 15px 15px; border-bottom:solid 1px #f2f2f2;"><span style="color:Navy;">Itineraries for:</span>&nbsp;<span style="color:Gray;">@ViewBag.q</span></div>
+        <div style="font-size:18px;font-weight:bold;text-align:center;padding:40px 0 12px 0">No itineraries found.</div>
+        <div style="font-size:14px;font-weight:bold;text-align:center;">Please try the following link:</div>
+        @{ 
+            var bag = ViewBag.q.Replace(" ", "%20");
+        }
+        <div style="margin:10px 200px 20px 200px;padding:10px 0;cursor:pointer;text-decoration:underline;color:#121085;border:solid 1px #c8c8c8;text-align:center; background: -moz-linear-gradient(to bottom, #f6f6f6, #e0e0e0);
+            background:-webkit-linear-gradient(to bottom, #f6f6f6, #e0e0e0);background:-o-linear-gradient(to bottom, #f6f6f6, #e0e0e0);background:-moz-linear-gradient(to bottom, #f6f6f6, #e0e0e0);background:linear-gradient(to bottom, #f6f6f6, #e0e0e0);"             
+             onclick='window.open("@String.Format("https://www.google.com/search?q=site:tripmasters.com {0}", @bag)")'>            
+            @Html.Raw(@String.Format("https://www.google.com/search?q=site:tripmasters.com {0}", @bag))
+        </div>
+        <div style="font-size:14px;font-weight:bold;text-align:center;margin-bottom:60px;">Thank you!</div>
+    </div>
+</div>
+
+<div id="dvBack" style="position:absolute;top:0;left:0;background-color: gray;opacity:.5;z-index:9991;display:none;"></div>
+
+@section Scripts
+    {
+    <environment include="Development">
+        <script src="~/js/search/dt.java.search.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/search/dt.java.search.min.js" asp-append-version="true"></script>
+    </environment>
+}

@@ -1,0 +1,273 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MVC_TM
+build_property.RootNamespace = MVC_TM
+build_property.ProjectDir = D:\Profesional\MVC_Websites\Website.TM.Core.MVC\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Profesional\MVC_Websites\Website.TM.Core.MVC
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 6.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/BuildYourOwnVacation/GenericBYO.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRZb3VyT3duVmFjYXRpb25cR2VuZXJpY0JZTy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/BuildYourOwnVacation/GenericBYOAdvanced.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRZb3VyT3duVmFjYXRpb25cR2VuZXJpY0JZT0FkdmFuY2VkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/BuildYourOwnVacation/GenericBYOMob.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVpbGRZb3VyT3duVmFjYXRpb25cR2VuZXJpY0JZT01vYi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/CachePage/HtmlCachePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FjaGVQYWdlXEh0bWxDYWNoZVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Car/Car.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXENhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Chat/Chat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFxDaGF0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Chat/ChatMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFxDaGF0TWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Chat/PostSurvey.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFxQb3N0U3VydmV5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/CheckBookingForReview/CheckBookingForReview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tCb29raW5nRm9yUmV2aWV3XENoZWNrQm9va2luZ0ZvclJldmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/CheckBookingForReview/CheckBookingForReviewMob.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tCb29raW5nRm9yUmV2aWV3XENoZWNrQm9va2luZ0ZvclJldmlld01vYi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Cms/Cms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ21zXENtcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/ContactAgent/ContactAgent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdEFnZW50XENvbnRhY3RBZ2VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/ContactAgent/ContactAgentMob.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdEFnZW50XENvbnRhY3RBZ2VudE1vYi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/CustomerReview/CustomerReview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJSZXZpZXdcQ3VzdG9tZXJSZXZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/CustomerReview/CustomerReviewMob.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJSZXZpZXdcQ3VzdG9tZXJSZXZpZXdNb2IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Destinations/Destinations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGluYXRpb25zXERlc3RpbmF0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Footer/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXEFib3V0VXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Footer/AirlineAncillaryFees.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXEFpcmxpbmVBbmNpbGxhcnlGZWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Footer/AirlineAncillaryFeesMob.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXEFpcmxpbmVBbmNpbGxhcnlGZWVzTW9iLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Footer/BookingConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXEJvb2tpbmdDb25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Footer/ContactUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXENvbnRhY3RVcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Footer/FAQ.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXEZBUS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Footer/How-to-book.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXEhvdy10by1ib29rLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Footer/Insurance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXEluc3VyYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Footer/Payments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXFBheW1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Footer/SavedItinerary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXFNhdmVkSXRpbmVyYXJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Footer/SecurityPrivacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXFNlY3VyaXR5UHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Footer/Terms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXFRlcm1zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Footer/Visas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXFZpc2FzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/GeneralPurpose/GeneralPurpose.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhbFB1cnBvc2VcR2VuZXJhbFB1cnBvc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Home/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Home/HomeMob.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lTW9iLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Marketing/Manage_Subscription.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2V0aW5nXE1hbmFnZV9TdWJzY3JpcHRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/RecentlyViewed/RecentlyViewed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZW50bHlWaWV3ZWRcUmVjZW50bHlWaWV3ZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/RecentlyViewed/RecentlyViewedMob.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZW50bHlWaWV3ZWRcUmVjZW50bHlWaWV3ZWRNb2IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Review/Review.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XFJldmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Review/ReviewMob.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XFJldmlld01vYi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Search/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoXFNlYXJjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Search/SearchMob.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoXFNlYXJjaE1vYi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Shared/Components/Code1619/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29kZTE2MTlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Shared/Components/Code1620/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29kZTE2MjBcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Shared/Components/Code1623/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29kZTE2MjNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Shared/Components/Code1882/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29kZTE4ODJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Shared/Components/Code1912/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29kZTE5MTJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Shared/Components/Code2478_70/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29kZTI0NzhfNzBcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Shared/Components/FeaturedPacks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRmVhdHVyZWRQYWNrc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Shared/Components/UC_TM_ResponsiveCalendar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVUNfVE1fUmVzcG9uc2l2ZUNhbGVuZGFyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Shared/ReviewPerPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFJldmlld1BlclBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Shared/SearchPackages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNlYXJjaFBhY2thZ2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Shared/SearchPackagesMob.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNlYXJjaFBhY2thZ2VzTW9iLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Shared/TopDealsPackageInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFRvcERlYWxzUGFja2FnZUluZm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Shared/_LayoutTM_Responsive.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRUTV9SZXNwb25zaXZlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Tax/TaxByCity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGF4XFRheEJ5Q2l0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Test_chat/Test_chat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdF9jaGF0XFRlc3RfY2hhdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/TopDeals/TopDeals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9wRGVhbHNcVG9wRGVhbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/TopDeals/WeeklyTopDeals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9wRGVhbHNcV2Vla2x5VG9wRGVhbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/VacationPackages/VacationPackages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYXRpb25QYWNrYWdlc1xWYWNhdGlvblBhY2thZ2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/Years/Years.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWWVhcnNcWWVhcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Profesional/MVC_Websites/Website.TM.Core.MVC/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

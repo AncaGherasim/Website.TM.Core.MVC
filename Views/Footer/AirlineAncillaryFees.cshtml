@@ -1,0 +1,88 @@
+﻿@using MVC_TM.Infrastructure;
+@using Microsoft.Extensions.Options
+@inject IOptionsMonitor<AppSettings> _appsettings
+@{
+    ViewBag.Canonical = @String.Format("https://www.tripmasters.com/airline_ancillary_fees");
+
+}
+@section Styles{
+    <style>
+        H3.exceptions { position: relative;color: #666;font-size: 15px;padding: 0 20px;font-family: Arial,Helvetica,sans-serif;text-transform: uppercase;text-align: justify; margin-left: auto; margin-right: auto;}
+        .dvCol {padding: 5px;text-align:center;}
+        .lblAirline {font-family: Arial,Helvetica,sans-serif;text-transform: uppercase; font-weight: bold;color: #666;text-indent: 15px; padding: 8px 14px 0 0;}
+    </style>
+}
+
+
+<div style="margin: 0 auto; width: 964px; height: auto; border-radius: 10px; padding: 10px;
+        border: 1px solid #999; margin: 15px auto">
+    <div style="background-color: #6c98bb; color: #fff; display: table-cell; font-size: 20px;
+            height: 50px; padding: 0 30px; vertical-align: middle; width: 980px;">Baggage Fees</div>
+    <div class="dvtable" style="background-color:#dfdfdf">
+        <div class="dvimgAmadeus"><img alt="Baggage charges and allowances" class="style1" longdesc="Baggage charges and allowances" src="https://bags.amadeus.com/Baggage_Charges_Allowances_Header.gif" /></div>
+
+        <div class="dvCol">
+            <span class="lblAirline">Display baggage policy of </span>
+            <span id='ajaxLoadTx' style='width:220px; background:#fff; border:1px solid black; padding: 10px 25px;'><img src="https://pictures.tripmasters.com/siteassets/d/ajax-indicator.gif" /> Loading Airlines List</span>
+            <select name="ddlAirline" onchange="javascript:calliframe(this.value)" id="ddlAirline" style="font-family:Courier New;"></select>
+        </div>
+        <div class="dvCol">
+            <h3 class="exceptions">Baggage allowance and charges are provided for information only. Additional discounts may apply depending on flyer-specific factors (e.g., frequent flyer status, military, credit card used for purchase, early purchase over the internet, etc.). Additional charges may apply in case of excess or overweight baggage. Please contact your travel agent for more specific information.</h3>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            jQuery.ajaxPrefilter(function (options) {
+                if (options.crossDomain && jQuery.support.cors) {
+                    options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+                };
+            });
+            $('#ddlAirline').hide();
+            $.ajax({
+                type: "POST",
+                url: "/Api/GetAirlineFeeList",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: '{listID:"adeusList"}',
+                success: function (data) {
+                    var sel = '<option> Select Airline </option>' + data;
+                    $('#ddlAirline').show().html(sel);
+                    $('#ajaxLoadTx').hide();
+                },
+                error: function (xhr, desc, exceptionobj) {
+                    $('#ajaxLoadTx').html('Error ! reload page');
+                }
+            });
+            $.get("https://bags.amadeus.com/").done(function (data) {
+                console.log(data);
+            });
+
+        });
+        function calliframe(air) {
+            popupCenter('https://bags.amadeus.com/Display.aspx?a=' + air, air, 1100, 700)
+        };
+        function popupCenter(url, title, w, h) {
+            var left = (screen.width / 2) - (w / 2);
+            var top = (screen.height / 2) - (h / 2);
+            return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+        };
+        function PopupCenterDual(url, title, w, h) {
+            // Fixes dual-screen position Most browsers Firefox
+            var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+            var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+            width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+            height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+            var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+            var top = ((height / 2) - (h / 2)) + dualScreenTop;
+            var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+            // Puts focus on the newWindow
+            if (window.focus) {
+                newWindow.focus();
+            };
+        };
+    </script>
+}

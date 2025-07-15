@@ -1,0 +1,1 @@
+>aws ecs update-service --cluster websites --service website-service --load-balancer file://command.json

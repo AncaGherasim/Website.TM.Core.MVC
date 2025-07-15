@@ -1,0 +1,179 @@
+﻿@using MVC_TM.Infrastructure;
+@model List<xmlPackage>
+@using Microsoft.Extensions.Options
+@inject IOptionsMonitor<AppSettings> _appsettings
+
+@{
+    Layout = null;
+}
+
+<div>
+    @{
+        string nights = "";
+        string ntsText = "";
+        Int32 enumerator = 0;
+        string imagePath = "https://pictures.tripmasters.com/siteassets/d/";
+     }
+    @if (Model.Count > 0)
+    {
+        foreach (var p in Model)
+        {
+            string urlSite = "";
+            @if (p.ProdKinds.Contains(":.ED"))
+            {
+                urlSite = "https://www.tripmasters.com/europe/";
+            }
+            @if (p.ProdKinds.Contains(":LD"))
+            {
+                urlSite = "https://www.tripmasters.com/latin/";
+            }
+            @if (p.ProdKinds.Contains(":.TW"))
+            {
+                urlSite = "https://www.tripmasters.com/asia/";
+            }
+            @if (p.ProdKinds.Contains(":.TM - Luxury"))
+            {
+                if (string.IsNullOrEmpty(p.Country))
+                {
+                    urlSite = "https://www.tripmasters.com/luxury/country";
+                }
+                else
+                {
+                    urlSite = "https://www.tripmasters.com/luxury/";
+                }                           
+            }
+
+                string display = "";
+                if (p != Model.First())
+                {
+                    display = "border-top: dashed 1px #bdbcbc;";
+                }
+
+            <div style="@display">
+                <div style="float:left; margin-left:5px; width:120px;">
+                   
+                    <a href=@String.Format("{0}{1}/{2}/package-{3}", urlSite, p.Country.Replace(" ", "_").ToLower(), p.Title.Replace(" ", "_").ToLower(), p.Id) style="text-decoration:none;border:none;">
+                        <img id=@String.Format("img{0}", p.Id) style="width:100px; height:100px;margin-top:15px" src=@String.Format("https://pictures.tripmasters.com{0}", p.ImageURL.ToLower()) alt="" />
+                    </a>
+                    @if (p.IsLuxury == "1")
+                    {
+                        var t = p.IsLuxury;
+                        <div class="curatelux">
+                            <span class="best-packages__item-lux">Curated Luxury</span>
+                            <span class="best-packages__item-stars">★★★★★</span>
+                        </div>
+                    }
+                </div>
+                <div style="float:left;width:540px;">
+                    <div class="Text_Arial16_BlueBold" style="padding-top:11px;clear:both;">
+                        <a href=@String.Format("{0}{1}/{2}/package-{3}", urlSite, p.Country.Replace(" ", "_").ToLower(), p.Title.Replace(" ", "_").ToLower(), p.Id) style="text-decoration:none;color:Navy;">@p.Title @if (p.IsLuxury == "1")
+                            {
+                                 <span class="starlux">★</span>
+                            }</a>
+                        @if (p.ProdKinds.Contains("1784"))
+                        {
+                            @Html.Raw("&nbsp;")
+                            <span>
+                                <img id=@String.Format("imgGuided{0}", p.Id) src=@String.Format("{0}Guided.jpg", imagePath) alt="" style="vertical-align:middle;margin-top:-5px;" onMouseOver="showPopUp(this.id)" onMouseOut="hidePopUp(this.id)" />
+                            </span>
+                        }
+                        @if (p.ProdKinds.Contains("1785"))
+                        {
+                            @Html.Raw("&nbsp;")
+                            <span>
+                                <img id=@String.Format("imgPartiallyGuid{0}", p.Id) src=@String.Format("{0}GuidedPartially.jpg", imagePath) alt="" style="vertical-align:middle;margin-top:-5px;" onMouseOver="showPopUp(this.id)" onMouseOut="hidePopUp(this.id)" />
+                            </span>
+                        }
+                    </div>
+                    <div style="margin-top:5px;">
+                        @if (p.Duration > 0)
+                        {
+                            @if (p.ProdKinds.Contains("1901"))
+                            {
+                                nights = p.Duration.ToString() + " nights ";
+                                ntsText = "by selecting date, and your departure city.";
+                                <span id=@String.Format("ntsNoBubble{0}", p.Id) name="@nights.Replace(" ", "_")|@ntsText.Replace(" ", "_")" class="Text_12Arial_BlackBold">@nights</span>
+                            }
+                            else
+                            {
+                                nights = p.Duration.ToString() + " to " + (p.Duration + Math.Round(Convert.ToDecimal(p.Duration) / 2)) + "+ nights";
+                                ntsText = "by selecting dates, No. of nights in each city and your departure city.";
+                                <span id=@String.Format("ntsBubble{0}", p.Id) class="toolTip" data="@nights.Replace(" ", "_")|@ntsText.Replace(" ", "_")">@nights</span>
+                            }
+                        }
+                        @if (p.Price != 0)
+                        {
+                            @Html.Raw("&nbsp;from&nbsp;")<span class="Text_Arial15_Orange"><b>@String.Format("{0:c0}", @p.Price)*</b></span>
+                        }
+                    </div>
+                    @if (p.Reviews > 0)
+                    {
+                        <div style="margin-top:5px;">
+                            <a style="color:#4056c6;text-decoration:underline;cursor:pointer;" onclick=@String.Format("window.open('{0}{1}/{2}/package-{3}');", urlSite, p.Country.Replace(" ", "_").ToLower(), p.Title.Replace(" ", "_").ToLower(), p.Id)>
+                                Customer feedback (@p.Reviews) <img src=@String.Format("{0}FeedbackBox.gif", imagePath) width="21" height="16" border="0" />
+                            </a>
+                        </div>
+                    }
+                    <div style="margin-top:15px;">@Html.Raw(@p.Description)</div>
+                    <div style="margin-top:8px;cursor:pointer;padding-bottom:20px;width:130px;"><img id=@String.Format("imgInfo{0}", p.Id) src=@String.Format("{0}PackageIncludes.jpg", imagePath) onclick=@String.Format("dvOpenMain('divInfo{0}');", p.Id) alt="" /></div>
+
+                    <div id=@String.Format("divInfo{0}", p.Id) style="display:none; border:solid 1px #1f67c8; width:450px; background-color:#FFF;position:absolute;z-index:9999;">
+                        <div style="padding:3px 10px;color:#4056c6;text-align:right;"><span style="cursor:pointer;" onclick=@String.Format("dvCloseMain('divInfo{0}')", p.Id)>close [ - ]</span></div>
+                        <div class="Text_Arial16_BlueBold" style="margin:0px 20px 0px 20px;">@p.Title</div>
+                        <div style="margin:5px 0px 0px 20px;">
+                            @if (p.Duration > 0)
+                            {
+                                <span id=@String.Format("DivInfntsBubble{0}", p.Id) name="@nights.Replace(" ","_")|@ntsText.Replace(" ","_")" class="Text_12Arial_BlackBold">@nights</span>
+                            }
+                            @if (p.Price != 0)
+                            {
+                                @Html.Raw("&nbsp;from&nbsp;")<span class="Text_Arial15_Orange"><b>@String.Format("{0:c0}", @p.Price)*</b></span>
+                            }
+                        </div>
+                        @if (p.Price != 0)
+                        {
+                            <div class="Text_12_Gray" style="margin:8px 20px 0px 20px;"> This sample price:  @p.PriceHistInfo for arrival on @p.DepartureDate.ToLongDateString(), departure from @p.DepartureAirport. Choose your own departure city and dates.</div>
+                        }
+                        <div class="Text_12Arial_BlackBold" style="margin:25px 0px 0px 20px;">This @p.Duration night sample itinerary includes:</div>
+                        @{
+                            string[] a = p.Include.Split("[crlf]");
+                            string strContent = "";
+                            for (Int32 i = 0; i <= a.Length - 1; i++)
+                            {
+                                strContent = strContent + "&bull;&nbsp;" + a[i].Replace("|", ";") + "</br>";
+                            }
+                        }
+                        <div style="margin:3px 30px 0px 20px;">@Html.Raw(@strContent)</div>
+                        <div style="margin:20px auto; width:140px;"><a href=@String.Format("{0}{1}/{2}/package-{3}", urlSite, p.Country.Replace(" ", "_").ToLower(), p.Title.Replace(" ", "_").ToLower(), p.Id)><img width="131" height="34" border="0" src=@String.Format("{0}MoreDetails.jpg", imagePath)></a></div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            @if (enumerator == 4)
+            {
+                <div style="width:96%; border-bottom:dashed 1px #bdbcbc; margin:0 10px; border-top:dashed 1px #bdbcbc; padding:5px 0px 15px 0px;text-align:center;clear:both;"><a href="http://www.tripmasters.com"><img src=@String.Format("{0}BuildOnYourOwn_Large.jpg", imagePath) style="margin-top:10px;border-style:none;" alt="BuildOnYourOwn" /></a></div>
+            }
+            enumerator += 1;
+        }
+
+        @if (Model.Count <= 4)
+        {
+            <div style="width:96%; border-bottom:dashed 1px #bdbcbc; margin:0 10px; border-top:dashed 1px #bdbcbc; padding:5px 0px 15px 0px;text-align:center;clear:both;"><a href="http://www.tripmasters.com"><img src=@String.Format("{0}BuildOnYourOwn_Large.jpg", imagePath) style="margin-top:10px;border-style:none;" alt="BuildOnYourOwn" /></a></div>
+        }
+
+    }
+    else
+    {
+        <div id="msgNoPacks" style="display:none;font-size:16px;color:navy;"></div>
+    }
+
+    @if (ViewBag.xmlPacksCount == null)
+    {
+        <input name="noOfPacks" type="hidden" id="noOfPacks" value="0" />
+    }
+    else
+    {
+        <input name="noOfPacks" type="hidden" id="noOfPacks" value="@ViewBag.xmlPacksCount" />
+    }
+
+</div>

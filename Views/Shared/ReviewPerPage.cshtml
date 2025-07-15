@@ -1,0 +1,145 @@
+﻿@using MVC_TM.Infrastructure;
+@model List<ReviewPageTotal>
+@using Microsoft.Extensions.Options
+@inject IOptionsMonitor<AppSettings> _appsettings
+
+@{
+    Layout = null;
+}
+
+@if (Model.Count > 0)
+{
+    Int32 totalRevs = Model[0].Total;
+    foreach (var r in Model)
+    {
+        string urlSite = "";
+        string siteName = "";
+        /* Mofify logic to include dept if UserID is null */
+        switch (true)
+        {
+            case true when r.STR_UserId == 243:
+            case true when r.dept == 1615:
+                urlSite = "https://www.tripmasters.com/europe/";
+                siteName = "Europe";
+                break;
+            case true when r.STR_UserId == 182:
+            case true when r.dept == 1617:
+                urlSite = "https://www.tripmasters.com/latin/";
+                siteName = "Latin America";
+                break;
+             case true when r.STR_UserId == 595:
+             case true when r.dept == 1425:
+                urlSite = "https://www.tripmasters.com/asia/";
+                siteName = "Asia & South Pacific";
+                break;
+        }
+        <div style="border-bottom:solid 1px gray;padding:15px 15px 10px 15px;">
+            @if (r.OverallScore > 0)
+            {
+                <div style="padding:0 0 2px 0px;position:relative;">
+                    <img alt="@r.OverallScore" src=@String.Format("https://pictures.tripmasters.com/siteassets/d/Stars_{0}_Stars.gif", r.OverallScore) />
+                    <span class="darkText" style="font-weight:normal;padding:0 0 0 8px;position:absolute;margin-top:-2px;">(@r.OverallScore out of 5)</span>
+                </div>
+            }
+            <div style="font-size:12px;margin:5px 0 0 0;">@Html.Raw(@Utilities.FormatCustomerComment(r.PCC_Comment))</div>
+            @{
+                Int32 rvType = 0;
+                if (r.PCC_PDLID == 0)
+                {
+                    rvType = 1;
+                }
+                else { rvType = 0; }
+                if (rvType == 0)
+                {
+                    if (r.PDL_NoWeb == null)
+                    {
+                        rvType = 1;
+                    }
+                }
+                if (rvType == 1)
+                {
+                    <div class="packIncludeUp"><a href="@urlSite">Explore @siteName</a>&nbsp;&nbsp;</div>
+                    <div style="clear:both;"></div>
+                }
+                else
+                {
+                    <div id=@String.Format("divInfoLink{0}", r.PCCID) class="packIncludeUp" onclick=@String.Format("displayPackInfo('divInfo{0}');", r.PCCID)>Itinerary details&nbsp;&nbsp;</div>
+                    <div style="clear:both;"></div>
+                    <div id=@String.Format("divInfo{0}", r.PCCID) class="packInfo">
+                        @{
+                            string[] a = r.PCC_Itinerary.Split("\r\n");
+                            string strContent = "";
+                            for (Int32 i = 0; i < a.Length; i++)
+                            {
+                                strContent = strContent + a[i].Replace("|", ";") + "</br>";
+
+                            }
+                            <div style="color:#6a6a6a;margin:3px 10px 0 0;">@Html.Raw(@strContent)</div>
+                            <a class="packLink" href=@String.Format("{0}{1}/{2}/package-{3}", urlSite, r.CountryNA.Replace(" ", "_").ToLower(), r.PDL_Title.Replace(" ", "_").ToLower(), r.PCC_PDLID)>@r.PDL_Title</a>
+                            if (r.NoOfFeed > 0)
+                            {
+                                <div class="darkText" style="margin-top:5px;">(@r.NoOfFeed Reviews)</div>
+                            }
+                            if (r.STP_Save != 9999)
+                            {
+                                <div style="margin:10px 0 0 0;color:black;">Price for this package starting at <span style="color:#ff670b;font-size:12px;font-weight:bold;">@String.Format("{0:c0}", r.STP_Save)*</span></div>
+                            }
+                            if (r.RelatePlaces.Length > 0)
+                            {
+                                <div style="font-weight:bold;margin:15px 0 0 0;">See Reviews for:</div>
+                                <div style="margin-top:5px;">
+                                    @{
+                                        string[] places = @r.RelatePlaces.Trim().Split("@");
+                                        if (places.Length > 0)
+                                        {
+                                            foreach (var p in places)
+                                            {
+                                                if (p != "")
+                                                {
+                                                    string[] placeInfo = p.Split("|");
+                                                    string pp = "";
+                                                    switch (placeInfo[2].Trim())
+                                                    {
+                                                        case "25":
+                                                        case "1":
+                                                        case "6":
+                                                        case "5":
+                                                            if (p == places.First())
+                                                            {
+                                                                pp = "";
+                                                            }
+                                                            else
+                                                            {
+                                                                pp = " - ";
+                                                            }
+                                                            <a style="color:Gray;" href=@String.Format("{0}{1}/trips_taken_by_travelers", urlSite, placeInfo[0].Trim().ToLower().Replace(" ", "_"))><u>@placeInfo[0].Trim()</u></a>
+                                                            break;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                    }
+                                </div>
+                            }
+                        }
+                    </div>
+
+                }
+            }
+        </div>
+    }
+    Int32 nopageNumber = Int32.Parse(ViewBag.pageNumber);
+    @if (nopageNumber * 10 < totalRevs)
+    {
+        Int32 restRevs = totalRevs - 10 * nopageNumber;
+        if (restRevs >= nopageNumber)
+        {
+            restRevs = nopageNumber;
+        }
+        <div id=@String.Format("dvMore_{0}", nopageNumber + 1) style="border-bottom:1px solid gray;background-color:White;padding:10px 0 25px 0;text-align:center;">
+            <div class="grayButton">Show @restRevs more results</div>
+        </div>
+
+    }
+}
