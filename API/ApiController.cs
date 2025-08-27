@@ -27,6 +27,8 @@ using System.Text.Json.Nodes;
 using Mysqlx;
 using System.Dynamic;
 using Microsoft.Extensions.Primitives;
+using Newtonsoft.Json.Linq;
+using Microsoft.Extensions.Logging;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -40,13 +42,15 @@ namespace MVC_TM.API
         private readonly DapperWrap _dapperWrap;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly CachedDataService _cachedDataService;
+        private readonly ILogger<PackagesController> _logger;
 
-        public PackagesController(IOptions<AppSettings> appSettings, DapperWrap dapperWrap, IHttpContextAccessor httpContextAccessor, CachedDataService cachedDataService)
+        public PackagesController(IOptions<AppSettings> appSettings, DapperWrap dapperWrap, IHttpContextAccessor httpContextAccessor, CachedDataService cachedDataService, ILogger<PackagesController> logger)
         {
             _appSettings = appSettings.Value;
             _dapperWrap = dapperWrap;
             _httpContextAccessor = httpContextAccessor;
-            _cachedDataService = cachedDataService; 
+            _cachedDataService = cachedDataService;
+            _logger = logger;
         }
 
         [HttpPost("Packages/getDataRelPacks")]
@@ -259,22 +263,8 @@ namespace MVC_TM.API
             if (dict == null || dict.Count == 0)
             {
                 var rawBody = HttpContext.Items["RawRequestBody"] as string ?? "";
-                var sessionId = HttpContext.Items["SessionId"]?.ToString() ?? "NoSession";
-                string clientIp;
-                if (HttpContext.Request.Headers.TryGetValue("X-Forwarded-For", out var xfwd)
-                    && !StringValues.IsNullOrEmpty(xfwd))
-                {
-                    clientIp = xfwd.ToString()
-                                   .Split(',', StringSplitOptions.RemoveEmptyEntries)[0]
-                                   .Trim();
-                }
-                else
-                {
-                    clientIp = HttpContext.Connection.RemoteIpAddress?
-                                   .ToString()
-                               ?? "UnknownIP";
-                }
-                Console.WriteLine($"****** Site: TM | SessionId: {sessionId} | ClientIP: {clientIp} | Wrong payload {rawBody} for webservComponentList 400 BadRequest");
+                string clientIp = ClientInfo.GetClientIp(HttpContext);
+                _logger.LogInformation($"****** Site: TM | ClientIP: {clientIp} | Wrong payload {rawBody} for webservComponentList 400 BadRequest");
                 return BadRequest();
             }
             var dataDictionary = queryString as IDictionary<string, object>;
@@ -793,7 +783,7 @@ namespace MVC_TM.API
             catch (System.IO.IOException ex)
             {
                 suggs.Insert(0, "Error: " + ex.Message);
-                Console.WriteLine("TM-Error-amzCloud_Suggestions IOException message: " + ex.Message + ", q.Id: " + q.Id);
+                _logger.LogError($"****** Site: TM | Error-amzCloud_Suggestions IOException message: " + ex.Message + ", q.Id: " + q.Id);
             }
 
             return suggs;
@@ -829,12 +819,74 @@ namespace MVC_TM.API
             return false;
         }
         [HttpPost("CheckStatus")]
-        public async Task<IEnumerable<ContactAgent>> CheckStatus([FromBody] CheckStatus status)
+        public async Task<string> CheckStatus([FromBody] CheckStatus status)
         {
-            List<ContactAgent> agent = new List<ContactAgent>();
-            var result1 = await _dapperWrap.GetRecords<ContactAgent>(SqlCalls.SQL_ContactAgent(status.email, status.id));
-            agent = result1.ToList();
-            return agent;
+            //List<ContactAgent> agent = new List<ContactAgent>();
+            //var result1 = await _dapperWrap.GetRecords<ContactAgent>(SqlCalls.SQL_ContactAgent(status.email, status.id));
+            //agent = result1.ToList();
+
+            List<AwsCredentials> awsCredentials = new List<AwsCredentials>();
+            var responseMessage = string.Empty;
+            string rResult = string.Empty;
+
+            var sqlGetAWSCredentials = _appSettings.AWSConnection.AwsCredentialsQuery;
+            var t0 = _dapperWrap.GetRecords<AwsCredentials>(sqlGetAWSCredentials);
+            awsCredentials = t0.Result.ToList();
+            var payload = new
+            {
+                parameters = new { UserId = status.id, Command = "get_current_user_data_agent" }
+            };
+            using (AmazonLambdaClient client = new AmazonLambdaClient(awsCredentials.First().AWSK_AccessKey, awsCredentials.First().AWSK_SecretKey, RegionEndpoint.USEast1))
+            {
+                InvokeRequest ir = new InvokeRequest
+                {
+                    FunctionName = @"arn:aws:lambda:" + _appSettings.AWSConnection.AwsRegionId + @":function:TM_AWSConnect_CCP_Instance",
+                    InvocationType = InvocationType.RequestResponse,
+                    Payload = Newtonsoft.Json.JsonConvert.SerializeObject(payload)
+                };
+                try
+                {
+                    InvokeResponse response = client.InvokeAsync(ir).Result;
+                    if (String.IsNullOrEmpty(response.FunctionError))
+                    {
+                        using (response.Payload)
+                        {
+                            var sr = new StreamReader(response.Payload);
+                            JsonReader reader = new JsonTextReader(sr);
+
+                            var serilizer = new JsonSerializer();
+                            JObject op = serilizer.Deserialize<JObject>(reader);
+                            dynamic obj = JsonConvert.DeserializeObject<ExpandoObject>(op.ToString());
+                            var bodyJson = obj.body.ToString();
+                            List<dynamic> bodyList = JsonConvert.DeserializeObject<List<dynamic>>(bodyJson);
+
+                            dynamic rsp = bodyList.FirstOrDefault(x => x.User.Username == status.email);
+
+                            var responsePayload = new Object();
+                            if (rsp != null)
+                            {
+                                responsePayload = new { statusCode = 200, agentStatus = rsp.Status.StatusName, activeVoice = rsp.AvailableSlotsByChannel.VOICE, activeChat = rsp.AvailableSlotsByChannel.CHAT };
+                            }else
+                            {
+                                responsePayload = new { statusCode = 200, agentStatus = "Offline" };
+                            }
+
+                            responseMessage = JsonConvert.SerializeObject(responsePayload);
+                        }
+                    }
+                    else
+                    {
+                        rResult = "Error" + response.FunctionError;
+                        throw new Exception(response.FunctionError + " throwed exception");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    rResult = "Catched error from Check Status Agent = " + ex.Message;
+                    responseMessage = rResult;
+                }
+            }
+            return responseMessage;
         }
         [HttpPost("GetChtInfo")]
         public async Task<IEnumerable<ContactAgent>> GetChtInfo([FromBody] string email)
@@ -849,8 +901,6 @@ namespace MVC_TM.API
         public async Task<string> CallCustomer([FromBody] CallCustomer customer)
         {
             string returnResult = "";
-            HttpWebRequest request;
-            HttpWebResponse response;
             Regex emailRegex = new Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$");
             Regex phoneRegex = new Regex(@"\d+");
             var matchEmail = emailRegex.Match(customer.email);
@@ -863,30 +913,26 @@ namespace MVC_TM.API
 
             if (matchEmail.Success && matchPhone.Success)
             {
-                request = (HttpWebRequest)WebRequest.Create(AWSOutBoundCall);
+                var client = new HttpClient();
                 var postBody = new
                 {
                     TMUser = customer.email.ToString(),
-                    DestinationPhoneNumber = @"+1" + customer.phone
+                    DestinationPhoneNumber = $"+1{customer.phone}"
                 };
-                byte[] data = Encoding.UTF8.GetBytes(Newtonsoft.Json.JsonConvert.SerializeObject(postBody));
-                request.Method = "POST";
-                request.ContentLength = data.Length;
-                request.Headers["x-utvisitorid"] = utValues[0].Split("=")[1];
-                request.Headers["x-register"] = "Unitraqv2";
-                request.Headers["x-utpagetype"] = "AgentCall";
-                request.Headers["x-utlogid"] = utValues[2].Split("=")[1];
-                request.Headers["x-phone"] = customer.phone;
-                request.Headers["x-name"] = customer.name;
-                request.Headers["x-email"] = customer.email;
 
-                Stream stream = await request.GetRequestStreamAsync();
-                stream.Write(data, 0, data.Length);
-                stream.Close();
+                var json = JsonConvert.SerializeObject(postBody);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                response = (HttpWebResponse)request.GetResponse();
-                StreamReader streamReader = new StreamReader(response.GetResponseStream());
-                string result = streamReader.ReadToEnd();
+                content.Headers.Add("x-utvisitorid", utValues[0].Split("=")[1]);
+                content.Headers.Add("x-register", "Unitraqv2");
+                content.Headers.Add("x-utpagetype", "AgentCall");
+                content.Headers.Add("x-utlogid", utValues[2].Split("=")[1]);
+                content.Headers.Add("x-phone", customer.phone);
+                content.Headers.Add("x-name", customer.name);
+                content.Headers.Add("x-email", customer.email);
+
+                var response = await client.PostAsync(AWSOutBoundCall, content);
+                var result = await response.Content.ReadAsStringAsync();
                 returnResult = result;
             }
             return returnResult;
@@ -956,22 +1002,8 @@ namespace MVC_TM.API
             if (survey == null)
             {
                 var rawBody = HttpContext.Items["RawRequestBody"] as string ?? "";
-                var sessionId = HttpContext.Items["SessionId"]?.ToString() ?? "NoSession";
-                string clientIp;
-                if (HttpContext.Request.Headers.TryGetValue("X-Forwarded-For", out var xfwd)
-                    && !StringValues.IsNullOrEmpty(xfwd))
-                {
-                    clientIp = xfwd.ToString()
-                                   .Split(',', StringSplitOptions.RemoveEmptyEntries)[0]
-                                   .Trim();
-                }
-                else
-                {
-                    clientIp = HttpContext.Connection.RemoteIpAddress?
-                                   .ToString()
-                               ?? "UnknownIP";
-                }
-                Console.WriteLine($"****** Site: TM | SessionId: {sessionId} | ClientIP: {clientIp} | Wrong payload {rawBody} for PostSurvey 400 BadRequest");
+                string clientIp = ClientInfo.GetClientIp(HttpContext); 
+                _logger.LogInformation($"****** Site: TM | ClientIP: {clientIp} | Wrong payload {rawBody} for PostSurvey 400 BadRequest");
                 return null;
             }
             string resolve = survey.resolve;
@@ -1226,7 +1258,7 @@ namespace MVC_TM.API
                     catch (Exception ex)
                     {
                         mrkMessage = ex.Message;
-                        Console.WriteLine("TM-Error-MarketingSubscriber catched error : " + ex.Message);
+                        _logger.LogError($"****** Site: TM | Error-MarketingSubscriber catched error : " + ex.Message);
                         return mrkMessage;
                     }
                 }
@@ -1244,7 +1276,7 @@ namespace MVC_TM.API
             catch (Exception ex)
             {
                 mrkResult = ex.Message;
-                Console.WriteLine("TM-Error-MarketingSubscriber catched error : " + ex.Message);
+                _logger.LogError($"****** Site: TM | Error-MarketingSubscriber catched error : " + ex.Message);
                 return mrkResult;
             }
         }
@@ -1539,12 +1571,12 @@ namespace MVC_TM.API
         {
             if (logErrorRequest == null)
             {
-                Console.WriteLine($"TM-Error-BYO-Calendar logErrorRequest object is null");
+                _logger.LogError($"****** Site: TM | Error-BYO-Calendar logErrorRequest object is null");
             }
             else
             {
-                Console.WriteLine($"TM-Error-BYO-Calendar message: {logErrorRequest.Message}");
-                Console.WriteLine($"TM-Error-BYO-Calendar cities: {logErrorRequest.Cities}");
+                _logger.LogError($"****** Site: TM | Error-BYO-Calendar message: {logErrorRequest.Message}");
+                _logger.LogError($"****** Site: TM | Error-BYO-Calendar cities: {logErrorRequest.Cities}");
             }
             return Ok();
         }
